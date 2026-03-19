@@ -1,5 +1,6 @@
 'use client'
 import { createContext, useContext, useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation'
 import { translations, type Locale } from './translations'
 
 interface LanguageContextType {
@@ -16,20 +17,22 @@ const LanguageContext = createContext<LanguageContextType>({
   setLocale: () => {},
 })
 
+function localeFromPath(pathname: string): Locale {
+  if (pathname === '/en' || pathname.startsWith('/en/')) return 'en'
+  return 'de'
+}
+
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname()
   const [locale, setLocale] = useState<Locale>('en')
 
   useEffect(() => {
-    const browserLang = navigator.language.toLowerCase()
-    if (browserLang.startsWith('de')) {
-      setLocale('de')
-    } else {
-      setLocale('en')
-    }
-  }, [])
+    setLocale(localeFromPath(pathname))
+  }, [pathname])
 
   useEffect(() => {
     document.documentElement.lang = locale
+    localStorage.setItem('locale', locale)
   }, [locale])
 
   const toggle = () => setLocale(prev => prev === 'en' ? 'de' : 'en')

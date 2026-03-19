@@ -4,9 +4,8 @@ import Footer from '@/components/Footer'
 import HubSpotForm from '@/components/HubSpotForm'
 import { useLanguage } from '@/lib/LanguageContext'
 
-export default function KontaktPage() {
+export default function ContactPage() {
   const { t } = useLanguage()
-
   const c = t.contact
 
   return (
@@ -17,7 +16,6 @@ export default function KontaktPage() {
         <div className="absolute inset-0 dot-grid opacity-60 pointer-events-none" />
 
         <div className="relative max-w-5xl mx-auto">
-          {/* Header */}
           <div className="text-center mb-16 animate-fade-up-1">
             <span className="glass-accent text-accent text-xs font-semibold tracking-[0.2em] uppercase px-4 py-1.5 rounded-full">
               {c.label}
@@ -29,7 +27,6 @@ export default function KontaktPage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 animate-fade-up-2">
-            {/* Info cards */}
             <div className="flex flex-col gap-4">
               {[
                 { label: c.info.email_label, value: c.info.email_value },
@@ -42,8 +39,6 @@ export default function KontaktPage() {
                 </div>
               ))}
             </div>
-
-            {/* HubSpot Form */}
             <div className="md:col-span-2 glass rounded-2xl p-8">
               <HubSpotForm />
             </div>
