@@ -4,7 +4,7 @@ import { translations, type Locale } from './translations'
 
 interface LanguageContextType {
   locale: Locale
-  t: typeof translations['en']
+  t: typeof translations[Locale]
   toggle: () => void
 }
 
