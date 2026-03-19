@@ -144,6 +144,30 @@ export const translations = {
       copyright: '© 2026 iundf Gruppe · iundf Dewave AG · Inhalt & Form',
       links: ['Privacy', 'Imprint', 'Contact'],
     },
+    contact: {
+      label: 'Contact',
+      title: 'Get in',
+      title_em: 'touch',
+      sub: 'Have a question or want to learn more about Lumaia? We\'d love to hear from you.',
+      form: {
+        name: 'Full name',
+        email: 'Your business email',
+        subject: 'Subject',
+        message: 'Your message',
+        submit: 'Send Message →',
+        privacy: 'Your data is treated confidentially and not passed on to third parties.',
+        success_title: 'Message sent!',
+        success_sub: 'We\'ll get back to you within 24 hours.',
+      },
+      info: {
+        email_label: 'Email',
+        email_value: 'hello@lumaia.ai',
+        location_label: 'Location',
+        location_value: 'Switzerland',
+        response_label: 'Response Time',
+        response_value: 'Within 24 hours',
+      },
+    },
   },
 
   de: {
@@ -288,6 +312,30 @@ export const translations = {
     footer: {
       copyright: '© 2026 iundf Gruppe · iundf Dewave AG · Inhalt & Form',
       links: ['Datenschutz', 'Impressum', 'Kontakt'],
+    },
+    contact: {
+      label: 'Kontakt',
+      title: 'Schreiben Sie',
+      title_em: 'uns',
+      sub: 'Haben Sie eine Frage oder möchten Sie mehr über Lumaia erfahren? Wir freuen uns von Ihnen zu hören.',
+      form: {
+        name: 'Vollständiger Name',
+        email: 'Ihre geschäftliche E-Mail',
+        subject: 'Betreff',
+        message: 'Ihre Nachricht',
+        submit: 'Nachricht senden →',
+        privacy: 'Ihre Daten werden vertraulich behandelt und nicht an Dritte weitergegeben.',
+        success_title: 'Nachricht gesendet!',
+        success_sub: 'Wir melden uns innerhalb von 24 Stunden.',
+      },
+      info: {
+        email_label: 'E-Mail',
+        email_value: 'hello@lumaia.ai',
+        location_label: 'Standort',
+        location_value: 'Schweiz',
+        response_label: 'Antwortzeit',
+        response_value: 'Innerhalb von 24 Stunden',
+      },
     },
   },
 } as const
