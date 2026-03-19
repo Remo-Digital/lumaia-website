@@ -40,7 +40,12 @@ export default function ContactPage() {
               ))}
             </div>
             <div className="md:col-span-2 glass rounded-2xl p-8">
-              <HubSpotForm />
+              <HubSpotForm
+                formId="4a6a06b0-4008-43cd-a2ec-f4d6978022d2"
+                consentText="I have read and accept the"
+                privacyHref="/en/privacy"
+                privacyLabel="Privacy Policy"
+              />
             </div>
           </div>
         </div>

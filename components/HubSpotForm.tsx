@@ -1,5 +1,5 @@
 'use client'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 declare global {
   interface Window {
@@ -11,16 +11,34 @@ declare global {
   }
 }
 
-export default function HubSpotForm() {
+interface Props {
+  portalId?: string
+  formId?: string
+  region?: string
+  consentText: string
+  privacyHref: string
+  privacyLabel: string
+}
+
+export default function HubSpotForm({
+  portalId = '5625458',
+  formId = 'ad72af02-88e1-495f-a8b5-c6ae0cf1b99a',
+  region = 'na1',
+  consentText,
+  privacyHref,
+  privacyLabel,
+}: Props) {
+  const [consented, setConsented] = useState(false)
+
   useEffect(() => {
     const scriptId = 'hs-forms-script'
 
     function initForm() {
       if (window.hbspt) {
         window.hbspt.forms.create({
-          portalId: '5625458',
-          formId: 'ad72af02-88e1-495f-a8b5-c6ae0cf1b99a',
-          region: 'na1',
+          portalId,
+          formId,
+          region,
           target: '#hs-form-target',
         })
       }
@@ -38,7 +56,45 @@ export default function HubSpotForm() {
     script.type = 'text/javascript'
     script.onload = initForm
     document.head.appendChild(script)
-  }, [])
+  }, [portalId, formId, region])
+
+  // Inject consent checkbox before submit button once form renders
+  useEffect(() => {
+    const target = document.getElementById('hs-form-target')
+    if (!target) return
+
+    const observer = new MutationObserver(() => {
+      const submitBtn = target.querySelector<HTMLElement>('.hs-button, input[type="submit"]')
+      if (submitBtn && !target.querySelector('#gdpr-consent')) {
+        const label = document.createElement('label')
+        label.id = 'gdpr-consent'
+        label.className = 'gdpr-consent-label'
+        label.innerHTML = `
+          <input type="checkbox" id="gdpr-consent-cb" />
+          <span>${consentText} <a href="${privacyHref}" target="_blank" rel="noopener noreferrer">${privacyLabel}</a></span>
+        `
+        label.querySelector('input')?.addEventListener('change', e => {
+          setConsented((e.target as HTMLInputElement).checked)
+        })
+        submitBtn.closest('.hs-submit') ? submitBtn.closest('.hs-submit')!.before(label) : submitBtn.before(label)
+        observer.disconnect()
+      }
+    })
+
+    observer.observe(target, { childList: true, subtree: true })
+    return () => observer.disconnect()
+  }, [consentText, privacyHref, privacyLabel])
+
+  // Block form submission until consent is given
+  useEffect(() => {
+    const target = document.getElementById('hs-form-target')
+    if (!target) return
+    const handler = (e: Event) => {
+      if (!consented) e.preventDefault()
+    }
+    target.addEventListener('submit', handler, true)
+    return () => target.removeEventListener('submit', handler, true)
+  }, [consented])
 
   return (
     <>
@@ -138,13 +194,19 @@ export default function HubSpotForm() {
           padding: 12px 24px;
           border-radius: 12px;
           cursor: pointer;
-          transition: background 0.2s;
+          transition: background 0.2s, opacity 0.2s;
           width: auto;
           align-self: flex-start;
         }
         #hs-form-target .hs-button:hover,
         #hs-form-target input[type="submit"]:hover {
           background: rgba(123,232,159,0.1);
+        }
+        .hs-consent-blocked #hs-form-target .hs-button,
+        .hs-consent-blocked #hs-form-target input[type="submit"] {
+          opacity: 0.35;
+          pointer-events: none;
+          cursor: not-allowed;
         }
         #hs-form-target .submitted-message {
           color: #7be89f;
@@ -178,8 +240,40 @@ export default function HubSpotForm() {
             grid-template-columns: 1fr;
           }
         }
+        .gdpr-consent-label {
+          display: flex !important;
+          align-items: flex-start !important;
+          gap: 10px !important;
+          text-transform: none !important;
+          letter-spacing: 0 !important;
+          font-size: 0.75rem !important;
+          color: rgba(255,255,255,0.28) !important;
+          cursor: pointer !important;
+          font-weight: 400 !important;
+          line-height: 1.5 !important;
+          margin-bottom: 4px !important;
+        }
+        .gdpr-consent-label input[type="checkbox"] {
+          width: 14px !important;
+          height: 14px !important;
+          flex-shrink: 0 !important;
+          margin-top: 2px !important;
+          accent-color: #7be89f !important;
+          cursor: pointer !important;
+        }
+        .gdpr-consent-label a {
+          color: rgba(123,232,159,0.6) !important;
+          text-decoration: underline !important;
+          transition: color 0.2s !important;
+        }
+        .gdpr-consent-label a:hover {
+          color: #7be89f !important;
+        }
       `}</style>
-      <div id="hs-form-target" />
+
+      <div className={consented ? '' : 'hs-consent-blocked'}>
+        <div id="hs-form-target" />
+      </div>
     </>
   )
 }
