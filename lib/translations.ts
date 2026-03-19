@@ -143,9 +143,9 @@ export const translations = {
     footer: {
       copyright: '© 2026 iundf Gruppe · iundf Dewave AG · Inhalt & Form',
       links: [
-        { label: 'Privacy', href: '/privacy' },
-        { label: 'Imprint', href: '/imprint' },
-        { label: 'Contact', href: '/contact' },
+        { label: 'Privacy', href: '/en/privacy' },
+        { label: 'Imprint', href: '/en/imprint' },
+        { label: 'Contact', href: '/en/contact' },
       ],
     },
     privacy: {

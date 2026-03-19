@@ -1,15 +1,10 @@
 'use client'
-import { useEffect } from 'react'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import { useLanguage } from '@/lib/LanguageContext'
 
 export default function ImpressumPage() {
-  const { t, setLocale } = useLanguage()
-
-  useEffect(() => {
-    setLocale('de')
-  }, [setLocale])
+  const { t } = useLanguage()
 
   const im = t.imprint
 

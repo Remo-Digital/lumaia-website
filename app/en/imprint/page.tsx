@@ -27,10 +27,10 @@ export default function ImprintPage() {
           <div className="glass rounded-2xl p-8 md:p-12 animate-fade-up-2 flex flex-col gap-8">
             {[
               { label: im.company, value: 'iundf Dewave AG' },
-              { label: im.address, value: 'Schweiz' },
+              { label: im.address, value: 'Switzerland' },
               { label: im.email, value: 'hello@lumaia.ai', href: 'mailto:hello@lumaia.ai' },
-              { label: im.register, value: 'Handelsregister Kanton Zürich' },
-              { label: im.vat, value: 'CHE-XXX.XXX.XXX MWST' },
+              { label: im.register, value: 'Commercial Register Canton Zurich' },
+              { label: im.vat, value: 'CHE-XXX.XXX.XXX VAT' },
               { label: im.responsible, value: 'iundf Dewave AG' },
             ].map(({ label, value, href }) => (
               <div key={label} className="border-b border-white/05 pb-6 last:border-0 last:pb-0">
