@@ -10,8 +10,8 @@ export default function Footer() {
         <span className="font-serif text-xl gradient-text">Lumaia</span>
         <span className="text-white/20 text-xs">{t.footer.copyright}</span>
         <div className="flex gap-6 text-xs">
-          {t.footer.links.map(link => (
-            <a key={link} href="#" className="text-white/25 hover:text-accent transition-colors duration-200">{link}</a>
+          {t.footer.links.map(({ label, href }) => (
+            <a key={href} href={href} className="text-white/25 hover:text-accent transition-colors duration-200">{label}</a>
           ))}
         </div>
       </div>
