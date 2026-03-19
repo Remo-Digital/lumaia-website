@@ -142,7 +142,28 @@ export const translations = {
     },
     footer: {
       copyright: '© 2026 iundf Gruppe · iundf Dewave AG · Inhalt & Form',
-      links: ['Privacy', 'Imprint', 'Contact'],
+      links: [
+        { label: 'Privacy', href: '/en/privacy' },
+        { label: 'Imprint', href: '/en/imprint' },
+        { label: 'Contact', href: '/en/contact' },
+      ],
+    },
+    privacy: {
+      label: 'Privacy Policy',
+      title: 'Privacy',
+      title_em: 'Policy',
+      last_updated: 'Last updated: March 2026',
+    },
+    imprint: {
+      label: 'Imprint',
+      title: 'Legal',
+      title_em: 'Notice',
+      company: 'iundf Dewave AG',
+      address: 'Switzerland',
+      email: 'hello@lumaia.ai',
+      vat: 'VAT ID',
+      register: 'Commercial Register',
+      responsible: 'Responsible for content',
     },
     contact: {
       label: 'Contact',
@@ -311,7 +332,28 @@ export const translations = {
     },
     footer: {
       copyright: '© 2026 iundf Gruppe · iundf Dewave AG · Inhalt & Form',
-      links: ['Datenschutz', 'Impressum', 'Kontakt'],
+      links: [
+        { label: 'Datenschutz', href: '/datenschutz' },
+        { label: 'Impressum', href: '/impressum' },
+        { label: 'Kontakt', href: '/kontakt' },
+      ],
+    },
+    privacy: {
+      label: 'Datenschutz',
+      title: 'Daten',
+      title_em: 'schutz',
+      last_updated: 'Zuletzt aktualisiert: März 2026',
+    },
+    imprint: {
+      label: 'Impressum',
+      title: 'Impressum',
+      title_em: '',
+      company: 'iundf Dewave AG',
+      address: 'Schweiz',
+      email: 'hello@lumaia.ai',
+      vat: 'MwSt-Nummer',
+      register: 'Handelsregister',
+      responsible: 'Verantwortlich für den Inhalt',
     },
     contact: {
       label: 'Kontakt',
