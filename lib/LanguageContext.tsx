@@ -6,12 +6,14 @@ interface LanguageContextType {
   locale: Locale
   t: typeof translations[Locale]
   toggle: () => void
+  setLocale: (locale: Locale) => void
 }
 
 const LanguageContext = createContext<LanguageContextType>({
   locale: 'en',
   t: translations.en,
   toggle: () => {},
+  setLocale: () => {},
 })
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
@@ -33,7 +35,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const toggle = () => setLocale(prev => prev === 'en' ? 'de' : 'en')
 
   return (
-    <LanguageContext.Provider value={{ locale, t: translations[locale], toggle }}>
+    <LanguageContext.Provider value={{ locale, t: translations[locale], toggle, setLocale }}>
       {children}
     </LanguageContext.Provider>
   )
