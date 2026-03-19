@@ -148,20 +148,6 @@ export const translations = {
         { label: 'Contact', href: '/contact' },
       ],
     },
-    contact: {
-      label: 'Contact',
-      title: 'Get in',
-      title_em: 'touch',
-      sub: 'Have a question or want to learn more about Lumaia? We\'d love to hear from you.',
-      info: {
-        email_label: 'Email',
-        email_value: 'hello@lumaia.ai',
-        location_label: 'Location',
-        location_value: 'Switzerland',
-        response_label: 'Response Time',
-        response_value: 'Within 24 hours',
-      },
-    },
     privacy: {
       label: 'Privacy Policy',
       title: 'Privacy',
@@ -351,20 +337,6 @@ export const translations = {
         { label: 'Impressum', href: '/impressum' },
         { label: 'Kontakt', href: '/kontakt' },
       ],
-    },
-    contact: {
-      label: 'Kontakt',
-      title: 'Schreiben Sie',
-      title_em: 'uns',
-      sub: 'Haben Sie eine Frage oder möchten Sie mehr über Lumaia erfahren? Wir freuen uns von Ihnen zu hören.',
-      info: {
-        email_label: 'E-Mail',
-        email_value: 'hello@lumaia.ai',
-        location_label: 'Standort',
-        location_value: 'Schweiz',
-        response_label: 'Antwortzeit',
-        response_value: 'Innerhalb von 24 Stunden',
-      },
     },
     privacy: {
       label: 'Datenschutz',
