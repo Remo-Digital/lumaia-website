@@ -45,7 +45,11 @@ export default function KontaktPage() {
 
             {/* HubSpot Form */}
             <div className="md:col-span-2 glass rounded-2xl p-8">
-              <HubSpotForm />
+              <HubSpotForm
+                consentText="Ich habe die"
+                privacyHref="/datenschutz"
+                privacyLabel="Datenschutzerklärung gelesen und akzeptiere sie"
+              />
             </div>
           </div>
         </div>
