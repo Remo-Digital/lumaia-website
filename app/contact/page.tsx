@@ -1,17 +1,24 @@
 'use client'
+import { useState } from 'react'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
-import HubSpotForm from '@/components/HubSpotForm'
 import { useLanguage } from '@/lib/LanguageContext'
 
 export default function ContactPage() {
   const { t } = useLanguage()
   const c = t.contact
+  const [submitted, setSubmitted] = useState(false)
+  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault()
+    setSubmitted(true)
+  }
 
   return (
     <>
       <Nav />
-      <main className="relative min-h-screen pt-28 pb-20 px-6"
+      <main className="min-h-screen pt-28 pb-20 px-6"
         style={{ background: 'linear-gradient(135deg, #03020a 0%, #0d0822 45%, #04021a 100%)' }}>
         <div className="absolute inset-0 dot-grid opacity-60 pointer-events-none" />
 
@@ -42,9 +49,58 @@ export default function ContactPage() {
               ))}
             </div>
 
-            {/* HubSpot Form */}
+            {/* Form */}
             <div className="md:col-span-2 glass rounded-2xl p-8">
-              <HubSpotForm />
+              {submitted ? (
+                <div className="flex flex-col items-center justify-center h-full gap-3 py-12 text-center">
+                  <span className="text-4xl">✓</span>
+                  <h2 className="font-serif text-2xl gradient-text">{c.form.success_title}</h2>
+                  <p className="text-white/40 text-sm">{c.form.success_sub}</p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <input
+                      required
+                      type="text"
+                      placeholder={c.form.name}
+                      value={form.name}
+                      onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
+                      className="bg-white/05 border border-white/08 rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 focus:outline-none focus:border-accent/40 transition-colors"
+                    />
+                    <input
+                      required
+                      type="email"
+                      placeholder={c.form.email}
+                      value={form.email}
+                      onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
+                      className="bg-white/05 border border-white/08 rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 focus:outline-none focus:border-accent/40 transition-colors"
+                    />
+                  </div>
+                  <input
+                    required
+                    type="text"
+                    placeholder={c.form.subject}
+                    value={form.subject}
+                    onChange={e => setForm(f => ({ ...f, subject: e.target.value }))}
+                    className="bg-white/05 border border-white/08 rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 focus:outline-none focus:border-accent/40 transition-colors"
+                  />
+                  <textarea
+                    required
+                    rows={5}
+                    placeholder={c.form.message}
+                    value={form.message}
+                    onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
+                    className="bg-white/05 border border-white/08 rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 focus:outline-none focus:border-accent/40 transition-colors resize-none"
+                  />
+                  <button
+                    type="submit"
+                    className="glass-accent text-accent font-semibold text-sm px-6 py-3 rounded-xl tracking-wide transition-all duration-200 hover:bg-accent/10 text-left">
+                    {c.form.submit}
+                  </button>
+                  <p className="text-white/20 text-xs">{c.form.privacy}</p>
+                </form>
+              )}
             </div>
           </div>
         </div>
