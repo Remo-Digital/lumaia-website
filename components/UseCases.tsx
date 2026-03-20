@@ -18,8 +18,8 @@ export default function UseCases() {
         style={{ background: 'radial-gradient(circle, rgba(124,58,237,0.09) 0%, transparent 70%)', filter: 'blur(80px)', borderRadius: '50%' }} />
 
       <div className="relative z-10 max-w-5xl mx-auto">
-        <p className="text-accent text-xs font-semibold tracking-[0.18em] uppercase mb-4">{t.usecases.label}</p>
-        <h2 className="font-serif text-4xl md:text-5xl text-white leading-[1.15] max-w-xl mb-14">
+        <p className="text-accent text-base font-semibold tracking-[0.18em] uppercase mb-4">{t.usecases.label}</p>
+        <h2 className="font-serif text-5xl md:text-6xl text-white leading-[1.15] max-w-xl mb-14">
           {t.usecases.title} <em className="gradient-text not-italic italic">{t.usecases.title_em}</em>
         </h2>
 
@@ -30,7 +30,7 @@ export default function UseCases() {
               <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                 style={{ background: `radial-gradient(circle at top right, ${colors[idx]} 0%, transparent 60%)` }} />
               <h3 className="text-white font-medium mb-3 relative z-10">{c.title}</h3>
-              <p className="text-white/40 text-sm leading-relaxed mb-5 relative z-10">{c.desc}</p>
+              <p className="text-white/60 text-base leading-relaxed mb-5 relative z-10">{c.desc}</p>
               <span className="relative z-10 glass-accent text-accent text-xs font-semibold px-3 py-1.5 rounded-full inline-block">
                 {c.result}
               </span>

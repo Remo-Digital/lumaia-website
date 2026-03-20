@@ -12,8 +12,8 @@ export default function Problem() {
         style={{ background: 'radial-gradient(circle, rgba(124,58,237,0.08) 0%, transparent 70%)', filter: 'blur(80px)', borderRadius: '50%' }} />
 
       <div className="relative z-10 max-w-5xl mx-auto">
-        <p className="text-accent text-xs font-semibold tracking-[0.18em] uppercase mb-4">{t.problem.label}</p>
-        <h2 className="font-serif text-4xl md:text-5xl text-white leading-[1.15] max-w-xl mb-4">
+        <p className="text-accent text-base font-semibold tracking-[0.18em] uppercase mb-4">{t.problem.label}</p>
+        <h2 className="font-serif text-5xl md:text-6xl text-white leading-[1.15] max-w-xl mb-4">
           {t.problem.title} <em className="gradient-text not-italic italic">{t.problem.title_em}</em>
         </h2>
 
@@ -24,8 +24,8 @@ export default function Problem() {
                 className="glass glow-hover rounded-xl p-4 flex gap-4 items-start transition-all duration-300">
                 <span className="text-xl mt-0.5 flex-shrink-0">{p.icon}</span>
                 <div>
-                  <strong className="text-white/80 font-medium text-sm">{p.strong}</strong>{' '}
-                  <span className="text-white/40 text-sm">{p.text}</span>
+                  <strong className="text-white/80 font-medium text-base">{p.strong}</strong>{' '}
+                  <span className="text-white/60 text-base">{p.text}</span>
                 </div>
               </li>
             ))}
@@ -36,13 +36,13 @@ export default function Problem() {
             <div className="absolute top-0 right-0 w-32 h-32 pointer-events-none"
               style={{ background: 'radial-gradient(circle at top right, rgba(123,232,159,0.1) 0%, transparent 70%)' }} />
             <h3 className="font-serif text-2xl gradient-text mb-4">{t.problem.card_title}</h3>
-            <p className="text-white/50 text-sm leading-relaxed mb-4">
+            <p className="text-white/50 text-base leading-relaxed mb-4">
               {t.problem.card_p1}
             </p>
-            <p className="text-white/40 text-sm leading-relaxed mb-6">
+            <p className="text-white/60 text-base leading-relaxed mb-6">
               {t.problem.card_p2}
             </p>
-            <blockquote className="border-l-2 border-accent/40 pl-4 text-sm italic text-white/40">
+            <blockquote className="border-l-2 border-accent/40 pl-4 text-base italic text-white/60">
               {t.problem.card_quote}
             </blockquote>
           </div>

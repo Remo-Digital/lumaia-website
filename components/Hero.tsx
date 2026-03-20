@@ -38,7 +38,7 @@ export default function Hero() {
         </div>
 
         {/* H1 */}
-        <h1 className="animate-fade-up-2 font-serif text-5xl md:text-7xl text-white leading-[1.05] mb-6 max-w-4xl">
+        <h1 className="animate-fade-up-2 font-serif text-6xl md:text-8xl text-white leading-[1.05] mb-6 max-w-4xl">
           {t.hero.h1}<em className="gradient-text not-italic italic">{t.hero.h1_em}</em>
           <br />{t.hero.h1_2}
         </h1>
@@ -62,7 +62,7 @@ export default function Hero() {
         </div>
 
         {/* Microcopy */}
-        <p className="animate-fade-up-4 text-white/25 text-sm mb-16 tracking-wide">
+        <p className="animate-fade-up-4 text-white/50 text-base mb-16 tracking-wide">
           {t.hero.microcopy}
         </p>
 
@@ -72,7 +72,7 @@ export default function Hero() {
           {t.hero.stats.map((stat) => (
             <div key={stat.value} className="glass rounded-2xl px-5 py-4">
               <div className="font-serif text-3xl gradient-text mb-1">{stat.value}</div>
-              <div className="text-white/35 text-xs tracking-widest uppercase">{stat.label}</div>
+              <div className="text-white/55 text-sm tracking-widest uppercase">{stat.label}</div>
             </div>
           ))}
         </div>

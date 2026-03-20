@@ -20,10 +20,10 @@ export default function Testimonial() {
         <div className="glass-strong rounded-3xl p-10 md:p-14 relative overflow-hidden">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-px"
             style={{ background: 'linear-gradient(90deg, transparent, rgba(123,232,159,0.5), transparent)' }} />
-          <blockquote className="font-serif text-2xl md:text-3xl text-white/80 italic leading-relaxed mb-8">
+          <blockquote className="font-serif text-3xl md:text-4xl text-white/80 italic leading-relaxed mb-8">
             {t.testimonial.quote}
           </blockquote>
-          <cite className="not-italic text-xs tracking-[0.15em] uppercase gradient-text font-semibold">
+          <cite className="not-italic text-sm tracking-[0.15em] uppercase gradient-text font-semibold">
             {t.testimonial.cite}
           </cite>
         </div>
