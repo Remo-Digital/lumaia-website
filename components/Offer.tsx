@@ -11,11 +11,11 @@ export default function Offer() {
         style={{ background: 'radial-gradient(circle, rgba(123,232,159,0.08) 0%, transparent 70%)', filter: 'blur(80px)', borderRadius: '50%' }} />
 
       <div className="relative z-10 max-w-5xl mx-auto">
-        <p className="text-accent text-xs font-semibold tracking-[0.18em] uppercase mb-4">{t.offer.label}</p>
-        <h2 className="font-serif text-4xl md:text-5xl text-white leading-[1.15] max-w-lg mb-3">
+        <p className="text-accent text-base font-semibold tracking-[0.18em] uppercase mb-4">{t.offer.label}</p>
+        <h2 className="font-serif text-5xl md:text-6xl text-white leading-[1.15] max-w-lg mb-3">
           {t.offer.title}<br />{t.offer.title_2} <em className="gradient-text not-italic italic">{t.offer.title_em}</em>
         </h2>
-        <p className="text-white/40 max-w-md mb-14 leading-relaxed text-sm">
+        <p className="text-white/60 max-w-md mb-14 leading-relaxed text-base">
           {t.offer.sub}
         </p>
 
@@ -27,7 +27,7 @@ export default function Offer() {
                 style={{ background: 'linear-gradient(90deg, transparent, rgba(123,232,159,0.5), transparent)' }} />
               <div className="font-serif text-5xl mb-4" style={{ color: `rgba(123,232,159,${0.08 + i * 0.05})` }}>{s.num}</div>
               <div className="text-white font-medium mb-2">{s.title}</div>
-              <p className="text-white/40 text-xs leading-relaxed">{s.desc}</p>
+              <p className="text-white/60 text-base leading-relaxed">{s.desc}</p>
             </div>
           ))}
         </div>

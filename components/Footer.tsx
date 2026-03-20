@@ -9,10 +9,10 @@ export default function Footer() {
     <footer className="relative py-8 px-6" style={{ background: '#02010a', borderTop: '1px solid rgba(255,255,255,0.04)' }}>
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <Image src="/LUMAIA_Logo.svg" alt="Lumaia" width={100} height={28} />
-        <span className="text-white/20 text-xs">{t.footer.copyright}</span>
-        <div className="flex items-center gap-6 text-xs">
+        <span className="text-white/50 text-sm">{t.footer.copyright}</span>
+        <div className="flex items-center gap-6 text-sm">
           {t.footer.links.map(({ label, href }) => (
-            <a key={href} href={href} className="text-white/25 hover:text-accent transition-colors duration-200">{label}</a>
+            <a key={href} href={href} className="text-white/50 hover:text-accent transition-colors duration-200">{label}</a>
           ))}
           <a
             href={locale === 'en' ? '/' : '/en'}
