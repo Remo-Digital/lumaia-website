@@ -1,18 +1,16 @@
 import type { Metadata } from 'next'
-import { DM_Sans, Instrument_Serif } from 'next/font/google'
+import { Inter, Lexend } from 'next/font/google'
 import './globals.css'
 import { LanguageProvider } from '@/lib/LanguageContext'
 
-const dmSans = DM_Sans({
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-sans',
   display: 'swap',
 })
 
-const instrumentSerif = Instrument_Serif({
+const lexend = Lexend({
   subsets: ['latin'],
-  weight: ['400'],
-  style: ['normal', 'italic'],
   variable: '--font-serif',
   display: 'swap',
 })
@@ -29,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${dmSans.variable} ${instrumentSerif.variable}`}>
+    <html lang="en" className={`${inter.variable} ${lexend.variable}`}>
       <body className="font-sans bg-ink text-white antialiased">
         <LanguageProvider>{children}</LanguageProvider>
       </body>

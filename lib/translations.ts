@@ -7,11 +7,11 @@ export const translations = {
       lang: 'DE',
     },
     hero: {
-      label: 'AI Agency OS · Beta April 2026',
-      h1: 'The Marketing-',
-      h1_em: 'Operating System',
-      h1_2: 'built with Agency DNA',
-      sub: 'Lumaia automates the entire marketing workflow – from strategy to finished asset. 10× faster. 70% cheaper. 100% Brand-Safe.',
+      label: 'Lumaia · Beta May 2026',
+      h1: 'The ',
+      h1_em: 'Agentic Agency System',
+      h1_2: 'for Marketing',
+      sub: 'Lumaia automates the entire marketing workflow – from strategy to finished asset and campaign optimization. 10× faster. 70% cheaper. 100% Brand-Safe.',
       cta_primary: 'Book Demo Now',
       cta_secondary: 'Explore Modules',
       microcopy: 'No credit card. Free demo session. Within 48h.',
@@ -44,8 +44,8 @@ export const translations = {
     offer: {
       label: 'The Solution',
       title: 'Lumaia is not a tool.',
-      title_2: 'It is an',
-      title_em: 'operating system.',
+      title_2: 'It is your',
+      title_em: 'agentic agency.',
       sub: 'A complete end-to-end infrastructure that pours the collective knowledge of a full-service agency into software.',
       steps: [
         { num: '01', title: 'Plan', desc: 'Strategic thinking at campaign level – automated and data-driven. Media mix, budget allocation, keyword strategy.' },
@@ -93,7 +93,7 @@ export const translations = {
     comparison: {
       label: 'Comparison',
       title: 'Lumaia vs. traditional agency',
-      headers: ['Criterion', 'Traditional Agency', 'Lumaia AI Agency OS'],
+      headers: ['Criterion', 'Traditional Agency', 'Lumaia Agentic Agency'],
       rows: [
         { label: 'Campaign Launch', agency: '4–8 weeks', lumaia: '48 hours' },
         { label: 'Cost per Campaign', agency: 'CHF 50,000–150,000', lumaia: 'From CHF 449/month' },
@@ -106,7 +106,7 @@ export const translations = {
     },
     testimonial: {
       quote: '"We are building the AI Agency OS. It thinks strategically, creates assets in seconds and optimises itself – all in a closed loop."',
-      cite: 'iundf Gruppe – 15+ years of brand experience, poured into software',
+      cite: 'iundf Gruppe – 25+ years of communication experience, poured into software',
     },
     faq: {
       label: 'Frequently Asked Questions',
@@ -197,11 +197,11 @@ export const translations = {
       lang: 'EN',
     },
     hero: {
-      label: 'AI Agency OS · Beta April 2026',
-      h1: 'Das Marketing-',
-      h1_em: 'Betriebssystem',
-      h1_2: 'das mit Agentur-DNA gebaut ist',
-      sub: 'Lumaia automatisiert den gesamten Marketing-Workflow – von der Strategie bis zum fertigen Asset. 10× schneller. 70% günstiger. 100% Brand-Safe.',
+      label: 'Agentic Agency · Beta Mai 2026',
+      h1: 'Das',
+      h1_em: 'Agentic Agency System',
+      h1_2: 'fürs Marketing',
+      sub: 'Lumaia automatisiert den gesamten Marketing-Workflow – von der Strategie bis zum fertigen Asset und Kampagnen optimierung. 10× schneller. 70% günstiger. 100% Brand-Safe.',
       cta_primary: 'Demo jetzt buchen',
       cta_secondary: 'Module entdecken',
       microcopy: 'Keine Kreditkarte. Kostenlose Demo-Session. Innerhalb von 48h.',
@@ -234,8 +234,8 @@ export const translations = {
     offer: {
       label: 'Die Lösung',
       title: 'Lumaia ist kein Tool.',
-      title_2: 'Es ist ein',
-      title_em: 'Betriebssystem.',
+      title_2: 'Es ist deine',
+      title_em: 'Agentic Angentur.',
       sub: 'Eine vollständige End-to-End-Infrastruktur, die das kollektive Wissen einer Full-Service-Agentur in Software gegossen hat.',
       steps: [
         { num: '01', title: 'Plan', desc: 'Strategisches Denken auf Kampagnenebene – automatisiert und datengetrieben. Media-Mix, Budget-Allokation, Keyword-Strategie.' },
@@ -283,7 +283,7 @@ export const translations = {
     comparison: {
       label: 'Vergleich',
       title: 'Lumaia vs. traditionelle Agentur',
-      headers: ['Kriterium', 'Traditionelle Agentur', 'Lumaia AI Agency OS'],
+      headers: ['Kriterium', 'Traditionelle Agentur', 'Lumaia Agentic Agency'],
       rows: [
         { label: 'Kampagnen-Launch', agency: '4–8 Wochen', lumaia: '48 Stunden' },
         { label: 'Kosten pro Kampagne', agency: 'CHF 50.000–150.000', lumaia: 'Ab CHF 449/Monat' },
@@ -296,7 +296,7 @@ export const translations = {
     },
     testimonial: {
       quote: '"Wir bauen das AI Agency OS. Es denkt strategisch, erstellt Assets in Sekunden und optimiert sich selbst – alles in einem geschlossenen Kreislauf."',
-      cite: 'iundf Gruppe – 15+ Jahre Markenerfahrung, in Software gegossen',
+      cite: 'iundf Gruppe – 25+ Jahre Kommunikationserfahrung, in Software gegossen',
     },
     faq: {
       label: 'Häufige Fragen',
@@ -331,7 +331,7 @@ export const translations = {
       },
     },
     footer: {
-      copyright: '© 2026 iundf Gruppe · iundf Dewave AG · Inhalt & Form',
+      copyright: '© 2026 Lumaia by iundf Dewave GmbH · Inhalt & Form',
       links: [
         { label: 'Datenschutz', href: '/datenschutz' },
         { label: 'Impressum', href: '/impressum' },
@@ -348,7 +348,7 @@ export const translations = {
       label: 'Impressum',
       title: 'Impressum',
       title_em: '',
-      company: 'iundf Dewave AG',
+      company: 'iundf Dewave GmbH',
       address: 'Schweiz',
       email: 'hello@lumaia.ai',
       vat: 'MwSt-Nummer',

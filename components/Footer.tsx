@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 import { useLanguage } from '@/lib/LanguageContext'
 
 export default function Footer() {
@@ -7,7 +8,7 @@ export default function Footer() {
   return (
     <footer className="relative py-8 px-6" style={{ background: '#02010a', borderTop: '1px solid rgba(255,255,255,0.04)' }}>
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        <span className="font-serif text-xl gradient-text">Lumaia</span>
+        <Image src="/LUMAIA_Logo.svg" alt="Lumaia" width={100} height={28} />
         <span className="text-white/20 text-xs">{t.footer.copyright}</span>
         <div className="flex items-center gap-6 text-xs">
           {t.footer.links.map(({ label, href }) => (
