@@ -56,7 +56,7 @@ export default function Hero() {
             {t.hero.cta_primary}
           </a>
           <a href="#modules"
-            className="glass text-white/70 hover:text-white px-8 py-4 rounded-full text-base transition-all duration-200 hover:-translate-y-0.5">
+            className="glass gradient-text px-8 py-4 rounded-full text-base font-medium transition-all duration-200 hover:opacity-80 hover:-translate-y-0.5">
             {t.hero.cta_secondary}
           </a>
         </div>
@@ -76,6 +76,7 @@ export default function Hero() {
             </div>
           ))}
         </div>
+        
       </div>
     </section>
   )

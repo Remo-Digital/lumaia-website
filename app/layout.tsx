@@ -29,6 +29,14 @@ export const metadata: Metadata = {
     apple: { url: '/apple-touch-icon.png' },
   },
   manifest: '/site.webmanifest',
+  alternates: {
+    canonical: 'https://lumaia.studio/',
+    languages: {
+      'de': 'https://lumaia.studio/',
+      'en': 'https://lumaia.studio/en/',
+      'x-default': 'https://lumaia.studio/',
+    },
+  },
 }
 
 export default function RootLayout({
