@@ -30,11 +30,11 @@ export default function CTAFinal() {
         style={{ border: '1px solid rgba(124,58,237,0.6)', transform: 'rotate(30deg)' }} />
 
       <div className="relative z-10 max-w-lg mx-auto text-center">
-        <span className="glass-accent text-accent text-xs font-semibold tracking-[0.18em] uppercase px-4 py-2 rounded-full inline-block mb-6">{t.cta.label}</span>
-        <h2 className="font-serif text-4xl md:text-5xl text-white leading-[1.1] mb-4">
+        <span className="glass-accent text-accent text-base font-semibold tracking-[0.18em] uppercase px-4 py-2 rounded-full inline-block mb-6">{t.cta.label}</span>
+        <h2 className="font-serif text-5xl md:text-6xl text-white leading-[1.1] mb-4">
           {t.cta.title} <em className="gradient-text not-italic italic">{t.cta.title_em}</em> –<br />{t.cta.title_2}
         </h2>
-        <p className="text-white/40 mb-10 leading-relaxed text-sm">
+        <p className="text-white/60 mb-10 leading-relaxed text-base">
           {t.cta.sub}
         </p>
 
@@ -47,23 +47,23 @@ export default function CTAFinal() {
             <div className="text-center py-8">
               <div className="text-4xl mb-4">✓</div>
               <p className="text-white font-medium mb-2">{t.cta.form.success_title}</p>
-              <p className="text-white/40 text-sm">{t.cta.form.success_sub}</p>
+              <p className="text-white/60 text-base">{t.cta.form.success_sub}</p>
             </div>
           ) : (
             <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true) }} className="space-y-3">
               <div className="grid grid-cols-2 gap-3">
                 <input type="text" placeholder={t.cta.form.first} required
-                  className="glass rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 focus:outline-none focus:border-accent/40 w-full" />
+                  className="glass rounded-xl px-4 py-3 text-base text-white placeholder-white/25 focus:outline-none focus:border-accent/40 w-full" />
                 <input type="text" placeholder={t.cta.form.last} required
-                  className="glass rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 focus:outline-none focus:border-accent/40 w-full" />
+                  className="glass rounded-xl px-4 py-3 text-base text-white placeholder-white/25 focus:outline-none focus:border-accent/40 w-full" />
               </div>
               <input type="email" placeholder={t.cta.form.email} required
-                className="glass rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 focus:outline-none focus:border-accent/40 w-full" />
+                className="glass rounded-xl px-4 py-3 text-base text-white placeholder-white/25 focus:outline-none focus:border-accent/40 w-full" />
               <div className="grid grid-cols-2 gap-3">
                 <input type="text" placeholder={t.cta.form.company} required
-                  className="glass rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 focus:outline-none focus:border-accent/40 w-full" />
+                  className="glass rounded-xl px-4 py-3 text-base text-white placeholder-white/25 focus:outline-none focus:border-accent/40 w-full" />
                 <select required
-                  className="glass rounded-xl px-4 py-3 text-sm text-white/50 focus:outline-none focus:border-accent/40 w-full"
+                  className="glass rounded-xl px-4 py-3 text-base text-white/50 focus:outline-none focus:border-accent/40 w-full"
                   style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
                   <option value="" disabled>{t.cta.form.industry}</option>
                   {t.cta.form.industries.map(ind => (
@@ -72,11 +72,11 @@ export default function CTAFinal() {
                 </select>
               </div>
               <button type="submit"
-                className="w-full py-4 rounded-xl font-semibold text-ink text-sm tracking-wide mt-2 transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5"
+                className="w-full py-4 rounded-xl font-semibold text-ink text-base tracking-wide mt-2 transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5"
                 style={{ background: 'linear-gradient(135deg, #7be89f 0%, #0e9cb0 100%)', boxShadow: '0 8px 32px rgba(79,193,168,0.2)' }}>
                 {t.cta.form.submit}
               </button>
-              <p className="text-white/20 text-xs text-center leading-relaxed pt-1">
+              <p className="text-white/50 text-sm text-center leading-relaxed pt-1">
                 {t.cta.form.privacy}
               </p>
             </form>

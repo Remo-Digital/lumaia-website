@@ -25,9 +25,9 @@ export default function Modules() {
         style={{ border: '1px solid rgba(123,232,159,1)', borderRadius: '50%' }} />
 
       <div className="relative z-10 max-w-5xl mx-auto">
-        <p className="text-accent text-xs font-semibold tracking-[0.18em] uppercase mb-4 text-center">{t.modules.label}</p>
-        <h2 className="font-serif text-4xl md:text-5xl text-white text-center leading-[1.15] mb-3">{t.modules.title}</h2>
-        <p className="text-white/40 text-center max-w-md mx-auto mb-14 leading-relaxed text-sm">
+        <p className="text-accent text-sm font-semibold tracking-[0.18em] uppercase mb-4 text-center">{t.modules.label}</p>
+        <h2 className="font-serif text-5xl md:text-6xl text-white text-center leading-[1.15] mb-3">{t.modules.title}</h2>
+        <p className="text-white/60 text-center max-w-md mx-auto mb-14 leading-relaxed text-base">
           {t.modules.sub}
         </p>
 
@@ -45,9 +45,9 @@ export default function Modules() {
                 <div className="absolute -top-8 -right-8 w-24 h-24 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                   style={{ background: `radial-gradient(circle, ${glow} 0%, transparent 70%)`, filter: 'blur(16px)' }} />
 
-                <span className="glass-accent text-accent text-[0.65rem] font-semibold tracking-[0.15em] uppercase px-3 py-1 rounded-full inline-block mb-4">{m.tag}</span>
-                <h3 className="text-white font-medium text-base mb-2">{m.title}</h3>
-                <p className="text-white/40 text-sm leading-relaxed">{m.desc}</p>
+                <span className="glass-accent text-accent text-xs font-semibold tracking-[0.15em] uppercase px-3 py-1 rounded-full inline-block mb-4">{m.tag}</span>
+                <h3 className="text-white font-medium text-lg mb-2">{m.title}</h3>
+                <p className="text-white/60 text-base leading-relaxed">{m.desc}</p>
               </div>
             )
           })}

@@ -13,8 +13,8 @@ export default function FAQ() {
         style={{ background: 'radial-gradient(circle, rgba(124,58,237,0.07) 0%, transparent 70%)', filter: 'blur(80px)', borderRadius: '50%' }} />
 
       <div className="relative z-10 max-w-2xl mx-auto">
-        <p className="text-accent text-xs font-semibold tracking-[0.18em] uppercase mb-4">{t.faq.label}</p>
-        <h2 className="font-serif text-4xl md:text-5xl text-white leading-[1.15] mb-12">
+        <p className="text-accent text-base font-semibold tracking-[0.18em] uppercase mb-4">{t.faq.label}</p>
+        <h2 className="font-serif text-5xl md:text-6xl text-white leading-[1.15] mb-12">
           {t.faq.title} <em className="gradient-text not-italic italic">{t.faq.title_em}</em>
         </h2>
 
@@ -24,14 +24,14 @@ export default function FAQ() {
               <button
                 className="w-full text-left px-6 py-5 flex justify-between items-center gap-4"
                 onClick={() => setOpen(open === i ? null : i)}>
-                <span className="text-white/80 text-sm font-medium">{faq.q}</span>
-                <span className="flex-shrink-0 w-6 h-6 rounded-full glass-accent flex items-center justify-center text-accent text-sm transition-transform duration-300"
+                <span className="text-white/80 text-base font-medium">{faq.q}</span>
+                <span className="flex-shrink-0 w-6 h-6 rounded-full glass-accent flex items-center justify-center text-accent text-base transition-transform duration-300"
                   style={{ transform: open === i ? 'rotate(45deg)' : 'rotate(0deg)' }}>+</span>
               </button>
               {open === i && (
                 <div className="px-6 pb-5">
                   <div className="h-px mb-4" style={{ background: 'rgba(255,255,255,0.06)' }} />
-                  <p className="text-white/40 text-sm leading-relaxed">{faq.a}</p>
+                  <p className="text-white/60 text-base leading-relaxed">{faq.a}</p>
                 </div>
               )}
             </div>
