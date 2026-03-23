@@ -18,7 +18,6 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <TrustBar />
         <Problem />
         <Offer />
         <Modules />

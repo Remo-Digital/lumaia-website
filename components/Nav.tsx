@@ -13,7 +13,7 @@ export default function Nav() {
       </a>
       <div className="flex items-center gap-3">
         <a href={locale === 'en' ? '/en#demo' : '/#demo'}
-          className="glass-accent text-accent text-base font-medium px-5 py-2.5 rounded-full tracking-wide transition-all duration-200 hover:bg-accent/10">
+          className="glass gradient-text text-base font-medium px-5 py-2.5 rounded-full transition-all duration-200 hover:opacity-80">
           {t.nav.cta}
         </a>
       </div>

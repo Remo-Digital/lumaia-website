@@ -183,24 +183,28 @@ export default function HubSpotForm({
         }
         #hs-form-target .hs-button,
         #hs-form-target input[type="submit"] {
-          background: rgba(123,232,159,0.05);
-          border: 1px solid rgba(123,232,159,0.18);
+          background: rgba(255,255,255,0.04);
+          border: 1px solid rgba(255,255,255,0.08);
           backdrop-filter: blur(16px);
           -webkit-backdrop-filter: blur(16px);
+          background-image: linear-gradient(135deg, #7be89f 0%, #4fc1a8 50%, #0e9cb0 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
           color: #7be89f;
           font-size: 0.875rem;
           font-weight: 600;
           letter-spacing: 0.05em;
           padding: 12px 24px;
-          border-radius: 12px;
+          border-radius: 9999px;
           cursor: pointer;
-          transition: background 0.2s, opacity 0.2s;
+          transition: opacity 0.2s;
           width: auto;
           align-self: flex-start;
         }
         #hs-form-target .hs-button:hover,
         #hs-form-target input[type="submit"]:hover {
-          background: rgba(123,232,159,0.1);
+          opacity: 0.8;
         }
         .hs-consent-blocked #hs-form-target .hs-button,
         .hs-consent-blocked #hs-form-target input[type="submit"] {

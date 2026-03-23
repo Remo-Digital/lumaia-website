@@ -198,7 +198,7 @@ export const translations = {
     },
     hero: {
       label: 'Agentic Agency · Beta Mai 2026',
-      h1: 'Das',
+      h1: 'Das ',
       h1_em: 'Agentic Agency System',
       h1_2: 'fürs Marketing',
       sub: 'Lumaia automatisiert den gesamten Marketing-Workflow – von der Strategie bis zum fertigen Asset und Kampagnen optimierung. 10× schneller. 70% günstiger. 100% Brand-Safe.',

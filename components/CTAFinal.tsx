@@ -1,10 +1,9 @@
 'use client'
-import { useState } from 'react'
 import { useLanguage } from '@/lib/LanguageContext'
+import HubSpotForm from '@/components/HubSpotForm'
 
 export default function CTAFinal() {
   const { t } = useLanguage()
-  const [submitted, setSubmitted] = useState(false)
 
   return (
     <section id="demo" className="relative overflow-hidden py-28 px-6" style={{ background: 'linear-gradient(135deg, #03020a 0%, #0d0822 45%, #04021a 100%)' }}>
@@ -42,45 +41,11 @@ export default function CTAFinal() {
           {/* Accent top line */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-px rounded-full"
             style={{ background: 'linear-gradient(90deg, transparent, rgba(123,232,159,0.6), transparent)' }} />
-
-          {submitted ? (
-            <div className="text-center py-8">
-              <div className="text-4xl mb-4">✓</div>
-              <p className="text-white font-medium mb-2">{t.cta.form.success_title}</p>
-              <p className="text-white/60 text-base">{t.cta.form.success_sub}</p>
-            </div>
-          ) : (
-            <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true) }} className="space-y-3">
-              <div className="grid grid-cols-2 gap-3">
-                <input type="text" placeholder={t.cta.form.first} required
-                  className="glass rounded-xl px-4 py-3 text-base text-white placeholder-white/25 focus:outline-none focus:border-accent/40 w-full" />
-                <input type="text" placeholder={t.cta.form.last} required
-                  className="glass rounded-xl px-4 py-3 text-base text-white placeholder-white/25 focus:outline-none focus:border-accent/40 w-full" />
-              </div>
-              <input type="email" placeholder={t.cta.form.email} required
-                className="glass rounded-xl px-4 py-3 text-base text-white placeholder-white/25 focus:outline-none focus:border-accent/40 w-full" />
-              <div className="grid grid-cols-2 gap-3">
-                <input type="text" placeholder={t.cta.form.company} required
-                  className="glass rounded-xl px-4 py-3 text-base text-white placeholder-white/25 focus:outline-none focus:border-accent/40 w-full" />
-                <select required
-                  className="glass rounded-xl px-4 py-3 text-base text-white/50 focus:outline-none focus:border-accent/40 w-full"
-                  style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
-                  <option value="" disabled>{t.cta.form.industry}</option>
-                  {t.cta.form.industries.map(ind => (
-                    <option key={ind} value={ind} className="bg-gray-900 text-white">{ind}</option>
-                  ))}
-                </select>
-              </div>
-              <button type="submit"
-                className="w-full py-4 rounded-xl font-semibold text-ink text-base tracking-wide mt-2 transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5"
-                style={{ background: 'linear-gradient(135deg, #7be89f 0%, #0e9cb0 100%)', boxShadow: '0 8px 32px rgba(79,193,168,0.2)' }}>
-                {t.cta.form.submit}
-              </button>
-              <p className="text-white/50 text-sm text-center leading-relaxed pt-1">
-                {t.cta.form.privacy}
-              </p>
-            </form>
-          )}
+          <HubSpotForm
+            consentText="Ich habe die"
+            privacyHref="/datenschutz"
+            privacyLabel="Datenschutzerklärung gelesen und akzeptiere sie"
+          />
         </div>
       </div>
     </section>
