@@ -19,7 +19,6 @@ export default function EnPage() {
       <Nav />
       <main>
         <Hero />
-        <TrustBar />
         <Problem />
         <Offer />
         <Modules />
