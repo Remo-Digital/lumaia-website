@@ -5,6 +5,7 @@ export const translations = {
     nav: {
       cta: 'Book Demo',
       lang: 'DE',
+      agentic: 'Agentic Commerce',
     },
     hero: {
       label: 'Lumaia · Beta May 2026',
@@ -165,6 +166,14 @@ export const translations = {
       register: 'Commercial Register',
       responsible: 'Responsible for content',
     },
+    agenticCommerce: {
+      label: 'Coming August 2026',
+      h1: 'Agentic',
+      h1_em: 'Commerce',
+      subtitle: 'Get ready for the age of agentic commerce with Lumaia Product Assets Studio.',
+      coming_soon: 'Coming August 2026',
+      cta: 'Request Early Access',
+    },
     contact: {
       label: 'Contact',
       title: 'Get in',
@@ -195,6 +204,7 @@ export const translations = {
     nav: {
       cta: 'Demo buchen',
       lang: 'EN',
+      agentic: 'Agentic Commerce',
     },
     hero: {
       label: 'Agentic Agency · Beta Mai 2026',
@@ -354,6 +364,14 @@ export const translations = {
       vat: 'MwSt-Nummer',
       register: 'Handelsregister',
       responsible: 'Verantwortlich für den Inhalt',
+    },
+    agenticCommerce: {
+      label: 'Ab August 2026',
+      h1: 'Agentic',
+      h1_em: 'Commerce',
+      subtitle: 'Machen Sie sich bereit für das Zeitalter des Agentic Commerce mit Lumaia Product Assets Studio.',
+      coming_soon: 'Ab August 2026',
+      cta: 'Early Access anfragen',
     },
     contact: {
       label: 'Kontakt',

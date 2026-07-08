@@ -11,7 +11,11 @@ export default function Nav() {
       <a href={locale === 'en' ? '/en' : '/'}>
         <Image src="/LUMAIA_Logo.svg" alt="Lumaia" width={120} height={32} priority />
       </a>
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-5">
+        <a href={locale === 'en' ? '/en/agentic-commerce' : '/agentic-commerce'}
+          className="text-white/70 text-sm font-medium transition-colors duration-200 hover:text-white">
+          {t.nav.agentic}
+        </a>
         <a href={locale === 'en' ? '/en#demo' : '/#demo'}
           className="glass gradient-text text-base font-medium px-5 py-2.5 rounded-full transition-all duration-200 hover:opacity-80">
           {t.nav.cta}
