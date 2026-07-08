@@ -5,6 +5,7 @@ export const translations = {
     nav: {
       cta: 'Book Demo',
       lang: 'DE',
+      agentic: 'Agentic Commerce',
     },
     hero: {
       label: 'Lumaia · Beta May 2026',
@@ -165,6 +166,14 @@ export const translations = {
       register: 'Commercial Register',
       responsible: 'Responsible for content',
     },
+    agenticCommerce: {
+      label: 'Coming August 2026',
+      h1: 'Agentic',
+      h1_em: 'Commerce',
+      subtitle: 'Get ready for the age of agentic commerce with Lumaia Product Assets Studio.',
+      coming_soon: 'Coming August 2026',
+      cta: 'Request Early Access',
+    },
     contact: {
       label: 'Contact',
       title: 'Get in',
@@ -195,6 +204,7 @@ export const translations = {
     nav: {
       cta: 'Demo buchen',
       lang: 'EN',
+      agentic: 'Agentic Commerce',
     },
     hero: {
       label: 'Agentic Agency · Beta Mai 2026',
@@ -272,7 +282,7 @@ export const translations = {
     usecases: {
       label: 'Use Cases',
       title: 'Was Lumaia für Sie',
-      title_em: 'konkret',
+      title_em: 'konkret löst',
       items: [
         { title: 'Produktlaunch in Rekordzeit', desc: '50 neue Produkte, Cross-Channel-Kampagne, individuelle Assets pro Kanal – vollständig in 48 Stunden statt 4 Wochen. Mit einem Klick erstellt die KI aus der Media-Strategie detaillierte Briefings für alle Produktseiten.', result: '↓ 90% Produktionszeit' },
         { title: 'ROAS-Maximierung während Sales-Events', desc: 'Bei bis zu 5.000 Produkten erkennt Lumaia Ad Fatigue in Echtzeit, erstellt automatisch neue Varianten und schichtet Budget dynamisch auf die Gewinner um – 24/7 ohne manuellen Eingriff.', result: '↑ Kein Budget verbrennen' },
@@ -354,6 +364,14 @@ export const translations = {
       vat: 'MwSt-Nummer',
       register: 'Handelsregister',
       responsible: 'Verantwortlich für den Inhalt',
+    },
+    agenticCommerce: {
+      label: 'Ab August 2026',
+      h1: 'Agentic',
+      h1_em: 'Commerce',
+      subtitle: 'Machen Sie sich bereit für das Zeitalter des Agentic Commerce mit Lumaia Product Assets Studio.',
+      coming_soon: 'Ab August 2026',
+      cta: 'Early Access anfragen',
     },
     contact: {
       label: 'Kontakt',
