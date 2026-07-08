@@ -272,7 +272,7 @@ export const translations = {
     usecases: {
       label: 'Use Cases',
       title: 'Was Lumaia für Sie',
-      title_em: 'konkret',
+      title_em: 'konkret löst',
       items: [
         { title: 'Produktlaunch in Rekordzeit', desc: '50 neue Produkte, Cross-Channel-Kampagne, individuelle Assets pro Kanal – vollständig in 48 Stunden statt 4 Wochen. Mit einem Klick erstellt die KI aus der Media-Strategie detaillierte Briefings für alle Produktseiten.', result: '↓ 90% Produktionszeit' },
         { title: 'ROAS-Maximierung während Sales-Events', desc: 'Bei bis zu 5.000 Produkten erkennt Lumaia Ad Fatigue in Echtzeit, erstellt automatisch neue Varianten und schichtet Budget dynamisch auf die Gewinner um – 24/7 ohne manuellen Eingriff.', result: '↑ Kein Budget verbrennen' },
