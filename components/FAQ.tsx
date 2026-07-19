@@ -58,7 +58,7 @@ export default function FAQ({ items: customItems, showSchemaMarkup = true }: FAQ
                 aria-expanded={open === i}
                 aria-controls={`faq-answer-${i}`}
               >
-                <span className="text-white/80 text-base font-medium">{faq.q}</span>
+                <span className="text-white/90 text-base font-medium">{faq.q}</span>
                 <span
                   className="flex-shrink-0 w-6 h-6 rounded-full glass-accent flex items-center justify-center text-accent text-base transition-transform duration-300"
                   style={{ transform: open === i ? 'rotate(45deg)' : 'rotate(0deg)' }}
@@ -74,7 +74,7 @@ export default function FAQ({ items: customItems, showSchemaMarkup = true }: FAQ
                 {open === i && (
                   <div className="px-6 pb-5">
                     <div className="h-px mb-4" style={{ background: 'rgba(255,255,255,0.06)' }} aria-hidden="true" />
-                    <p className="text-white/60 text-base leading-relaxed">{faq.a}</p>
+                    <p className="text-white/70 text-base leading-relaxed">{faq.a}</p>
                   </div>
                 )}
               </div>

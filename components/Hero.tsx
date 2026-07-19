@@ -1,12 +1,7 @@
 'use client'
 import { useLanguage } from '@/lib/LanguageContext'
-import type { Locale } from '@/lib/translations'
+import { localizedHref } from '@/lib/i18n'
 import MetricsBar from './MetricsBar'
-
-function localizedHref(href: string, locale: Locale) {
-  if (locale === 'en') return `/en${href}`
-  return href
-}
 
 export default function Hero() {
   const { t, locale } = useLanguage()
@@ -41,7 +36,7 @@ export default function Hero() {
         </h1>
 
         {/* Subtitle */}
-        <p className="animate-fade-up-3 text-lg text-white/50 max-w-xl mb-10 leading-relaxed">
+        <p className="animate-fade-up-3 text-lg text-white/70 max-w-xl mb-10 leading-relaxed">
           {t.hero.sub}
         </p>
 
@@ -56,14 +51,15 @@ export default function Hero() {
           </a>
           <a
             href={localizedHref('/plattform', locale)}
-            className="glass gradient-text px-8 py-4 rounded-full text-base font-medium transition-all duration-200 hover:opacity-80 hover:-translate-y-0.5"
+            className="text-ink font-semibold px-8 py-4 rounded-full text-base transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5"
+            style={{ background: 'linear-gradient(135deg, #7be89f 0%, #0e9cb0 100%)', boxShadow: '0 8px 32px rgba(79,193,168,0.25)' }}
           >
             {t.hero.cta_secondary}
           </a>
         </div>
 
         {/* Microcopy */}
-        <p className="animate-fade-up-4 text-white/50 text-base mb-16 tracking-wide">
+        <p className="animate-fade-up-4 text-white/70 text-base mb-16 tracking-wide">
           {t.hero.microcopy}
         </p>
 

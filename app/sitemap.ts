@@ -1,70 +1,52 @@
 import { modules } from '@/lib/modules'
+import { locales } from '@/lib/i18n'
 import type { MetadataRoute } from 'next'
 
 const BASE = 'https://lumaia.studio'
 
+const routes = [
+  { path: '/', changeFrequency: 'weekly' as const, priority: 1.0 },
+  { path: '/plattform', changeFrequency: 'monthly' as const, priority: 0.8 },
+  { path: '/plattform/product-asset-studio', changeFrequency: 'monthly' as const, priority: 0.9 },
+  { path: '/use-cases', changeFrequency: 'monthly' as const, priority: 0.7 },
+  { path: '/use-cases/agentic-commerce', changeFrequency: 'monthly' as const, priority: 0.8 },
+  { path: '/pricing', changeFrequency: 'monthly' as const, priority: 0.7 },
+  { path: '/blog', changeFrequency: 'weekly' as const, priority: 0.6 },
+  { path: '/contact', changeFrequency: 'monthly' as const, priority: 0.7 },
+  { path: '/signup', changeFrequency: 'monthly' as const, priority: 0.6 },
+  { path: '/privacy', changeFrequency: 'yearly' as const, priority: 0.3 },
+  { path: '/imprint', changeFrequency: 'yearly' as const, priority: 0.3 },
+  { path: '/legal/terms', changeFrequency: 'yearly' as const, priority: 0.3 },
+]
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const today = new Date().toISOString().split('T')[0]
 
-  const entries: MetadataRoute.Sitemap = [
-    // ── Homepage ──
-    { url: `${BASE}/`, lastModified: today, changeFrequency: 'weekly', priority: 1.0 },
-    { url: `${BASE}/en`, lastModified: today, changeFrequency: 'weekly', priority: 0.9 },
+  const entries: MetadataRoute.Sitemap = []
 
-    // ── Platform overview ──
-    { url: `${BASE}/plattform`, lastModified: today, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/en/plattform`, lastModified: today, changeFrequency: 'monthly', priority: 0.7 },
+  // Static routes × locales
+  for (const route of routes) {
+    for (const locale of locales) {
+      entries.push({
+        url: `${BASE}/${locale}${route.path === '/' ? '' : route.path}`,
+        lastModified: today,
+        changeFrequency: route.changeFrequency,
+        priority: locale === 'de' ? route.priority : Math.max(route.priority - 0.1, 0.1),
+      })
+    }
+  }
 
-    // ── Product Asset Studio (live module) ──
-    { url: `${BASE}/plattform/product-asset-studio`, lastModified: today, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE}/en/plattform/product-asset-studio`, lastModified: today, changeFrequency: 'monthly', priority: 0.8 },
-
-    // ── Use Cases ──
-    { url: `${BASE}/use-cases`, lastModified: today, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/en/use-cases`, lastModified: today, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${BASE}/use-cases/agentic-commerce`, lastModified: today, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/en/use-cases/agentic-commerce`, lastModified: today, changeFrequency: 'monthly', priority: 0.7 },
-
-    // ── Pricing ──
-    { url: `${BASE}/pricing`, lastModified: today, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/en/pricing`, lastModified: today, changeFrequency: 'monthly', priority: 0.6 },
-
-    // ── Blog ──
-    { url: `${BASE}/blog`, lastModified: today, changeFrequency: 'weekly', priority: 0.6 },
-    { url: `${BASE}/en/blog`, lastModified: today, changeFrequency: 'weekly', priority: 0.5 },
-
-    // ── Contact ──
-    { url: `${BASE}/contact`, lastModified: today, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/en/contact`, lastModified: today, changeFrequency: 'monthly', priority: 0.6 },
-
-    // ── Signup ──
-    { url: `${BASE}/signup`, lastModified: today, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${BASE}/en/signup`, lastModified: today, changeFrequency: 'monthly', priority: 0.5 },
-
-    // ── Legal ──
-    { url: `${BASE}/privacy`, lastModified: today, changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${BASE}/en/privacy`, lastModified: today, changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${BASE}/imprint`, lastModified: today, changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${BASE}/en/imprint`, lastModified: today, changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${BASE}/legal/terms`, lastModified: today, changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${BASE}/en/legal/terms`, lastModified: today, changeFrequency: 'yearly', priority: 0.3 },
-  ]
-
-  // ── Module pages (coming-soon) ──
+  // Module pages (coming-soon) × locales
   for (const mod of modules) {
-    if (mod.status === 'live') continue // Product Asset Studio already listed above
-    entries.push({
-      url: `${BASE}${mod.url}`,
-      lastModified: today,
-      changeFrequency: 'monthly',
-      priority: 0.4,
-    })
-    entries.push({
-      url: `${BASE}/en${mod.url}`,
-      lastModified: today,
-      changeFrequency: 'monthly',
-      priority: 0.3,
-    })
+    if (mod.status === 'live') continue
+    for (const locale of locales) {
+      entries.push({
+        url: `${BASE}/${locale}${mod.url}`,
+        lastModified: today,
+        changeFrequency: 'monthly',
+        priority: locale === 'de' ? 0.4 : 0.3,
+      })
+    }
   }
 
   return entries

@@ -16,21 +16,21 @@ export default function TestimonialsSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {t.testimonials.items.map((item, i) => (
             <blockquote key={i} className="glass-strong rounded-2xl p-8">
-              <p className="text-white/60 text-base leading-relaxed mb-6 italic">&ldquo;{item.quote}&rdquo;</p>
+              <p className="text-white/70 text-base leading-relaxed mb-6 italic">&ldquo;{item.quote}&rdquo;</p>
               <footer className="flex items-center gap-3">
                 {/* Placeholder avatar */}
-                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white/30 text-sm font-semibold" aria-hidden="true">
+                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white/50 text-sm font-semibold" aria-hidden="true">
                   {item.name[1]}
                 </div>
                 <div>
-                  <cite className="text-white/70 text-sm font-medium not-italic block">{item.name}</cite>
-                  <span className="text-white/40 text-xs">{item.role}, {item.company}</span>
+                  <cite className="text-white/80 text-sm font-medium not-italic block">{item.name}</cite>
+                  <span className="text-white/60 text-xs">{item.role}, {item.company}</span>
                 </div>
               </footer>
             </blockquote>
           ))}
         </div>
-        <p className="mt-6 text-white/30 text-sm italic">{t.testimonials.note}</p>
+        <p className="mt-6 text-white/50 text-sm italic">{t.testimonials.note}</p>
       </div>
     </section>
   )

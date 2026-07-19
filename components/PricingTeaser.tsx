@@ -1,11 +1,6 @@
 'use client'
 import { useLanguage } from '@/lib/LanguageContext'
-import type { Locale } from '@/lib/translations'
-
-function localizedHref(href: string, locale: Locale) {
-  if (locale === 'en') return `/en${href}`
-  return href
-}
+import { localizedHref } from '@/lib/i18n'
 
 export default function PricingTeaser() {
   const { t, locale } = useLanguage()
@@ -26,7 +21,7 @@ export default function PricingTeaser() {
               <thead>
                 <tr className="border-b border-white/10">
                   {t.pricingTeaser.headers.map((h, i) => (
-                    <th key={i} className={`px-6 py-4 text-sm font-semibold ${i === 0 ? 'text-white/40 w-1/4' : 'text-white/70'}`} scope="col">
+                    <th key={i} className={`px-6 py-4 text-sm font-semibold ${i === 0 ? 'text-white/60 w-1/4' : 'text-white/80'}`} scope="col">
                       {h}
                     </th>
                   ))}
@@ -35,9 +30,9 @@ export default function PricingTeaser() {
               <tbody>
                 {t.pricingTeaser.rows.map((row, i) => (
                   <tr key={i} className={i < t.pricingTeaser.rows.length - 1 ? 'border-b border-white/5' : ''}>
-                    <td className="px-6 py-4 text-white/50 text-sm font-medium">{row.label}</td>
-                    <td className="px-6 py-4 text-white/60 text-sm">{row.col1}</td>
-                    <td className="px-6 py-4 text-white/60 text-sm">{row.col2}</td>
+                    <td className="px-6 py-4 text-white/70 text-sm font-medium">{row.label}</td>
+                    <td className="px-6 py-4 text-white/70 text-sm">{row.col1}</td>
+                    <td className="px-6 py-4 text-white/70 text-sm">{row.col2}</td>
                   </tr>
                 ))}
               </tbody>

@@ -1,11 +1,6 @@
 'use client'
 import { useLanguage } from '@/lib/LanguageContext'
-import type { Locale } from '@/lib/translations'
-
-function localizedHref(href: string, locale: Locale) {
-  if (locale === 'en') return `/en${href}`
-  return href
-}
+import { localizedHref } from '@/lib/i18n'
 
 export default function CTAFinal() {
   const { t, locale } = useLanguage()
@@ -30,10 +25,10 @@ export default function CTAFinal() {
         <h2 id="cta-final-title" className="font-serif text-4xl md:text-5xl text-white leading-[1.1] mb-4">
           {t.cta.title}
         </h2>
-        <p className="text-white/50 text-lg mb-4 italic">
+        <p className="text-white/70 text-lg mb-4 italic">
           {t.cta.title_em}
         </p>
-        <p className="text-white/60 mb-10 leading-relaxed text-base">
+        <p className="text-white/70 mb-10 leading-relaxed text-base">
           {t.cta.sub}
         </p>
 

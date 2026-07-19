@@ -23,19 +23,19 @@ export default function TrustArchitecture() {
         <h2 id="trust-arch-title" className="font-serif text-4xl md:text-5xl text-white leading-[1.15] mb-4">
           {t.trustArch.title} <em className="gradient-text not-italic italic">{t.trustArch.title_em}</em>
         </h2>
-        <p className="text-white/50 text-lg max-w-2xl mb-12 leading-relaxed">{t.trustArch.sub}</p>
+        <p className="text-white/70 text-lg max-w-2xl mb-12 leading-relaxed">{t.trustArch.sub}</p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {t.trustArch.items.map((item, i) => (
             <article key={i} className="glass glow-hover rounded-2xl p-8 transition-all duration-300">
               <div className="mb-4">{icons[i]}</div>
               <h3 className="font-serif text-xl text-white mb-3">{item.title}</h3>
-              <p className="text-white/55 text-sm leading-relaxed">{item.desc}</p>
+              <p className="text-white/70 text-sm leading-relaxed">{item.desc}</p>
             </article>
           ))}
         </div>
 
-        <p className="mt-10 text-white/60 text-base italic">{t.trustArch.conclusion}</p>
+        <p className="mt-10 text-white/70 text-base italic">{t.trustArch.conclusion}</p>
       </div>
     </section>
   )

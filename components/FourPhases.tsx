@@ -1,11 +1,6 @@
 'use client'
 import { useLanguage } from '@/lib/LanguageContext'
-import type { Locale } from '@/lib/translations'
-
-function localizedHref(href: string, locale: Locale) {
-  if (locale === 'en') return `/en${href}`
-  return href
-}
+import { localizedHref } from '@/lib/i18n'
 
 const phaseIcons = ['🎯', '🛠', '🚀', '📊']
 
@@ -23,7 +18,7 @@ export default function FourPhases() {
         <h2 id="four-phases-title" className="font-serif text-5xl md:text-6xl text-white leading-[1.15] mb-4">
           {t.fourPhases.title} <em className="gradient-text not-italic italic">{t.fourPhases.title_em}</em>
         </h2>
-        <p className="text-white/50 text-lg max-w-2xl mb-16 leading-relaxed">{t.fourPhases.sub}</p>
+        <p className="text-white/70 text-lg max-w-2xl mb-16 leading-relaxed">{t.fourPhases.sub}</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {t.fourPhases.phases.map((phase, i) => (
@@ -33,12 +28,12 @@ export default function FourPhases() {
                 <span className="text-accent text-sm font-semibold tracking-[0.15em] uppercase">{phase.num}</span>
                 <h3 className="font-serif text-2xl text-white">{phase.title}</h3>
               </div>
-              <p className="text-white/55 text-base leading-relaxed">{phase.desc}</p>
+              <p className="text-white/70 text-base leading-relaxed">{phase.desc}</p>
             </article>
           ))}
         </div>
 
-        <p className="mt-10 text-white/50 text-base">
+        <p className="mt-10 text-white/70 text-base">
           {t.fourPhases.modulesLink}{' '}
           <a href={localizedHref('/plattform', locale)} className="text-accent hover:underline underline-offset-2">
             {t.fourPhases.modulesLinkText} &rarr;

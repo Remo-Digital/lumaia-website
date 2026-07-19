@@ -15,21 +15,21 @@ export default function Problem() {
         <h2 id="problem-title" className="font-serif text-5xl md:text-6xl text-white leading-[1.15] mb-6 max-w-3xl">
           {t.problem.title} <em className="gradient-text not-italic italic">{t.problem.title_em}</em>
         </h2>
-        <p className="text-white/50 text-lg max-w-2xl mb-10 leading-relaxed">{t.problem.intro}</p>
+        <p className="text-white/70 text-lg max-w-2xl mb-10 leading-relaxed">{t.problem.intro}</p>
 
         <ul className="space-y-4 mb-10 max-w-2xl" role="list">
           {t.problem.items.map((item, i) => (
-            <li key={i} className="flex items-start gap-3 text-white/60 text-base leading-relaxed">
+            <li key={i} className="flex items-start gap-3 text-white/70 text-base leading-relaxed">
               <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-accent/60 mt-2.5" aria-hidden="true" />
               {item}
             </li>
           ))}
         </ul>
 
-        <p className="text-white/70 text-lg font-medium mb-8">{t.problem.conclusion}</p>
+        <p className="text-white/80 text-lg font-medium mb-8">{t.problem.conclusion}</p>
 
         <blockquote className="glass-strong rounded-2xl p-8 max-w-xl">
-          <p className="text-white/60 text-lg italic leading-relaxed">{t.problem.quote}</p>
+          <p className="text-white/70 text-lg italic leading-relaxed">{t.problem.quote}</p>
         </blockquote>
       </div>
     </section>

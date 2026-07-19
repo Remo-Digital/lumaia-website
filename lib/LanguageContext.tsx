@@ -1,6 +1,5 @@
 'use client'
-import { createContext, useContext, useEffect, useState } from 'react'
-import { usePathname } from 'next/navigation'
+import { createContext, useContext } from 'react'
 import { translations, type Locale } from './translations'
 
 interface LanguageContextType {
@@ -11,31 +10,27 @@ interface LanguageContextType {
 }
 
 const LanguageContext = createContext<LanguageContextType>({
-  locale: 'en',
-  t: translations.en,
+  locale: 'de',
+  t: translations.de,
   toggle: () => {},
   setLocale: () => {},
 })
 
-function localeFromPath(pathname: string): Locale {
-  if (pathname === '/en' || pathname.startsWith('/en/')) return 'en'
-  return 'de'
-}
+export function LanguageProvider({
+  locale,
+  children,
+}: {
+  locale: Locale
+  children: React.ReactNode
+}) {
+  const toggle = () => {
+    // In the new routing model, toggling navigates to the other locale URL.
+    // Components handle this via the language switcher links instead.
+  }
 
-export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname()
-  const [locale, setLocale] = useState<Locale>('en')
-
-  useEffect(() => {
-    setLocale(localeFromPath(pathname))
-  }, [pathname])
-
-  useEffect(() => {
-    document.documentElement.lang = locale
-    localStorage.setItem('locale', locale)
-  }, [locale])
-
-  const toggle = () => setLocale(prev => prev === 'en' ? 'de' : 'en')
+  const setLocale = () => {
+    // Same as toggle – navigation-based, not state-based.
+  }
 
   return (
     <LanguageContext.Provider value={{ locale, t: translations[locale], toggle, setLocale }}>

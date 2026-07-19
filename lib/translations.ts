@@ -180,10 +180,10 @@ export const translations = {
     footer: {
       copyright: '\u00a9 2026 LumAIa by iundf Dewave AG',
       links: [
-        { label: 'Privacy', href: '/en/privacy' },
-        { label: 'Imprint', href: '/en/imprint' },
-        { label: 'Terms', href: '/en/legal/terms' },
-        { label: 'Contact', href: '/en/contact' },
+        { label: 'Privacy', href: '/privacy' },
+        { label: 'Imprint', href: '/imprint' },
+        { label: 'Terms', href: '/legal/terms' },
+        { label: 'Contact', href: '/contact' },
       ],
       platform: 'Platform',
       useCases: 'Use Cases',
@@ -204,6 +204,9 @@ export const translations = {
         response_label: 'Response Time',
         response_value: 'Within 48 hours',
       },
+      formId: '4a6a06b0-4008-43cd-a2ec-f4d6978022d2',
+      consentText: 'I have read and accept the',
+      privacyLabel: 'Privacy Policy',
     },
 
     // ── Privacy Page ──
@@ -234,6 +237,31 @@ export const translations = {
       label: 'Pricing',
       title: 'Transparent pricing,',
       title_em: 'no fine print',
+      selfServeLabel: 'Self-Serve',
+      selfServePrice: 'From CHF <em>29</em><span>/month</span>',
+      selfServeDesc: 'Individual modules like Product Asset Studio. Start instantly, cancel monthly. No sales call required.',
+      selfServeFeatures: [
+        'Instant access – no onboarding call',
+        'Cancel monthly',
+        'No credit card to start',
+        'Product Asset Studio from CHF 29/month',
+      ],
+      selfServeCta: 'Get started',
+      pilotLabel: 'Pilot Partner',
+      pilotPrice: '<em>12 months</em> fixed price',
+      pilotDesc: 'All modules, guaranteed price, direct influence on LumAIa development. For teams that want the full system.',
+      pilotFeatures: [
+        'Access to all 19 modules',
+        '12 months guaranteed fixed price',
+        'Personal onboarding and setup',
+        'Direct influence on product development',
+        'Limited spots available',
+      ],
+      pilotCta: 'Book demo',
+      faqTeaserText: 'Have questions? All details in the FAQ on the main page or get in touch directly.',
+      faqTeaserLink: 'Go to main page',
+      faqTeaserContact: 'Get in touch',
+      noCreditCard: 'No credit card. Free demo session.',
     },
 
     // ── Platform Page ──
@@ -463,6 +491,8 @@ export const translations = {
       title_em: 'perspectives',
       sub: 'On Agentic Commerce, AI visibility in answer engines, and the future of marketing.',
       comingSoon: 'Blog articles coming soon. Stay tuned.',
+      readArticle: 'Read article',
+      contactCta: 'Get in touch',
     },
 
     // ── Signup Page ──
@@ -475,6 +505,7 @@ export const translations = {
       sub: 'Start using Product Asset Studio in minutes. No credit card required.',
       comingSoon: 'Self-serve signup will be available soon. In the meantime, book a demo to get started.',
       cta: 'Book a demo instead',
+      noCreditCard: 'No credit card. Free demo session.',
     },
 
     // ── Legal Terms Page ──
@@ -485,6 +516,8 @@ export const translations = {
       title: 'Terms of',
       title_em: 'Service',
       comingSoon: 'Terms of service are being prepared and will be published shortly.',
+      contactCta: 'Contact',
+      privacyCta: 'Privacy',
     },
 
     // ── Module Coming Soon ──
@@ -701,6 +734,9 @@ export const translations = {
         response_label: 'Antwortzeit',
         response_value: 'Innerhalb von 48 Stunden',
       },
+      formId: 'ad72af02-88e1-495f-a8b5-c6ae0cf1b99a',
+      consentText: 'Ich habe die',
+      privacyLabel: 'Datenschutzerkl\u00e4rung gelesen und akzeptiere sie',
     },
 
     // ── Privacy Page ──
@@ -731,6 +767,31 @@ export const translations = {
       label: 'Preise',
       title: 'Transparente Preise,',
       title_em: 'kein Kleingedrucktes',
+      selfServeLabel: 'Self-Serve',
+      selfServePrice: 'Ab CHF <em>29</em><span>/Monat</span>',
+      selfServeDesc: 'Einzelne Module wie Product Asset Studio. Sofort starten, monatlich k\u00fcndbar. Kein Verkaufsgespr\u00e4ch erforderlich.',
+      selfServeFeatures: [
+        'Sofortiger Zugang \u2013 kein Onboarding-Termin',
+        'Monatlich k\u00fcndbar',
+        'Keine Kreditkarte zum Starten',
+        'Product Asset Studio ab CHF 29/Monat',
+      ],
+      selfServeCta: 'Jetzt starten',
+      pilotLabel: 'Pilot-Partner',
+      pilotPrice: '<em>12 Monate</em> Fixpreis',
+      pilotDesc: 'Alle Module, garantierter Preis, direkter Einfluss auf die Entwicklung von LumAIa. F\u00fcr Teams, die das Gesamtsystem nutzen wollen.',
+      pilotFeatures: [
+        'Zugang zu allen 19 Modulen',
+        '12 Monate garantierter Fixpreis',
+        'Pers\u00f6nliches Onboarding und Setup',
+        'Direkter Einfluss auf die Produktentwicklung',
+        'Anzahl Pl\u00e4tze begrenzt',
+      ],
+      pilotCta: 'Demo buchen',
+      faqTeaserText: 'Offene Fragen? Alle Details im FAQ auf der Hauptseite oder direkt per Demo.',
+      faqTeaserLink: 'Zur Hauptseite',
+      faqTeaserContact: 'Kontakt aufnehmen',
+      noCreditCard: 'Keine Kreditkarte. Kostenlose Demo-Session.',
     },
 
     // ── Platform Page ──
@@ -960,6 +1021,8 @@ export const translations = {
       title_em: 'Perspektiven',
       sub: 'Zu Agentic Commerce, KI-Sichtbarkeit in Antwort-Engines und der Zukunft des Marketings.',
       comingSoon: 'Blog-Artikel erscheinen in K\u00fcrze. Bleiben Sie dran.',
+      readArticle: 'Artikel lesen',
+      contactCta: 'Kontakt aufnehmen',
     },
 
     // ── Signup Page ──
@@ -972,6 +1035,7 @@ export const translations = {
       sub: 'Starten Sie mit Product Asset Studio in wenigen Minuten. Keine Kreditkarte erforderlich.',
       comingSoon: 'Die Self-Serve-Registrierung wird in K\u00fcrze verf\u00fcgbar sein. Buchen Sie in der Zwischenzeit eine Demo.',
       cta: 'Stattdessen Demo buchen',
+      noCreditCard: 'Keine Kreditkarte. Kostenlose Demo-Session.',
     },
 
     // ── Legal Terms Page ──
@@ -982,6 +1046,8 @@ export const translations = {
       title: 'Allgemeine',
       title_em: 'Gesch\u00e4ftsbedingungen',
       comingSoon: 'Die AGB werden derzeit erstellt und in K\u00fcrze ver\u00f6ffentlicht.',
+      contactCta: 'Kontakt',
+      privacyCta: 'Datenschutz',
     },
 
     // ── Module Coming Soon ──

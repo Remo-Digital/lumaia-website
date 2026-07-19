@@ -1,11 +1,6 @@
 'use client'
 import { useLanguage } from '@/lib/LanguageContext'
-import type { Locale } from '@/lib/translations'
-
-function localizedHref(href: string, locale: Locale) {
-  if (locale === 'en') return `/en${href}`
-  return href
-}
+import { localizedHref } from '@/lib/i18n'
 
 export default function AgenticCommerceTeaser() {
   const { t, locale } = useLanguage()
@@ -21,8 +16,8 @@ export default function AgenticCommerceTeaser() {
           <h2 id="agentic-teaser-title" className="font-serif text-3xl md:text-4xl text-white leading-[1.2] mb-6">
             {t.agenticTeaser.title}
           </h2>
-          <p className="text-white/55 text-base leading-relaxed mb-4">{t.agenticTeaser.p1}</p>
-          <p className="text-white/55 text-base leading-relaxed mb-8">{t.agenticTeaser.p2}</p>
+          <p className="text-white/70 text-base leading-relaxed mb-4">{t.agenticTeaser.p1}</p>
+          <p className="text-white/70 text-base leading-relaxed mb-8">{t.agenticTeaser.p2}</p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href={localizedHref('/use-cases/agentic-commerce', locale)}
@@ -32,7 +27,7 @@ export default function AgenticCommerceTeaser() {
             </a>
             <a
               href={localizedHref('/use-cases', locale)}
-              className="text-white/50 font-medium hover:text-white/70 transition-colors"
+              className="text-white/70 font-medium hover:text-white/80 transition-colors"
             >
               {t.agenticTeaser.link2} &rarr;
             </a>

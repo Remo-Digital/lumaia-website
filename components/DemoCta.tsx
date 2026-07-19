@@ -1,11 +1,6 @@
 'use client'
 import { useLanguage } from '@/lib/LanguageContext'
-import type { Locale } from '@/lib/translations'
-
-function localizedHref(href: string, locale: Locale) {
-  if (locale === 'en') return `/en${href}`
-  return href
-}
+import { localizedHref } from '@/lib/i18n'
 
 export default function DemoCta() {
   const { t, locale } = useLanguage()
@@ -20,7 +15,7 @@ export default function DemoCta() {
         <h2 className="font-serif text-4xl md:text-5xl text-white leading-[1.15] mb-4">
           {t.demoCta.title}
         </h2>
-        <p className="text-white/50 text-lg mb-8 leading-relaxed">{t.demoCta.sub}</p>
+        <p className="text-white/70 text-lg mb-8 leading-relaxed">{t.demoCta.sub}</p>
         <a
           href={localizedHref('/contact', locale)}
           className="inline-block text-ink font-semibold px-8 py-4 rounded-full text-base transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5"

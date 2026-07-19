@@ -20,7 +20,7 @@ export default function Comparison() {
               <thead>
                 <tr className="border-b border-white/10">
                   {t.comparison.headers.map((h, i) => (
-                    <th key={i} className={`px-6 py-4 text-sm font-semibold ${i === 0 ? 'text-white/40' : i === 2 ? 'text-accent/80' : 'text-white/60'}`} scope="col">
+                    <th key={i} className={`px-6 py-4 text-sm font-semibold ${i === 0 ? 'text-white/60' : i === 2 ? 'text-accent/80' : 'text-white/70'}`} scope="col">
                       {h}
                     </th>
                   ))}
@@ -29,8 +29,8 @@ export default function Comparison() {
               <tbody>
                 {t.comparison.rows.map((row, i) => (
                   <tr key={i} className={i < t.comparison.rows.length - 1 ? 'border-b border-white/5' : ''}>
-                    <td className="px-6 py-4 text-white/50 text-sm font-medium">{row.label}</td>
-                    <td className="px-6 py-4 text-white/40 text-sm">
+                    <td className="px-6 py-4 text-white/70 text-sm font-medium">{row.label}</td>
+                    <td className="px-6 py-4 text-white/60 text-sm">
                       <span className="text-red-400/70 mr-2" aria-hidden="true">&#x2717;</span>
                       {row.agency}
                     </td>

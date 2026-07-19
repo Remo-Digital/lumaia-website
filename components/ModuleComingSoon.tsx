@@ -1,15 +1,9 @@
 'use client'
 import { useLanguage } from '@/lib/LanguageContext'
 import { getModuleBySlug, phases } from '@/lib/modules'
-import type { Locale } from '@/lib/translations'
+import { localizedHref } from '@/lib/i18n'
 import Nav from './Nav'
-import TopBanner from './TopBanner'
 import Footer from './Footer'
-
-function localizedHref(href: string, locale: Locale) {
-  if (locale === 'en') return `/en${href}`
-  return href
-}
 
 export default function ModuleComingSoon({ slug }: { slug: string }) {
   const { t, locale } = useLanguage()
@@ -21,7 +15,6 @@ export default function ModuleComingSoon({ slug }: { slug: string }) {
 
   return (
     <>
-      <TopBanner />
       <Nav />
       <main id="main-content" className="pt-24">
         <section className="relative min-h-[70vh] flex items-center overflow-hidden py-24 px-6" style={{ background: 'linear-gradient(135deg, #03020a 0%, #0d0822 45%, #04021a 100%)' }}>
@@ -50,10 +43,10 @@ export default function ModuleComingSoon({ slug }: { slug: string }) {
             <h1 className="font-serif text-5xl md:text-6xl text-white leading-[1.1] mb-6">
               {mod.name[locale]}
             </h1>
-            <p className="text-white/55 text-lg leading-relaxed mb-8 max-w-xl">
+            <p className="text-white/70 text-lg leading-relaxed mb-8 max-w-xl">
               {mod.description[locale]}
             </p>
-            <p className="text-white/40 text-base mb-12">
+            <p className="text-white/60 text-base mb-12">
               {t.moduleComingSoon.intro}
             </p>
 
@@ -81,13 +74,13 @@ export default function ModuleComingSoon({ slug }: { slug: string }) {
                   </rect>
                 </svg>
               </div>
-              <span className="relative text-white/20 text-sm font-medium tracking-wider uppercase">{t.moduleComingSoon.status}</span>
+              <span className="relative text-white/30 text-sm font-medium tracking-wider uppercase">{t.moduleComingSoon.status}</span>
             </div>
 
             {/* CTA */}
             <div className="glass-strong rounded-2xl p-8 text-center">
               <h2 className="font-serif text-2xl text-white mb-3">{t.moduleComingSoon.ctaTitle}</h2>
-              <p className="text-white/50 text-base mb-6">{t.moduleComingSoon.ctaSub}</p>
+              <p className="text-white/70 text-base mb-6">{t.moduleComingSoon.ctaSub}</p>
               <a
                 href={localizedHref('/contact', locale)}
                 className="inline-block text-ink font-semibold px-8 py-4 rounded-full text-base transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5"
