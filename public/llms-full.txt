@@ -185,7 +185,7 @@ A pilot partner secures early, full access to all modules at a guaranteed fixed 
 
 - Homepage: https://lumaia.studio
 - Platform Overview: https://lumaia.studio/plattform
-- Product Asset Studio: https://lumaia.studio/agentic-commerce
+- Product Asset Studio: https://lumaia.studio/plattform/product-asset-studio
 - Use Cases: https://lumaia.studio/use-cases
 - Agentic Commerce: https://lumaia.studio/use-cases/agentic-commerce
 - Pricing: https://lumaia.studio/pricing

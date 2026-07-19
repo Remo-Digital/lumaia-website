@@ -16,7 +16,7 @@ export default function TopBanner() {
     >
       <span className="text-white/80">{t.nav.banner}</span>
       <a
-        href="/agentic-commerce"
+        href="/plattform/product-asset-studio"
         className="font-semibold text-accent hover:underline underline-offset-2"
       >
         {t.nav.bannerCta} &rarr;

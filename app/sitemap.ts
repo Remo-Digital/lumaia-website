@@ -16,7 +16,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/en/plattform`, lastModified: today, changeFrequency: 'monthly', priority: 0.7 },
 
     // ── Product Asset Studio (live module) ──
-    { url: `${BASE}/agentic-commerce`, lastModified: today, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE}/plattform/product-asset-studio`, lastModified: today, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE}/en/plattform/product-asset-studio`, lastModified: today, changeFrequency: 'monthly', priority: 0.8 },
 
     // ── Use Cases ──
     { url: `${BASE}/use-cases`, lastModified: today, changeFrequency: 'monthly', priority: 0.7 },

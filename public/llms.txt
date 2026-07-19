@@ -65,7 +65,7 @@ Turns a single product image into a complete set of hero, lifestyle, detail, and
 - Homepage: https://lumaia.studio
 - Platform: https://lumaia.studio/plattform
 - Use Cases: https://lumaia.studio/use-cases
-- Product Asset Studio: https://lumaia.studio/agentic-commerce
+- Product Asset Studio: https://lumaia.studio/plattform/product-asset-studio
 - Pricing: https://lumaia.studio/pricing
 - Contact: https://lumaia.studio/contact
 - Blog: https://lumaia.studio/blog

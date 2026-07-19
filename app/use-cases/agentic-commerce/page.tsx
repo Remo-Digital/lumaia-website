@@ -223,7 +223,7 @@ export default function AgenticCommercePage() {
                 <p className="text-white/70 font-medium italic">{ac.sections.solution.p3}</p>
               </div>
               <a
-                href="/agentic-commerce"
+                href="/plattform/product-asset-studio"
                 className="inline-block text-ink font-semibold px-8 py-4 rounded-full text-base transition-all duration-200 hover:opacity-90"
                 style={{ background: 'linear-gradient(135deg, #7be89f 0%, #0e9cb0 100%)', boxShadow: '0 8px 32px rgba(79,193,168,0.25)' }}
               >
@@ -271,7 +271,7 @@ export default function AgenticCommercePage() {
         <section className="py-20 px-6" style={{ background: '#070512' }}>
           <div className="max-w-2xl mx-auto text-center">
             <a
-              href="/agentic-commerce"
+              href="/plattform/product-asset-studio"
               className="inline-block text-ink font-semibold px-8 py-4 rounded-full text-base transition-all duration-200 hover:opacity-90"
               style={{ background: 'linear-gradient(135deg, #7be89f 0%, #0e9cb0 100%)', boxShadow: '0 8px 32px rgba(79,193,168,0.25)' }}
             >

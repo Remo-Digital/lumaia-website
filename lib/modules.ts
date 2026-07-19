@@ -161,7 +161,7 @@ export const modules: Module[] = [
       en: 'AI-generated product images with Fidelity Scoring and C2PA provenance – EU AI Act compliant.',
     },
     tag: { de: 'Produktbilder', en: 'Product Images' },
-    url: '/agentic-commerce',
+    url: '/plattform/product-asset-studio',
   },
 
   // ── Publish Phase ──

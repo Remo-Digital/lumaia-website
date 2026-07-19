@@ -34,7 +34,7 @@ export default function Footer() {
             <h4 className="text-white/60 text-xs font-semibold tracking-[0.15em] uppercase mb-4">{t.footer.platform}</h4>
             <ul className="space-y-2">
               <li><a href={localizedHref('/plattform', locale)} className="text-white/40 text-sm hover:text-accent transition-colors">{locale === 'de' ? 'Plattform-\u00dcbersicht' : 'Platform Overview'}</a></li>
-              <li><a href="/agentic-commerce" className="text-white/40 text-sm hover:text-accent transition-colors">Product Asset Studio</a></li>
+              <li><a href={localizedHref('/plattform/product-asset-studio', locale)} className="text-white/40 text-sm hover:text-accent transition-colors">Product Asset Studio</a></li>
             </ul>
           </div>
 

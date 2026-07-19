@@ -6,7 +6,8 @@ const nextConfig: NextConfig = {
       { source: '/datenschutz', destination: '/privacy', permanent: true },
       { source: '/impressum', destination: '/imprint', permanent: true },
       { source: '/kontakt', destination: '/contact', permanent: true },
-      { source: '/en/agentic-commerce', destination: '/agentic-commerce', permanent: false },
+      { source: '/agentic-commerce', destination: '/plattform/product-asset-studio', permanent: true },
+      { source: '/en/agentic-commerce', destination: '/en/plattform/product-asset-studio', permanent: true },
     ]
   },
 }
