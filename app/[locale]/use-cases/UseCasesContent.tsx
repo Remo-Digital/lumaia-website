@@ -10,7 +10,7 @@ export default function UseCasesContent() {
   return (
     <>
       <Nav />
-      <main id="main-content" className="pt-24">
+      <main id="main-content" className="pt-32">
         {/* Hero */}
         <section className="relative overflow-hidden py-24 px-6" style={{ background: 'linear-gradient(135deg, #03020a 0%, #0d0822 45%, #04021a 100%)' }} aria-labelledby="usecases-title">
           <div className="absolute inset-0 dot-grid opacity-50 pointer-events-none" aria-hidden="true" />

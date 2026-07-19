@@ -8,7 +8,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative min-h-screen flex items-center overflow-hidden pt-24 pb-16"
+      className="relative min-h-screen flex items-center overflow-hidden pt-32 pb-16"
       style={{ background: 'linear-gradient(135deg, #03020a 0%, #0d0822 45%, #04021a 100%)' }}
       aria-labelledby="hero-heading"
     >
@@ -51,9 +51,23 @@ export default function Hero() {
           </a>
           <a
             href={localizedHref('/plattform', locale)}
-            className="text-ink font-semibold px-8 py-4 rounded-full text-base transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5"
-            style={{ background: 'linear-gradient(135deg, #7be89f 0%, #0e9cb0 100%)', boxShadow: '0 8px 32px rgba(79,193,168,0.25)' }}
+            className="relative font-semibold px-8 py-4 rounded-full text-base transition-all duration-200 hover:-translate-y-0.5 text-white/90 hover:text-white"
+            style={{
+              background: 'linear-gradient(135deg, rgba(123,232,159,0.1) 0%, rgba(14,156,176,0.1) 100%)',
+            }}
           >
+            {/* Gradient border via pseudo-element for rounded corners */}
+            <span
+              className="absolute inset-0 rounded-full pointer-events-none"
+              style={{
+                padding: '2px',
+                background: 'linear-gradient(135deg, #7be89f, #0e9cb0)',
+                WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                WebkitMaskComposite: 'xor',
+                maskComposite: 'exclude',
+              }}
+              aria-hidden="true"
+            />
             {t.hero.cta_secondary}
           </a>
         </div>

@@ -16,7 +16,7 @@ export default function ModuleComingSoon({ slug }: { slug: string }) {
   return (
     <>
       <Nav />
-      <main id="main-content" className="pt-24">
+      <main id="main-content" className="pt-32">
         <section className="relative min-h-[70vh] flex items-center overflow-hidden py-24 px-6" style={{ background: 'linear-gradient(135deg, #03020a 0%, #0d0822 45%, #04021a 100%)' }}>
           <div className="absolute inset-0 dot-grid opacity-40 pointer-events-none" aria-hidden="true" />
           <div className="absolute top-0 right-0 w-[500px] h-[500px] pointer-events-none"
