@@ -1,4 +1,5 @@
 'use client'
+import TopBanner from '@/components/TopBanner'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import { useLanguage } from '@/lib/LanguageContext'
@@ -9,10 +10,11 @@ export default function ImprintPage() {
 
   return (
     <>
+      <TopBanner />
       <Nav />
-      <main className="relative min-h-screen pt-28 pb-20 px-6"
+      <main id="main-content" className="relative min-h-screen pt-28 pb-20 px-6"
         style={{ background: 'linear-gradient(135deg, #03020a 0%, #0d0822 45%, #04021a 100%)' }}>
-        <div className="absolute inset-0 dot-grid opacity-60 pointer-events-none" />
+        <div className="absolute inset-0 dot-grid opacity-60 pointer-events-none" aria-hidden="true" />
 
         <div className="relative max-w-3xl mx-auto">
           <div className="text-center mb-12 animate-fade-up-1">

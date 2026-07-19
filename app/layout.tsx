@@ -17,9 +17,9 @@ const lexend = Lexend({
 })
 
 export const metadata: Metadata = {
-  title: 'Lumaia – Das AI Agency OS',
+  title: 'LumAIa \u2013 Die Agentic Agency Plattform f\u00fcr Marketing',
   description:
-    'Lumaia ist das erste AI-betriebene Agency Operating System für Marken, die schneller wachsen wollen – mit weniger Aufwand, mehr Präzision und echten Ergebnissen.',
+    'LumAIa automatisiert den gesamten Marketing-Workflow \u2013 von Strategie bis Kampagnen-Optimierung. 10\u00d7 schneller, 70% g\u00fcnstiger, 100% Brand-Safe.',
   icons: {
     icon: [
       { url: '/favicon.ico' },
@@ -32,8 +32,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://lumaia.studio/',
     languages: {
-      'de': 'https://lumaia.studio/',
-      'en': 'https://lumaia.studio/en/',
+      'de-CH': 'https://lumaia.studio/',
+      'de-DE': 'https://lumaia.studio/',
+      'de-AT': 'https://lumaia.studio/',
+      'en-US': 'https://lumaia.studio/en/',
+      'en-CH': 'https://lumaia.studio/en/',
       'x-default': 'https://lumaia.studio/',
     },
   },
@@ -45,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${lexend.variable}`}>
+    <html lang="de" className={`${inter.variable} ${lexend.variable}`}>
       <head>
         {/* Google Tag Manager */}
         <Script id="google-tag-manager" strategy="afterInteractive">
@@ -75,8 +78,12 @@ gtag('config', 'G-21LLYMZSE2');`}
             height="0"
             width="0"
             style={{ display: 'none', visibility: 'hidden' }}
+            title="Google Tag Manager"
           />
         </noscript>
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-accent focus:text-ink focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold">
+          Skip to main content
+        </a>
         <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>

@@ -1,4 +1,5 @@
 'use client'
+import TopBanner from '@/components/TopBanner'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import HubSpotForm from '@/components/HubSpotForm'
@@ -10,13 +11,14 @@ export default function ContactPage() {
 
   return (
     <>
+      <TopBanner />
       <Nav />
-      <main className="relative min-h-screen pt-28 pb-20 px-6"
+      <main id="main-content" className="relative min-h-screen pt-28 pb-20 px-6"
         style={{ background: 'linear-gradient(135deg, #03020a 0%, #0d0822 45%, #04021a 100%)' }}>
-        <div className="absolute inset-0 dot-grid opacity-60 pointer-events-none" />
+        <div className="absolute inset-0 dot-grid opacity-60 pointer-events-none" aria-hidden="true" />
 
         <div className="relative max-w-5xl mx-auto">
-          <div className="text-center mb-16 animate-fade-up-1">
+          <header className="text-center mb-16 animate-fade-up-1">
             <span className="glass-accent text-accent text-xs font-semibold tracking-[0.2em] uppercase px-4 py-1.5 rounded-full">
               {c.label}
             </span>
@@ -24,7 +26,7 @@ export default function ContactPage() {
               {c.title} <em className="gradient-text not-italic">{c.title_em}</em>
             </h1>
             <p className="text-white/50 text-lg max-w-xl mx-auto">{c.sub}</p>
-          </div>
+          </header>
 
           <div className="grid md:grid-cols-3 gap-8 animate-fade-up-2">
             <div className="flex flex-col gap-4">
