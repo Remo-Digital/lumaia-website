@@ -81,7 +81,7 @@ export default function Nav() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-6">
-            {/* Platform Dropdown */}
+            {/* Platform Dropdown 
             <div ref={megaRef} className="relative">
               <button
                 onClick={() => setMegaOpen(!megaOpen)}
@@ -139,12 +139,21 @@ export default function Nav() {
                 </div>
               )}
             </div>
+            
 
             <a href={localizedHref('/use-cases', locale)} className="text-white/80 text-sm font-medium transition-colors duration-200 hover:text-white">
               {t.nav.useCases}
             </a>
+            
             <a href={localizedHref('/blog', locale)} className="text-white/80 text-sm font-medium transition-colors duration-200 hover:text-white">
               {t.nav.blog}
+            </a> 
+            */}
+            <a href={localizedHref('/plattform/product-asset-studio', locale)} className="text-white/80 text-sm font-medium transition-colors duration-200 hover:text-white">
+              Product Asset Studio
+            </a>
+            <a href={localizedHref('/use-cases/agentic-commerce', locale)} className="text-white/80 text-sm font-medium transition-colors duration-200 hover:text-white">
+              {t.nav.agentic}
             </a>
             <a href={localizedHref('/pricing', locale)} className="text-white/80 text-sm font-medium transition-colors duration-200 hover:text-white">
               {t.nav.pricing}
@@ -185,7 +194,7 @@ export default function Nav() {
         {mobileOpen && (
           <div className="lg:hidden fixed inset-0 top-[65px] z-40 overflow-y-auto" style={{ background: 'rgba(3,2,10,0.97)' }}>
             <div className="px-6 py-8 space-y-6">
-              <a href={localizedHref('/plattform', locale)} className="block text-lg text-white/90 hover:text-white" onClick={() => setMobileOpen(false)}>
+             {/*  <a href={localizedHref('/plattform', locale)} className="block text-lg text-white/90 hover:text-white" onClick={() => setMobileOpen(false)}>
                 {t.nav.platform}
               </a>
               <a href={localizedHref('/use-cases', locale)} className="block text-lg text-white/90 hover:text-white" onClick={() => setMobileOpen(false)}>
@@ -193,6 +202,12 @@ export default function Nav() {
               </a>
               <a href={localizedHref('/blog', locale)} className="block text-lg text-white/90 hover:text-white" onClick={() => setMobileOpen(false)}>
                 {t.nav.blog}
+              </a> */}
+              <a href={localizedHref('/plattform/product-asset-studio', locale)} className="block text-lg text-white/90 hover:text-white" onClick={() => setMobileOpen(false)}>
+                Product Asset Studio
+              </a>
+              <a href={localizedHref('/use-cases/agentic-commerce', locale)} className="block text-lg text-white/90 hover:text-white" onClick={() => setMobileOpen(false)}>
+                {t.nav.agentic}
               </a>
               <a href={localizedHref('/pricing', locale)} className="block text-lg text-white/90 hover:text-white" onClick={() => setMobileOpen(false)}>
                 {t.nav.pricing}
