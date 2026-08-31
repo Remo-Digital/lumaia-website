@@ -50,7 +50,7 @@ export default function HomeContent() {
         <Hero />
         <TrustLogos />
         <Problem />
-        <FourPhases />
+       {/*  <FourPhases /> */}
         <DemoCta />
         <AgenticCommerceTeaser />
         <TrustArchitecture />
