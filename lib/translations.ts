@@ -178,12 +178,12 @@ export const translations = {
 
     // ── Footer ──
     footer: {
-      copyright: '\u00a9 2026 LumAIa by iundf Dewave AG',
+      copyright: '\u00a9 2026 LumAIa by Dewave GmbH',
       links: [
+        { label: 'Contact', href: '/contact' },
         { label: 'Privacy', href: '/privacy' },
         { label: 'Imprint', href: '/imprint' },
         { label: 'Terms', href: '/legal/terms' },
-        { label: 'Contact', href: '/contact' },
       ],
       platform: 'Platform',
       useCases: 'Use Cases',
