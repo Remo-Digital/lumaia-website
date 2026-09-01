@@ -28,23 +28,9 @@ export default function ContactContent() {
             <p className="text-white/70 text-lg max-w-xl mx-auto">{c.sub}</p>
           </header>
 
-          <div className="grid md:grid-cols-3 gap-8 animate-fade-up-2">
-            {/* Info cards */}
-            <aside className="flex flex-col gap-4" aria-label={locale === 'de' ? 'Kontaktinformationen' : 'Contact information'}>
-              {[
-                { label: c.info.email_label, value: c.info.email_value },
-                { label: c.info.location_label, value: c.info.location_value },
-                { label: c.info.response_label, value: c.info.response_value },
-              ].map(({ label, value }) => (
-                <div key={label} className="glass rounded-2xl p-5 glow-hover">
-                  <p className="text-white/50 text-xs font-semibold tracking-[0.15em] uppercase mb-1">{label}</p>
-                  <p className="text-white/90 text-sm">{value}</p>
-                </div>
-              ))}
-            </aside>
-
+          <div className="max-w-2xl mx-auto animate-fade-up-2">
             {/* HubSpot Form */}
-            <section className="md:col-span-2 glass rounded-2xl p-8" aria-label={locale === 'de' ? 'Kontaktformular' : 'Contact form'}>
+            <section className="glass rounded-2xl p-8" aria-label={locale === 'de' ? 'Kontaktformular' : 'Contact form'}>
               <HubSpotForm
                 formId={c.formId}
                 consentText={c.consentText}
