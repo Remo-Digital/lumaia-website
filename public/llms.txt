@@ -1,0 +1,72 @@
+# LumAIa – The Agentic Agency Platform for Marketing
+
+> LumAIa automates the entire marketing workflow – from strategy to campaign optimization.
+> 10x faster, 70% cheaper, 100% brand-safe.
+
+## About
+
+LumAIa is an AI-powered platform that unifies strategy, production, and campaign optimization in one system. It translates the expertise of a top agency into software, delivering 10x faster campaigns, 70% lower costs, and 100% brand safety.
+
+## Company
+
+- Name: LumAIa (by iundf Dewave AG)
+- Website: https://lumaia.studio
+- Location: Switzerland
+- Contact: hello@lumaia.ai
+
+## Platform Phases
+
+1. **Plan** – Market analysis, personas, media strategy, budget planning
+2. **Build** – Asset creation (banners, copy, visuals, landing pages, emails)
+3. **Publish** – Automated campaign launch, budget control, real-time optimization
+4. **Report & Learn** – Attribution, management reports, learning feedback loop
+
+## Key Modules
+
+- Briefing Agent
+- Market & Audience Intelligence Agent
+- Persona Architect
+- Media Strategy Agent
+- Media Planning Agent
+- Production Planning Agent
+- Creative Concept & Key Visual Agent
+- Media Asset Studio
+- Landing Page Agent
+- Email Agent
+- Content & Copy Agent
+- Product Asset Studio (live – for e-commerce image assets)
+- Campaign Activation Agent
+- Autonomous Optimization Agent
+- Campaign Health Monitor
+- Attribution AI
+- Executive Dashboard Agent
+- Learning Engine
+- GEO Visibility & Performance Monitor
+
+## Product Asset Studio
+
+Turns a single product image into a complete set of hero, lifestyle, detail, and micro-rotation assets – EU AI Act compliant with C2PA provenance records and Fidelity Scoring.
+
+## Use Cases
+
+- Agentic Commerce: Making online shops agent-ready for AI shopping agents
+- Product launches at record speed
+- ROAS maximization during sales events
+- Regional campaign scaling
+- AEO dominance
+
+## Pricing
+
+- Self-Serve: From CHF 29/month (e.g., Product Asset Studio)
+- Pilot Partner: 12-month fixed price with full module access
+
+## Links
+
+- Homepage (DE): https://lumaia.studio/de
+- Homepage (EN): https://lumaia.studio/en
+- Platform: https://lumaia.studio/de/plattform
+- Use Cases: https://lumaia.studio/de/use-cases
+- Product Asset Studio: https://lumaia.studio/de/plattform/product-asset-studio
+- Pricing: https://lumaia.studio/de/pricing
+- Contact: https://lumaia.studio/de/contact
+- Blog: https://lumaia.studio/de/blog

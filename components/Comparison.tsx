@@ -3,48 +3,46 @@ import { useLanguage } from '@/lib/LanguageContext'
 
 export default function Comparison() {
   const { t } = useLanguage()
-  const rows = t.comparison.rows
-  const headers = t.comparison.headers
 
   return (
-    <section className="relative overflow-hidden py-24 px-6" style={{ background: '#050411' }}>
-      <div className="absolute inset-0 dot-grid opacity-30 pointer-events-none" />
-      <div className="absolute top-1/2 left-0 w-80 h-80 pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(123,232,159,0.06) 0%, transparent 70%)', filter: 'blur(80px)', borderRadius: '50%', transform: 'translateY(-50%)' }} />
+    <section className="relative overflow-hidden py-24 px-6" style={{ background: '#080614' }} aria-labelledby="comparison-title">
+      <div className="absolute inset-0 line-grid pointer-events-none" aria-hidden="true" />
 
-      <div className="relative z-10 max-w-5xl mx-auto">
+      <div className="relative z-10 max-w-4xl mx-auto">
         <p className="text-accent text-base font-semibold tracking-[0.18em] uppercase mb-4">{t.comparison.label}</p>
-        <h2 className="font-serif text-5xl md:text-6xl text-white leading-[1.15] mb-14">
+        <h2 id="comparison-title" className="font-serif text-4xl md:text-5xl text-white leading-[1.15] mb-12">
           {t.comparison.title}
         </h2>
 
-        <div className="glass rounded-2xl overflow-hidden">
-          <table className="w-full border-collapse">
-            <thead>
-              <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-                <th className="text-left p-5 text-base font-medium tracking-[0.12em] uppercase text-white/55">{headers[0]}</th>
-                <th className="text-left p-5 text-base font-medium tracking-[0.12em] uppercase text-white/55">{headers[1]}</th>
-                <th className="text-left p-5 text-base font-medium tracking-[0.12em] uppercase gradient-text">{headers[2]}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {rows.map((r, i) => (
-                <tr key={r.label}
-                  style={{ borderBottom: i < rows.length - 1 ? '1px solid rgba(255,255,255,0.04)' : 'none' }}
-                  className="group hover:bg-white/[0.02] transition-colors duration-200">
-                  <td className="p-5 text-white/60 text-base">{r.label}</td>
-                  <td className="p-5 text-base">
-                    <span className="text-red-400/70 mr-2">✗</span>
-                    <span className="text-white/55">{r.agency}</span>
-                  </td>
-                  <td className="p-5 text-base">
-                    <span className="text-emerald-400 mr-2">✓</span>
-                    <span className="text-white/70 font-medium">{r.lumaia}</span>
-                  </td>
+        <div className="glass-strong rounded-2xl overflow-hidden">
+          <div className="overflow-x-auto">
+            <table className="w-full text-left" role="table">
+              <thead>
+                <tr className="border-b border-white/10">
+                  {t.comparison.headers.map((h, i) => (
+                    <th key={i} className={`px-6 py-4 text-sm font-semibold ${i === 0 ? 'text-white/60' : i === 2 ? 'text-accent/80' : 'text-white/70'}`} scope="col">
+                      {h}
+                    </th>
+                  ))}
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {t.comparison.rows.map((row, i) => (
+                  <tr key={i} className={i < t.comparison.rows.length - 1 ? 'border-b border-white/5' : ''}>
+                    <td className="px-6 py-4 text-white/70 text-sm font-medium">{row.label}</td>
+                    <td className="px-6 py-4 text-white/60 text-sm">
+                      <span className="text-red-400/70 mr-2" aria-hidden="true">&#x2717;</span>
+                      {row.agency}
+                    </td>
+                    <td className="px-6 py-4 text-accent/70 text-sm font-medium">
+                      <span className="text-emerald-400 mr-2" aria-hidden="true">&#x2713;</span>
+                      {row.lumaia}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </section>

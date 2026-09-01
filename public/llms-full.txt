@@ -1,0 +1,197 @@
+# LumAIa – The Agentic Agency Platform for Marketing
+# Full Context Document for LLMs
+
+> LumAIa automates the entire marketing workflow – from strategy to campaign optimization.
+> 10x faster, 70% cheaper, 100% brand-safe.
+
+---
+
+## Company Overview
+
+LumAIa is an AI-powered platform built by iundf Dewave AG, a Swiss digital and AI transformation agency with 25+ years of experience in marketing, communication, and software development. LumAIa unifies strategy, production, and campaign optimization in one system – not a stack of tools, not a traditional agency, but an infrastructure that translates the expertise of a top agency into software.
+
+**Key Metrics:**
+- 90% time saved
+- 10x ROI increase
+- 70% cost reduction
+- 48 hours from briefing to launch
+
+**Contact:**
+- Website: https://lumaia.studio
+- Email: hello@lumaia.ai
+- Location: Switzerland
+
+---
+
+## Platform Architecture
+
+LumAIa covers the entire agency value chain as one continuous system. Each phase hands its result to the next.
+
+### Phase 1: Plan
+Strategic thinking at the campaign level: market analysis, personas, media strategy, budget plan. Data-driven and structured – before a single asset is produced.
+
+**Modules:**
+- **Briefing Agent** – Entry point of the value chain, validated briefing
+- **Market & Audience Intelligence Agent** – Market, competitive, and GEO/SEO analysis
+- **Persona Architect** – Data-driven personas
+- **Media Strategy Agent** – Channel logic, funnel design
+- **Media Planning Agent** – Budgeted media plan
+- **Production Planning Agent** – Production brief for the Build phase
+
+### Phase 2: Build
+Asset creation in seconds: banners, copy, visuals, landing pages, emails – consistent in your brand voice, for every channel.
+
+**Modules:**
+- **Creative Concept & Key Visual Agent** – Core idea + key visuals
+- **Media Asset Studio** – Mass production of channel-ready formats
+- **Landing Page Agent** – Generate and deploy landing pages
+- **Email Agent** – Ready-to-send emails
+- **Content & Copy Agent** – Central copy engine, keyword-first
+- **Product Asset Studio** (LIVE) – AI-generated product images with Fidelity Scoring and C2PA provenance. Turns a single product image into hero, lifestyle, detail, and micro-rotation assets. EU AI Act compliant.
+
+### Phase 3: Publish
+Campaigns go live automatically. Autonomous budget control and real-time optimization run within defined parameters – no manual intervention, around the clock.
+
+**Modules:**
+- **Campaign Activation Agent** – Campaign setup and launch across channels
+- **Autonomous Optimization Agent** – Variant testing, autonomous budget reallocation
+- **Campaign Health Monitor** – Fatigue and anomaly detection
+
+### Phase 4: Report & Learn
+Every campaign makes the next one better. Attribution in plain language, management reports, and a learning signal that flows back into strategy and production.
+
+**Modules:**
+- **Attribution AI** – Touchpoint attribution
+- **Executive Dashboard Agent** – Management summaries
+- **Learning Engine** – Flywheel, learning signal back to Plan/Build
+- **GEO Visibility & Performance Monitor** – Visibility in answer engines
+
+---
+
+## Trust Architecture
+
+Every campaign and asset runs through the same trust architecture:
+
+1. **Integration Hub** – One data source for the entire marketing chain (PIM/DAM to analytics). No data silos, no manual exports.
+2. **Brand and Compliance Guards** – Automatic checks against brand guidelines and legal requirements. Every asset, every time.
+3. **Campaign Engineer Gate** – Experienced marketing professionals validate what the system should not decide alone. People stay in control where it matters.
+
+---
+
+## Product Asset Studio (Live Module)
+
+Product Asset Studio turns a single product image into a complete set of:
+- **Lifestyle Images** – Product shown in real-use context
+- **Hero Shots** – Clean product photos on white background
+- **Detailed Close-ups** – Detail shots and quality enhancement up to 4K
+- **Micro-Rotation** – Product from multiple angles
+
+**Features:**
+- Fidelity Score rating (GREEN/Yellow/RED)
+- C2PA provenance record on every image
+- EU AI Act compliant
+- Campaign Engineer Gate validation
+- PIM/DAM/Shop integration via Integration Hub
+- Output format: .webp, up to 4K
+
+**Google Standard Compliance:**
+Covers Priority 1 of Google's 13 essential attributes for Agentic Inventory Readiness: High Quality images, Lifestyle images, and Additional images.
+
+**Results:**
+- 95% time saved vs. traditional photo shoots
+- 10x ROI increase through scalable content
+- 70% cost reduction per product image set
+- 100% brand safety through Campaign Engineer Gate
+
+**Target Audience:** E-commerce and DTC brands with thousands of products needing scalable, compliant image assets.
+
+**Pricing:** From CHF 29/month, no credit card required.
+
+---
+
+## Agentic Commerce
+
+Agentic Commerce is the act of shopping through autonomous AI agents (ChatGPT, Gemini, Perplexity) without a human guiding every step. The agent searches, compares, and buys on behalf of the consumer.
+
+### Five Key Protocols
+1. **ACP** (Agentic Commerce Protocol) – Purchase processes
+2. **UCP** (Universal Commerce Protocol) – Structured product data
+3. **MCP** (Model Context Protocol) – AI model data access
+4. **AP2** (Agent Payments Protocol) – Secure agent payments
+5. **A2A** (Agent-to-Agent Protocol) – Agent-to-agent communication
+
+### Three Prerequisites for Agent-Readiness
+1. Structured product data (Schema.org, clean attributes)
+2. Compliant image assets (C2PA provenance, EU AI Act compliant)
+3. Technical accessibility (open interfaces, crawler access)
+
+Product Asset Studio addresses prerequisite #2, delivering compliant, verifiable image assets at scale.
+
+---
+
+## Pricing
+
+### Self-Serve
+- Access: Individual modules (e.g., Product Asset Studio)
+- Price: From CHF 29/month
+- Billing: Monthly, cancel anytime
+- Getting started: Instant, no call required
+
+### Pilot Partner (Agentic Agency)
+- Access: All modules
+- Price: 12-month fixed price
+- Getting started: After a demo
+- Benefits: Early full access, guaranteed pricing, direct influence on product development
+
+---
+
+## LumAIa vs. Traditional Agency
+
+| Criterion | Traditional Agency | LumAIa |
+|---|---|---|
+| Campaign launch | 4–8 weeks | <24 hours |
+| Cost per campaign | CHF 50,000–150,000 | From CHF 449/month |
+| Scalability | Limited by headcount | Unlimited |
+| Brand compliance | Manual, error-prone | 100% – Campaign Engineer Gate |
+| A/B testing | Manual, time-consuming | Automated, real-time |
+| AEO optimization | Not available | Natively integrated |
+| Learning effect | Depends on staff | Continuous, systemic |
+
+---
+
+## FAQ
+
+**Is LumAIa a tool or an agency?**
+LumAIa is an AI platform that automates the work of an agency – with professionals in the background who review every critical decision.
+
+**How do you ensure brand safety and legal compliance?**
+Through the Campaign Engineer Gate: every asset first passes automatic brand and compliance guards. Anything they cannot clearly resolve is reviewed by a person. Nothing is published without review.
+
+**How quickly is LumAIa up and running?**
+From brief to first launch typically takes 48 hours. Pilot partners receive onboarding and setup as part of their fixed-price package.
+
+**Which channels are supported?**
+Meta (Facebook/Instagram), Google Ads, TikTok, Display/Programmatic, SEO/AEO, Email/Newsletter, CMS integration.
+
+**What does LumAIa cost?**
+Self-serve modules start at CHF 29/month. Pilot partners receive a 12-month fixed price with full module access.
+
+**What does "Pilot Partner" mean?**
+A pilot partner secures early, full access to all modules at a guaranteed fixed price and shapes the development of LumAIa directly. Spots are limited.
+
+---
+
+## Links
+
+- Homepage (DE): https://lumaia.studio/de
+- Homepage (EN): https://lumaia.studio/en
+- Platform Overview: https://lumaia.studio/de/plattform
+- Product Asset Studio: https://lumaia.studio/de/plattform/product-asset-studio
+- Use Cases: https://lumaia.studio/de/use-cases
+- Agentic Commerce: https://lumaia.studio/de/use-cases/agentic-commerce
+- Pricing: https://lumaia.studio/de/pricing
+- Blog: https://lumaia.studio/de/blog
+- Contact: https://lumaia.studio/de/contact
+- Privacy: https://lumaia.studio/de/privacy
+- Imprint: https://lumaia.studio/de/imprint
+- Terms: https://lumaia.studio/de/legal/terms
