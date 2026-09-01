@@ -52,13 +52,14 @@ export default function HomeContent() {
         <TrustLogos />
         <Problem />
        {/*  <FourPhases /> */}
+        <ProductAssetStudioTeaser />
         <DemoCta />
         <AgenticCommerceTeaser />
         <TrustArchitecture />
         <ProductAssetStudioTeaser />
         <TestimonialsSection />
         <Comparison />
-        <PricingTeaser />
+        {/* <PricingTeaser /> */}
         <FAQ />
         {/* <BlogTeaser /> */}
         <CTAFinal />

@@ -6,7 +6,8 @@ export const translations = {
     nav: {
       cta: 'Book Demo',
       lang: 'DE',
-      agentic: 'Agentic Commerce',
+      agentic: 'Use Case',
+      solution: 'Solution',
       platform: 'Platform',
       useCases: 'Use Cases',
       blog: 'Blog',
@@ -27,10 +28,10 @@ export const translations = {
       cta_secondary: 'Explore the modules',
       microcopy: 'No credit card. Free demo session. Reply within 48 hours.',
       stats: [
-        { value: '90%', label: 'Time Saved' },
-        { value: '10\u00d7', label: 'ROI Increase' },
-        { value: '70%', label: 'Cost Reduction' },
-        { value: '48h', label: 'Brief to Launch' },
+        { value: '100%', label: 'Agent-Ready' },
+        { value: '100%', label: 'Brand Safety' },
+        { value: '\u221e', label: 'Infinite Scalability' },
+        { value: '90%', label: 'Cost Reduction' },
       ],
     },
 
@@ -186,12 +187,12 @@ export const translations = {
 
     // ── Footer ──
     footer: {
-      copyright: '\u00a9 2026 LumAIa by iundf Dewave AG',
+      copyright: '\u00a9 2026 LumAIa by Dewave GmbH',
       links: [
+      
         { label: 'Privacy', href: '/privacy' },
         { label: 'Imprint', href: '/imprint' },
         { label: 'Terms', href: '/legal/terms' },
-        { label: 'Contact', href: '/contact' },
       ],
       platform: 'Platform',
       useCases: 'Use Cases',
@@ -648,7 +649,8 @@ export const translations = {
     nav: {
       cta: 'Demo buchen',
       lang: 'EN',
-      agentic: 'Agentic Commerce',
+      agentic: 'Use Case',
+      solution: 'Lösung',
       platform: 'Plattform',
       useCases: 'Use Cases',
       blog: 'Blog',
@@ -669,10 +671,10 @@ export const translations = {
       cta_secondary: 'Module entdecken',
       microcopy: 'Keine Kreditkarte. Kostenlose Demo-Session. Antwort innert 48 Stunden.',
       stats: [
-        { value: '90%', label: 'Zeitersparnis' },
-        { value: '10\u00d7', label: 'ROI-Steigerung' },
-        { value: '70%', label: 'Kostenreduktion' },
-        { value: '48h', label: 'Briefing bis Launch' },
+        { value: '100 %', label: 'Agent-Ready' },
+        { value: '100 %', label: 'Brandsafety' },
+        { value: '\u221e', label: 'Unbegrenzte Skalierbarkeit' },
+        { value: '90 %', label: 'Kostenreduktion' },
       ],
     },
 

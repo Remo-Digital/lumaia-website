@@ -150,7 +150,7 @@ export default function Nav() {
             </a> 
             */}
             <a href={localizedHref('/plattform/product-asset-studio', locale)} className="text-white/80 text-sm font-medium transition-colors duration-200 hover:text-white">
-              Product Asset Studio
+              {t.nav.solution}
             </a>
             <a href={localizedHref('/use-cases/agentic-commerce', locale)} className="text-white/80 text-sm font-medium transition-colors duration-200 hover:text-white">
               {t.nav.agentic}
@@ -200,7 +200,7 @@ export default function Nav() {
         >
           <div className="px-6 py-8 space-y-6">
             <a href={localizedHref('/plattform/product-asset-studio', locale)} className="block text-lg text-white/90 hover:text-white" onClick={() => setMobileOpen(false)}>
-              Product Asset Studio
+              {t.nav.solution}
             </a>
             <a href={localizedHref('/use-cases/agentic-commerce', locale)} className="block text-lg text-white/90 hover:text-white" onClick={() => setMobileOpen(false)}>
               {t.nav.agentic}
