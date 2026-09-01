@@ -25,33 +25,33 @@ export default function Footer() {
             <Image src="/LUMAIA_Logo.svg" alt="LumAIa" width={100} height={28} />
             <p className="text-white/60 text-sm mt-4 leading-relaxed">
               {locale === 'de'
-                ? 'Die Agentic Agency Plattform f\u00fcr Marketing.'
-                : 'The Agentic Agency Platform for Marketing.'}
+                ? 'Die Agentic Agency Plattform f\u00fcr E-Commerce.'
+                : 'The Agentic Agency Platform for E-Commerce.'}
             </p>
           </div>
 
           {/* Platform */}
-          <div>
+          <nav>
             <h4 className="text-white/70 text-xs font-semibold tracking-[0.15em] uppercase mb-4">{t.footer.platform}</h4>
             <ul className="space-y-2">
-              <li><a href={localizedHref('/plattform', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">{locale === 'de' ? 'Plattform-\u00dcbersicht' : 'Platform Overview'}</a></li>
+              {/* <li><a href={localizedHref('/plattform', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">{locale === 'de' ? 'Plattform-\u00dcbersicht' : 'Platform Overview'}</a></li> */}
               <li><a href={localizedHref('/plattform/product-asset-studio', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">Product Asset Studio</a></li>
             </ul>
-          </div>
+          </nav>
 
           {/* Use Cases & Resources */}
-          <div>
+          <nav>
             <h4 className="text-white/70 text-xs font-semibold tracking-[0.15em] uppercase mb-4">{t.footer.useCases}</h4>
             <ul className="space-y-2">
               <li><a href={localizedHref('/use-cases', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">{locale === 'de' ? 'Alle Use Cases' : 'All Use Cases'}</a></li>
               <li><a href={localizedHref('/use-cases/agentic-commerce', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">Agentic Commerce</a></li>
-              <li><a href={localizedHref('/blog', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">Blog</a></li>
+              {/* <li><a href={localizedHref('/blog', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">Blog</a></li> */}
               <li><a href={localizedHref('/pricing', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">{t.nav.pricing}</a></li>
             </ul>
-          </div>
+          </nav>
 
           {/* Company */}
-          <div>
+          <nav>
             <h4 className="text-white/70 text-xs font-semibold tracking-[0.15em] uppercase mb-4">{t.footer.company}</h4>
             <ul className="space-y-2">
               <li><a href={localizedHref('/contact', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">{t.nav.contact}</a></li>
@@ -61,7 +61,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
         </div>
 
         {/* Bottom bar */}
