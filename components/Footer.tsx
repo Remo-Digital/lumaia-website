@@ -36,6 +36,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {/* <li><a href={localizedHref('/plattform', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">{locale === 'de' ? 'Plattform-\u00dcbersicht' : 'Platform Overview'}</a></li> */}
               <li><a href={localizedHref('/plattform/product-asset-studio', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">Product Asset Studio</a></li>
+              <li><a href={localizedHref('/pricing', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">{t.nav.pricing}</a></li>
             </ul>
           </nav>
 
@@ -54,7 +55,6 @@ export default function Footer() {
           <nav>
             <h4 className="text-white/70 text-xs font-semibold tracking-[0.15em] uppercase mb-4">{t.footer.company}</h4>
             <ul className="space-y-2">
-              <li><a href={localizedHref('/contact', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">{t.nav.contact}</a></li>
               {t.footer.links.map(({ label, href }) => (
                 <li key={href}>
                   <a href={localizedHref(href, locale)} className="text-white/60 text-sm hover:text-accent transition-colors">{label}</a>
