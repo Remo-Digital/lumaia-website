@@ -36,7 +36,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li><a href={localizedHref('/plattform', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">{locale === 'de' ? 'Plattform-\u00dcbersicht' : 'Platform Overview'}</a></li>
               <li><a href={localizedHref('/plattform/product-asset-studio', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">Product Asset Studio</a></li>
-            </ul>
+              <li><a href={localizedHref('/pricing', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">{t.nav.pricing}</a></li>            </ul>
           </div>
 
           {/* Use Cases & Resources */}
@@ -46,7 +46,7 @@ export default function Footer() {
               {/* <li><a href={localizedHref('/use-cases', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">{locale === 'de' ? 'Alle Use Cases' : 'All Use Cases'}</a></li> */}
               <li><a href={localizedHref('/use-cases/agentic-commerce', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">Agentic Commerce</a></li>
               {/* <li><a href={localizedHref('/blog', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">Blog</a></li> */}
-              <li><a href={localizedHref('/pricing', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">{t.nav.pricing}</a></li>
+              
             </ul>
           </div>
 

@@ -181,9 +181,9 @@ export const translations = {
       copyright: '\u00a9 2026 LumAIa by Dewave GmbH',
       links: [
         { label: 'Contact', href: '/contact' },
+        { label: 'Terms', href: '/legal/terms' },
         { label: 'Privacy', href: '/privacy' },
         { label: 'Imprint', href: '/imprint' },
-        { label: 'Terms', href: '/legal/terms' },
       ],
       platform: 'Platform',
       useCases: 'Use Cases',
@@ -708,12 +708,12 @@ export const translations = {
 
     // ── Footer ──
     footer: {
-      copyright: '\u00a9 2026 LumAIa by iundf Dewave AG',
+      copyright: '\u00a9 2026 LumAIa by Dewave GmbH',
       links: [
-        { label: 'Datenschutz', href: '/privacy' },
-        { label: 'Impressum', href: '/imprint' },
-        { label: 'AGB', href: '/legal/terms' },
-        { label: 'Kontakt', href: '/contact' },
+        { label: 'Kontakt', href: '/kontakt' },
+        { label: 'AGB', href: '/legal/agb' },
+        { label: 'Datenschutz', href: '/datenschutz' },
+        { label: 'Impressum', href: '/impressum' },
       ],
       platform: 'Plattform',
       useCases: 'Use Cases',
