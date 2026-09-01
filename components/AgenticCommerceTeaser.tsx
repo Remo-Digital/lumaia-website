@@ -25,12 +25,6 @@ export default function AgenticCommerceTeaser() {
             >
               {t.agenticTeaser.link1} &rarr;
             </a>
-            <a
-              href={localizedHref('/use-cases', locale)}
-              className="text-white/70 font-medium hover:text-white/80 transition-colors"
-            >
-              {t.agenticTeaser.link2} &rarr;
-            </a>
           </div>
         </div>
       </div>

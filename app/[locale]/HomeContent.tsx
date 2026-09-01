@@ -7,11 +7,12 @@ import FourPhases from '@/components/FourPhases'
 import DemoCta from '@/components/DemoCta'
 import AgenticCommerceTeaser from '@/components/AgenticCommerceTeaser'
 import TrustArchitecture from '@/components/TrustArchitecture'
+import ProductAssetStudioTeaser from '@/components/ProductAssetStudioTeaser'
 import TestimonialsSection from '@/components/TestimonialsSection'
 import Comparison from '@/components/Comparison'
 import PricingTeaser from '@/components/PricingTeaser'
 import FAQ from '@/components/FAQ'
-import BlogTeaser from '@/components/BlogTeaser'
+// import BlogTeaser from '@/components/BlogTeaser'
 import CTAFinal from '@/components/CTAFinal'
 import Footer from '@/components/Footer'
 
@@ -26,10 +27,10 @@ export default function HomeContent() {
     operatingSystem: 'Web',
     offers: {
       '@type': 'AggregateOffer',
-      lowPrice: '29',
-      highPrice: '449',
+      lowPrice: '39',
+      highPrice: '499',
       priceCurrency: 'CHF',
-      offerCount: '2',
+      offerCount: '4',
     },
     creator: {
       '@type': 'Organization',
@@ -54,11 +55,12 @@ export default function HomeContent() {
         <DemoCta />
         <AgenticCommerceTeaser />
         <TrustArchitecture />
+        <ProductAssetStudioTeaser />
         <TestimonialsSection />
         <Comparison />
         <PricingTeaser />
         <FAQ />
-        <BlogTeaser />
+        {/* <BlogTeaser /> */}
         <CTAFinal />
       </main>
       <Footer />
