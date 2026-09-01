@@ -56,7 +56,7 @@ export default function HomeContent() {
         <DemoCta />
         <AgenticCommerceTeaser />
         <TrustArchitecture />
-        
+        <ProductAssetStudioTeaser />
         <TestimonialsSection />
         <Comparison />
         {/* <PricingTeaser /> */}
