@@ -41,7 +41,7 @@ export default function Nav() {
   const phaseOrder = ['plan', 'build', 'publish', 'report-learn'] as const
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
+    <header className="fixed top-0 left-0 right-0 z-50 isolate">
       {/* Top Banner */}
       {!bannerDismissed && (
         <div
@@ -150,7 +150,7 @@ export default function Nav() {
             </a> 
             */}
             <a href={localizedHref('/plattform/product-asset-studio', locale)} className="text-white/80 text-sm font-medium transition-colors duration-200 hover:text-white">
-              Product Asset Studio
+              {t.nav.solution}
             </a>
             <a href={localizedHref('/use-cases/agentic-commerce', locale)} className="text-white/80 text-sm font-medium transition-colors duration-200 hover:text-white">
               {t.nav.agentic}
@@ -190,54 +190,49 @@ export default function Nav() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
-        {mobileOpen && (
-          <div className="lg:hidden fixed inset-0 top-[65px] z-40 overflow-y-auto" style={{ background: 'rgba(3,2,10,0.97)' }}>
-            <div className="px-6 py-8 space-y-6">
-             {/*  <a href={localizedHref('/plattform', locale)} className="block text-lg text-white/90 hover:text-white" onClick={() => setMobileOpen(false)}>
-                {t.nav.platform}
+      </nav>
+
+      {/* Mobile Menu — outside <nav> to avoid backdrop-filter containing-block issue */}
+      {mobileOpen && (
+        <div
+          className="lg:hidden fixed inset-x-0 bottom-0 z-40 overflow-y-auto"
+          style={{ top: bannerDismissed ? '65px' : '101px', background: 'rgba(3,2,10,0.97)' }}
+        >
+          <div className="px-6 py-8 space-y-6">
+            <a href={localizedHref('/plattform/product-asset-studio', locale)} className="block text-lg text-white/90 hover:text-white" onClick={() => setMobileOpen(false)}>
+              {t.nav.solution}
+            </a>
+            <a href={localizedHref('/use-cases/agentic-commerce', locale)} className="block text-lg text-white/90 hover:text-white" onClick={() => setMobileOpen(false)}>
+              {t.nav.agentic}
+            </a>
+            <a href={localizedHref('/pricing', locale)} className="block text-lg text-white/90 hover:text-white" onClick={() => setMobileOpen(false)}>
+              {t.nav.pricing}
+            </a>
+            <a href={localizedHref('/contact', locale)} className="block text-lg text-white/90 hover:text-white" onClick={() => setMobileOpen(false)}>
+              {t.nav.contact}
+            </a>
+            <div className="pt-4 border-t border-white/10">
+              <a
+                href={localizedHref('/contact', locale)}
+                className="inline-block text-ink font-semibold px-6 py-3 rounded-full"
+                style={{ background: 'linear-gradient(135deg, #7be89f 0%, #0e9cb0 100%)' }}
+                onClick={() => setMobileOpen(false)}
+              >
+                {t.nav.cta}
               </a>
-              <a href={localizedHref('/use-cases', locale)} className="block text-lg text-white/90 hover:text-white" onClick={() => setMobileOpen(false)}>
-                {t.nav.useCases}
+            </div>
+            <div className="pt-2">
+              <a
+                href={switchLocaleHref}
+                className="text-sm text-accent/70 hover:text-accent font-semibold tracking-[0.15em] uppercase"
+                onClick={() => setMobileOpen(false)}
+              >
+                {otherLocale.toUpperCase()}
               </a>
-              <a href={localizedHref('/blog', locale)} className="block text-lg text-white/90 hover:text-white" onClick={() => setMobileOpen(false)}>
-                {t.nav.blog}
-              </a> */}
-              <a href={localizedHref('/plattform/product-asset-studio', locale)} className="block text-lg text-white/90 hover:text-white" onClick={() => setMobileOpen(false)}>
-                Product Asset Studio
-              </a>
-              <a href={localizedHref('/use-cases/agentic-commerce', locale)} className="block text-lg text-white/90 hover:text-white" onClick={() => setMobileOpen(false)}>
-                {t.nav.agentic}
-              </a>
-              <a href={localizedHref('/pricing', locale)} className="block text-lg text-white/90 hover:text-white" onClick={() => setMobileOpen(false)}>
-                {t.nav.pricing}
-              </a>
-              <a href={localizedHref('/contact', locale)} className="block text-lg text-white/90 hover:text-white" onClick={() => setMobileOpen(false)}>
-                {t.nav.contact}
-              </a>
-              <div className="pt-4 border-t border-white/10">
-                <a
-                  href={localizedHref('/contact', locale)}
-                  className="inline-block text-ink font-semibold px-6 py-3 rounded-full"
-                  style={{ background: 'linear-gradient(135deg, #7be89f 0%, #0e9cb0 100%)' }}
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {t.nav.cta}
-                </a>
-              </div>
-              <div className="pt-2">
-                <a
-                  href={switchLocaleHref}
-                  className="text-sm text-accent/70 hover:text-accent font-semibold tracking-[0.15em] uppercase"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {otherLocale.toUpperCase()}
-                </a>
-              </div>
             </div>
           </div>
-        )}
-      </nav>
+        </div>
+      )}
     </header>
   )
 }
