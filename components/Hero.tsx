@@ -50,7 +50,7 @@ export default function Hero() {
             {t.hero.cta_primary}
           </a>
           <a
-            href={localizedHref('/plattform', locale)}
+            href={localizedHref('/plattform/product-asset-studio', locale)}
             className="relative font-semibold px-8 py-4 rounded-full text-base transition-all duration-200 hover:-translate-y-0.5 text-white/90 hover:text-white"
             style={{
               background: 'linear-gradient(135deg, rgba(123,232,159,0.1) 0%, rgba(14,156,176,0.1) 100%)',

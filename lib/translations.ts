@@ -101,6 +101,14 @@ export const translations = {
       conclusion: 'That is the difference between a tool and an agency.',
     },
 
+    // ── Product Asset Studio Teaser ──
+    pasTeaser: {
+      title: 'From one product image to a complete asset set',
+      p1: 'Product Asset Studio turns a single product photo into hero, lifestyle, detail, and micro-rotation assets — brand-safe, EU AI Act compliant, and with C2PA provenance.',
+      p2: 'No photo shoot required. Catalog-ready images in minutes, rated with a Fidelity Score so nothing goes live without passing quality checks.',
+      link: 'Discover Product Asset Studio',
+    },
+
     // ── Testimonials ──
     testimonials: {
       title: 'What our customers say',
@@ -118,7 +126,7 @@ export const translations = {
       headers: ['Criterion', 'Traditional Agency', 'LumAIa Agentic Agency'],
       rows: [
         { label: 'Campaign launch', agency: '4\u20138 weeks', lumaia: '<24 hours' },
-        { label: 'Cost per campaign', agency: 'CHF 50,000\u2013150,000', lumaia: 'From CHF 449/month' },
+        { label: 'Cost per campaign', agency: 'CHF 50,000\u2013150,000', lumaia: 'From CHF 39/month' },
         { label: 'Scalability', agency: 'Limited by headcount', lumaia: 'Unlimited' },
         { label: 'Brand compliance', agency: 'Manual, error-prone', lumaia: '100% \u2013 Campaign Engineer Gate' },
         { label: 'A/B testing', agency: 'Manual, time-consuming', lumaia: 'Automated, in real time' },
@@ -133,7 +141,7 @@ export const translations = {
       headers: ['', 'Self-Serve (e.g. Product Asset Studio)', 'Pilot Partner (Agentic Agency)'],
       rows: [
         { label: 'Access', col1: 'Individual modules', col2: 'All modules' },
-        { label: 'Pricing model', col1: 'From CHF 29/month, cancel monthly', col2: '12-month fixed price' },
+        { label: 'Pricing model', col1: 'From CHF 39/month, cancel monthly', col2: '12-month fixed price' },
         { label: 'Getting started', col1: 'Instant, no call required', col2: 'After a demo' },
         { label: 'Who it is for', col1: 'Teams with a clearly defined need', col2: 'Teams that want the full system' },
       ],
@@ -150,7 +158,7 @@ export const translations = {
         { q: 'How do you ensure brand safety and legal compliance?', a: 'Through the Campaign Engineer Gate: every asset first passes automatic brand and compliance guards. Anything they cannot clearly resolve is reviewed by a person. Nothing is published without review.' },
         { q: 'How quickly is LumAIa up and running?', a: 'From brief to first launch typically takes 48 hours. Pilot partners receive onboarding and setup as part of their fixed-price package.' },
         { q: 'Which channels are supported?', a: 'Meta (Facebook/Instagram), Google Ads, TikTok, Display/Programmatic, SEO/AEO, Email/Newsletter, CMS integration.' },
-        { q: 'What does LumAIa cost?', a: 'Self-serve modules like Product Asset Studio start at CHF 29/month, cancelable monthly. Pilot partners receive a 12-month fixed price with full module access. All details at lumaia.studio/pricing.' },
+        { q: 'What does LumAIa cost?', a: 'Self-serve modules like Product Asset Studio start at CHF 39/month, cancelable monthly. Pilot partners receive a 12-month fixed price with full module access. All details at lumaia.studio/pricing.' },
         { q: 'What does "Pilot Partner" mean?', a: 'A pilot partner secures early, full access to all modules at a guaranteed fixed price \u2013 and shapes the development of LumAIa directly. The number of pilot partner spots is limited.' },
       ],
     },
@@ -735,6 +743,14 @@ export const translations = {
       conclusion: 'Das ist der Unterschied zwischen einem Tool und einer Agentur.',
     },
 
+    // ── Product Asset Studio Teaser ──
+    pasTeaser: {
+      title: 'Von einem Produktbild zum vollständigen Asset-Set',
+      p1: 'Product Asset Studio verwandelt ein einzelnes Produktfoto in Hero-, Lifestyle-, Detail- und Micro-Rotation-Assets — brand-konform, EU-AI-Act-konform und mit C2PA-Herkunftsnachweis.',
+      p2: 'Kein Fotoshooting nötig. Katalogfertige Bilder in Minuten, mit Fidelity-Score bewertet — nichts geht live ohne bestandene Qualitätsprüfung.',
+      link: 'Product Asset Studio entdecken',
+    },
+
     // ── Testimonials ──
     testimonials: {
       title: 'Das sagen unsere Kunden',
@@ -752,7 +768,7 @@ export const translations = {
       headers: ['Kriterium', 'Klassische Agentur', 'LumAIa Agentic Agency'],
       rows: [
         { label: 'Kampagnen-Launch', agency: '4\u20138 Wochen', lumaia: '<24 Stunden' },
-        { label: 'Kosten pro Kampagne', agency: 'CHF 50\u2019000\u2013150\u2019000', lumaia: 'Ab CHF 449/Monat' },
+        { label: 'Kosten pro Kampagne', agency: 'CHF 50\u2019000\u2013150\u2019000', lumaia: 'Ab CHF 39/Monat' },
         { label: 'Skalierbarkeit', agency: 'Durch Personal limitiert', lumaia: 'Unbegrenzt' },
         { label: 'Brand-Compliance', agency: 'Manuell, fehleranf\u00e4llig', lumaia: '100% \u2013 Campaign Engineer Gate' },
         { label: 'A/B-Testing', agency: 'Manuell, zeitaufw\u00e4ndig', lumaia: 'Automatisiert, in Echtzeit' },
@@ -767,7 +783,7 @@ export const translations = {
       headers: ['', 'Self-Serve (z.B. Product Asset Studio)', 'Pilot-Partner (Agentic Agency)'],
       rows: [
         { label: 'Zugriff', col1: 'Einzelne Module', col2: 'Alle Module' },
-        { label: 'Preismodell', col1: 'Ab CHF 29/Monat, monatlich k\u00fcndbar', col2: '12 Monate Fixpreis' },
+        { label: 'Preismodell', col1: 'Ab CHF 39/Monat, monatlich k\u00fcndbar', col2: '12 Monate Fixpreis' },
         { label: 'Einstieg', col1: 'Sofort, ohne Gespr\u00e4ch', col2: 'Nach Demo' },
         { label: 'F\u00fcr wen', col1: 'Teams mit klar umrissenem Bedarf', col2: 'Teams, die das gesamte System nutzen wollen' },
       ],
@@ -784,7 +800,7 @@ export const translations = {
         { q: 'Wie stellen Sie Markensicherheit und rechtliche Konformit\u00e4t sicher?', a: '\u00dcber den Campaign Engineer Gate: Jedes Asset durchl\u00e4uft zuerst automatische Brand- und Compliance-Guards. Was diese nicht eindeutig kl\u00e4ren k\u00f6nnen, pr\u00fcft ein Mensch. Keine Ver\u00f6ffentlichung ohne Pr\u00fcfung.' },
         { q: 'Wie schnell ist LumAIa einsatzbereit?', a: 'Von Briefing bis erstem Launch vergehen in der Regel 48 Stunden. Pilot-Partner erhalten Onboarding und Einrichtung als Teil ihres Fixpreis-Pakets.' },
         { q: 'Welche Kan\u00e4le werden unterst\u00fctzt?', a: 'Meta (Facebook/Instagram), Google Ads, TikTok, Display/Programmatic, SEO/AEO, E-Mail/Newsletter, CMS-Integration.' },
-        { q: 'Was kostet LumAIa?', a: 'Self-Serve-Module wie Product Asset Studio sind ab CHF 29/Monat verf\u00fcgbar, monatlich k\u00fcndbar. Pilot-Partner erhalten einen 12-monatigen Fixpreis mit vollem Modul-Zugriff. Alle Details unter lumaia.studio/pricing.' },
+        { q: 'Was kostet LumAIa?', a: 'Self-Serve-Module wie Product Asset Studio sind ab CHF 39/Monat verf\u00fcgbar, monatlich k\u00fcndbar. Pilot-Partner erhalten einen 12-monatigen Fixpreis mit vollem Modul-Zugriff. Alle Details unter lumaia.studio/pricing.' },
         { q: 'Was bedeutet \u00abPilot-Partner\u00bb?', a: 'Ein Pilot-Partner sichert sich fr\u00fchen, vollen Zugriff auf alle Module zu einem garantierten Fixpreis \u2013 und wirkt direkt an der Weiterentwicklung von LumAIa mit. Die Anzahl Pilot-Partner-Pl\u00e4tze ist begrenzt.' },
       ],
     },
