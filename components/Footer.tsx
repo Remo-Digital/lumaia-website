@@ -8,8 +8,8 @@ export default function Footer() {
   const { t, locale } = useLanguage()
   const pathname = usePathname()
 
-  const otherLocale = locale === 'en' ? 'de' : 'en'
-  const pathWithoutLocale = pathname.replace(/^\/(de|en)/, '') || '/'
+  const otherLocale = locale === 'en-ch' ? 'de-ch' : 'en-ch'
+  const pathWithoutLocale = pathname.replace(/^\/(de-ch|en-ch)/, '') || '/'
   const switchLocaleHref = `/${otherLocale}${pathWithoutLocale === '/' ? '' : pathWithoutLocale}`
 
   return (
@@ -24,7 +24,7 @@ export default function Footer() {
           <div className="md:col-span-1">
             <Image src="/LUMAIA_Logo.svg" alt="LumAIa" width={100} height={28} />
             <p className="text-white/60 text-sm mt-4 leading-relaxed">
-              {locale === 'de'
+              {locale === 'de-ch'
                 ? 'Die Agentic Agency Plattform f\u00fcr E-Commerce.'
                 : 'The Agentic Agency Platform for E-Commerce.'}
             </p>
@@ -34,7 +34,7 @@ export default function Footer() {
           <nav>
             <h4 className="text-white/70 text-xs font-semibold tracking-[0.15em] uppercase mb-4">{t.footer.platform}</h4>
             <ul className="space-y-2">
-              {/* <li><a href={localizedHref('/plattform', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">{locale === 'de' ? 'Plattform-\u00dcbersicht' : 'Platform Overview'}</a></li> */}
+              {/* <li><a href={localizedHref('/plattform', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">{locale === 'de-ch' ? 'Plattform-\u00dcbersicht' : 'Platform Overview'}</a></li> */}
               <li><a href={localizedHref('/plattform/product-asset-studio', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">Product Asset Studio</a></li>
               <li><a href={localizedHref('/pricing', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">{t.nav.pricing}</a></li>
             </ul>
@@ -44,7 +44,7 @@ export default function Footer() {
           <nav>
             <h4 className="text-white/70 text-xs font-semibold tracking-[0.15em] uppercase mb-4">{t.footer.useCases}</h4>
             <ul className="space-y-2">
-              {/* <li><a href={localizedHref('/use-cases', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">{locale === 'de' ? 'Alle Use Cases' : 'All Use Cases'}</a></li> */}
+              {/* <li><a href={localizedHref('/use-cases', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">{locale === 'de-ch' ? 'Alle Use Cases' : 'All Use Cases'}</a></li> */}
               <li><a href={localizedHref('/use-cases/agentic-commerce', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">Agentic Commerce</a></li>
               {/* <li><a href={localizedHref('/blog', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">Blog</a></li> */}
               
@@ -70,7 +70,7 @@ export default function Footer() {
           <a
             href={switchLocaleHref}
             className="glass-accent text-accent/70 hover:text-accent font-semibold tracking-[0.15em] uppercase px-3 py-1.5 rounded-full transition-all duration-200 hover:bg-accent/10 text-sm"
-            aria-label={locale === 'en' ? 'Zu Deutsch wechseln' : 'Switch to English'}
+            aria-label={locale === 'en-ch' ? 'Zu Deutsch wechseln' : 'Switch to English'}
           >
             {otherLocale.toUpperCase()}
           </a>

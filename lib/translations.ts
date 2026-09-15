@@ -1,7 +1,7 @@
-export type Locale = 'en' | 'de'
+export type Locale = 'en-ch' | 'de-ch'
 
 export const translations = {
-  en: {
+  'en-ch': {
     // ── Navigation ──
     nav: {
       cta: 'Book Demo',
@@ -231,11 +231,9 @@ export const translations = {
       label: 'Imprint',
       title: 'Legal',
       title_em: 'Notice',
-      company: 'iundf Dewave AG',
-      address: 'Switzerland',
-      email: 'hello@lumaia.ai',
-      vat: 'VAT ID',
-      register: 'Commercial Register',
+      company: 'Company',
+      address: 'Address',
+      uid: 'Company Number (UID)',
       responsible: 'Responsible for content',
     },
 
@@ -644,7 +642,7 @@ export const translations = {
     },
   },
 
-  de: {
+  'de-ch': {
     // ── Navigation ──
     nav: {
       cta: 'Demo buchen',
@@ -874,11 +872,9 @@ export const translations = {
       label: 'Impressum',
       title: 'Impressum',
       title_em: '',
-      company: 'iundf Dewave AG',
-      address: 'Schweiz',
-      email: 'hello@lumaia.ai',
-      vat: 'MwSt-Nummer',
-      register: 'Handelsregister',
+      company: 'Unternehmen',
+      address: 'Adresse',
+      uid: 'Unternehmens-Nr (UID)',
       responsible: 'Verantwortlich f\u00fcr den Inhalt',
     },
 

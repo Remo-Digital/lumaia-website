@@ -29,7 +29,7 @@ export default function BlogContent() {
           </header>
 
           {/* Blog cards */}
-          <section className="grid md:grid-cols-3 gap-6 animate-fade-up-2 mb-16" aria-label={locale === 'de' ? 'Blog-Artikel' : 'Blog articles'}>
+          <section className="grid md:grid-cols-3 gap-6 animate-fade-up-2 mb-16" aria-label={locale === 'de-ch' ? 'Blog-Artikel' : 'Blog articles'}>
             {bt.posts.map((post, i) => (
               <article key={i} className="glass rounded-2xl p-6 flex flex-col gap-4 glow-hover">
                 <div
@@ -57,7 +57,7 @@ export default function BlogContent() {
           </section>
 
           {/* Coming soon notice */}
-          <section className="glass rounded-2xl p-8 text-center animate-fade-up-3" aria-label={locale === 'de' ? 'Ank\u00fcndigung' : 'Announcement'}>
+          <section className="glass rounded-2xl p-8 text-center animate-fade-up-3" aria-label={locale === 'de-ch' ? 'Ank\u00fcndigung' : 'Announcement'}>
             <p className="text-white/70 text-base mb-6">{b.comingSoon}</p>
             <a
               href={localizedHref('/contact', locale)}

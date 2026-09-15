@@ -15,8 +15,8 @@ export default function Nav() {
   const megaRef = useRef<HTMLDivElement>(null)
 
   // Build language switcher URL: strip current locale prefix, prepend other locale
-  const otherLocale = locale === 'en' ? 'de' : 'en'
-  const pathWithoutLocale = pathname.replace(/^\/(de|en)/, '') || '/'
+  const otherLocale = locale === 'en-ch' ? 'de-ch' : 'en-ch'
+  const pathWithoutLocale = pathname.replace(/^\/(de-ch|en-ch)/, '') || '/'
   const switchLocaleHref = `/${otherLocale}${pathWithoutLocale === '/' ? '' : pathWithoutLocale}`
 
   useEffect(() => {
@@ -59,7 +59,7 @@ export default function Nav() {
           <button
             onClick={() => setBannerDismissed(true)}
             className="absolute right-3 top-1/2 -translate-y-1/2 text-white/60 hover:text-white/80 transition-colors p-1"
-            aria-label={locale === 'de' ? 'Banner schliessen' : 'Dismiss banner'}
+            aria-label={locale === 'de-ch' ? 'Banner schliessen' : 'Dismiss banner'}
           >
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
               <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
@@ -71,7 +71,7 @@ export default function Nav() {
       {/* Navigation Bar */}
       <nav
         style={{ background: 'rgba(3,2,10,0.85)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}
-        aria-label={locale === 'de' ? 'Hauptnavigation' : 'Main navigation'}
+        aria-label={locale === 'de-ch' ? 'Hauptnavigation' : 'Main navigation'}
       >
         <div className="flex items-center justify-between px-6 md:px-12 py-4">
           {/* Logo */}
@@ -133,7 +133,7 @@ export default function Nav() {
                       className="text-sm text-accent hover:underline underline-offset-2"
                       onClick={() => setMegaOpen(false)}
                     >
-                      {locale === 'de' ? 'Alle 19 Module ansehen' : 'View all 19 modules'} &rarr;
+                      {locale === 'de-ch' ? 'Alle 19 Module ansehen' : 'View all 19 modules'} &rarr;
                     </a>
                   </div>
                 </div>
@@ -176,7 +176,7 @@ export default function Nav() {
             className="lg:hidden text-white/80 hover:text-white p-2"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-expanded={mobileOpen}
-            aria-label={locale === 'de' ? 'Menü öffnen' : 'Open menu'}
+            aria-label={locale === 'de-ch' ? 'Menü öffnen' : 'Open menu'}
           >
             {mobileOpen ? (
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">

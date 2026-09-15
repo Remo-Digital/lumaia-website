@@ -26,19 +26,14 @@ export default function ImprintContent() {
 
           <section className="glass rounded-2xl p-8 md:p-12 animate-fade-up-2 flex flex-col gap-8" aria-label={im.label}>
             {[
-              { label: im.company, value: 'iundf Dewave AG' },
-              { label: im.address, value: 'Schweiz' },
-              { label: im.email, value: 'hello@lumaia.ai', href: 'mailto:hello@lumaia.ai' },
-              { label: im.register, value: 'Handelsregister Kanton Z\u00fcrich' },
-              { label: im.vat, value: 'CHE-XXX.XXX.XXX MWST' },
-              { label: im.responsible, value: 'iundf Dewave AG' },
-            ].map(({ label, value, href }) => (
+              { label: im.company, value: 'Dewave GmbH' },
+              { label: im.address, value: 'Bahnhofstrasse 59\n6312 Steinhausen\nSchweiz' },
+              { label: im.uid, value: 'CHE-162.124.947' },
+              { label: im.responsible, value: 'Remo Girard, Co-Founder' },
+            ].map(({ label, value }) => (
               <div key={label} className="border-b border-white/5 pb-6 last:border-0 last:pb-0">
                 <p className="text-white/50 text-xs font-semibold tracking-[0.15em] uppercase mb-1">{label}</p>
-                {href
-                  ? <a href={href} className="text-white/70 text-sm hover:text-accent transition-colors">{value}</a>
-                  : <p className="text-white/70 text-sm">{value}</p>
-                }
+                <p className="text-white/70 text-sm whitespace-pre-line">{value}</p>
               </div>
             ))}
           </section>

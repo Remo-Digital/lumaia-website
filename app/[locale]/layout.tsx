@@ -31,21 +31,21 @@ export async function generateMetadata({
   const hreflang = getHreflangUrls('/')
 
   const titles: Record<string, string> = {
-    de: 'LumAIa \u2013 Die Agentic Agency Plattform f\u00fcr Marketing',
-    en: 'LumAIa \u2013 The Agentic Agency Platform for Marketing',
+    'de-ch': 'LumAIa \u2013 Die Agentic Agency Plattform f\u00fcr Marketing',
+    'en-ch': 'LumAIa \u2013 The Agentic Agency Platform for Marketing',
   }
 
   const descriptions: Record<string, string> = {
-    de: 'LumAIa automatisiert den gesamten Marketing-Workflow \u2013 von Strategie bis Kampagnen-Optimierung. 10\u00d7 schneller, 70% g\u00fcnstiger, 100% Brand-Safe.',
-    en: 'LumAIa automates the entire marketing workflow \u2013 from strategy to campaign optimization. 10\u00d7 faster, 70% cheaper, 100% brand-safe.',
+    'de-ch': 'LumAIa automatisiert den gesamten Marketing-Workflow \u2013 von Strategie bis Kampagnen-Optimierung. 10\u00d7 schneller, 70% g\u00fcnstiger, 100% Brand-Safe.',
+    'en-ch': 'LumAIa automates the entire marketing workflow \u2013 from strategy to campaign optimization. 10\u00d7 faster, 70% cheaper, 100% brand-safe.',
   }
 
   return {
     title: {
-      default: titles[locale] || titles.de,
+      default: titles[locale] || titles['de-ch'],
       template: '%s \u2013 LumAIa',
     },
-    description: descriptions[locale] || descriptions.de,
+    description: descriptions[locale] || descriptions['de-ch'],
     icons: {
       icon: [
         { url: '/favicon.ico' },
@@ -56,7 +56,7 @@ export async function generateMetadata({
     },
     manifest: '/site.webmanifest',
     alternates: {
-      canonical: hreflang[locale === 'en' ? 'en-CH' : 'de-CH'],
+      canonical: hreflang[locale === 'en-ch' ? 'en-CH' : 'de-CH'],
       languages: hreflang,
     },
   }

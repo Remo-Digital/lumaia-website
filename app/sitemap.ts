@@ -31,7 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         url: `${BASE}/${locale}${route.path === '/' ? '' : route.path}`,
         lastModified: today,
         changeFrequency: route.changeFrequency,
-        priority: locale === 'de' ? route.priority : Math.max(route.priority - 0.1, 0.1),
+        priority: locale === 'de-ch' ? route.priority : Math.max(route.priority - 0.1, 0.1),
       })
     }
   }
@@ -44,7 +44,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         url: `${BASE}/${locale}${mod.url}`,
         lastModified: today,
         changeFrequency: 'monthly',
-        priority: locale === 'de' ? 0.4 : 0.3,
+        priority: locale === 'de-ch' ? 0.4 : 0.3,
       })
     }
   }

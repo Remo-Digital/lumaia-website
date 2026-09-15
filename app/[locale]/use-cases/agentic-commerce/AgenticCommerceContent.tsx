@@ -60,8 +60,8 @@ export default function AgenticCommerceContent() {
               <p className="text-white/80 text-base leading-relaxed">{ac.directAnswer}</p>
             </div>
 
-            <nav className="glass rounded-2xl p-6 mb-16" aria-label={locale === 'de' ? 'Inhaltsverzeichnis' : 'Table of contents'}>
-              <h2 className="text-white/70 text-sm font-semibold tracking-[0.15em] uppercase mb-4">{locale === 'de' ? 'Inhaltsverzeichnis' : 'Contents'}</h2>
+            <nav className="glass rounded-2xl p-6 mb-16" aria-label={locale === 'de-ch' ? 'Inhaltsverzeichnis' : 'Table of contents'}>
+              <h2 className="text-white/70 text-sm font-semibold tracking-[0.15em] uppercase mb-4">{locale === 'de-ch' ? 'Inhaltsverzeichnis' : 'Contents'}</h2>
               <ol className="space-y-2">
                 {ac.toc.map((item, i) => (
                   <li key={i}>
@@ -110,7 +110,7 @@ export default function AgenticCommerceContent() {
                     ))}
                   </svg>
                 </div>
-                <span className="relative text-white/30 text-xs">{locale === 'de' ? 'Protokoll-\u00dcbersicht' : 'Protocol Overview'}</span>
+                <span className="relative text-white/30 text-xs">{locale === 'de-ch' ? 'Protokoll-\u00dcbersicht' : 'Protocol Overview'}</span>
               </div>
               <p className="text-white/70 text-base leading-relaxed font-medium">{ac.sections.howAgentsShop.conclusion}</p>
             </section>
@@ -172,8 +172,8 @@ export default function AgenticCommerceContent() {
                   <table className="w-full text-left" role="table">
                     <thead>
                       <tr className="border-b border-white/10">
-                        <th className="px-6 py-4 text-sm font-semibold text-white/60" scope="col">{locale === 'de' ? 'Merkmal' : 'Attribute'}</th>
-                        <th className="px-6 py-4 text-sm font-semibold text-white/70" scope="col">{locale === 'de' ? 'Klassisch' : 'Traditional'}</th>
+                        <th className="px-6 py-4 text-sm font-semibold text-white/60" scope="col">{locale === 'de-ch' ? 'Merkmal' : 'Attribute'}</th>
+                        <th className="px-6 py-4 text-sm font-semibold text-white/70" scope="col">{locale === 'de-ch' ? 'Klassisch' : 'Traditional'}</th>
                         <th className="px-6 py-4 text-sm font-semibold text-accent/80" scope="col">Agent-ready</th>
                       </tr>
                     </thead>
@@ -208,7 +208,7 @@ export default function AgenticCommerceContent() {
             </section>
 
             <section className="glass-strong rounded-2xl p-8 mb-8">
-              <h2 className="font-serif text-xl text-white mb-4">{locale === 'de' ? 'Fazit' : 'Conclusion'}</h2>
+              <h2 className="font-serif text-xl text-white mb-4">{locale === 'de-ch' ? 'Fazit' : 'Conclusion'}</h2>
               <p className="text-white/70 text-base leading-relaxed">{ac.conclusion}</p>
             </section>
 

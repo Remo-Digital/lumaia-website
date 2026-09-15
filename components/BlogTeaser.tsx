@@ -24,7 +24,7 @@ export default function BlogTeaser() {
               </div>
               <div className="p-6">
                 <h3 className="text-white/80 font-medium text-base mb-2">{post.title}</h3>
-                <span className="text-accent text-sm">{locale === 'de' ? 'Bald verf\u00fcgbar' : 'Coming soon'}</span>
+                <span className="text-accent text-sm">{locale === 'de-ch' ? 'Bald verf\u00fcgbar' : 'Coming soon'}</span>
               </div>
             </article>
           ))}

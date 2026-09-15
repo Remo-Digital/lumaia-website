@@ -147,10 +147,10 @@ export default function ProductAssetStudioContent() {
               <p className="text-white/70 text-base leading-relaxed mb-4">{pas.sections.example1.before}</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 <div className="glass rounded-xl p-8 flex items-center justify-center min-h-[150px]">
-                  <span className="text-white/30 text-xs">{locale === 'de' ? 'Vorher: 1 Bild' : 'Before: 1 image'}</span>
+                  <span className="text-white/30 text-xs">{locale === 'de-ch' ? 'Vorher: 1 Bild' : 'Before: 1 image'}</span>
                 </div>
                 <div className="glass-accent rounded-xl p-8 flex items-center justify-center min-h-[150px]">
-                  <span className="text-accent/20 text-xs">{locale === 'de' ? 'Nachher: 6 Bilder' : 'After: 6 images'}</span>
+                  <span className="text-accent/20 text-xs">{locale === 'de-ch' ? 'Nachher: 6 Bilder' : 'After: 6 images'}</span>
                 </div>
               </div>
               <p className="text-white/70 text-base leading-relaxed">{pas.sections.example1.after}</p>
@@ -199,9 +199,9 @@ export default function ProductAssetStudioContent() {
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-sm">
               <a href={localizedHref('/use-cases/agentic-commerce', locale)} className="text-white/70 hover:text-accent transition-colors">Use Case: Agentic Commerce</a>
               <span className="text-white/30 hidden sm:inline" aria-hidden="true">&bull;</span>
-              <a href={localizedHref('/pricing', locale)} className="text-white/70 hover:text-accent transition-colors">{locale === 'de' ? 'Preise' : 'Pricing'}</a>
+              <a href={localizedHref('/pricing', locale)} className="text-white/70 hover:text-accent transition-colors">{locale === 'de-ch' ? 'Preise' : 'Pricing'}</a>
               <span className="text-white/30 hidden sm:inline" aria-hidden="true">&bull;</span>
-              <a href={localizedHref('/plattform', locale)} className="text-white/70 hover:text-accent transition-colors">{locale === 'de' ? 'Plattform-\u00dcbersicht' : 'Platform Overview'}</a>
+              <a href={localizedHref('/plattform', locale)} className="text-white/70 hover:text-accent transition-colors">{locale === 'de-ch' ? 'Plattform-\u00dcbersicht' : 'Platform Overview'}</a>
             </div>
           </div>
         </section>

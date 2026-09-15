@@ -31,7 +31,7 @@ export async function generateMetadata({
     title: `${mod.name[locale as Locale]} \u2013 LumAIa`,
     description: mod.description[locale as Locale],
     alternates: {
-      canonical: hreflang[locale === 'en' ? 'en-CH' : 'de-CH'],
+      canonical: hreflang[locale === 'en-ch' ? 'en-CH' : 'de-CH'],
       languages: hreflang,
     },
   }

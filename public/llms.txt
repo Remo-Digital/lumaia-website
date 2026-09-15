@@ -62,11 +62,11 @@ Turns a single product image into a complete set of hero, lifestyle, detail, and
 
 ## Links
 
-- Homepage (DE): https://lumaia.studio/de
-- Homepage (EN): https://lumaia.studio/en
-- Platform: https://lumaia.studio/de/plattform
-- Use Cases: https://lumaia.studio/de/use-cases
-- Product Asset Studio: https://lumaia.studio/de/plattform/product-asset-studio
-- Pricing: https://lumaia.studio/de/pricing
-- Contact: https://lumaia.studio/de/contact
-- Blog: https://lumaia.studio/de/blog
+- Homepage (DE): https://lumaia.studio/de-ch
+- Homepage (EN): https://lumaia.studio/en-ch
+- Platform: https://lumaia.studio/de-ch-ch/plattform
+- Use Cases: https://lumaia.studio/de-ch-ch/use-cases
+- Product Asset Studio: https://lumaia.studio/de-ch-ch/plattform/product-asset-studio
+- Pricing: https://lumaia.studio/de-ch-ch/pricing
+- Contact: https://lumaia.studio/de-ch-ch/contact
+- Blog: https://lumaia.studio/de-ch-ch/blog
