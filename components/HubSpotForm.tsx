@@ -23,7 +23,7 @@ interface Props {
 export default function HubSpotForm({
   portalId = '5625458',
   formId = 'ad72af02-88e1-495f-a8b5-c6ae0cf1b99a',
-  region = 'na1',
+  region = 'eu1',
   consentText,
   privacyHref,
   privacyLabel,
