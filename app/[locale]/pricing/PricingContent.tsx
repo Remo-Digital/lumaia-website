@@ -44,7 +44,7 @@ export default function PricingContent() {
           {/* Plan Cards – top 3 */}
           <section
             className="animate-fade-up-2 mb-5"
-            aria-label={locale === 'de' ? 'Preispläne' : 'Pricing plans'}
+            aria-label={locale === 'de-ch' ? 'Preispläne' : 'Pricing plans'}
           >
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5">
               {pp.plans.slice(0, 3).map((plan) => (
@@ -267,11 +267,11 @@ export default function PricingContent() {
                     <span className="font-serif text-3xl gradient-text">{asset.credits}</span>
                   </div>
                   <div className="flex items-center gap-2 text-xs text-white/40">
-                    <span>{locale === 'de' ? 'Traditionell*' : 'Traditional*'}</span>
+                    <span>{locale === 'de-ch' ? 'Traditionell*' : 'Traditional*'}</span>
                     <span className="line-through">{asset.traditional}</span>
                   </div>
                   <div className="text-[10px] font-bold tracking-wider uppercase text-accent/80 mt-auto">
-                    {locale === 'de' ? 'mind. 90% günstiger' : 'at least 90% cheaper'}
+                    {locale === 'de-ch' ? 'mind. 90% günstiger' : 'at least 90% cheaper'}
                   </div>
                 </div>
               ))}
@@ -281,7 +281,7 @@ export default function PricingContent() {
           </section>
 
           {/* FAQ Teaser */}
-          <section className="glass rounded-2xl p-8 animate-fade-up-3 text-center" aria-label={locale === 'de' ? 'Kontakt' : 'Contact'}>
+          <section className="glass rounded-2xl p-8 animate-fade-up-3 text-center" aria-label={locale === 'de-ch' ? 'Kontakt' : 'Contact'}>
             <p className="text-white/70 text-sm mb-5">{pp.faqTeaserText}</p>
             <a
               href={localizedHref('/contact', locale)}

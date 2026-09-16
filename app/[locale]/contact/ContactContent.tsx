@@ -30,7 +30,7 @@ export default function ContactContent() {
 
           <div className="max-w-2xl mx-auto animate-fade-up-2">
             {/* HubSpot Form */}
-            <section className="glass rounded-2xl p-8" aria-label={locale === 'de' ? 'Kontaktformular' : 'Contact form'}>
+            <section className="glass rounded-2xl p-8" aria-label={locale === 'de-ch' ? 'Kontaktformular' : 'Contact form'}>
               <HubSpotForm
                 formId={c.formId}
                 consentText={c.consentText}

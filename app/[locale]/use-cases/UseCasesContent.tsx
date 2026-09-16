@@ -52,7 +52,7 @@ export default function UseCasesContent() {
                     <p className="text-white/70 text-base leading-relaxed">{uc.desc}</p>
                     {href !== '#' && (
                       <span className="inline-block mt-4 text-accent text-sm font-medium">
-                        {locale === 'de' ? 'Mehr erfahren' : 'Learn more'} &rarr;
+                        {locale === 'de-ch' ? 'Mehr erfahren' : 'Learn more'} &rarr;
                       </span>
                     )}
                   </a>

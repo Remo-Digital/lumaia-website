@@ -24,7 +24,7 @@ export async function generateMetadata({
     title: titles[locale] || titles.de,
     description: descriptions[locale] || descriptions.de,
     alternates: {
-      canonical: hreflang[locale === 'en' ? 'en-CH' : 'de-CH'],
+      canonical: hreflang[locale === 'en-ch' ? 'en-CH' : 'de-CH'],
       languages: hreflang,
     },
   }
