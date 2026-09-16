@@ -75,10 +75,7 @@ export function getHreflangUrls(internalPath: string) {
 
   return {
     'de-CH': dePath,
-    'de-DE': dePath,
-    'de-AT': dePath,
     'en-CH': enPath,
-    'en-US': enPath,
     'x-default': dePath,
   }
 }

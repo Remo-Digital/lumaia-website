@@ -1,15 +1,15 @@
-# LumAIa – The Agentic Agency Platform for Marketing
+# LumAIa – The Agentic Agency Platform for E-Commerce
 
-> LumAIa automates the entire marketing workflow – from strategy to campaign optimization.
-> 10x faster, 70% cheaper, 100% brand-safe.
+> LumAIa makes online shops agent-ready for the era of AI shopping agents.
+> 100% Agent-Ready. 100% Brand Safety. Unlimited Scalability. 90% Cost Reduction.
 
 ## About
 
-LumAIa is an AI-powered platform that unifies strategy, production, and campaign optimization in one system. It translates the expertise of a top agency into software, delivering 10x faster campaigns, 70% lower costs, and 100% brand safety.
+LumAIa is an AI-powered platform that makes e-commerce product catalogs visible and selectable for autonomous AI shopping agents (ChatGPT, Gemini, Perplexity). It unifies strategy, production, and campaign optimization in one system – translating agency expertise into software.
 
 ## Company
 
-- Name: LumAIa (by iundf Dewave AG)
+- Name: LumAIa (by Dewave GmbH)
 - Website: https://lumaia.studio
 - Location: Switzerland
 - Contact: hello@lumaia.ai
@@ -17,43 +17,25 @@ LumAIa is an AI-powered platform that unifies strategy, production, and campaign
 ## Platform Phases
 
 1. **Plan** – Market analysis, personas, media strategy, budget planning
-2. **Build** – Asset creation (banners, copy, visuals, landing pages, emails)
+2. **Build** – Asset creation (banners, copy, visuals, landing pages, emails, product images)
 3. **Publish** – Automated campaign launch, budget control, real-time optimization
 4. **Report & Learn** – Attribution, management reports, learning feedback loop
 
-## Key Modules
+## Product Asset Studio (Live)
 
-- Briefing Agent
-- Market & Audience Intelligence Agent
-- Persona Architect
-- Media Strategy Agent
-- Media Planning Agent
-- Production Planning Agent
-- Creative Concept & Key Visual Agent
-- Media Asset Studio
-- Landing Page Agent
-- Email Agent
-- Content & Copy Agent
-- Product Asset Studio (live – for e-commerce image assets)
-- Campaign Activation Agent
-- Autonomous Optimization Agent
-- Campaign Health Monitor
-- Attribution AI
-- Executive Dashboard Agent
-- Learning Engine
-- GEO Visibility & Performance Monitor
+Turns a single product image into a complete set of hero, lifestyle, detail, and micro-rotation assets – EU AI Act compliant with C2PA provenance records and Fidelity Scoring. Makes product catalogs machine-readable and agent-ready at scale.
 
-## Product Asset Studio
+## Agentic Commerce
 
-Turns a single product image into a complete set of hero, lifestyle, detail, and micro-rotation assets – EU AI Act compliant with C2PA provenance records and Fidelity Scoring.
+Agentic commerce is shopping through autonomous AI agents – they search, compare, and buy on behalf of consumers without human guidance. Online shops must meet three prerequisites to be visible to these agents:
 
-## Use Cases
+1. **Structured product data** – Schema.org, clean and complete attributes
+2. **Compliant image assets** – C2PA provenance, EU AI Act compliant, verifiable
+3. **Technical accessibility** – Open interfaces, crawler access, protocol support
 
-- Agentic Commerce: Making online shops agent-ready for AI shopping agents
-- Product launches at record speed
-- ROAS maximization during sales events
-- Regional campaign scaling
-- AEO dominance
+Five protocols shape this process: ACP (purchase processes), UCP (structured product data), MCP (AI model data access), AP2 (secure agent payments), A2A (agent-to-agent communication).
+
+Product Asset Studio addresses prerequisite #2 – delivering compliant, verifiable image assets at catalog scale.
 
 ## Pricing
 
@@ -64,9 +46,21 @@ Turns a single product image into a complete set of hero, lifestyle, detail, and
 
 - Homepage (DE): https://lumaia.studio/de-ch
 - Homepage (EN): https://lumaia.studio/en-ch
-- Platform: https://lumaia.studio/de-ch-ch/plattform
-- Use Cases: https://lumaia.studio/de-ch-ch/use-cases
-- Product Asset Studio: https://lumaia.studio/de-ch-ch/plattform/product-asset-studio
-- Pricing: https://lumaia.studio/de-ch-ch/pricing
-- Contact: https://lumaia.studio/de-ch-ch/contact
-- Blog: https://lumaia.studio/de-ch-ch/blog
+- Platform Overview (DE): https://lumaia.studio/de-ch/plattform
+- Platform Overview (EN): https://lumaia.studio/en-ch/platform
+- Product Asset Studio (DE): https://lumaia.studio/de-ch/plattform/product-asset-studio
+- Product Asset Studio (EN): https://lumaia.studio/en-ch/platform/product-asset-studio
+- Agentic Commerce (DE): https://lumaia.studio/de-ch/use-cases/agentic-commerce
+- Agentic Commerce (EN): https://lumaia.studio/en-ch/use-cases/agentic-commerce
+- Pricing (DE): https://lumaia.studio/de-ch/preise
+- Pricing (EN): https://lumaia.studio/en-ch/pricing
+- Contact (DE): https://lumaia.studio/de-ch/kontakt
+- Contact (EN): https://lumaia.studio/en-ch/contact
+- Blog (DE): https://lumaia.studio/de-ch/blog
+- Blog (EN): https://lumaia.studio/en-ch/blog
+- Privacy (DE): https://lumaia.studio/de-ch/datenschutz
+- Privacy (EN): https://lumaia.studio/en-ch/privacy
+- Imprint (DE): https://lumaia.studio/de-ch/impressum
+- Imprint (EN): https://lumaia.studio/en-ch/imprint
+- Terms (DE): https://lumaia.studio/de-ch/rechtliches/agbs
+- Terms (EN): https://lumaia.studio/en-ch/legal/terms
