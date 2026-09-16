@@ -10,8 +10,8 @@ interface LanguageContextType {
 }
 
 const LanguageContext = createContext<LanguageContextType>({
-  locale: 'de',
-  t: translations.de,
+  locale: 'de-ch',
+  t: translations['de-ch'],
   toggle: () => {},
   setLocale: () => {},
 })

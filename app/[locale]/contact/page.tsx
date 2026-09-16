@@ -9,14 +9,14 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>
 }): Promise<Metadata> {
   const { locale } = await params
-  const t = translations[locale as keyof typeof translations] || translations.de
+  const t = translations[locale as keyof typeof translations] || translations['de-ch']
   const hreflang = getHreflangUrls('/contact')
 
   return {
     title: `${t.contact.label} \u2013 LumAIa`,
     description: t.contact.sub,
     alternates: {
-      canonical: hreflang[locale === 'en' ? 'en-CH' : 'de-CH'],
+      canonical: hreflang[locale === 'en-ch' ? 'en-CH' : 'de-CH'],
       languages: hreflang,
     },
   }

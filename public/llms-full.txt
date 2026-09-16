@@ -183,15 +183,15 @@ A pilot partner secures early, full access to all modules at a guaranteed fixed 
 
 ## Links
 
-- Homepage (DE): https://lumaia.studio/de
-- Homepage (EN): https://lumaia.studio/en
-- Platform Overview: https://lumaia.studio/de/plattform
-- Product Asset Studio: https://lumaia.studio/de/plattform/product-asset-studio
-- Use Cases: https://lumaia.studio/de/use-cases
-- Agentic Commerce: https://lumaia.studio/de/use-cases/agentic-commerce
-- Pricing: https://lumaia.studio/de/pricing
-- Blog: https://lumaia.studio/de/blog
-- Contact: https://lumaia.studio/de/contact
-- Privacy: https://lumaia.studio/de/privacy
-- Imprint: https://lumaia.studio/de/imprint
-- Terms: https://lumaia.studio/de/legal/terms
+- Homepage (DE): https://lumaia.studio/de-ch
+- Homepage (EN): https://lumaia.studio/en-ch
+- Platform Overview: https://lumaia.studio/de-ch-ch/plattform
+- Product Asset Studio: https://lumaia.studio/de-ch-ch/plattform/product-asset-studio
+- Use Cases: https://lumaia.studio/de-ch-ch/use-cases
+- Agentic Commerce: https://lumaia.studio/de-ch-ch/use-cases/agentic-commerce
+- Pricing: https://lumaia.studio/de-ch-ch/pricing
+- Blog: https://lumaia.studio/de-ch-ch/blog
+- Contact: https://lumaia.studio/de-ch-ch/contact
+- Privacy: https://lumaia.studio/de-ch-ch/privacy
+- Imprint: https://lumaia.studio/de-ch-ch/imprint
+- Terms: https://lumaia.studio/de-ch-ch/legal/terms
