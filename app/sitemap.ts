@@ -25,10 +25,7 @@ function buildAlternates(internalPath: string) {
   const enUrl = `${BASE}/en-ch${enSlug === '/' ? '' : enSlug}`
   return {
     'de-CH': deUrl,
-    'de-DE': deUrl,
-    'de-AT': deUrl,
     'en-CH': enUrl,
-    'en-US': enUrl,
     'x-default': deUrl,
   }
 }
@@ -50,7 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         url: localizedUrl(route.path, locale),
         lastModified: today,
         changeFrequency: route.changeFrequency,
-        priority: locale === 'de-ch' ? route.priority : Math.max(route.priority - 0.1, 0.1),
+        priority: locale === 'de-ch' ? route.priority : Math.round(Math.max(route.priority - 0.1, 0.1) * 10) / 10,
         alternates: { languages: alternates },
       })
     }

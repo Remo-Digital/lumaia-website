@@ -1,20 +1,20 @@
-# LumAIa – The Agentic Agency Platform for Marketing
+# LumAIa – The Agentic Agency Platform for E-Commerce
 # Full Context Document for LLMs
 
-> LumAIa automates the entire marketing workflow – from strategy to campaign optimization.
-> 10x faster, 70% cheaper, 100% brand-safe.
+> LumAIa makes online shops agent-ready for the era of AI shopping agents.
+> 100% Agent-Ready. 100% Brand Safety. Unlimited Scalability. 90% Cost Reduction.
 
 ---
 
 ## Company Overview
 
-LumAIa is an AI-powered platform built by iundf Dewave AG, a Swiss digital and AI transformation agency with 25+ years of experience in marketing, communication, and software development. LumAIa unifies strategy, production, and campaign optimization in one system – not a stack of tools, not a traditional agency, but an infrastructure that translates the expertise of a top agency into software.
+LumAIa is an AI-powered platform built by Dewave GmbH, a Swiss digital and AI transformation agency with 25+ years of experience in marketing, communication, and software development. LumAIa makes e-commerce product catalogs visible and selectable for autonomous AI shopping agents (ChatGPT, Gemini, Perplexity) – unifying strategy, production, and campaign optimization in one system.
 
 **Key Metrics:**
-- 90% time saved
-- 10x ROI increase
-- 70% cost reduction
-- 48 hours from briefing to launch
+- 100% Agent-Ready
+- 100% Brand Safety
+- Unlimited Scalability
+- 90% Cost Reduction
 
 **Contact:**
 - Website: https://lumaia.studio
@@ -39,7 +39,7 @@ Strategic thinking at the campaign level: market analysis, personas, media strat
 - **Production Planning Agent** – Production brief for the Build phase
 
 ### Phase 2: Build
-Asset creation in seconds: banners, copy, visuals, landing pages, emails – consistent in your brand voice, for every channel.
+Asset creation in seconds: banners, copy, visuals, landing pages, emails – consistent in your brand voice, for every channel. For shops with thousands of products, Product Asset Studio handles image production.
 
 **Modules:**
 - **Creative Concept & Key Visual Agent** – Core idea + key visuals
@@ -98,10 +98,10 @@ Product Asset Studio turns a single product image into a complete set of:
 Covers Priority 1 of Google's 13 essential attributes for Agentic Inventory Readiness: High Quality images, Lifestyle images, and Additional images.
 
 **Results:**
-- 95% time saved vs. traditional photo shoots
-- 10x ROI increase through scalable content
-- 70% cost reduction per product image set
-- 100% brand safety through Campaign Engineer Gate
+- 100% Agent-Ready
+- 100% Brand Safety
+- Unlimited Scalability
+- 90% Cost Reduction
 
 **Target Audience:** E-commerce and DTC brands with thousands of products needing scalable, compliant image assets.
 
@@ -111,21 +111,30 @@ Covers Priority 1 of Google's 13 essential attributes for Agentic Inventory Read
 
 ## Agentic Commerce
 
-Agentic Commerce is the act of shopping through autonomous AI agents (ChatGPT, Gemini, Perplexity) without a human guiding every step. The agent searches, compares, and buys on behalf of the consumer.
+Agentic commerce is the act of shopping through autonomous AI agents (ChatGPT, Gemini, Perplexity) without a human guiding every step. The agent searches, compares, and buys on behalf of the consumer. Whether an online shop is even considered comes down to three prerequisites.
 
 ### Five Key Protocols
-1. **ACP** (Agentic Commerce Protocol) – Purchase processes
-2. **UCP** (Universal Commerce Protocol) – Structured product data
-3. **MCP** (Model Context Protocol) – AI model data access
-4. **AP2** (Agent Payments Protocol) – Secure agent payments
-5. **A2A** (Agent-to-Agent Protocol) – Agent-to-agent communication
+1. **ACP** (Agentic Commerce Protocol) – An open standard that lets agents handle purchase processes directly, connected to checkout and payment providers.
+2. **UCP** (Universal Commerce Protocol) – A standard that structures product data so different agents can read it consistently.
+3. **MCP** (Model Context Protocol) – The technical foundation through which AI models access external data sources and tools in a controlled way.
+4. **AP2** (Agent Payments Protocol) – An open standard that lets agents trigger payments securely and with authorization on behalf of the consumer.
+5. **A2A** (Agent-to-Agent Protocol) – A standard for direct communication between agents, through which an assistant agent and a merchant agent exchange requests, offers, and confirmations.
 
 ### Three Prerequisites for Agent-Readiness
-1. Structured product data (Schema.org, clean attributes)
-2. Compliant image assets (C2PA provenance, EU AI Act compliant)
-3. Technical accessibility (open interfaces, crawler access)
+1. **Structured product data** – Machine-readable, complete, standardized (Schema.org, clean attributes).
+2. **Compliant image assets** – With provenance (C2PA), EU AI Act compliant, without misleading representation.
+3. **Technical accessibility** – Open interfaces, crawler access, connection to the relevant protocols.
 
-Product Asset Studio addresses prerequisite #2, delivering compliant, verifiable image assets at scale.
+The first and third prerequisites are familiar from traditional technical optimization. The second – compliant, verifiable image assets – is new and most often overlooked. Product Asset Studio addresses exactly this, delivering compliant, verifiable image assets at catalog scale.
+
+### Traditional Online Shop vs. Agent-Ready Online Shop
+
+| Criterion | Traditional | Agent-Ready |
+|---|---|---|
+| Product data | Body text, inconsistent | Structured, Schema.org |
+| Image provenance | Not verifiable | C2PA manifest, EU AI Act compliant |
+| Discoverability | Optimized for humans | Optimized for humans and agents |
+| Visibility to agents | Random to nonexistent | Predictable |
 
 ---
 
@@ -185,13 +194,21 @@ A pilot partner secures early, full access to all modules at a guaranteed fixed 
 
 - Homepage (DE): https://lumaia.studio/de-ch
 - Homepage (EN): https://lumaia.studio/en-ch
-- Platform Overview: https://lumaia.studio/de-ch-ch/plattform
-- Product Asset Studio: https://lumaia.studio/de-ch-ch/plattform/product-asset-studio
-- Use Cases: https://lumaia.studio/de-ch-ch/use-cases
-- Agentic Commerce: https://lumaia.studio/de-ch-ch/use-cases/agentic-commerce
-- Pricing: https://lumaia.studio/de-ch-ch/pricing
-- Blog: https://lumaia.studio/de-ch-ch/blog
-- Contact: https://lumaia.studio/de-ch-ch/contact
-- Privacy: https://lumaia.studio/de-ch-ch/privacy
-- Imprint: https://lumaia.studio/de-ch-ch/imprint
-- Terms: https://lumaia.studio/de-ch-ch/legal/terms
+- Platform Overview (DE): https://lumaia.studio/de-ch/plattform
+- Platform Overview (EN): https://lumaia.studio/en-ch/platform
+- Product Asset Studio (DE): https://lumaia.studio/de-ch/plattform/product-asset-studio
+- Product Asset Studio (EN): https://lumaia.studio/en-ch/platform/product-asset-studio
+- Agentic Commerce (DE): https://lumaia.studio/de-ch/use-cases/agentic-commerce
+- Agentic Commerce (EN): https://lumaia.studio/en-ch/use-cases/agentic-commerce
+- Pricing (DE): https://lumaia.studio/de-ch/preise
+- Pricing (EN): https://lumaia.studio/en-ch/pricing
+- Contact (DE): https://lumaia.studio/de-ch/kontakt
+- Contact (EN): https://lumaia.studio/en-ch/contact
+- Blog (DE): https://lumaia.studio/de-ch/blog
+- Blog (EN): https://lumaia.studio/en-ch/blog
+- Privacy (DE): https://lumaia.studio/de-ch/datenschutz
+- Privacy (EN): https://lumaia.studio/en-ch/privacy
+- Imprint (DE): https://lumaia.studio/de-ch/impressum
+- Imprint (EN): https://lumaia.studio/en-ch/imprint
+- Terms (DE): https://lumaia.studio/de-ch/rechtliches/agbs
+- Terms (EN): https://lumaia.studio/en-ch/legal/terms
