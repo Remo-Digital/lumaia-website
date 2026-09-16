@@ -74,7 +74,7 @@ export default function ModuleComingSoon({ slug }: { slug: string }) {
                   </rect>
                 </svg>
               </div>
-              <span className="relative text-white/30 text-sm font-medium tracking-wider uppercase">{t.moduleComingSoon.status}</span>
+              <span className="relative text-white/30 text-sm font-medium tracking-wider uppercase flex flex-col items-center gap-1">{t.moduleComingSoon.status}<span className="text-white/20 text-[10px] normal-case tracking-normal">800 × 400 px · .webp · max 200 KB</span></span>
             </div>
 
             {/* CTA */}

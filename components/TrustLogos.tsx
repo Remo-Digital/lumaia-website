@@ -20,10 +20,11 @@ export default function TrustLogos() {
           {placeholderLogos.map((name, i) => (
             <div
               key={i}
-              className="glass rounded-lg px-6 py-3 text-white/30 text-sm font-medium"
+              className="glass rounded-lg px-6 py-3 text-white/30 text-sm font-medium flex flex-col items-center gap-0.5"
               aria-label={name}
             >
-              {name}
+              <span>{name}</span>
+              <span className="text-white/15 text-[9px]">200 × 60 px · .webp · max 200 KB</span>
             </div>
           ))}
         </div>

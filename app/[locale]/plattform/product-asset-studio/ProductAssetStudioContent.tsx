@@ -55,7 +55,7 @@ export default function ProductAssetStudioContent() {
                   </defs>
                 </svg>
               </div>
-              <span className="relative text-white/30 text-xs">{pas.heroAlt}</span>
+              <span className="relative text-white/30 text-xs flex flex-col items-center gap-1">{pas.heroAlt}<span className="text-white/20 text-[10px]">1200 × 500 px · .webp · max 200 KB</span></span>
             </div>
 
             <p className="text-white/70 text-lg leading-relaxed mb-8">{pas.directOffer}</p>
@@ -102,8 +102,9 @@ export default function ProductAssetStudioContent() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {pas.sections.assetTypes.types.map((type, i) => (
                   <article key={i} className="glass glow-hover rounded-2xl overflow-hidden transition-all duration-300">
-                    <div className="h-32 bg-gradient-to-br from-accent/5 to-purple/5 flex items-center justify-center">
+                    <div className="h-32 bg-gradient-to-br from-accent/5 to-purple/5 flex flex-col items-center justify-center gap-1">
                       <span className="text-white/30 text-xs">{type.title} Placeholder</span>
+                      <span className="text-white/20 text-[10px]">600 × 400 px · .webp · max 200 KB</span>
                     </div>
                     <div className="p-6">
                       <h3 className="font-serif text-lg text-white mb-2">{type.title}</h3>
@@ -146,11 +147,13 @@ export default function ProductAssetStudioContent() {
               <h2 className="font-serif text-3xl md:text-4xl text-white mb-6">{pas.sections.example1.title}</h2>
               <p className="text-white/70 text-base leading-relaxed mb-4">{pas.sections.example1.before}</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                <div className="glass rounded-xl p-8 flex items-center justify-center min-h-[150px]">
+                <div className="glass rounded-xl p-8 flex flex-col items-center justify-center min-h-[150px] gap-1">
                   <span className="text-white/30 text-xs">{locale === 'de-ch' ? 'Vorher: 1 Bild' : 'Before: 1 image'}</span>
+                  <span className="text-white/20 text-[10px]">600 × 400 px · .webp · max 200 KB</span>
                 </div>
-                <div className="glass-accent rounded-xl p-8 flex items-center justify-center min-h-[150px]">
+                <div className="glass-accent rounded-xl p-8 flex flex-col items-center justify-center min-h-[150px] gap-1">
                   <span className="text-accent/20 text-xs">{locale === 'de-ch' ? 'Nachher: 6 Bilder' : 'After: 6 images'}</span>
+                  <span className="text-accent/15 text-[10px]">600 × 400 px · .webp · max 200 KB</span>
                 </div>
               </div>
               <p className="text-white/70 text-base leading-relaxed">{pas.sections.example1.after}</p>

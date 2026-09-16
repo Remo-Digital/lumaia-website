@@ -19,8 +19,9 @@ export default function BlogTeaser() {
           {t.blogTeaser.posts.map((post, i) => (
             <article key={i} className="glass glow-hover rounded-2xl overflow-hidden transition-all duration-300">
               {/* Placeholder image */}
-              <div className="h-40 bg-gradient-to-br from-accent/5 to-purple/5 flex items-center justify-center">
+              <div className="h-40 bg-gradient-to-br from-accent/5 to-purple/5 flex flex-col items-center justify-center gap-1">
                 <span className="text-white/30 text-sm">Blog Placeholder</span>
+                <span className="text-white/20 text-[10px]">800 × 450 px · .webp · max 200 KB</span>
               </div>
               <div className="p-6">
                 <h3 className="text-white/80 font-medium text-base mb-2">{post.title}</h3>
