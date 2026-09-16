@@ -2,7 +2,6 @@
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import { useLanguage } from '@/lib/LanguageContext'
-import { localizedHref } from '@/lib/i18n'
 
 export default function TermsContent() {
   const { t, locale } = useLanguage()
@@ -25,36 +24,32 @@ export default function TermsContent() {
             </h1>
           </header>
 
-          <section className="glass rounded-2xl p-10 text-center animate-fade-up-2 flex flex-col items-center gap-6" aria-label={tp.label}>
-            <div
-              className="w-16 h-16 rounded-2xl flex items-center justify-center"
-              style={{ background: 'linear-gradient(135deg, rgba(123,232,159,0.10) 0%, rgba(14,156,176,0.10) 100%)', border: '1px solid rgba(123,232,159,0.12)' }}
-              aria-hidden="true"
-            >
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-                <rect x="5" y="3" width="18" height="22" rx="2" stroke="#7be89f" strokeWidth="1.5" strokeOpacity="0.6" />
-                <path d="M9 9h10M9 13h10M9 17h6" stroke="#7be89f" strokeWidth="1.5" strokeLinecap="round" />
-              </svg>
-            </div>
+          <article className="glass rounded-2xl p-8 md:p-12 animate-fade-up-2">
+            {/* Intro & Version */}
+            <p className="text-white/70 text-sm leading-relaxed mb-2">{tp.intro}</p>
+            <p className="text-white/50 text-xs mb-6">{tp.version}</p>
 
-            <p className="text-white/70 text-base leading-relaxed">{tp.comingSoon}</p>
+            {/* Translation note (EN only) */}
+            {'translationNote' in tp && (
+              <div className="glass-accent rounded-xl p-4 mb-8">
+                <p className="text-accent/80 text-xs leading-relaxed">{(tp as { translationNote: string }).translationNote}</p>
+              </div>
+            )}
 
-            <div className="flex flex-wrap gap-4 justify-center">
-              <a
-                href={localizedHref('/contact', locale)}
-                className="inline-flex items-center justify-center gap-2 text-sm font-semibold px-6 py-3 rounded-full transition-opacity hover:opacity-80"
-                style={{ background: 'linear-gradient(135deg, rgba(123,232,159,0.15) 0%, rgba(14,156,176,0.15) 100%)', border: '1px solid rgba(123,232,159,0.2)', color: '#7be89f' }}
-              >
-                {tp.contactCta} &rarr;
-              </a>
-              <a
-                href={localizedHref('/privacy', locale)}
-                className="inline-flex items-center justify-center gap-2 glass border border-white/10 text-white/80 hover:text-white text-sm font-semibold px-6 py-3 rounded-full transition-colors"
-              >
-                {tp.privacyCta}
-              </a>
+            {/* Sections */}
+            <div className="space-y-10">
+              {tp.sections.map((section, i) => (
+                <section key={i}>
+                  <h2 className="font-serif text-lg text-white mb-4">{section.title}</h2>
+                  <div className="space-y-3">
+                    {section.paragraphs.map((p, j) => (
+                      <p key={j} className="text-white/60 text-sm leading-relaxed whitespace-pre-line">{p}</p>
+                    ))}
+                  </div>
+                </section>
+              ))}
             </div>
-          </section>
+          </article>
         </div>
       </main>
       <Footer />

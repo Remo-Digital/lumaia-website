@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import { useLanguage } from '@/lib/LanguageContext'
 import { modules, phases } from '@/lib/modules'
-import { localizedHref } from '@/lib/i18n'
+import { localizedHref, switchLocalePath } from '@/lib/i18n'
 
 export default function Nav() {
   const { t, locale } = useLanguage()
@@ -47,7 +47,7 @@ export default function Nav() {
         <div
           role="banner"
           className="relative flex items-center justify-center gap-3 px-4 py-2 text-sm text-center"
-          style={{ background: 'linear-gradient(90deg, rgba(123,232,159,0.15) 0%, rgba(14,156,176,0.15) 100%)', borderBottom: '1px solid rgba(123,232,159,0.12)' }}
+          style={{ background: 'linear-gradient(90deg, #0e3d2a 0%, #0a2e3a 100%)', borderBottom: '1px solid rgba(123,232,159,0.25)' }}
         >
           <span className="text-white/90">{t.nav.banner}</span>
           <a
@@ -169,6 +169,25 @@ export default function Nav() {
             >
               {t.nav.cta}
             </a>
+
+            {/* Language Switcher */}
+            <div className="flex items-center gap-1 text-sm font-semibold tracking-[0.1em] uppercase">
+              <a
+                href={`/de-ch${pathWithoutLocale === '/' ? '' : switchLocalePath(pathWithoutLocale || '/', locale, 'de-ch')}`}
+                className={`px-2 py-1 rounded transition-colors ${locale === 'de-ch' ? 'text-accent' : 'text-white/40 hover:text-white/70'}`}
+                aria-label="Deutsch"
+              >
+                DE
+              </a>
+              <span className="text-white/20">|</span>
+              <a
+                href={`/en-ch${pathWithoutLocale === '/' ? '' : switchLocalePath(pathWithoutLocale || '/', locale, 'en-ch')}`}
+                className={`px-2 py-1 rounded transition-colors ${locale === 'en-ch' ? 'text-accent' : 'text-white/40 hover:text-white/70'}`}
+                aria-label="English"
+              >
+                EN
+              </a>
+            </div>
           </div>
 
           {/* Mobile hamburger */}
@@ -221,13 +240,21 @@ export default function Nav() {
                 {t.nav.cta}
               </a>
             </div>
-            <div className="pt-2">
+            <div className="pt-2 flex items-center gap-2 text-sm font-semibold tracking-[0.1em] uppercase">
               <a
-                href={switchLocaleHref}
-                className="text-sm text-accent/70 hover:text-accent font-semibold tracking-[0.15em] uppercase"
+                href={`/de-ch${pathWithoutLocale === '/' ? '' : switchLocalePath(pathWithoutLocale || '/', locale, 'de-ch')}`}
+                className={`px-2 py-1 rounded transition-colors ${locale === 'de-ch' ? 'text-accent' : 'text-white/40 hover:text-white/70'}`}
                 onClick={() => setMobileOpen(false)}
               >
-                {otherLocale.toUpperCase()}
+                DE
+              </a>
+              <span className="text-white/20">|</span>
+              <a
+                href={`/en-ch${pathWithoutLocale === '/' ? '' : switchLocalePath(pathWithoutLocale || '/', locale, 'en-ch')}`}
+                className={`px-2 py-1 rounded transition-colors ${locale === 'en-ch' ? 'text-accent' : 'text-white/40 hover:text-white/70'}`}
+                onClick={() => setMobileOpen(false)}
+              >
+                EN
               </a>
             </div>
           </div>
