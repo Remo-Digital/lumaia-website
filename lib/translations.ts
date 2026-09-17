@@ -75,7 +75,7 @@ export const translations = {
 
     // ── Demo CTA (mid-page) ──
     demoCta: {
-      title: 'Ready to see it for yourself?',
+      title: 'Ready to see LumAIa for yourself?',
       sub: 'See in 20 minutes what LumAIa would look like for your brand. No pitch, no boilerplate deck \u2013 a demo tailored to your context.',
       cta: 'Book a demo',
     },
@@ -932,7 +932,7 @@ export const translations = {
 
     // ── Demo CTA (mid-page) ──
     demoCta: {
-      title: 'Bereit, das selbst zu sehen?',
+      title: 'Bereit, LumAIa selbst zu sehen?',
       sub: 'Sehen Sie in 20 Minuten, wie LumAIa f\u00fcr Ihre Marke aussehen w\u00fcrde. Kein Pitch, kein Standarddeck \u2013 eine Demo auf Ihren Kontext zugeschnitten.',
       cta: 'Demo buchen',
     },
