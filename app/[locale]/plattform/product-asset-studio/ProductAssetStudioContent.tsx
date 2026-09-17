@@ -5,6 +5,13 @@ import FAQ from '@/components/FAQ'
 import { useLanguage } from '@/lib/LanguageContext'
 import { localizedHref } from '@/lib/i18n'
 
+const assetTypeImages = [
+  '/lifestyle-use-agentic-commerce.webp',
+  '/hero-shot-agentic-commerce.webp',
+  '/detail-close-up-agentic-commerce.webp',
+  '/microrotation-agentic-commerce.webp',
+]
+
 export default function ProductAssetStudioContent() {
   const { t, locale } = useLanguage()
   const pas = t.pas
@@ -102,9 +109,8 @@ export default function ProductAssetStudioContent() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {pas.sections.assetTypes.types.map((type, i) => (
                   <article key={i} className="glass glow-hover rounded-2xl overflow-hidden transition-all duration-300">
-                    <div className="h-32 bg-gradient-to-br from-accent/5 to-purple/5 flex flex-col items-center justify-center gap-1">
-                      <span className="text-white/30 text-xs">{type.title} Placeholder</span>
-                      <span className="text-white/20 text-[10px]">600 × 400 px · .webp · max 200 KB</span>
+                    <div className="h-48 overflow-hidden">
+                      <img src={assetTypeImages[i]} alt={type.title} className="w-full h-full object-cover" loading="lazy" />
                     </div>
                     <div className="p-6">
                       <h3 className="font-serif text-lg text-white mb-2">{type.title}</h3>
@@ -147,13 +153,17 @@ export default function ProductAssetStudioContent() {
               <h2 className="font-serif text-3xl md:text-4xl text-white mb-6">{pas.sections.example1.title}</h2>
               <p className="text-white/70 text-base leading-relaxed mb-4">{pas.sections.example1.before}</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                <div className="glass rounded-xl p-8 flex flex-col items-center justify-center min-h-[150px] gap-1">
-                  <span className="text-white/30 text-xs">{locale === 'de-ch' ? 'Vorher: 1 Bild' : 'Before: 1 image'}</span>
-                  <span className="text-white/20 text-[10px]">600 × 400 px · .webp · max 200 KB</span>
+                <div className="glass rounded-xl overflow-hidden">
+                  <div className="px-4 pt-3 pb-1">
+                    <span className="text-white/50 text-xs font-medium">{locale === 'de-ch' ? 'Vorher: 1 Produktbild' : 'Before: 1 product image'}</span>
+                  </div>
+                  <img src="/gartenmoebel-produktfotos.webp" alt={locale === 'de-ch' ? 'Bistro-Set Produktfotos – Ausgangsbild' : 'Bistro set product photos – source image'} className="w-full object-cover" loading="lazy" />
                 </div>
-                <div className="glass-accent rounded-xl p-8 flex flex-col items-center justify-center min-h-[150px] gap-1">
-                  <span className="text-accent/20 text-xs">{locale === 'de-ch' ? 'Nachher: 6 Bilder' : 'After: 6 images'}</span>
-                  <span className="text-accent/15 text-[10px]">600 × 400 px · .webp · max 200 KB</span>
+                <div className="glass-accent rounded-xl overflow-hidden">
+                  <div className="px-4 pt-3 pb-1">
+                    <span className="text-accent/60 text-xs font-medium">{locale === 'de-ch' ? 'Nachher: 6 Asset-Varianten' : 'After: 6 asset variants'}</span>
+                  </div>
+                  <img src="/gartenmoebel-collage.webp" alt={locale === 'de-ch' ? 'Bistro-Set Lifestyle-Collage – generierte Varianten' : 'Bistro set lifestyle collage – generated variants'} className="w-full object-cover" loading="lazy" />
                 </div>
               </div>
               <p className="text-white/70 text-base leading-relaxed">{pas.sections.example1.after}</p>
@@ -162,6 +172,20 @@ export default function ProductAssetStudioContent() {
             <section>
               <h2 className="font-serif text-3xl md:text-4xl text-white mb-6">{pas.sections.example2.title}</h2>
               <p className="text-white/70 text-base leading-relaxed mb-4">{pas.sections.example2.cutout}</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <div className="glass rounded-xl overflow-hidden">
+                  <div className="px-4 pt-3 pb-1">
+                    <span className="text-white/50 text-xs font-medium">{locale === 'de-ch' ? 'Freisteller' : 'Cut-out'}</span>
+                  </div>
+                  <img src="/abtropfgestell-freisteller.webp" alt={locale === 'de-ch' ? 'Abtropfgestell Freisteller' : 'Dish rack cut-out'} className="w-full object-cover" loading="lazy" />
+                </div>
+                <div className="glass-accent rounded-xl overflow-hidden">
+                  <div className="px-4 pt-3 pb-1">
+                    <span className="text-accent/60 text-xs font-medium">{locale === 'de-ch' ? 'Generiertes Lifestyle-Bild' : 'Generated lifestyle image'}</span>
+                  </div>
+                  <img src="/abtropfgestell-kueche-01.webp" alt={locale === 'de-ch' ? 'Abtropfgestell in Küche – generiertes Lifestyle-Bild' : 'Dish rack in kitchen – generated lifestyle image'} className="w-full object-cover" loading="lazy" />
+                </div>
+              </div>
               <p className="text-white/70 text-base leading-relaxed mb-4">{pas.sections.example2.upscaling}</p>
               <p className="text-white/60 text-sm italic">{pas.sections.example2.note}</p>
             </section>
