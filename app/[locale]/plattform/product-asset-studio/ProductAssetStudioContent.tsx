@@ -34,7 +34,7 @@ export default function ProductAssetStudioContent() {
 
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white leading-[1.1] mb-8">{pas.h1}</h1>
 
-            {/* Hero placeholder 
+            {/* Hero placeholder */}
             <div className="glass-strong rounded-2xl p-10 mb-8 min-h-[250px] relative overflow-hidden flex items-center justify-center">
               <div className="absolute inset-0 opacity-25" aria-hidden="true">
                 <svg className="w-full h-full" viewBox="0 0 600 250" fill="none">
@@ -64,7 +64,7 @@ export default function ProductAssetStudioContent() {
               </div>
               <span className="relative text-white/30 text-xs flex flex-col items-center gap-1">{pas.heroAlt}<span className="text-white/20 text-[10px]">1200 × 500 px · .webp · max 200 KB</span></span>
             </div>
-              */}
+              
             <p className="text-white/70 text-lg leading-relaxed mb-8">{pas.directOffer}</p>
 
             <div className="flex flex-col sm:flex-row items-start gap-4 mb-4">

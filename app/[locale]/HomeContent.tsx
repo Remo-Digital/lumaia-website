@@ -15,6 +15,7 @@ import FAQ from '@/components/FAQ'
 // import BlogTeaser from '@/components/BlogTeaser'
 import CTAFinal from '@/components/CTAFinal'
 import Footer from '@/components/Footer'
+import BlogTeaser from '@/components/BlogTeaser'
 
 export default function HomeContent() {
   const schemaOrg = {
@@ -49,18 +50,18 @@ export default function HomeContent() {
       <Nav />
       <main id="main-content">
         <Hero />
-        {/* <TrustLogos /> */}
+        <TrustLogos /> 
         <Problem />
        {/*  <FourPhases /> */}
         <ProductAssetStudioTeaser />
         <DemoCta />
         <AgenticCommerceTeaser />
          <TrustArchitecture /> 
-        {/* <TestimonialsSection /> */}
+        <TestimonialsSection />
         <Comparison />
-        {/* <PricingTeaser /> */}
+       <PricingTeaser />
         <FAQ />
-        {/* <BlogTeaser /> */}
+        <BlogTeaser />
         <CTAFinal />
       </main>
       <Footer />

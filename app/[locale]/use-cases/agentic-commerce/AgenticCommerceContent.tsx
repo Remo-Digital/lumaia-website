@@ -22,7 +22,7 @@ export default function AgenticCommerceContent() {
           <div className="relative z-10 max-w-3xl mx-auto">
             <h1 className="font-serif text-4xl md:text-6xl text-white leading-[1.1] mb-8">{ac.h1}</h1>
 
-            {/* Hero placeholder image 
+            {/* Hero placeholder image */}
             <div className="glass-strong rounded-2xl p-12 mb-8 flex items-center justify-center min-h-[250px] relative overflow-hidden">
               <div className="absolute inset-0 opacity-20" aria-hidden="true">
                 <svg className="w-full h-full" viewBox="0 0 600 250" fill="none">
@@ -55,7 +55,7 @@ export default function AgenticCommerceContent() {
               </div>
               <span className="relative text-white/30 text-sm flex flex-col items-center gap-1" aria-label={ac.heroAlt}>{ac.heroAlt}<span className="text-white/20 text-[10px]">1200 × 500 px · .webp · max 200 KB</span></span>
             </div>
-            */}
+            
 
             <div className="glass-accent rounded-2xl p-6 mb-12">
               <p className="text-white/80 text-base leading-relaxed">{ac.directAnswer}</p>
@@ -94,8 +94,6 @@ export default function AgenticCommerceContent() {
                 ))}
               </div>
 
-              {/*
-
               <div className="glass-strong rounded-2xl p-10 mb-8 flex items-center justify-center min-h-[180px] relative overflow-hidden">
                 <div className="absolute inset-0 opacity-25" aria-hidden="true">
                   <svg className="w-full h-full" viewBox="0 0 500 180" fill="none">
@@ -116,7 +114,7 @@ export default function AgenticCommerceContent() {
                 </div>
                 <span className="relative text-white/30 text-xs flex flex-col items-center gap-1">{locale === 'de-ch' ? 'Protokoll-\u00dcbersicht' : 'Protocol Overview'}<span className="text-white/20 text-[10px]">1000 × 360 px · .webp · max 200 KB</span></span>
               </div>
-              */}
+           
               <p className="text-white/70 text-base leading-relaxed font-medium">{ac.sections.howAgentsShop.conclusion}</p>
             </section>
 
