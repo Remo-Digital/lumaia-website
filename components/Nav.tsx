@@ -46,7 +46,7 @@ export default function Nav() {
       {!bannerDismissed && (
         <div
           role="banner"
-          className="relative flex items-center justify-center gap-3 px-4 py-2 text-sm text-center"
+          className="relative flex items-center justify-center gap-3 px-4 pr-10 py-2 text-sm text-center"
           style={{ background: 'linear-gradient(90deg, #0e3d2a 0%, #0a2e3a 100%)', borderBottom: '1px solid rgba(123,232,159,0.25)' }}
         >
           <span className="text-white/90">{t.nav.banner}</span>

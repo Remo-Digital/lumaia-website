@@ -49,15 +49,14 @@ export default function HomeContent() {
       <Nav />
       <main id="main-content">
         <Hero />
-        <TrustLogos />
+        {/* <TrustLogos /> */}
         <Problem />
        {/*  <FourPhases /> */}
         <ProductAssetStudioTeaser />
         <DemoCta />
         <AgenticCommerceTeaser />
-        <TrustArchitecture />
-        <ProductAssetStudioTeaser />
-        <TestimonialsSection />
+         <TrustArchitecture /> 
+        {/* <TestimonialsSection /> */}
         <Comparison />
         {/* <PricingTeaser /> */}
         <FAQ />
