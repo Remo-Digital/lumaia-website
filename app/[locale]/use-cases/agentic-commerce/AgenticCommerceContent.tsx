@@ -25,7 +25,7 @@ export default function AgenticCommerceContent() {
             {/* Hero placeholder image */}
             <div className="glass-strong rounded-2xl p-12 mb-8 flex items-center justify-center min-h-[250px] relative overflow-hidden">
               <div className="absolute inset-0 opacity-20" aria-hidden="true">
-                <svg className="w-full h-full" viewBox="0 0 600 250" fill="none">
+                <svg className="w-full h-full" viewBox="0 0 600 250" fill="none" aria-hidden="true">
                   <circle cx="100" cy="125" r="40" stroke="rgba(123,232,159,0.3)" strokeWidth="1.5" fill="rgba(123,232,159,0.03)">
                     <animate attributeName="r" values="38;42;38" dur="3s" repeatCount="indefinite" />
                   </circle>
@@ -96,7 +96,7 @@ export default function AgenticCommerceContent() {
 
               <div className="glass-strong rounded-2xl p-10 mb-8 flex items-center justify-center min-h-[180px] relative overflow-hidden">
                 <div className="absolute inset-0 opacity-25" aria-hidden="true">
-                  <svg className="w-full h-full" viewBox="0 0 500 180" fill="none">
+                  <svg className="w-full h-full" viewBox="0 0 500 180" fill="none" aria-hidden="true">
                     {['ACP', 'UCP', 'MCP', 'AP2', 'A2A'].map((name, i) => (
                       <g key={name}>
                         <rect x={20 + i * 95} y="60" width="80" height="60" rx="8" stroke="rgba(123,232,159,0.25)" strokeWidth="1" fill="rgba(123,232,159,0.03)">

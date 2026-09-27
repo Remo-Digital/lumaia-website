@@ -182,6 +182,7 @@ export default function PricingContent() {
               onClick={() => setCompareOpen(!compareOpen)}
               className="inline-flex items-center gap-2 text-sm font-semibold text-accent/70 hover:text-accent transition-colors px-5 py-2.5 glass rounded-full border border-white/10"
               aria-expanded={compareOpen}
+              aria-controls="comparison-table"
             >
               {compareOpen ? pp.compareBtnClose : pp.compareBtn}
               <svg
@@ -196,7 +197,7 @@ export default function PricingContent() {
 
           {/* Comparison Table */}
           {compareOpen && (
-            <section className="mb-16 animate-fade-up-1" aria-label={pp.compareTable.title}>
+            <section id="comparison-table" className="mb-16 animate-fade-up-1" aria-label={pp.compareTable.title}>
               <div className="glass-strong rounded-2xl overflow-hidden">
                 <div className="overflow-x-auto">
                   <table className="w-full text-left text-sm" role="table">

@@ -53,6 +53,7 @@ export default function FAQ({ items: customItems, showSchemaMarkup = true }: FAQ
           {items.map((faq, i) => (
             <div key={i} className="glass rounded-2xl overflow-hidden transition-all duration-300" role="listitem">
               <button
+                id={`faq-q-${i}`}
                 className="w-full text-left px-6 py-5 flex justify-between items-center gap-4"
                 onClick={() => setOpen(open === i ? null : i)}
                 aria-expanded={open === i}
