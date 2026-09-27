@@ -43,18 +43,18 @@ export const translations = {
     // ── Problem Section ──
     problem: {
       label: 'The Challenge',
-      title: 'Why traditional marketing hits its',
-      title_em: 'limits',
-      intro: 'Marketing in 2026 demands more output, more personalization, and strict compliance \u2013 more than any team can handle manually. This is not a skill problem. It is a structural one.',
+      title: 'Why a store is spread across too many places',
+      title_em: 'today',
+      intro: 'Your products appear in your store, in marketplace listings, in shopping feeds, in social ads, in newsletters, and increasingly in AI responses. Each of these places demands its own formats, its own data, and its own consistency. This can no longer be handled manually.',
       items: [
-        'Campaigns take weeks instead of days \u2013 the market will not wait.',
-        'Agency costs climb while ROI turns into a gamble.',
-        'Email ping-pong and meetings replace decisions.',
-        'Every step of growth demands new headcount \u2013 scaling becomes the ceiling.',
-        'More than 100 touchpoints can no longer be run by hand.',
+        'Every channel requires specific image formats, text lengths, and attribute structures.',
+        'Marketplaces and feeds penalize incomplete or inconsistent product data.',
+        'AI-powered search only cites what is machine-readable and consistent.',
+        'Legal requirements regarding AI labeling and advertising claims apply per asset, not per campaign.',
+        'Over 100 touchpoints cannot be managed by a team of three people.',
       ],
-      conclusion: 'Traditional agencies are no longer part of the solution. They are the bottleneck.',
-      quote: '\u201cQuality no longer takes weeks \u2013 it takes the right architecture.\u201d',
+      conclusion: 'The bottleneck isn\u2019t creation. The bottleneck is distribution across all channels.',
+      quote: '\u201cConsistency across 100 touchpoints isn\u2019t a matter of manual labor. It\u2019s an architectural question.\u201d',
     },
 
     // ── Four Phases ──
@@ -900,18 +900,18 @@ export const translations = {
     // ── Problem Section ──
     problem: {
       label: 'Die Herausforderung',
-      title: 'Warum klassisches Marketing an seine',
-      title_em: 'Grenzen st\u00f6sst',
-      intro: 'Marketing 2026 verlangt mehr Output, mehr Personalisierung und strikte Compliance \u2013 mehr, als sich manuell bew\u00e4ltigen l\u00e4sst. Das ist kein Kompetenzproblem. Es ist ein strukturelles Problem.',
+      title: 'Warum ein Shop heute an zu vielen Orten',
+      title_em: 'stattfindet',
+      intro: 'Ihre Produkte erscheinen im Shop, im Marktplatz-Listing, im Shopping-Feed, im Social Ad, im Newsletter und zunehmend in KI-Antworten. Jeder dieser Orte verlangt eigene Formate, eigene Daten und eigene Konsistenz. Manuell ist das nicht mehr abzudecken.',
       items: [
-        'Kampagnen brauchen Wochen statt Tage \u2013 der Markt wartet nicht.',
-        'Agenturkosten steigen, der ROI wird zum Gl\u00fccksspiel.',
-        'E-Mail-Ping-Pong und Meetings ersetzen Entscheidungen.',
-        'Jeder Wachstumsschritt verlangt neues Personal \u2013 Skalierung wird zur Grenze.',
-        '\u00dcber 100 Touchpoints lassen sich manuell nicht mehr bespielen.',
+        'Jeder Kanal fordert eigene Bildformate, Textl\u00e4ngen und Attributstrukturen.',
+        'Marktpl\u00e4tze und Feeds strafen unvollst\u00e4ndige oder inkonsistente Produktdaten ab.',
+        'KI-gest\u00fctzte Suche zitiert nur, was maschinenlesbar und konsistent vorliegt.',
+        'Rechtliche Vorgaben zu KI-Kennzeichnung und Werbeaussagen gelten pro Asset, nicht pro Kampagne.',
+        '\u00dcber 100 Touchpoints lassen sich nicht mit einem Team von drei Personen bespielen.',
       ],
-      conclusion: 'Klassische Agenturen sind nicht mehr Teil der L\u00f6sung. Sie sind der Engpass.',
-      quote: '\u00abQualit\u00e4t braucht keine Wochen mehr \u2013 sie braucht die richtige Architektur.\u00bb',
+      conclusion: 'Der Engpass ist nicht die Kreation. Der Engpass ist die Verteilung \u00fcber alle Kan\u00e4le.',
+      quote: '\u00abKonsistenz \u00fcber 100 Touchpoints ist keine Fleissarbeit. Sie ist eine Architekturfrage.\u00bb',
     },
 
     // ── Four Phases ──
