@@ -82,6 +82,7 @@ export const translations = {
 
     // ── Agentic Commerce Teaser ──
     agenticTeaser: {
+      sectionTitle: 'How shops become visible to AI agents',
       title: 'Agentic Commerce: get your online shop ready for the AI-agent era',
       p1: 'AI agents like ChatGPT, Gemini, and Perplexity already shop on behalf of consumers \u2013 without a human guiding every step. Most online shops are neither discoverable nor trustworthy enough for these agents, and fall short of the standard.',
       p2: 'With Product Asset Studio, LumAIa makes online shops agent-ready: a single product image becomes a complete, verified asset set \u2013 EU AI Act compliant and with C2PA provenance \u2013 the foundation for a shop that is visible not only to people, but to agents too.',
@@ -939,6 +940,7 @@ export const translations = {
 
     // ── Agentic Commerce Teaser ──
     agenticTeaser: {
+      sectionTitle: 'So werden Shops f\u00fcr KI-Agenten sichtbar',
       title: 'Agentic Commerce: Bereite dein Onlineshop f\u00fcr das KI-Agenten Zeitalter vor.',
       p1: 'KI-Agenten wie ChatGPT, Gemini und Perplexity kaufen heute bereits f\u00fcr Konsumenten ein \u2013 ohne dass ein Mensch jeden Schritt begleitet. Die meisten Onlineshops sind f\u00fcr diese Agenten weder auffindbar noch vertrauensw\u00fcrdig genug und entsprechen nicht der Norm.',
       p2: 'Mit Product Asset Studio macht LumAIa Onlineshops agent-ready: Ein Produktbild wird zu einem vollst\u00e4ndigen, gepr\u00fcften Asset-Set, EU-AI Act complient und mit C2PA-Herkunftsnachweis \u2013 die Grundlage daf\u00fcr, dass Ihr Onlineshop nicht nur f\u00fcr Menschen, sondern auch f\u00fcr Agenten sichtbar ist.',

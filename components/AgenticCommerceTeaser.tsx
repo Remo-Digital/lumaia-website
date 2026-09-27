@@ -12,10 +12,13 @@ export default function AgenticCommerceTeaser() {
         style={{ background: 'radial-gradient(circle, rgba(14,156,176,0.08) 0%, transparent 70%)', filter: 'blur(80px)', borderRadius: '50%', transform: 'translate(30%, -20%)' }} />
 
       <div className="relative z-10 max-w-5xl mx-auto">
+        <h2 id="agentic-teaser-title" className="font-serif text-3xl md:text-4xl text-white leading-[1.2] mb-8">
+          {t.agenticTeaser.sectionTitle}
+        </h2>
         <div className="glass-strong rounded-3xl p-10 md:p-14">
-          <h2 id="agentic-teaser-title" className="font-serif text-3xl md:text-4xl text-white leading-[1.2] mb-6">
+          <h3 className="font-serif text-2xl md:text-3xl text-white leading-[1.2] mb-6">
             {t.agenticTeaser.title}
-          </h2>
+          </h3>
           <p className="text-white/70 text-base leading-relaxed mb-4">{t.agenticTeaser.p1}</p>
           <p className="text-white/70 text-base leading-relaxed mb-8">{t.agenticTeaser.p2}</p>
           <div className="flex flex-col sm:flex-row gap-4">
