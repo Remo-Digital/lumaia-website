@@ -690,7 +690,7 @@ export const translations = {
         audience: {
           title: 'Who Product Asset Studio is for',
           forWhom: 'For e-commerce and DTC brands with thousands of products that want to supply their catalogs with image assets at scale and in compliance.',
-          notFor: 'Not the right fit if: you need a single, fully art-directed hero campaign image shot by a real photographer. A traditional production is better suited for that.',
+          notFor: '',
         },
       },
       faq: [
@@ -1551,7 +1551,7 @@ export const translations = {
         audience: {
           title: 'F\u00fcr wen Product Asset Studio gemacht ist',
           forWhom: 'F\u00fcr E-Commerce- und DTC-Marken mit tausenden von Produkten, die ihre Kataloge skalierbar und konform mit Bild-Assets versorgen wollen.',
-          notFor: 'Nicht das Richtige f\u00fcr Sie, wenn: Sie ein einzelnes, vollst\u00e4ndig art-direktes Hero-Kampagnenbild mit einem echten Fotografen brauchen. Daf\u00fcr eignet sich eine klassische Produktion besser.',
+          notFor: '',
         },
       },
       faq: [

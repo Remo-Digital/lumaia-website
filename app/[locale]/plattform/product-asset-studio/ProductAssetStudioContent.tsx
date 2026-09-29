@@ -205,8 +205,7 @@ export default function ProductAssetStudioContent() {
 
             <section>
               <h2 className="font-serif text-3xl md:text-4xl text-white mb-6">{pas.sections.audience.title}</h2>
-              <p className="text-white/70 text-base leading-relaxed mb-4">{pas.sections.audience.forWhom}</p>
-              <p className="text-white/60 text-sm italic">{pas.sections.audience.notFor}</p>
+              <p className="text-white/70 text-base leading-relaxed">{pas.sections.audience.forWhom}</p>
             </section>
           </div>
         </article>
