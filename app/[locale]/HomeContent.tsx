@@ -53,6 +53,19 @@ export default function HomeContent() {
         <TrustLogos /> 
         <Problem />
        {/*  <FourPhases /> */}
+        <section className="relative py-16 px-6" style={{ background: '#080614' }}>
+          <div className="max-w-4xl mx-auto">
+            <video
+              src="/Lumaia_Ad.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full rounded-2xl"
+              aria-label="LumAIa Product Demo"
+            />
+          </div>
+        </section>
         <ProductAssetStudioTeaser />
         <DemoCta />
         <AgenticCommerceTeaser />
