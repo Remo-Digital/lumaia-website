@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import FAQ from '@/components/FAQ'
@@ -22,38 +23,15 @@ export default function AgenticCommerceContent() {
           <div className="relative z-10 max-w-3xl mx-auto">
             <h1 className="font-serif text-4xl md:text-6xl text-white leading-[1.1] mb-8">{ac.h1}</h1>
 
-            {/* Hero placeholder image */}
-            <div className="glass-strong rounded-2xl p-12 mb-8 flex items-center justify-center min-h-[250px] relative overflow-hidden">
-              <div className="absolute inset-0 opacity-20" aria-hidden="true">
-                <svg className="w-full h-full" viewBox="0 0 600 250" fill="none" aria-hidden="true">
-                  <circle cx="100" cy="125" r="40" stroke="rgba(123,232,159,0.3)" strokeWidth="1.5" fill="rgba(123,232,159,0.03)">
-                    <animate attributeName="r" values="38;42;38" dur="3s" repeatCount="indefinite" />
-                  </circle>
-                  <text x="100" y="130" textAnchor="middle" fill="rgba(123,232,159,0.4)" fontSize="12">AI Agent</text>
-                  <line x1="145" y1="105" x2="250" y2="70" stroke="rgba(123,232,159,0.15)" strokeWidth="1" strokeDasharray="4 4">
-                    <animate attributeName="strokeDashoffset" values="0;-8" dur="1s" repeatCount="indefinite" />
-                  </line>
-                  <line x1="145" y1="125" x2="250" y2="125" stroke="rgba(123,232,159,0.2)" strokeWidth="1" strokeDasharray="4 4">
-                    <animate attributeName="strokeDashoffset" values="0;-8" dur="0.8s" repeatCount="indefinite" />
-                  </line>
-                  <line x1="145" y1="145" x2="250" y2="180" stroke="rgba(123,232,159,0.15)" strokeWidth="1" strokeDasharray="4 4">
-                    <animate attributeName="strokeDashoffset" values="0;-8" dur="1.2s" repeatCount="indefinite" />
-                  </line>
-                  <rect x="250" y="50" width="120" height="40" rx="8" stroke="rgba(79,193,168,0.25)" strokeWidth="1" fill="rgba(79,193,168,0.03)" />
-                  <text x="310" y="75" textAnchor="middle" fill="rgba(255,255,255,0.2)" fontSize="10">Shop A</text>
-                  <rect x="250" y="105" width="120" height="40" rx="8" stroke="rgba(79,193,168,0.35)" strokeWidth="1.5" fill="rgba(79,193,168,0.05)" />
-                  <text x="310" y="130" textAnchor="middle" fill="rgba(255,255,255,0.3)" fontSize="10">Shop B</text>
-                  <rect x="250" y="160" width="120" height="40" rx="8" stroke="rgba(79,193,168,0.25)" strokeWidth="1" fill="rgba(79,193,168,0.03)" />
-                  <text x="310" y="185" textAnchor="middle" fill="rgba(255,255,255,0.2)" fontSize="10">Shop C</text>
-                  <line x1="380" y1="125" x2="460" y2="125" stroke="rgba(123,232,159,0.3)" strokeWidth="1.5">
-                    <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite" />
-                  </line>
-                  <circle cx="500" cy="125" r="30" stroke="rgba(123,232,159,0.4)" strokeWidth="1.5" fill="rgba(123,232,159,0.05)" />
-                  <text x="500" y="122" textAnchor="middle" fill="rgba(123,232,159,0.5)" fontSize="10">Buy</text>
-                  <text x="500" y="135" textAnchor="middle" fill="rgba(123,232,159,0.3)" fontSize="8">&#x2713;</text>
-                </svg>
-              </div>
-              <span className="relative text-white/30 text-sm flex flex-col items-center gap-1" aria-label={ac.heroAlt}>{ac.heroAlt}<span className="text-white/20 text-[10px]">1200 × 500 px · .webp · max 200 KB</span></span>
+            <div className="rounded-2xl mb-8 overflow-hidden">
+              <Image
+                src={locale === 'de-ch' ? '/Ausganslage_DE.webp' : '/Ausgangslage_Eng.webp'}
+                alt={ac.heroAlt}
+                width={1200}
+                height={500}
+                className="w-full h-auto"
+                priority
+              />
             </div>
             
 
