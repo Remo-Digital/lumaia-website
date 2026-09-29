@@ -22,7 +22,7 @@ export default function TrustLogos() {
               alt={logo.alt}
               width={logo.width}
               height={logo.height}
-              className="opacity-60 hover:opacity-100 transition-opacity duration-200"
+              className="opacity-100"
             />
           ))}
         </div>
