@@ -69,6 +69,7 @@ export default function HubSpotForm({
         const label = document.createElement('label')
         label.id = 'gdpr-consent'
         label.className = 'gdpr-consent-label'
+        label.setAttribute('for', 'gdpr-consent-cb')
         label.innerHTML = `
           <input type="checkbox" id="gdpr-consent-cb" />
           <span>${consentText} <a href="${privacyHref}" target="_blank" rel="noopener noreferrer">${privacyLabel}</a></span>
@@ -137,7 +138,7 @@ export default function HubSpotForm({
         #hs-form-target input[type="email"]::placeholder,
         #hs-form-target input[type="tel"]::placeholder,
         #hs-form-target textarea::placeholder {
-          color: rgba(255,255,255,0.2);
+          color: rgba(255,255,255,0.55);
         }
         #hs-form-target input:focus,
         #hs-form-target textarea:focus,
@@ -157,7 +158,7 @@ export default function HubSpotForm({
           font-size: 0.75rem;
           text-transform: none;
           letter-spacing: 0;
-          color: rgba(255,255,255,0.25);
+          color: rgba(255,255,255,0.55);
           display: flex;
           align-items: flex-start;
           gap: 8px;
@@ -223,7 +224,7 @@ export default function HubSpotForm({
         }
         #hs-form-target .legal-consent-container {
           font-size: 0.7rem;
-          color: rgba(255,255,255,0.2);
+          color: rgba(255,255,255,0.55);
         }
         #hs-form-target fieldset {
           border: none;
@@ -251,7 +252,7 @@ export default function HubSpotForm({
           text-transform: none !important;
           letter-spacing: 0 !important;
           font-size: 0.75rem !important;
-          color: rgba(255,255,255,0.28) !important;
+          color: rgba(255,255,255,0.55) !important;
           cursor: pointer !important;
           font-weight: 400 !important;
           line-height: 1.5 !important;

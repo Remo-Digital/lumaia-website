@@ -13,7 +13,7 @@ export default function DemoCta() {
 
       <div className="relative z-10 max-w-2xl mx-auto text-center">
         <h2 className="font-serif text-4xl md:text-5xl text-white leading-[1.15] mb-4">
-          {t.demoCta.title}
+          {t.demoCta.title} <em className="gradient-text not-italic italic">{t.demoCta.title_em}</em>
         </h2>
         <p className="text-white/70 text-lg mb-8 leading-relaxed">{t.demoCta.sub}</p>
         <a

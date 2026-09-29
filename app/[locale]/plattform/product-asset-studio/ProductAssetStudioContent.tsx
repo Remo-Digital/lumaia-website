@@ -37,7 +37,7 @@ export default function ProductAssetStudioContent() {
             {/* Hero placeholder 
             <div className="glass-strong rounded-2xl p-10 mb-8 min-h-[250px] relative overflow-hidden flex items-center justify-center">
               <div className="absolute inset-0 opacity-25" aria-hidden="true">
-                <svg className="w-full h-full" viewBox="0 0 600 250" fill="none">
+                <svg className="w-full h-full" viewBox="0 0 600 250" fill="none" aria-hidden="true">
                   <rect x="40" y="50" width="100" height="150" rx="8" stroke="rgba(255,255,255,0.15)" strokeWidth="1" fill="rgba(255,255,255,0.02)" />
                   <text x="90" y="130" textAnchor="middle" fill="rgba(255,255,255,0.15)" fontSize="9">1 Bild</text>
                   <line x1="160" y1="125" x2="220" y2="125" stroke="rgba(123,232,159,0.3)" strokeWidth="2" markerEnd="url(#arrow)">
@@ -110,7 +110,7 @@ export default function ProductAssetStudioContent() {
                 {pas.sections.assetTypes.types.map((type, i) => (
                   <article key={i} className="glass glow-hover rounded-2xl overflow-hidden transition-all duration-300">
                     <div className="h-48 overflow-hidden">
-                      <img src={assetTypeImages[i]} alt={type.title} className="w-full h-full object-cover" loading="lazy" />
+                      <img src={assetTypeImages[i]} alt={locale === 'de-ch' ? `${type.title} – Beispiel-Asset-Typ` : `${type.title} – Sample Asset Type`} className="w-full h-full object-cover" loading="lazy" />
                     </div>
                     <div className="p-6">
                       <h3 className="font-serif text-lg text-white mb-2">{type.title}</h3>
@@ -205,8 +205,7 @@ export default function ProductAssetStudioContent() {
 
             <section>
               <h2 className="font-serif text-3xl md:text-4xl text-white mb-6">{pas.sections.audience.title}</h2>
-              <p className="text-white/70 text-base leading-relaxed mb-4">{pas.sections.audience.forWhom}</p>
-              <p className="text-white/60 text-sm italic">{pas.sections.audience.notFor}</p>
+              <p className="text-white/70 text-base leading-relaxed">{pas.sections.audience.forWhom}</p>
             </section>
           </div>
         </article>

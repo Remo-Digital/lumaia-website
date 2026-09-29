@@ -195,6 +195,7 @@ export default function Nav() {
             className="lg:hidden text-white/80 hover:text-white p-2"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-expanded={mobileOpen}
+            aria-controls="mobile-menu"
             aria-label={locale === 'de-ch' ? 'Menü öffnen' : 'Open menu'}
           >
             {mobileOpen ? (
@@ -213,7 +214,9 @@ export default function Nav() {
 
       {/* Mobile Menu — outside <nav> to avoid backdrop-filter containing-block issue */}
       {mobileOpen && (
-        <div
+        <nav
+          id="mobile-menu"
+          aria-label={locale === 'de-ch' ? 'Mobile Navigation' : 'Mobile navigation'}
           className="lg:hidden fixed inset-x-0 bottom-0 z-40 overflow-y-auto"
           style={{ top: bannerDismissed ? '65px' : '101px', background: 'rgba(3,2,10,0.97)' }}
         >
@@ -244,21 +247,23 @@ export default function Nav() {
               <a
                 href={`/de-ch${pathWithoutLocale === '/' ? '' : switchLocalePath(pathWithoutLocale || '/', locale, 'de-ch')}`}
                 className={`px-2 py-1 rounded transition-colors ${locale === 'de-ch' ? 'text-accent' : 'text-white/40 hover:text-white/70'}`}
+                aria-label="Deutsch"
                 onClick={() => setMobileOpen(false)}
               >
                 DE
               </a>
-              <span className="text-white/20">|</span>
+              <span className="text-white/20" aria-hidden="true">|</span>
               <a
                 href={`/en-ch${pathWithoutLocale === '/' ? '' : switchLocalePath(pathWithoutLocale || '/', locale, 'en-ch')}`}
                 className={`px-2 py-1 rounded transition-colors ${locale === 'en-ch' ? 'text-accent' : 'text-white/40 hover:text-white/70'}`}
+                aria-label="English"
                 onClick={() => setMobileOpen(false)}
               >
                 EN
               </a>
             </div>
           </div>
-        </div>
+        </nav>
       )}
     </header>
   )

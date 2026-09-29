@@ -43,7 +43,7 @@ export default function FAQ({ items: customItems, showSchemaMarkup = true }: FAQ
         {!customItems && (
           <>
             <p className="text-accent text-base font-semibold tracking-[0.18em] uppercase mb-4">{t.faq.label}</p>
-            <h2 id="faq-title" className="font-serif text-5xl md:text-6xl text-white leading-[1.15] mb-12">
+            <h2 id="faq-title" className="font-serif text-4xl md:text-5xl text-white leading-[1.15] mb-12">
               {t.faq.title} <em className="gradient-text not-italic italic">{t.faq.title_em}</em>
             </h2>
           </>
@@ -53,6 +53,7 @@ export default function FAQ({ items: customItems, showSchemaMarkup = true }: FAQ
           {items.map((faq, i) => (
             <div key={i} className="glass rounded-2xl overflow-hidden transition-all duration-300" role="listitem">
               <button
+                id={`faq-q-${i}`}
                 className="w-full text-left px-6 py-5 flex justify-between items-center gap-4"
                 onClick={() => setOpen(open === i ? null : i)}
                 aria-expanded={open === i}

@@ -11,7 +11,7 @@ export default function BlogTeaser() {
 
       <div className="relative z-10 max-w-5xl mx-auto">
         <h2 id="blog-teaser-title" className="font-serif text-4xl md:text-5xl text-white leading-[1.15] mb-4">
-          {t.blogTeaser.title}
+          {t.blogTeaser.title} <em className="gradient-text not-italic italic">{t.blogTeaser.title_em}</em>
         </h2>
         <p className="text-white/70 text-lg max-w-2xl mb-12 leading-relaxed">{t.blogTeaser.sub}</p>
 
