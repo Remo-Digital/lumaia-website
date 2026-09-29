@@ -8,6 +8,7 @@ import DemoCta from '@/components/DemoCta'
 import AgenticCommerceTeaser from '@/components/AgenticCommerceTeaser'
 import TrustArchitecture from '@/components/TrustArchitecture'
 import ProductAssetStudioTeaser from '@/components/ProductAssetStudioTeaser'
+import VideoPlayer from '@/components/VideoPlayer'
 import TestimonialsSection from '@/components/TestimonialsSection'
 import Comparison from '@/components/Comparison'
 import PricingTeaser from '@/components/PricingTeaser'
@@ -15,6 +16,7 @@ import FAQ from '@/components/FAQ'
 // import BlogTeaser from '@/components/BlogTeaser'
 import CTAFinal from '@/components/CTAFinal'
 import Footer from '@/components/Footer'
+import BlogTeaser from '@/components/BlogTeaser'
 
 export default function HomeContent() {
   const schemaOrg = {
@@ -49,18 +51,23 @@ export default function HomeContent() {
       <Nav />
       <main id="main-content">
         <Hero />
-        {/* <TrustLogos /> */}
+        <TrustLogos /> 
         <Problem />
        {/*  <FourPhases /> */}
+        <section className="relative py-16 px-6" style={{ background: '#080614' }}>
+          <div className="max-w-4xl mx-auto">
+            <VideoPlayer src="/Lumaia_Ad.mp4" label="LumAIa Product Demo" />
+          </div>
+        </section>
         <ProductAssetStudioTeaser />
         <DemoCta />
         <AgenticCommerceTeaser />
          <TrustArchitecture /> 
         {/* <TestimonialsSection /> */}
         <Comparison />
-        {/* <PricingTeaser /> */}
+    {/*    <PricingTeaser /> */}
         <FAQ />
-        {/* <BlogTeaser /> */}
+   {/*      <BlogTeaser /> */}
         <CTAFinal />
       </main>
       <Footer />

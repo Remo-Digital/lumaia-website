@@ -12,7 +12,7 @@ export default function Problem() {
 
       <div className="relative z-10 max-w-5xl mx-auto">
         <p className="text-accent text-base font-semibold tracking-[0.18em] uppercase mb-4">{t.problem.label}</p>
-        <h2 id="problem-title" className="font-serif text-5xl md:text-6xl text-white leading-[1.15] mb-6 max-w-3xl">
+        <h2 id="problem-title" className="font-serif text-4xl md:text-5xl text-white leading-[1.15] mb-6 max-w-3xl">
           {t.problem.title} <em className="gradient-text not-italic italic">{t.problem.title_em}</em>
         </h2>
         <p className="text-white/70 text-lg max-w-2xl mb-10 leading-relaxed">{t.problem.intro}</p>

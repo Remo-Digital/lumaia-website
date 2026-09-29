@@ -43,18 +43,18 @@ export const translations = {
     // ── Problem Section ──
     problem: {
       label: 'The Challenge',
-      title: 'Why traditional marketing hits its',
-      title_em: 'limits',
-      intro: 'Marketing in 2026 demands more output, more personalization, and strict compliance \u2013 more than any team can handle manually. This is not a skill problem. It is a structural one.',
+      title: 'The Content Bottleneck: Why Manual Data Creation',
+      title_em: 'No Longer Scales',
+      intro: 'Your products appear in your store, in marketplace listings, in shopping feeds, in social ads, in newsletters, and increasingly in AI responses. Each of these places demands its own formats, its own data, and its own consistency. This can no longer be handled manually.',
       items: [
-        'Campaigns take weeks instead of days \u2013 the market will not wait.',
-        'Agency costs climb while ROI turns into a gamble.',
-        'Email ping-pong and meetings replace decisions.',
-        'Every step of growth demands new headcount \u2013 scaling becomes the ceiling.',
-        'More than 100 touchpoints can no longer be run by hand.',
+        'Every channel requires specific image formats, text lengths, and attribute structures.',
+        'Marketplaces and feeds penalize incomplete or inconsistent product data.',
+        'AI-powered search only cites what is machine-readable and consistent.',
+        'Legal requirements regarding AI labeling and advertising claims apply per asset, not per campaign.',
+        'Over 100 touchpoints cannot be managed by a team of three people.',
       ],
-      conclusion: 'Traditional agencies are no longer part of the solution. They are the bottleneck.',
-      quote: '\u201cQuality no longer takes weeks \u2013 it takes the right architecture.\u201d',
+      conclusion: 'The bottleneck isn\u2019t creation. The bottleneck is distribution across all channels.',
+      quote: '\u201cConsistency across 100 touchpoints isn\u2019t a matter of manual labor. It\u2019s an architectural question.\u201d',
     },
 
     // ── Four Phases ──
@@ -75,13 +75,16 @@ export const translations = {
 
     // ── Demo CTA (mid-page) ──
     demoCta: {
-      title: 'Ready to see LumAIa for yourself?',
+      title: 'Ready to see',
+      title_em: 'LumAIa for yourself?',
       sub: 'See in 20 minutes what LumAIa would look like for your brand. No pitch, no boilerplate deck \u2013 a demo tailored to your context.',
       cta: 'Book a demo',
     },
 
     // ── Agentic Commerce Teaser ──
     agenticTeaser: {
+      sectionTitle: 'How shops become',
+      sectionTitle_em: 'visible to AI agents',
       title: 'Agentic Commerce: get your online shop ready for the AI-agent era',
       p1: 'AI agents like ChatGPT, Gemini, and Perplexity already shop on behalf of consumers \u2013 without a human guiding every step. Most online shops are neither discoverable nor trustworthy enough for these agents, and fall short of the standard.',
       p2: 'With Product Asset Studio, LumAIa makes online shops agent-ready: a single product image becomes a complete, verified asset set \u2013 EU AI Act compliant and with C2PA provenance \u2013 the foundation for a shop that is visible not only to people, but to agents too.',
@@ -104,7 +107,8 @@ export const translations = {
 
     // ── Product Asset Studio Teaser ──
     pasTeaser: {
-      title: 'From one product image to a complete asset set',
+      title: 'From one product image',
+      title_em: 'to a complete asset set',
       p1: 'Product Asset Studio turns a single product photo into hero, lifestyle, detail, and micro-rotation assets — brand-safe, EU AI Act compliant, and with C2PA provenance.',
       p2: 'No photo shoot required. Catalog-ready images in minutes, rated with a Fidelity Score so nothing goes live without passing quality checks.',
       link: 'Discover Product Asset Studio',
@@ -123,7 +127,8 @@ export const translations = {
     // ── Comparison ──
     comparison: {
       label: 'Comparison',
-      title: 'LumAIa vs. the traditional agency',
+      title: 'LumAIa vs.',
+      title_em: 'the traditional agency',
       headers: ['Criterion', 'Traditional Agency', 'LumAIa Agentic Agency'],
       rows: [
         { label: 'Campaign launch', agency: '4\u20138 weeks', lumaia: '<24 hours' },
@@ -138,7 +143,8 @@ export const translations = {
 
     // ── Pricing Teaser ──
     pricingTeaser: {
-      title: 'Transparent pricing, no fine print',
+      title: 'Transparent pricing,',
+      title_em: 'no fine print',
       headers: ['', 'Self-Serve (e.g. Product Asset Studio)', 'Pilot Partner (Agentic Agency)'],
       rows: [
         { label: 'Access', col1: 'Individual modules', col2: 'All modules' },
@@ -166,7 +172,8 @@ export const translations = {
 
     // ── Blog Teaser ──
     blogTeaser: {
-      title: 'Go deeper on the LumAIa blog',
+      title: 'Go deeper on',
+      title_em: 'the LumAIa blog',
       sub: 'More on Agentic Commerce, AI visibility in answer engines, and the future of marketing on the LumAIa blog.',
       link: 'Go to the blog',
       posts: [
@@ -187,7 +194,7 @@ export const translations = {
 
     // ── Footer ──
     footer: {
-      copyright: '\u00a9 2026 LumAIa by Dewave GmbH',
+      copyright: '\u00a9 2026 LumAIa',
       links: [
         { label: 'Contact', href: '/contact' },
         { label: 'Terms', href: '/legal/terms' },
@@ -361,7 +368,7 @@ export const translations = {
           desc: 'All modules unlocked. Ideal for individuals and small teams with a clearly defined need.',
           features: [
             'All modules unlocked',
-            '250 LumAIa Credits/seat included',
+            '2,500 LumAIa Credits/seat included',
             '1 brand',
             'Bulk batch up to 10 (Product Asset Studio)',
             'AI Chat & Docs support',
@@ -382,7 +389,7 @@ export const translations = {
           desc: 'More credits, more brands, unlimited batch production. For teams that scale regularly.',
           features: [
             'All modules unlocked',
-            '400 LumAIa Credits/seat incl. (2\u00d7 rollover)',
+            '4,000 LumAIa Credits/seat incl. (2\u00d7 rollover)',
             'Up to 3 brands (+CHF\u00a0119/month each)',
             'Unlimited bulk batch (Product Asset Studio)',
             'Verified domains',
@@ -447,7 +454,7 @@ export const translations = {
         rows: [
           { label: 'Price/seat/month', cols: ['CHF 39', 'CHF 69', 'CHF 79', '\u2013'] },
           { label: 'Platform licence', cols: ['\u2013', '\u2013', 'CHF 499/month', 'On request'] },
-          { label: 'Credits/seat/month', cols: ['250 LC', '400 LC', 'Pay per use', 'Pay per use'] },
+          { label: 'Credits/seat/month', cols: ['2,500 LC', '4,000 LC', 'Pay per use', 'Pay per use'] },
           { label: 'Credit rollover', cols: ['\u2013', '2\u00d7', '\u2013', '\u2013'] },
           { label: '30-day free trial', cols: ['\u2713', '\u2713', '\u2013', '\u2013'] },
           { label: 'Brands incl.', cols: ['1', '1', '1', '1'] },
@@ -685,7 +692,7 @@ export const translations = {
         audience: {
           title: 'Who Product Asset Studio is for',
           forWhom: 'For e-commerce and DTC brands with thousands of products that want to supply their catalogs with image assets at scale and in compliance.',
-          notFor: 'Not the right fit if: you need a single, fully art-directed hero campaign image shot by a real photographer. A traditional production is better suited for that.',
+          notFor: '',
         },
       },
       faq: [
@@ -900,18 +907,18 @@ export const translations = {
     // ── Problem Section ──
     problem: {
       label: 'Die Herausforderung',
-      title: 'Warum klassisches Marketing an seine',
-      title_em: 'Grenzen st\u00f6sst',
-      intro: 'Marketing 2026 verlangt mehr Output, mehr Personalisierung und strikte Compliance \u2013 mehr, als sich manuell bew\u00e4ltigen l\u00e4sst. Das ist kein Kompetenzproblem. Es ist ein strukturelles Problem.',
+      title: 'Der Content-Flaschenhals: Warum die manuelle Datenerstellung',
+      title_em: 'nicht mehr skaliert',
+      intro: 'Ihre Produkte erscheinen im Shop, im Marktplatz-Listing, im Shopping-Feed, im Social Ad, im Newsletter und zunehmend in KI-Antworten. Jeder dieser Orte verlangt eigene Formate, eigene Daten und eigene Konsistenz. Manuell ist das nicht mehr abzudecken.',
       items: [
-        'Kampagnen brauchen Wochen statt Tage \u2013 der Markt wartet nicht.',
-        'Agenturkosten steigen, der ROI wird zum Gl\u00fccksspiel.',
-        'E-Mail-Ping-Pong und Meetings ersetzen Entscheidungen.',
-        'Jeder Wachstumsschritt verlangt neues Personal \u2013 Skalierung wird zur Grenze.',
-        '\u00dcber 100 Touchpoints lassen sich manuell nicht mehr bespielen.',
+        'Jeder Kanal fordert eigene Bildformate, Textl\u00e4ngen und Attributstrukturen.',
+        'Marktpl\u00e4tze und Feeds strafen unvollst\u00e4ndige oder inkonsistente Produktdaten ab.',
+        'KI-gest\u00fctzte Suche zitiert nur, was maschinenlesbar und konsistent vorliegt.',
+        'Rechtliche Vorgaben zu KI-Kennzeichnung und Werbeaussagen gelten pro Asset, nicht pro Kampagne.',
+        '\u00dcber 100 Touchpoints lassen sich nicht mit einem Team von drei Personen bespielen.',
       ],
-      conclusion: 'Klassische Agenturen sind nicht mehr Teil der L\u00f6sung. Sie sind der Engpass.',
-      quote: '\u00abQualit\u00e4t braucht keine Wochen mehr \u2013 sie braucht die richtige Architektur.\u00bb',
+      conclusion: 'Der Engpass ist nicht die Kreation. Der Engpass ist die Verteilung \u00fcber alle Kan\u00e4le.',
+      quote: '\u00abKonsistenz \u00fcber 100 Touchpoints ist keine Fleissarbeit. Sie ist eine Architekturfrage.\u00bb',
     },
 
     // ── Four Phases ──
@@ -932,13 +939,16 @@ export const translations = {
 
     // ── Demo CTA (mid-page) ──
     demoCta: {
-      title: 'Bereit, LumAIa selbst zu sehen?',
+      title: 'Bereit,',
+      title_em: 'LumAIa selbst zu sehen?',
       sub: 'Sehen Sie in 20 Minuten, wie LumAIa f\u00fcr Ihre Marke aussehen w\u00fcrde. Kein Pitch, kein Standarddeck \u2013 eine Demo auf Ihren Kontext zugeschnitten.',
       cta: 'Demo buchen',
     },
 
     // ── Agentic Commerce Teaser ──
     agenticTeaser: {
+      sectionTitle: 'So werden Shops f\u00fcr KI-Agenten',
+      sectionTitle_em: 'sichtbar',
       title: 'Agentic Commerce: Bereite dein Onlineshop f\u00fcr das KI-Agenten Zeitalter vor.',
       p1: 'KI-Agenten wie ChatGPT, Gemini und Perplexity kaufen heute bereits f\u00fcr Konsumenten ein \u2013 ohne dass ein Mensch jeden Schritt begleitet. Die meisten Onlineshops sind f\u00fcr diese Agenten weder auffindbar noch vertrauensw\u00fcrdig genug und entsprechen nicht der Norm.',
       p2: 'Mit Product Asset Studio macht LumAIa Onlineshops agent-ready: Ein Produktbild wird zu einem vollst\u00e4ndigen, gepr\u00fcften Asset-Set, EU-AI Act complient und mit C2PA-Herkunftsnachweis \u2013 die Grundlage daf\u00fcr, dass Ihr Onlineshop nicht nur f\u00fcr Menschen, sondern auch f\u00fcr Agenten sichtbar ist.',
@@ -961,7 +971,8 @@ export const translations = {
 
     // ── Product Asset Studio Teaser ──
     pasTeaser: {
-      title: 'Von einem Produktbild zum vollständigen Asset-Set',
+      title: 'Von einem Produktbild',
+      title_em: 'zum vollständigen Asset-Set',
       p1: 'Product Asset Studio verwandelt ein einzelnes Produktfoto in Hero-, Lifestyle-, Detail- und Micro-Rotation-Assets — brand-konform, EU-AI-Act-konform und mit C2PA-Herkunftsnachweis.',
       p2: 'Kein Fotoshooting nötig. Katalogfertige Bilder in Minuten, mit Fidelity-Score bewertet — nichts geht live ohne bestandene Qualitätsprüfung.',
       link: 'Product Asset Studio entdecken',
@@ -980,7 +991,8 @@ export const translations = {
     // ── Comparison ──
     comparison: {
       label: 'Vergleich',
-      title: 'LumAIa im Vergleich zur klassischen Agentur',
+      title: 'LumAIa im Vergleich zur',
+      title_em: 'klassischen Agentur',
       headers: ['Kriterium', 'Klassische Agentur', 'LumAIa Agentic Agency'],
       rows: [
         { label: 'Kampagnen-Launch', agency: '4\u20138 Wochen', lumaia: '<24 Stunden' },
@@ -995,7 +1007,8 @@ export const translations = {
 
     // ── Pricing Teaser ──
     pricingTeaser: {
-      title: 'Transparente Preise, kein Kleingedrucktes',
+      title: 'Transparente Preise,',
+      title_em: 'kein Kleingedrucktes',
       headers: ['', 'Self-Serve (z.B. Product Asset Studio)', 'Pilot-Partner (Agentic Agency)'],
       rows: [
         { label: 'Zugriff', col1: 'Einzelne Module', col2: 'Alle Module' },
@@ -1023,7 +1036,8 @@ export const translations = {
 
     // ── Blog Teaser ──
     blogTeaser: {
-      title: 'Vertiefung im LumAIa-Blog',
+      title: 'Vertiefung im',
+      title_em: 'LumAIa-Blog',
       sub: 'Mehr zu Agentic Commerce, KI-Sichtbarkeit in Antwort-Engines und der Zukunft des Marketings finden Sie im LumAIa-Blog.',
       link: 'Zum Blog',
       posts: [
@@ -1044,7 +1058,7 @@ export const translations = {
 
     // ── Footer ──
     footer: {
-      copyright: '\u00a9 2026 LumAIa by Dewave GmbH',
+      copyright: '\u00a9 2026 LumAIa',
       links: [
         { label: 'Kontakt', href: '/contact' },
         { label: 'AGB', href: '/legal/terms' },
@@ -1217,7 +1231,7 @@ export const translations = {
           desc: 'Alle Module freigeschaltet. Ideal f\u00fcr Einzelpersonen und kleine Teams mit klar umrissenem Bedarf.',
           features: [
             'Alle Module freigeschaltet',
-            '250 LumAIa Credits/Seat inkl.',
+            '2.500 LumAIa Credits/Seat inkl.',
             '1 Brand',
             'Bulk-Batch bis 10 (Product Asset Studio)',
             'Support via AI Chat & Docs',
@@ -1238,7 +1252,7 @@ export const translations = {
           desc: 'Mehr Credits, mehr Brands, unlimitierte Batch-Produktion. F\u00fcr Teams, die regelm\u00e4ssig skalieren.',
           features: [
             'Alle Module freigeschaltet',
-            '400 LumAIa Credits/Seat inkl. (2\u00d7 Rollover)',
+            '4.000 LumAIa Credits/Seat inkl. (2\u00d7 Rollover)',
             'Bis 3 Brands (+CHF\u00a0119/Monat pro weitere)',
             'Unlimited Bulk-Batch (Product Asset Studio)',
             'Verified Domains',
@@ -1303,7 +1317,7 @@ export const translations = {
         rows: [
           { label: 'Preis/Seat/Monat', cols: ['CHF 39', 'CHF 69', 'CHF 79', '\u2013'] },
           { label: 'Plattformlizenz', cols: ['\u2013', '\u2013', 'CHF 499/Monat', 'Auf Anfrage'] },
-          { label: 'Credits/Seat/Monat', cols: ['250 LC', '400 LC', 'Pay per use', 'Pay per use'] },
+          { label: 'Credits/Seat/Monat', cols: ['2.500 LC', '4.000 LC', 'Pay per use', 'Pay per use'] },
           { label: 'Credit Rollover', cols: ['\u2013', '2\u00d7', '\u2013', '\u2013'] },
           { label: '30-Tage Free Trial', cols: ['\u2713', '\u2713', '\u2013', '\u2013'] },
           { label: 'Inkl. Brands', cols: ['1', '1', '1', '1'] },
@@ -1541,7 +1555,7 @@ export const translations = {
         audience: {
           title: 'F\u00fcr wen Product Asset Studio gemacht ist',
           forWhom: 'F\u00fcr E-Commerce- und DTC-Marken mit tausenden von Produkten, die ihre Kataloge skalierbar und konform mit Bild-Assets versorgen wollen.',
-          notFor: 'Nicht das Richtige f\u00fcr Sie, wenn: Sie ein einzelnes, vollst\u00e4ndig art-direktes Hero-Kampagnenbild mit einem echten Fotografen brauchen. Daf\u00fcr eignet sich eine klassische Produktion besser.',
+          notFor: '',
         },
       },
       faq: [

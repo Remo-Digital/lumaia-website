@@ -53,7 +53,7 @@ export default function ModuleComingSoon({ slug }: { slug: string }) {
             {/* Animated placeholder visual */}
             <div className="glass-strong rounded-2xl p-12 mb-16 flex items-center justify-center min-h-[200px] relative overflow-hidden">
               <div className="absolute inset-0 opacity-30" aria-hidden="true">
-                <svg className="w-full h-full" viewBox="0 0 400 200" fill="none">
+                <svg className="w-full h-full" viewBox="0 0 400 200" fill="none" aria-hidden="true">
                   <rect x="20" y="20" width="100" height="60" rx="8" stroke="rgba(123,232,159,0.2)" strokeWidth="1" strokeDasharray="4 4">
                     <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite" />
                   </rect>
