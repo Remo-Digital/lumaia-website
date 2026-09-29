@@ -223,6 +223,7 @@ export const translations = {
       formId: '4a6a06b0-4008-43cd-a2ec-f4d6978022d2',
       consentText: 'I have read and accept the',
       privacyLabel: 'Privacy Policy',
+      newsletterConsentText: 'I would like to receive occasional product updates and tips by email. I can unsubscribe at any time.',
     },
 
     // ── Privacy Page ──
@@ -1086,7 +1087,8 @@ export const translations = {
       },
       formId: 'ad72af02-88e1-495f-a8b5-c6ae0cf1b99a',
       consentText: 'Ich habe die',
-      privacyLabel: 'Datenschutzerkl\u00e4rung gelesen und akzeptiere sie',
+      privacyLabel: 'Datenschutzerklärung gelesen und akzeptiere sie',
+      newsletterConsentText: 'Ich möchte gelegentlich Produkt-Updates und Tipps per E-Mail erhalten. Abmeldung jederzeit möglich.',
     },
 
     // ── Privacy Page ──

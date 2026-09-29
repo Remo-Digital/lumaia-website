@@ -18,6 +18,7 @@ interface Props {
   consentText: string
   privacyHref: string
   privacyLabel: string
+  newsletterConsentText?: string
 }
 
 export default function HubSpotForm({
@@ -27,6 +28,7 @@ export default function HubSpotForm({
   consentText,
   privacyHref,
   privacyLabel,
+  newsletterConsentText,
 }: Props) {
   const [consented, setConsented] = useState(false)
 
@@ -58,7 +60,7 @@ export default function HubSpotForm({
     document.head.appendChild(script)
   }, [portalId, formId, region])
 
-  // Inject consent checkbox before submit button once form renders
+  // Inject consent checkboxes before submit button once form renders
   useEffect(() => {
     const target = document.getElementById('hs-form-target')
     if (!target) return
@@ -66,6 +68,9 @@ export default function HubSpotForm({
     const observer = new MutationObserver(() => {
       const submitBtn = target.querySelector<HTMLElement>('.hs-button, input[type="submit"]')
       if (submitBtn && !target.querySelector('#gdpr-consent')) {
+        const insertBefore = submitBtn.closest('.hs-submit') ?? submitBtn
+
+        // GDPR / Privacy consent (required — blocks submission)
         const label = document.createElement('label')
         label.id = 'gdpr-consent'
         label.className = 'gdpr-consent-label'
@@ -77,16 +82,30 @@ export default function HubSpotForm({
         label.querySelector('input')?.addEventListener('change', e => {
           setConsented((e.target as HTMLInputElement).checked)
         })
-        submitBtn.closest('.hs-submit') ? submitBtn.closest('.hs-submit')!.before(label) : submitBtn.before(label)
+        insertBefore.before(label)
+
+        // Newsletter consent (optional — does not block submission)
+        if (newsletterConsentText) {
+          const nlLabel = document.createElement('label')
+          nlLabel.id = 'newsletter-consent'
+          nlLabel.className = 'gdpr-consent-label newsletter-consent-label'
+          nlLabel.setAttribute('for', 'newsletter-consent-cb')
+          nlLabel.innerHTML = `
+            <input type="checkbox" id="newsletter-consent-cb" name="newsletter_opt_in" value="true" />
+            <span>${newsletterConsentText}</span>
+          `
+          insertBefore.before(nlLabel)
+        }
+
         observer.disconnect()
       }
     })
 
     observer.observe(target, { childList: true, subtree: true })
     return () => observer.disconnect()
-  }, [consentText, privacyHref, privacyLabel])
+  }, [consentText, privacyHref, privacyLabel, newsletterConsentText])
 
-  // Block form submission until consent is given
+  // Block form submission until GDPR consent is given
   useEffect(() => {
     const target = document.getElementById('hs-form-target')
     if (!target) return
@@ -115,7 +134,7 @@ export default function HubSpotForm({
           font-weight: 600;
           letter-spacing: 0.15em;
           text-transform: uppercase;
-          color: rgba(255,255,255,0.3);
+          color: rgba(255,255,255,0.75);
         }
         #hs-form-target input[type="text"],
         #hs-form-target input[type="email"],
@@ -124,7 +143,7 @@ export default function HubSpotForm({
         #hs-form-target select {
           width: 100%;
           background: rgba(255,255,255,0.04);
-          border: 1px solid rgba(255,255,255,0.08);
+          border: 1px solid rgba(255,255,255,0.12);
           border-radius: 12px;
           padding: 12px 16px;
           font-size: 0.875rem;
@@ -143,7 +162,7 @@ export default function HubSpotForm({
         #hs-form-target input:focus,
         #hs-form-target textarea:focus,
         #hs-form-target select:focus {
-          border-color: rgba(123,232,159,0.4);
+          border-color: rgba(123,232,159,0.5);
         }
         #hs-form-target select option {
           background: #0d0822;
@@ -158,7 +177,7 @@ export default function HubSpotForm({
           font-size: 0.75rem;
           text-transform: none;
           letter-spacing: 0;
-          color: rgba(255,255,255,0.55);
+          color: rgba(255,255,255,0.75);
           display: flex;
           align-items: flex-start;
           gap: 8px;
@@ -178,7 +197,7 @@ export default function HubSpotForm({
         }
         #hs-form-target .hs-error-msgs label {
           font-size: 0.7rem;
-          color: rgba(255, 100, 100, 0.8);
+          color: rgba(255, 120, 120, 1);
           text-transform: none;
           letter-spacing: 0;
         }
@@ -224,7 +243,7 @@ export default function HubSpotForm({
         }
         #hs-form-target .legal-consent-container {
           font-size: 0.7rem;
-          color: rgba(255,255,255,0.55);
+          color: rgba(255,255,255,0.75);
         }
         #hs-form-target fieldset {
           border: none;
@@ -252,11 +271,15 @@ export default function HubSpotForm({
           text-transform: none !important;
           letter-spacing: 0 !important;
           font-size: 0.75rem !important;
-          color: rgba(255,255,255,0.55) !important;
+          color: rgba(255,255,255,0.75) !important;
           cursor: pointer !important;
           font-weight: 400 !important;
           line-height: 1.5 !important;
           margin-bottom: 4px !important;
+        }
+        .newsletter-consent-label {
+          color: rgba(255,255,255,0.65) !important;
+          margin-top: 2px !important;
         }
         .gdpr-consent-label input[type="checkbox"] {
           width: 14px !important;
@@ -267,12 +290,12 @@ export default function HubSpotForm({
           cursor: pointer !important;
         }
         .gdpr-consent-label a {
-          color: rgba(123,232,159,0.6) !important;
+          color: #7be89f !important;
           text-decoration: underline !important;
           transition: color 0.2s !important;
         }
         .gdpr-consent-label a:hover {
-          color: #7be89f !important;
+          color: rgba(123,232,159,0.8) !important;
         }
       `}</style>
 
