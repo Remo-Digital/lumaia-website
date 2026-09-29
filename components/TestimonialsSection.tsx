@@ -13,7 +13,7 @@ export default function TestimonialsSection() {
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <p className="text-accent text-base font-semibold tracking-[0.18em] uppercase mb-4">{t.testimonials.title}</p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+        <div className="grid grid-cols-1 gap-6 mt-12 max-w-2xl mx-auto">
           {t.testimonials.items.map((item, i) => (
             <blockquote
               key={i}

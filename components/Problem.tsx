@@ -28,8 +28,14 @@ export default function Problem() {
 
         <p className="text-white/80 text-lg font-medium mb-8">{t.problem.conclusion}</p>
 
-        <blockquote className="glass-strong rounded-2xl p-8 max-w-xl">
-          <p className="text-white/70 text-lg italic leading-relaxed">{t.problem.quote}</p>
+        <blockquote
+          className="relative rounded-2xl p-8 md:p-10 max-w-2xl overflow-hidden"
+          style={{ background: 'linear-gradient(135deg, rgba(123,232,159,0.07) 0%, rgba(14,156,176,0.07) 100%)', border: '1px solid rgba(123,232,159,0.2)' }}
+        >
+          <div className="absolute top-0 left-0 w-40 h-40 pointer-events-none"
+            style={{ background: 'radial-gradient(circle, rgba(123,232,159,0.12) 0%, transparent 70%)', filter: 'blur(30px)' }} aria-hidden="true" />
+          <span className="font-serif text-6xl gradient-text leading-none block mb-4" aria-hidden="true">&ldquo;</span>
+          <p className="relative text-white text-xl md:text-2xl font-serif italic leading-relaxed">{t.problem.quote}</p>
         </blockquote>
       </div>
     </section>
