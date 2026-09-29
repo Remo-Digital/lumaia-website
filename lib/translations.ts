@@ -143,7 +143,8 @@ export const translations = {
 
     // ── Pricing Teaser ──
     pricingTeaser: {
-      title: 'Transparent pricing, no fine print',
+      title: 'Transparent pricing,',
+      title_em: 'no fine print',
       headers: ['', 'Self-Serve (e.g. Product Asset Studio)', 'Pilot Partner (Agentic Agency)'],
       rows: [
         { label: 'Access', col1: 'Individual modules', col2: 'All modules' },
@@ -171,7 +172,8 @@ export const translations = {
 
     // ── Blog Teaser ──
     blogTeaser: {
-      title: 'Go deeper on the LumAIa blog',
+      title: 'Go deeper on',
+      title_em: 'the LumAIa blog',
       sub: 'More on Agentic Commerce, AI visibility in answer engines, and the future of marketing on the LumAIa blog.',
       link: 'Go to the blog',
       posts: [
@@ -1005,7 +1007,8 @@ export const translations = {
 
     // ── Pricing Teaser ──
     pricingTeaser: {
-      title: 'Transparente Preise, kein Kleingedrucktes',
+      title: 'Transparente Preise,',
+      title_em: 'kein Kleingedrucktes',
       headers: ['', 'Self-Serve (z.B. Product Asset Studio)', 'Pilot-Partner (Agentic Agency)'],
       rows: [
         { label: 'Zugriff', col1: 'Einzelne Module', col2: 'Alle Module' },
@@ -1033,7 +1036,8 @@ export const translations = {
 
     // ── Blog Teaser ──
     blogTeaser: {
-      title: 'Vertiefung im LumAIa-Blog',
+      title: 'Vertiefung im',
+      title_em: 'LumAIa-Blog',
       sub: 'Mehr zu Agentic Commerce, KI-Sichtbarkeit in Antwort-Engines und der Zukunft des Marketings finden Sie im LumAIa-Blog.',
       link: 'Zum Blog',
       posts: [
