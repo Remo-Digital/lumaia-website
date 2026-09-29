@@ -8,6 +8,7 @@ import DemoCta from '@/components/DemoCta'
 import AgenticCommerceTeaser from '@/components/AgenticCommerceTeaser'
 import TrustArchitecture from '@/components/TrustArchitecture'
 import ProductAssetStudioTeaser from '@/components/ProductAssetStudioTeaser'
+import VideoPlayer from '@/components/VideoPlayer'
 import TestimonialsSection from '@/components/TestimonialsSection'
 import Comparison from '@/components/Comparison'
 import PricingTeaser from '@/components/PricingTeaser'
@@ -55,26 +56,18 @@ export default function HomeContent() {
        {/*  <FourPhases /> */}
         <section className="relative py-16 px-6" style={{ background: '#080614' }}>
           <div className="max-w-4xl mx-auto">
-            <video
-              src="/Lumaia_Ad.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full rounded-2xl"
-              aria-label="LumAIa Product Demo"
-            />
+            <VideoPlayer src="/Lumaia_Ad.mp4" label="LumAIa Product Demo" />
           </div>
         </section>
         <ProductAssetStudioTeaser />
         <DemoCta />
         <AgenticCommerceTeaser />
          <TrustArchitecture /> 
-        <TestimonialsSection />
+        {/* <TestimonialsSection /> */}
         <Comparison />
-       <PricingTeaser />
+    {/*    <PricingTeaser /> */}
         <FAQ />
-        <BlogTeaser />
+   {/*      <BlogTeaser /> */}
         <CTAFinal />
       </main>
       <Footer />
