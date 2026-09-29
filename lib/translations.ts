@@ -43,8 +43,8 @@ export const translations = {
     // ── Problem Section ──
     problem: {
       label: 'The Challenge',
-      title: 'Why a store is spread across too many places',
-      title_em: 'today',
+      title: 'The Content Bottleneck: Why Manual Data Creation',
+      title_em: 'No Longer Scales',
       intro: 'Your products appear in your store, in marketplace listings, in shopping feeds, in social ads, in newsletters, and increasingly in AI responses. Each of these places demands its own formats, its own data, and its own consistency. This can no longer be handled manually.',
       items: [
         'Every channel requires specific image formats, text lengths, and attribute structures.',
@@ -362,7 +362,7 @@ export const translations = {
           desc: 'All modules unlocked. Ideal for individuals and small teams with a clearly defined need.',
           features: [
             'All modules unlocked',
-            '250 LumAIa Credits/seat included',
+            '2,500 LumAIa Credits/seat included',
             '1 brand',
             'Bulk batch up to 10 (Product Asset Studio)',
             'AI Chat & Docs support',
@@ -383,7 +383,7 @@ export const translations = {
           desc: 'More credits, more brands, unlimited batch production. For teams that scale regularly.',
           features: [
             'All modules unlocked',
-            '400 LumAIa Credits/seat incl. (2\u00d7 rollover)',
+            '4,000 LumAIa Credits/seat incl. (2\u00d7 rollover)',
             'Up to 3 brands (+CHF\u00a0119/month each)',
             'Unlimited bulk batch (Product Asset Studio)',
             'Verified domains',
@@ -448,7 +448,7 @@ export const translations = {
         rows: [
           { label: 'Price/seat/month', cols: ['CHF 39', 'CHF 69', 'CHF 79', '\u2013'] },
           { label: 'Platform licence', cols: ['\u2013', '\u2013', 'CHF 499/month', 'On request'] },
-          { label: 'Credits/seat/month', cols: ['250 LC', '400 LC', 'Pay per use', 'Pay per use'] },
+          { label: 'Credits/seat/month', cols: ['2,500 LC', '4,000 LC', 'Pay per use', 'Pay per use'] },
           { label: 'Credit rollover', cols: ['\u2013', '2\u00d7', '\u2013', '\u2013'] },
           { label: '30-day free trial', cols: ['\u2713', '\u2713', '\u2013', '\u2013'] },
           { label: 'Brands incl.', cols: ['1', '1', '1', '1'] },
@@ -901,8 +901,8 @@ export const translations = {
     // ── Problem Section ──
     problem: {
       label: 'Die Herausforderung',
-      title: 'Warum ein Shop heute an zu vielen Orten',
-      title_em: 'stattfindet',
+      title: 'Der Content-Flaschenhals: Warum die manuelle Datenerstellung',
+      title_em: 'nicht mehr skaliert',
       intro: 'Ihre Produkte erscheinen im Shop, im Marktplatz-Listing, im Shopping-Feed, im Social Ad, im Newsletter und zunehmend in KI-Antworten. Jeder dieser Orte verlangt eigene Formate, eigene Daten und eigene Konsistenz. Manuell ist das nicht mehr abzudecken.',
       items: [
         'Jeder Kanal fordert eigene Bildformate, Textl\u00e4ngen und Attributstrukturen.',
@@ -1219,7 +1219,7 @@ export const translations = {
           desc: 'Alle Module freigeschaltet. Ideal f\u00fcr Einzelpersonen und kleine Teams mit klar umrissenem Bedarf.',
           features: [
             'Alle Module freigeschaltet',
-            '250 LumAIa Credits/Seat inkl.',
+            '2.500 LumAIa Credits/Seat inkl.',
             '1 Brand',
             'Bulk-Batch bis 10 (Product Asset Studio)',
             'Support via AI Chat & Docs',
@@ -1240,7 +1240,7 @@ export const translations = {
           desc: 'Mehr Credits, mehr Brands, unlimitierte Batch-Produktion. F\u00fcr Teams, die regelm\u00e4ssig skalieren.',
           features: [
             'Alle Module freigeschaltet',
-            '400 LumAIa Credits/Seat inkl. (2\u00d7 Rollover)',
+            '4.000 LumAIa Credits/Seat inkl. (2\u00d7 Rollover)',
             'Bis 3 Brands (+CHF\u00a0119/Monat pro weitere)',
             'Unlimited Bulk-Batch (Product Asset Studio)',
             'Verified Domains',
@@ -1305,7 +1305,7 @@ export const translations = {
         rows: [
           { label: 'Preis/Seat/Monat', cols: ['CHF 39', 'CHF 69', 'CHF 79', '\u2013'] },
           { label: 'Plattformlizenz', cols: ['\u2013', '\u2013', 'CHF 499/Monat', 'Auf Anfrage'] },
-          { label: 'Credits/Seat/Monat', cols: ['250 LC', '400 LC', 'Pay per use', 'Pay per use'] },
+          { label: 'Credits/Seat/Monat', cols: ['2.500 LC', '4.000 LC', 'Pay per use', 'Pay per use'] },
           { label: 'Credit Rollover', cols: ['\u2013', '2\u00d7', '\u2013', '\u2013'] },
           { label: '30-Tage Free Trial', cols: ['\u2713', '\u2713', '\u2013', '\u2013'] },
           { label: 'Inkl. Brands', cols: ['1', '1', '1', '1'] },
