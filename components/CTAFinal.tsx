@@ -23,11 +23,8 @@ export default function CTAFinal() {
       <div className="relative z-10 max-w-lg mx-auto text-center">
         <span className="glass-accent text-accent text-base font-semibold tracking-[0.18em] uppercase px-4 py-2 rounded-full inline-block mb-6">{t.cta.label}</span>
         <h2 id="cta-final-title" className="font-serif text-4xl md:text-5xl text-white leading-[1.1] mb-4">
-          {t.cta.title}
+          {t.cta.title} <em className="gradient-text not-italic italic">{t.cta.title_em}</em>
         </h2>
-        <p className="text-white/70 text-lg mb-4 italic">
-          {t.cta.title_em}
-        </p>
         <p className="text-white/70 mb-10 leading-relaxed text-base">
           {t.cta.sub}
         </p>

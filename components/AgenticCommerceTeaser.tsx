@@ -12,8 +12,8 @@ export default function AgenticCommerceTeaser() {
         style={{ background: 'radial-gradient(circle, rgba(14,156,176,0.08) 0%, transparent 70%)', filter: 'blur(80px)', borderRadius: '50%', transform: 'translate(30%, -20%)' }} />
 
       <div className="relative z-10 max-w-5xl mx-auto">
-        <h2 id="agentic-teaser-title" className="font-serif text-3xl md:text-4xl text-white leading-[1.2] mb-8">
-          {t.agenticTeaser.sectionTitle}
+        <h2 id="agentic-teaser-title" className="font-serif text-4xl md:text-5xl text-white leading-[1.15] mb-8">
+          {t.agenticTeaser.sectionTitle} <em className="gradient-text not-italic italic">{t.agenticTeaser.sectionTitle_em}</em>
         </h2>
         <div className="glass-strong rounded-3xl p-10 md:p-14">
           <h3 className="font-serif text-2xl md:text-3xl text-white leading-[1.2] mb-6">

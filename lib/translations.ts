@@ -75,14 +75,16 @@ export const translations = {
 
     // ── Demo CTA (mid-page) ──
     demoCta: {
-      title: 'Ready to see LumAIa for yourself?',
+      title: 'Ready to see',
+      title_em: 'LumAIa for yourself?',
       sub: 'See in 20 minutes what LumAIa would look like for your brand. No pitch, no boilerplate deck \u2013 a demo tailored to your context.',
       cta: 'Book a demo',
     },
 
     // ── Agentic Commerce Teaser ──
     agenticTeaser: {
-      sectionTitle: 'How shops become visible to AI agents',
+      sectionTitle: 'How shops become',
+      sectionTitle_em: 'visible to AI agents',
       title: 'Agentic Commerce: get your online shop ready for the AI-agent era',
       p1: 'AI agents like ChatGPT, Gemini, and Perplexity already shop on behalf of consumers \u2013 without a human guiding every step. Most online shops are neither discoverable nor trustworthy enough for these agents, and fall short of the standard.',
       p2: 'With Product Asset Studio, LumAIa makes online shops agent-ready: a single product image becomes a complete, verified asset set \u2013 EU AI Act compliant and with C2PA provenance \u2013 the foundation for a shop that is visible not only to people, but to agents too.',
@@ -105,7 +107,8 @@ export const translations = {
 
     // ── Product Asset Studio Teaser ──
     pasTeaser: {
-      title: 'From one product image to a complete asset set',
+      title: 'From one product image',
+      title_em: 'to a complete asset set',
       p1: 'Product Asset Studio turns a single product photo into hero, lifestyle, detail, and micro-rotation assets — brand-safe, EU AI Act compliant, and with C2PA provenance.',
       p2: 'No photo shoot required. Catalog-ready images in minutes, rated with a Fidelity Score so nothing goes live without passing quality checks.',
       link: 'Discover Product Asset Studio',
@@ -124,7 +127,8 @@ export const translations = {
     // ── Comparison ──
     comparison: {
       label: 'Comparison',
-      title: 'LumAIa vs. the traditional agency',
+      title: 'LumAIa vs.',
+      title_em: 'the traditional agency',
       headers: ['Criterion', 'Traditional Agency', 'LumAIa Agentic Agency'],
       rows: [
         { label: 'Campaign launch', agency: '4\u20138 weeks', lumaia: '<24 hours' },
@@ -933,14 +937,16 @@ export const translations = {
 
     // ── Demo CTA (mid-page) ──
     demoCta: {
-      title: 'Bereit, LumAIa selbst zu sehen?',
+      title: 'Bereit,',
+      title_em: 'LumAIa selbst zu sehen?',
       sub: 'Sehen Sie in 20 Minuten, wie LumAIa f\u00fcr Ihre Marke aussehen w\u00fcrde. Kein Pitch, kein Standarddeck \u2013 eine Demo auf Ihren Kontext zugeschnitten.',
       cta: 'Demo buchen',
     },
 
     // ── Agentic Commerce Teaser ──
     agenticTeaser: {
-      sectionTitle: 'So werden Shops f\u00fcr KI-Agenten sichtbar',
+      sectionTitle: 'So werden Shops f\u00fcr KI-Agenten',
+      sectionTitle_em: 'sichtbar',
       title: 'Agentic Commerce: Bereite dein Onlineshop f\u00fcr das KI-Agenten Zeitalter vor.',
       p1: 'KI-Agenten wie ChatGPT, Gemini und Perplexity kaufen heute bereits f\u00fcr Konsumenten ein \u2013 ohne dass ein Mensch jeden Schritt begleitet. Die meisten Onlineshops sind f\u00fcr diese Agenten weder auffindbar noch vertrauensw\u00fcrdig genug und entsprechen nicht der Norm.',
       p2: 'Mit Product Asset Studio macht LumAIa Onlineshops agent-ready: Ein Produktbild wird zu einem vollst\u00e4ndigen, gepr\u00fcften Asset-Set, EU-AI Act complient und mit C2PA-Herkunftsnachweis \u2013 die Grundlage daf\u00fcr, dass Ihr Onlineshop nicht nur f\u00fcr Menschen, sondern auch f\u00fcr Agenten sichtbar ist.',
@@ -963,7 +969,8 @@ export const translations = {
 
     // ── Product Asset Studio Teaser ──
     pasTeaser: {
-      title: 'Von einem Produktbild zum vollständigen Asset-Set',
+      title: 'Von einem Produktbild',
+      title_em: 'zum vollständigen Asset-Set',
       p1: 'Product Asset Studio verwandelt ein einzelnes Produktfoto in Hero-, Lifestyle-, Detail- und Micro-Rotation-Assets — brand-konform, EU-AI-Act-konform und mit C2PA-Herkunftsnachweis.',
       p2: 'Kein Fotoshooting nötig. Katalogfertige Bilder in Minuten, mit Fidelity-Score bewertet — nichts geht live ohne bestandene Qualitätsprüfung.',
       link: 'Product Asset Studio entdecken',
@@ -982,7 +989,8 @@ export const translations = {
     // ── Comparison ──
     comparison: {
       label: 'Vergleich',
-      title: 'LumAIa im Vergleich zur klassischen Agentur',
+      title: 'LumAIa im Vergleich zur',
+      title_em: 'klassischen Agentur',
       headers: ['Kriterium', 'Klassische Agentur', 'LumAIa Agentic Agency'],
       rows: [
         { label: 'Kampagnen-Launch', agency: '4\u20138 Wochen', lumaia: '<24 Stunden' },

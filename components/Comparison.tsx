@@ -11,7 +11,7 @@ export default function Comparison() {
       <div className="relative z-10 max-w-4xl mx-auto">
         <p className="text-accent text-base font-semibold tracking-[0.18em] uppercase mb-4">{t.comparison.label}</p>
         <h2 id="comparison-title" className="font-serif text-4xl md:text-5xl text-white leading-[1.15] mb-12">
-          {t.comparison.title}
+          {t.comparison.title} <em className="gradient-text not-italic italic">{t.comparison.title_em}</em>
         </h2>
 
         <div className="glass-strong rounded-2xl overflow-hidden">

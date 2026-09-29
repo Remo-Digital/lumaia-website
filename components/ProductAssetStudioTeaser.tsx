@@ -12,8 +12,8 @@ export default function ProductAssetStudioTeaser() {
         style={{ background: 'radial-gradient(circle, rgba(123,232,159,0.08) 0%, transparent 70%)', filter: 'blur(80px)', borderRadius: '50%', transform: 'translate(-30%, -20%)' }} />
 
       <div className="relative z-10 max-w-5xl mx-auto">
-        <h2 id="pas-teaser-title" className="font-serif text-3xl md:text-4xl text-white leading-[1.2] mb-8">
-          {t.pasTeaser.title}
+        <h2 id="pas-teaser-title" className="font-serif text-4xl md:text-5xl text-white leading-[1.15] mb-8">
+          {t.pasTeaser.title} <em className="gradient-text not-italic italic">{t.pasTeaser.title_em}</em>
         </h2>
         <div className="glass-strong rounded-3xl p-10 md:p-14">
           <p className="text-white/70 text-base leading-relaxed mb-4">{t.pasTeaser.p1}</p>

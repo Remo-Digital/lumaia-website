@@ -43,7 +43,7 @@ export default function FAQ({ items: customItems, showSchemaMarkup = true }: FAQ
         {!customItems && (
           <>
             <p className="text-accent text-base font-semibold tracking-[0.18em] uppercase mb-4">{t.faq.label}</p>
-            <h2 id="faq-title" className="font-serif text-5xl md:text-6xl text-white leading-[1.15] mb-12">
+            <h2 id="faq-title" className="font-serif text-4xl md:text-5xl text-white leading-[1.15] mb-12">
               {t.faq.title} <em className="gradient-text not-italic italic">{t.faq.title_em}</em>
             </h2>
           </>

@@ -11,7 +11,7 @@ export default function PricingTeaser() {
 
       <div className="relative z-10 max-w-4xl mx-auto">
         <h2 id="pricing-teaser-title" className="font-serif text-4xl md:text-5xl text-white leading-[1.15] mb-12 text-center">
-          {t.pricingTeaser.title}
+          {t.pricingTeaser.title} <em className="gradient-text not-italic italic">{t.pricingTeaser.title_em}</em>
         </h2>
 
         {/* Table */}
