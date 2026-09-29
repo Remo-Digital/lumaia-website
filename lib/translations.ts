@@ -192,7 +192,7 @@ export const translations = {
 
     // ── Footer ──
     footer: {
-      copyright: '\u00a9 2026 LumAIa by Dewave GmbH',
+      copyright: '\u00a9 2026 LumAIa',
       links: [
         { label: 'Contact', href: '/contact' },
         { label: 'Terms', href: '/legal/terms' },
@@ -1054,7 +1054,7 @@ export const translations = {
 
     // ── Footer ──
     footer: {
-      copyright: '\u00a9 2026 LumAIa by Dewave GmbH',
+      copyright: '\u00a9 2026 LumAIa',
       links: [
         { label: 'Kontakt', href: '/contact' },
         { label: 'AGB', href: '/legal/terms' },
