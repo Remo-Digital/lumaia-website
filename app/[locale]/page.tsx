@@ -11,13 +11,13 @@ export async function generateMetadata({
   const hreflang = getHreflangUrls('/')
 
   const titles: Record<string, string> = {
-    de: 'LumAIa \u2013 Die Agentic Agency Plattform f\u00fcr Marketing',
-    en: 'LumAIa \u2013 The Agentic Agency Platform for Marketing',
+    de: 'Die Agentic Agency Plattform f\u00fcr E-Commerce | LumAIa',
+    en: 'The Agentic Agency Platform for E-Commerce | LumAIa',
   }
 
   const descriptions: Record<string, string> = {
-    de: 'LumAIa automatisiert den gesamten Marketing-Workflow \u2013 von Strategie bis Kampagnen-Optimierung. 10\u00d7 schneller, 70% g\u00fcnstiger, 100% Brand-Safe. Jetzt Pilot-Partner werden.',
-    en: 'LumAIa automates the entire marketing workflow \u2013 from strategy to campaign optimization. 10\u00d7 faster, 70% cheaper, 100% brand-safe. Become a pilot partner now.',
+    de: 'Ihre Produkte m\u00fcssen auf jedem Kanal und in KI-Antworten sichtbar sein. LumAIa automatisiert Produktbilder, Feeds und Kampagnen \u2013 skalierbar, Brand-konform, messbar.',
+    en: 'Your products must be visible on every channel and in AI responses. LumAIa automates product images, feeds, and campaigns \u2013 scalable, brand-safe, measurable.',
   }
 
   return {
