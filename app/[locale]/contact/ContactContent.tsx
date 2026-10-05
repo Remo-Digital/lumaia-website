@@ -38,6 +38,7 @@ export default function ContactContent() {
                 privacyLabel={c.privacyLabel}
                 newsletterConsentText={c.newsletterConsentText}
                 fieldLabelOverrides={c.fieldLabelOverrides}
+                conditionalRequired={c.conditionalRequired}
               />
             </section>
           </div>

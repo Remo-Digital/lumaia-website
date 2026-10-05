@@ -20,6 +20,7 @@ interface Props {
   privacyLabel: string
   newsletterConsentText?: string
   fieldLabelOverrides?: Record<string, string>
+  conditionalRequired?: { triggerText: string; errorMsg: string }
 }
 
 export default function HubSpotForm({
@@ -31,8 +32,10 @@ export default function HubSpotForm({
   privacyLabel,
   newsletterConsentText,
   fieldLabelOverrides,
+  conditionalRequired,
 }: Props) {
   const [consented, setConsented] = useState(false)
+  const [conditionalValid, setConditionalValid] = useState(true)
 
   useEffect(() => {
     const scriptId = 'hs-forms-script'
@@ -130,16 +133,69 @@ export default function HubSpotForm({
     return () => observer.disconnect()
   }, [fieldLabelOverrides])
 
-  // Block form submission until GDPR consent is given
+  // Conditional required: make textarea required when specific dropdown option is selected
+  useEffect(() => {
+    if (!conditionalRequired) return
+    const target = document.getElementById('hs-form-target')
+    if (!target) return
+
+    const setupLogic = () => {
+      const select = target.querySelector<HTMLSelectElement>('select')
+      const textarea = target.querySelector<HTMLTextAreaElement>('textarea')
+      if (!select || !textarea || select.dataset.conditionalAttached) return
+      select.dataset.conditionalAttached = 'true'
+
+      const validate = () => {
+        const selectedText = select.options[select.selectedIndex]?.text ?? ''
+        const triggered = selectedText.toLowerCase().includes(
+          conditionalRequired.triggerText.toLowerCase()
+        )
+        const field = textarea.closest('.hs-form-field')
+        const fieldLabel = field?.querySelector('label')
+
+        // Toggle asterisk on textarea label
+        if (triggered && fieldLabel && !field?.querySelector('.cond-asterisk')) {
+          const asterisk = document.createElement('span')
+          asterisk.className = 'cond-asterisk hs-form-required'
+          asterisk.textContent = ' *'
+          fieldLabel.appendChild(asterisk)
+        } else if (!triggered) {
+          field?.querySelector('.cond-asterisk')?.remove()
+        }
+
+        // Show/hide inline error message
+        const isEmpty = !textarea.value.trim()
+        field?.querySelector('.cond-error')?.remove()
+        if (triggered && isEmpty) {
+          const err = document.createElement('p')
+          err.className = 'cond-error'
+          err.textContent = conditionalRequired.errorMsg
+          field?.appendChild(err)
+          setConditionalValid(false)
+        } else {
+          setConditionalValid(!triggered || !isEmpty)
+        }
+      }
+
+      select.addEventListener('change', validate)
+      textarea.addEventListener('input', validate)
+    }
+
+    const observer = new MutationObserver(setupLogic)
+    observer.observe(target, { childList: true, subtree: true })
+    return () => observer.disconnect()
+  }, [conditionalRequired])
+
+  // Block form submission until GDPR consent is given and conditional fields are valid
   useEffect(() => {
     const target = document.getElementById('hs-form-target')
     if (!target) return
     const handler = (e: Event) => {
-      if (!consented) e.preventDefault()
+      if (!consented || !conditionalValid) e.preventDefault()
     }
     target.addEventListener('submit', handler, true)
     return () => target.removeEventListener('submit', handler, true)
-  }, [consented])
+  }, [consented, conditionalValid])
 
   return (
     <>
@@ -320,6 +376,12 @@ export default function HubSpotForm({
           margin-top: 2px !important;
           accent-color: #7be89f !important;
           cursor: pointer !important;
+        }
+        #hs-form-target .cond-error {
+          font-size: 0.7rem;
+          color: rgba(255,120,120,1);
+          margin-top: 4px;
+          margin-bottom: 0;
         }
         .gdpr-consent-label a {
           color: #7be89f !important;
