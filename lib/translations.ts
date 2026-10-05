@@ -209,9 +209,9 @@ export const translations = {
     // ── Contact Page ──
     contact: {
       label: 'Contact',
-      title: 'Get in',
-      title_em: 'touch',
-      sub: 'Have a question or want to learn more about LumAIa? We\'d love to hear from you.',
+      title: 'Your direct line to',
+      title_em: 'LumAIa',
+      sub: 'Whether it\'s general questions, specific inquiries, or a request for a live demo of LumAIa – we are here for you. Get in touch, we look forward to connecting!',
       info: {
         email_label: 'Email',
         email_value: 'hello@lumaia.ai',
@@ -1074,9 +1074,9 @@ export const translations = {
     // ── Contact Page ──
     contact: {
       label: 'Kontakt',
-      title: 'Schreiben Sie',
-      title_em: 'uns',
-      sub: 'Haben Sie eine Frage oder m\u00f6chten Sie mehr \u00fcber LumAIa erfahren? Wir freuen uns von Ihnen zu h\u00f6ren.',
+      title: 'Ihr direkter Draht zu',
+      title_em: 'LumAIa',
+      sub: 'Ob allgemeine Fragen, spezielle Anliegen oder der Wunsch nach einer Live-Demo von LumAIa – wir sind für Sie da. Melden Sie sich bei uns, wir freuen uns auf den Austausch!',
       info: {
         email_label: 'E-Mail',
         email_value: 'hello@lumaia.ai',
