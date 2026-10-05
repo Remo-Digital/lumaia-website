@@ -224,6 +224,7 @@ export const translations = {
       consentText: 'I have read and accept the',
       privacyLabel: 'Privacy Policy',
       newsletterConsentText: 'I would like to receive occasional product updates and tips by email. I can unsubscribe at any time.',
+      fieldLabelOverrides: { 'lumaia-demo': 'Reason for contact' },
     },
 
     // ── Privacy Page ──
@@ -1089,6 +1090,7 @@ export const translations = {
       consentText: 'Ich habe die',
       privacyLabel: 'Datenschutzerklärung gelesen und akzeptiere sie',
       newsletterConsentText: 'Ich möchte gelegentlich Produkt-Updates und Tipps per E-Mail erhalten. Abmeldung jederzeit möglich.',
+      fieldLabelOverrides: { 'lumaia-demo': 'Grund der Kontaktaufnahme' },
     },
 
     // ── Privacy Page ──

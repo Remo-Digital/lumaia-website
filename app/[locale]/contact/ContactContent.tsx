@@ -37,6 +37,7 @@ export default function ContactContent() {
                 privacyHref={localizedHref('/privacy', locale)}
                 privacyLabel={c.privacyLabel}
                 newsletterConsentText={c.newsletterConsentText}
+                fieldLabelOverrides={c.fieldLabelOverrides}
               />
             </section>
           </div>

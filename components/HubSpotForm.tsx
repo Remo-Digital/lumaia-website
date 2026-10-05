@@ -19,6 +19,7 @@ interface Props {
   privacyHref: string
   privacyLabel: string
   newsletterConsentText?: string
+  fieldLabelOverrides?: Record<string, string>
 }
 
 export default function HubSpotForm({
@@ -29,6 +30,7 @@ export default function HubSpotForm({
   privacyHref,
   privacyLabel,
   newsletterConsentText,
+  fieldLabelOverrides,
 }: Props) {
   const [consented, setConsented] = useState(false)
 
@@ -104,6 +106,29 @@ export default function HubSpotForm({
     observer.observe(target, { childList: true, subtree: true })
     return () => observer.disconnect()
   }, [consentText, privacyHref, privacyLabel, newsletterConsentText])
+
+  // Rename HubSpot field labels via DOM override
+  useEffect(() => {
+    if (!fieldLabelOverrides || Object.keys(fieldLabelOverrides).length === 0) return
+    const target = document.getElementById('hs-form-target')
+    if (!target) return
+
+    const applyOverrides = () => {
+      target.querySelectorAll<HTMLLabelElement>('label').forEach(label => {
+        // Collect only text nodes (ignore child elements like required-asterisk spans)
+        const textNode = Array.from(label.childNodes).find(n => n.nodeType === Node.TEXT_NODE)
+        if (!textNode) return
+        const raw = textNode.textContent?.trim().replace(/\*$/, '').trim() ?? ''
+        if (raw in fieldLabelOverrides) {
+          textNode.textContent = fieldLabelOverrides[raw]
+        }
+      })
+    }
+
+    const observer = new MutationObserver(applyOverrides)
+    observer.observe(target, { childList: true, subtree: true })
+    return () => observer.disconnect()
+  }, [fieldLabelOverrides])
 
   // Block form submission until GDPR consent is given
   useEffect(() => {
