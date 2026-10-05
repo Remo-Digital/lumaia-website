@@ -121,28 +121,20 @@ export default function HubSpotForm({
 
     const applyOverrides = () => {
       target.querySelectorAll<HTMLLabelElement>('label').forEach(label => {
-        // Skip our injected consent labels
+        // Skip injected consent labels and already-processed labels
         if (label.classList.contains('gdpr-consent-label')) return
+        if (label.dataset.labelOverridden) return
 
-        // Use full textContent (strips child HTML) to find the match key
+        // Match on full textContent (strips child HTML), case-insensitive
         const rawFull = (label.textContent ?? '').replace(/\*/g, '').trim().toLowerCase()
         const matchKey = Object.keys(fieldLabelOverrides).find(k => k.toLowerCase() === rawFull)
         if (!matchKey) return
 
-        // Replace text node(s) while preserving child elements (e.g. required asterisk span)
-        Array.from(label.childNodes).forEach(node => {
-          if (node.nodeType === Node.TEXT_NODE && node.textContent?.trim()) {
-            node.textContent = fieldLabelOverrides[matchKey]
-          }
-        })
-
-        // If no direct text node found, fall back to prepending text
-        const hasTextNode = Array.from(label.childNodes).some(
-          n => n.nodeType === Node.TEXT_NODE && n.textContent?.trim()
-        )
-        if (!hasTextNode) {
-          label.prepend(document.createTextNode(fieldLabelOverrides[matchKey]))
-        }
+        // Preserve the required asterisk span, wipe everything else, set new text
+        const requiredSpan = label.querySelector('.hs-form-required')
+        label.textContent = fieldLabelOverrides[matchKey]
+        if (requiredSpan) label.appendChild(requiredSpan)
+        label.dataset.labelOverridden = 'true'
       })
     }
 

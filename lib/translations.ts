@@ -224,7 +224,7 @@ export const translations = {
       consentText: 'I have read and accept the',
       privacyLabel: 'Privacy Policy',
       newsletterConsentText: 'I would like to receive occasional product updates and tips by email. I can unsubscribe at any time.',
-      fieldLabelOverrides: { 'lumaia-demo': 'Reason for contact' },
+      fieldLabelOverrides: { 'lumaia-demo': 'Reason for contact:' },
       conditionalRequired: { triggerText: 'General question', errorMsg: 'Please describe your question in the message field.' },
     },
 
