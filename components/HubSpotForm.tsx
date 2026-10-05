@@ -121,18 +121,35 @@ export default function HubSpotForm({
 
     const applyOverrides = () => {
       target.querySelectorAll<HTMLLabelElement>('label').forEach(label => {
-        // Collect only text nodes (ignore child elements like required-asterisk spans)
-        const textNode = Array.from(label.childNodes).find(n => n.nodeType === Node.TEXT_NODE)
-        if (!textNode) return
-        const raw = textNode.textContent?.trim().replace(/\*$/, '').trim() ?? ''
-        if (raw in fieldLabelOverrides) {
-          textNode.textContent = fieldLabelOverrides[raw]
+        // Skip our injected consent labels
+        if (label.classList.contains('gdpr-consent-label')) return
+
+        // Use full textContent (strips child HTML) to find the match key
+        const rawFull = (label.textContent ?? '').replace(/\*/g, '').trim().toLowerCase()
+        const matchKey = Object.keys(fieldLabelOverrides).find(k => k.toLowerCase() === rawFull)
+        if (!matchKey) return
+
+        // Replace text node(s) while preserving child elements (e.g. required asterisk span)
+        Array.from(label.childNodes).forEach(node => {
+          if (node.nodeType === Node.TEXT_NODE && node.textContent?.trim()) {
+            node.textContent = fieldLabelOverrides[matchKey]
+          }
+        })
+
+        // If no direct text node found, fall back to prepending text
+        const hasTextNode = Array.from(label.childNodes).some(
+          n => n.nodeType === Node.TEXT_NODE && n.textContent?.trim()
+        )
+        if (!hasTextNode) {
+          label.prepend(document.createTextNode(fieldLabelOverrides[matchKey]))
         }
       })
     }
 
     const observer = new MutationObserver(applyOverrides)
     observer.observe(target, { childList: true, subtree: true })
+    // Run immediately in case form already rendered
+    applyOverrides()
     return () => observer.disconnect()
   }, [fieldLabelOverrides])
 
@@ -182,10 +199,13 @@ export default function HubSpotForm({
 
       select.addEventListener('change', validate)
       textarea.addEventListener('input', validate)
+      // Run immediately in case form already rendered with a pre-selected value
+      validate()
     }
 
     const observer = new MutationObserver(setupLogic)
     observer.observe(target, { childList: true, subtree: true })
+    setupLogic()
     return () => observer.disconnect()
   }, [conditionalRequired])
 
