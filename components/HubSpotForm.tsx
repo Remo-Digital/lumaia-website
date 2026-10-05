@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 declare global {
   interface Window {
@@ -35,7 +35,8 @@ export default function HubSpotForm({
   conditionalRequired,
 }: Props) {
   const [consented, setConsented] = useState(false)
-  const [conditionalValid, setConditionalValid] = useState(true)
+  const consentedRef = useRef(false)
+  const conditionalValidRef = useRef(true)
 
   useEffect(() => {
     const scriptId = 'hs-forms-script'
@@ -86,7 +87,9 @@ export default function HubSpotForm({
           <span>${consentText} <a href="${privacyHref}" target="_blank" rel="noopener noreferrer">${privacyLabel}</a></span>
         `
         label.querySelector('input')?.addEventListener('change', e => {
-          setConsented((e.target as HTMLInputElement).checked)
+          const checked = (e.target as HTMLInputElement).checked
+          consentedRef.current = checked
+          setConsented(checked)
         })
         insertBefore.before(label)
       }
@@ -163,7 +166,7 @@ export default function HubSpotForm({
           field?.querySelector('.cond-asterisk')?.remove()
         }
 
-        // Show/hide inline error message
+        // Show/hide inline error message and update ref
         const isEmpty = !textarea.value.trim()
         field?.querySelector('.cond-error')?.remove()
         if (triggered && isEmpty) {
@@ -171,9 +174,9 @@ export default function HubSpotForm({
           err.className = 'cond-error'
           err.textContent = conditionalRequired.errorMsg
           field?.appendChild(err)
-          setConditionalValid(false)
+          conditionalValidRef.current = false
         } else {
-          setConditionalValid(!triggered || !isEmpty)
+          conditionalValidRef.current = !triggered || !isEmpty
         }
       }
 
@@ -186,16 +189,19 @@ export default function HubSpotForm({
     return () => observer.disconnect()
   }, [conditionalRequired])
 
-  // Block form submission until GDPR consent is given and conditional fields are valid
+  // Block form submission — uses refs to always read latest values without stale closure
   useEffect(() => {
     const target = document.getElementById('hs-form-target')
     if (!target) return
     const handler = (e: Event) => {
-      if (!consented || !conditionalValid) e.preventDefault()
+      if (!consentedRef.current || !conditionalValidRef.current) {
+        e.preventDefault()
+        e.stopImmediatePropagation()
+      }
     }
     target.addEventListener('submit', handler, true)
     return () => target.removeEventListener('submit', handler, true)
-  }, [consented, conditionalValid])
+  }, [])
 
   return (
     <>
