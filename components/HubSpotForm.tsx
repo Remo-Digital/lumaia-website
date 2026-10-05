@@ -62,17 +62,18 @@ export default function HubSpotForm({
     document.head.appendChild(script)
   }, [portalId, formId, region])
 
-  // Inject consent checkboxes before submit button once form renders
+  // Inject consent checkboxes before submit button — persistent observer so re-renders are handled
   useEffect(() => {
     const target = document.getElementById('hs-form-target')
     if (!target) return
 
-    const observer = new MutationObserver(() => {
+    const injectConsents = () => {
       const submitBtn = target.querySelector<HTMLElement>('.hs-button, input[type="submit"]')
-      if (submitBtn && !target.querySelector('#gdpr-consent')) {
-        const insertBefore = submitBtn.closest('.hs-submit') ?? submitBtn
+      if (!submitBtn) return
+      const insertBefore = submitBtn.closest('.hs-submit') ?? submitBtn
 
-        // GDPR / Privacy consent (required — blocks submission)
+      // Re-inject GDPR consent if missing (e.g. after HubSpot re-render)
+      if (!target.querySelector('#gdpr-consent')) {
         const label = document.createElement('label')
         label.id = 'gdpr-consent'
         label.className = 'gdpr-consent-label'
@@ -85,24 +86,23 @@ export default function HubSpotForm({
           setConsented((e.target as HTMLInputElement).checked)
         })
         insertBefore.before(label)
-
-        // Newsletter consent (optional — does not block submission)
-        if (newsletterConsentText) {
-          const nlLabel = document.createElement('label')
-          nlLabel.id = 'newsletter-consent'
-          nlLabel.className = 'gdpr-consent-label newsletter-consent-label'
-          nlLabel.setAttribute('for', 'newsletter-consent-cb')
-          nlLabel.innerHTML = `
-            <input type="checkbox" id="newsletter-consent-cb" name="newsletter_opt_in" value="true" />
-            <span>${newsletterConsentText}</span>
-          `
-          insertBefore.before(nlLabel)
-        }
-
-        observer.disconnect()
       }
-    })
 
+      // Re-inject newsletter consent if missing
+      if (newsletterConsentText && !target.querySelector('#newsletter-consent')) {
+        const nlLabel = document.createElement('label')
+        nlLabel.id = 'newsletter-consent'
+        nlLabel.className = 'gdpr-consent-label newsletter-consent-label'
+        nlLabel.setAttribute('for', 'newsletter-consent-cb')
+        nlLabel.innerHTML = `
+          <input type="checkbox" id="newsletter-consent-cb" name="newsletter_opt_in" value="true" />
+          <span>${newsletterConsentText}</span>
+        `
+        insertBefore.before(nlLabel)
+      }
+    }
+
+    const observer = new MutationObserver(injectConsents)
     observer.observe(target, { childList: true, subtree: true })
     return () => observer.disconnect()
   }, [consentText, privacyHref, privacyLabel, newsletterConsentText])
