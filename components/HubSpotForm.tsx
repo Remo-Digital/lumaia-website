@@ -53,7 +53,7 @@ export default function HubSpotForm({
 
     const script = document.createElement('script')
     script.id = scriptId
-    script.src = '//js.hsforms.net/forms/embed/v2.js'
+    script.src = '//js-eu1.hsforms.net/forms/embed/v2.js'
     script.charset = 'utf-8'
     script.type = 'text/javascript'
     script.onload = initForm
