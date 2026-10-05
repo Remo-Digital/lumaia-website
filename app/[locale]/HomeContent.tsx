@@ -1,4 +1,5 @@
 'use client'
+import { useLanguage } from '@/lib/LanguageContext'
 import Nav from '@/components/Nav'
 import Hero from '@/components/Hero'
 import TrustLogos from '@/components/TrustLogos'
@@ -19,6 +20,7 @@ import Footer from '@/components/Footer'
 import BlogTeaser from '@/components/BlogTeaser'
 
 export default function HomeContent() {
+  const { locale } = useLanguage()
   const schemaOrg = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
@@ -56,7 +58,10 @@ export default function HomeContent() {
        {/*  <FourPhases /> */}
         <section className="relative py-16 px-6" style={{ background: '#080614' }}>
           <div className="max-w-4xl mx-auto">
-            <VideoPlayer src="/Lumaia_Ad.mp4" label="LumAIa Product Demo" />
+            <VideoPlayer
+              src={locale === 'de-ch' ? '/Lumaia_Ad_DE.mp4' : '/Lumaia_Ad_EN.mp4'}
+              label="LumAIa Product Demo"
+            />
           </div>
         </section>
         <ProductAssetStudioTeaser />
