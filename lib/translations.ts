@@ -209,9 +209,9 @@ export const translations = {
     // ── Contact Page ──
     contact: {
       label: 'Contact',
-      title: 'Get in',
-      title_em: 'touch',
-      sub: 'Have a question or want to learn more about LumAIa? We\'d love to hear from you.',
+      title: 'Your direct line to',
+      title_em: 'LumAIa',
+      sub: 'Whether it\'s general questions, specific inquiries, or a request for a live demo of LumAIa – we are here for you. Get in touch, we look forward to connecting!',
       info: {
         email_label: 'Email',
         email_value: 'hello@lumaia.ai',
@@ -223,6 +223,9 @@ export const translations = {
       formId: '4a6a06b0-4008-43cd-a2ec-f4d6978022d2',
       consentText: 'I have read and accept the',
       privacyLabel: 'Privacy Policy',
+      newsletterConsentText: 'I would like to receive occasional product updates and tips by email. I can unsubscribe at any time.',
+      fieldLabelOverrides: { 'lumaia-demo': 'Reason for contact:' },
+      conditionalRequired: { triggerText: 'General question', errorMsg: 'Please describe your question in the message field.' },
     },
 
     // ── Privacy Page ──
@@ -1073,9 +1076,9 @@ export const translations = {
     // ── Contact Page ──
     contact: {
       label: 'Kontakt',
-      title: 'Schreiben Sie',
-      title_em: 'uns',
-      sub: 'Haben Sie eine Frage oder m\u00f6chten Sie mehr \u00fcber LumAIa erfahren? Wir freuen uns von Ihnen zu h\u00f6ren.',
+      title: 'Ihr direkter Draht zu',
+      title_em: 'LumAIa',
+      sub: 'Ob allgemeine Fragen, spezielle Anliegen oder der Wunsch nach einer Live-Demo von LumAIa – wir sind für Sie da. Melden Sie sich bei uns, wir freuen uns auf den Austausch!',
       info: {
         email_label: 'E-Mail',
         email_value: 'hello@lumaia.ai',
@@ -1086,7 +1089,10 @@ export const translations = {
       },
       formId: 'ad72af02-88e1-495f-a8b5-c6ae0cf1b99a',
       consentText: 'Ich habe die',
-      privacyLabel: 'Datenschutzerkl\u00e4rung gelesen und akzeptiere sie',
+      privacyLabel: 'Datenschutzerklärung gelesen und akzeptiere sie',
+      newsletterConsentText: 'Ich möchte gelegentlich Produkt-Updates und Tipps per E-Mail erhalten. Abmeldung jederzeit möglich.',
+      fieldLabelOverrides: { 'lumaia-demo': 'Grund der Kontaktaufnahme' },
+      conditionalRequired: { triggerText: 'Allgemeine Frage', errorMsg: 'Bitte schildern Sie Ihr Anliegen im Nachrichtenfeld.' },
     },
 
     // ── Privacy Page ──

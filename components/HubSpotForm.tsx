@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 declare global {
   interface Window {
@@ -18,6 +18,9 @@ interface Props {
   consentText: string
   privacyHref: string
   privacyLabel: string
+  newsletterConsentText?: string
+  fieldLabelOverrides?: Record<string, string>
+  conditionalRequired?: { triggerText: string; errorMsg: string }
 }
 
 export default function HubSpotForm({
@@ -27,8 +30,13 @@ export default function HubSpotForm({
   consentText,
   privacyHref,
   privacyLabel,
+  newsletterConsentText,
+  fieldLabelOverrides,
+  conditionalRequired,
 }: Props) {
   const [consented, setConsented] = useState(false)
+  const consentedRef = useRef(false)
+  const conditionalValidRef = useRef(true)
 
   useEffect(() => {
     const scriptId = 'hs-forms-script'
@@ -51,21 +59,25 @@ export default function HubSpotForm({
 
     const script = document.createElement('script')
     script.id = scriptId
-    script.src = '//js.hsforms.net/forms/embed/v2.js'
+    script.src = '//js-eu1.hsforms.net/forms/embed/v2.js'
     script.charset = 'utf-8'
     script.type = 'text/javascript'
     script.onload = initForm
     document.head.appendChild(script)
   }, [portalId, formId, region])
 
-  // Inject consent checkbox before submit button once form renders
+  // Inject consent checkboxes before submit button — persistent observer so re-renders are handled
   useEffect(() => {
     const target = document.getElementById('hs-form-target')
     if (!target) return
 
-    const observer = new MutationObserver(() => {
+    const injectConsents = () => {
       const submitBtn = target.querySelector<HTMLElement>('.hs-button, input[type="submit"]')
-      if (submitBtn && !target.querySelector('#gdpr-consent')) {
+      if (!submitBtn) return
+      const insertBefore = submitBtn.closest('.hs-submit') ?? submitBtn
+
+      // Re-inject GDPR consent if missing (e.g. after HubSpot re-render)
+      if (!target.querySelector('#gdpr-consent')) {
         const label = document.createElement('label')
         label.id = 'gdpr-consent'
         label.className = 'gdpr-consent-label'
@@ -75,27 +87,133 @@ export default function HubSpotForm({
           <span>${consentText} <a href="${privacyHref}" target="_blank" rel="noopener noreferrer">${privacyLabel}</a></span>
         `
         label.querySelector('input')?.addEventListener('change', e => {
-          setConsented((e.target as HTMLInputElement).checked)
+          const checked = (e.target as HTMLInputElement).checked
+          consentedRef.current = checked
+          setConsented(checked)
         })
-        submitBtn.closest('.hs-submit') ? submitBtn.closest('.hs-submit')!.before(label) : submitBtn.before(label)
-        observer.disconnect()
+        insertBefore.before(label)
       }
-    })
 
+      // Re-inject newsletter consent if missing
+      if (newsletterConsentText && !target.querySelector('#newsletter-consent')) {
+        const nlLabel = document.createElement('label')
+        nlLabel.id = 'newsletter-consent'
+        nlLabel.className = 'gdpr-consent-label newsletter-consent-label'
+        nlLabel.setAttribute('for', 'newsletter-consent-cb')
+        nlLabel.innerHTML = `
+          <input type="checkbox" id="newsletter-consent-cb" name="newsletter_opt_in" value="true" />
+          <span>${newsletterConsentText}</span>
+        `
+        insertBefore.before(nlLabel)
+      }
+    }
+
+    const observer = new MutationObserver(injectConsents)
     observer.observe(target, { childList: true, subtree: true })
     return () => observer.disconnect()
-  }, [consentText, privacyHref, privacyLabel])
+  }, [consentText, privacyHref, privacyLabel, newsletterConsentText])
 
-  // Block form submission until consent is given
+  // Rename HubSpot field labels via DOM override
+  useEffect(() => {
+    if (!fieldLabelOverrides || Object.keys(fieldLabelOverrides).length === 0) return
+    const target = document.getElementById('hs-form-target')
+    if (!target) return
+
+    const applyOverrides = () => {
+      target.querySelectorAll<HTMLLabelElement>('label').forEach(label => {
+        // Skip injected consent labels and already-processed labels
+        if (label.classList.contains('gdpr-consent-label')) return
+        if (label.dataset.labelOverridden) return
+
+        // Match on full textContent (strips child HTML), case-insensitive
+        const rawFull = (label.textContent ?? '').replace(/\*/g, '').trim().toLowerCase()
+        const matchKey = Object.keys(fieldLabelOverrides).find(k => k.toLowerCase() === rawFull)
+        if (!matchKey) return
+
+        // Preserve the required asterisk span, wipe everything else, set new text
+        const requiredSpan = label.querySelector('.hs-form-required')
+        label.textContent = fieldLabelOverrides[matchKey]
+        if (requiredSpan) label.appendChild(requiredSpan)
+        label.dataset.labelOverridden = 'true'
+      })
+    }
+
+    const observer = new MutationObserver(applyOverrides)
+    observer.observe(target, { childList: true, subtree: true })
+    // Run immediately in case form already rendered
+    applyOverrides()
+    return () => observer.disconnect()
+  }, [fieldLabelOverrides])
+
+  // Conditional required: make textarea required when specific dropdown option is selected
+  useEffect(() => {
+    if (!conditionalRequired) return
+    const target = document.getElementById('hs-form-target')
+    if (!target) return
+
+    const setupLogic = () => {
+      const select = target.querySelector<HTMLSelectElement>('select')
+      const textarea = target.querySelector<HTMLTextAreaElement>('textarea')
+      if (!select || !textarea || select.dataset.conditionalAttached) return
+      select.dataset.conditionalAttached = 'true'
+
+      const validate = () => {
+        const selectedText = select.options[select.selectedIndex]?.text ?? ''
+        const triggered = selectedText.toLowerCase().includes(
+          conditionalRequired.triggerText.toLowerCase()
+        )
+        const field = textarea.closest('.hs-form-field')
+        const fieldLabel = field?.querySelector('label')
+
+        // Toggle asterisk on textarea label
+        if (triggered && fieldLabel && !field?.querySelector('.cond-asterisk')) {
+          const asterisk = document.createElement('span')
+          asterisk.className = 'cond-asterisk hs-form-required'
+          asterisk.textContent = ' *'
+          fieldLabel.appendChild(asterisk)
+        } else if (!triggered) {
+          field?.querySelector('.cond-asterisk')?.remove()
+        }
+
+        // Show/hide inline error message and update ref
+        const isEmpty = !textarea.value.trim()
+        field?.querySelector('.cond-error')?.remove()
+        if (triggered && isEmpty) {
+          const err = document.createElement('p')
+          err.className = 'cond-error'
+          err.textContent = conditionalRequired.errorMsg
+          field?.appendChild(err)
+          conditionalValidRef.current = false
+        } else {
+          conditionalValidRef.current = !triggered || !isEmpty
+        }
+      }
+
+      select.addEventListener('change', validate)
+      textarea.addEventListener('input', validate)
+      // Run immediately in case form already rendered with a pre-selected value
+      validate()
+    }
+
+    const observer = new MutationObserver(setupLogic)
+    observer.observe(target, { childList: true, subtree: true })
+    setupLogic()
+    return () => observer.disconnect()
+  }, [conditionalRequired])
+
+  // Block form submission — uses refs to always read latest values without stale closure
   useEffect(() => {
     const target = document.getElementById('hs-form-target')
     if (!target) return
     const handler = (e: Event) => {
-      if (!consented) e.preventDefault()
+      if (!consentedRef.current || !conditionalValidRef.current) {
+        e.preventDefault()
+        e.stopImmediatePropagation()
+      }
     }
     target.addEventListener('submit', handler, true)
     return () => target.removeEventListener('submit', handler, true)
-  }, [consented])
+  }, [])
 
   return (
     <>
@@ -115,7 +233,7 @@ export default function HubSpotForm({
           font-weight: 600;
           letter-spacing: 0.15em;
           text-transform: uppercase;
-          color: rgba(255,255,255,0.3);
+          color: rgba(255,255,255,0.75);
         }
         #hs-form-target input[type="text"],
         #hs-form-target input[type="email"],
@@ -124,7 +242,7 @@ export default function HubSpotForm({
         #hs-form-target select {
           width: 100%;
           background: rgba(255,255,255,0.04);
-          border: 1px solid rgba(255,255,255,0.08);
+          border: 1px solid rgba(255,255,255,0.12);
           border-radius: 12px;
           padding: 12px 16px;
           font-size: 0.875rem;
@@ -143,7 +261,14 @@ export default function HubSpotForm({
         #hs-form-target input:focus,
         #hs-form-target textarea:focus,
         #hs-form-target select:focus {
-          border-color: rgba(123,232,159,0.4);
+          border-color: rgba(123,232,159,0.5);
+        }
+        #hs-form-target select {
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,0.5)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+          background-position: right 14px center;
+          padding-right: 40px;
+          cursor: pointer;
         }
         #hs-form-target select option {
           background: #0d0822;
@@ -158,7 +283,7 @@ export default function HubSpotForm({
           font-size: 0.75rem;
           text-transform: none;
           letter-spacing: 0;
-          color: rgba(255,255,255,0.55);
+          color: rgba(255,255,255,0.75);
           display: flex;
           align-items: flex-start;
           gap: 8px;
@@ -178,7 +303,7 @@ export default function HubSpotForm({
         }
         #hs-form-target .hs-error-msgs label {
           font-size: 0.7rem;
-          color: rgba(255, 100, 100, 0.8);
+          color: rgba(255, 120, 120, 1);
           text-transform: none;
           letter-spacing: 0;
         }
@@ -224,7 +349,7 @@ export default function HubSpotForm({
         }
         #hs-form-target .legal-consent-container {
           font-size: 0.7rem;
-          color: rgba(255,255,255,0.55);
+          color: rgba(255,255,255,0.75);
         }
         #hs-form-target fieldset {
           border: none;
@@ -252,11 +377,15 @@ export default function HubSpotForm({
           text-transform: none !important;
           letter-spacing: 0 !important;
           font-size: 0.75rem !important;
-          color: rgba(255,255,255,0.55) !important;
+          color: rgba(255,255,255,0.75) !important;
           cursor: pointer !important;
           font-weight: 400 !important;
           line-height: 1.5 !important;
           margin-bottom: 4px !important;
+        }
+        .newsletter-consent-label {
+          color: rgba(255,255,255,0.65) !important;
+          margin-top: 2px !important;
         }
         .gdpr-consent-label input[type="checkbox"] {
           width: 14px !important;
@@ -266,13 +395,19 @@ export default function HubSpotForm({
           accent-color: #7be89f !important;
           cursor: pointer !important;
         }
+        #hs-form-target .cond-error {
+          font-size: 0.7rem;
+          color: rgba(255,120,120,1);
+          margin-top: 4px;
+          margin-bottom: 0;
+        }
         .gdpr-consent-label a {
-          color: rgba(123,232,159,0.6) !important;
+          color: #7be89f !important;
           text-decoration: underline !important;
           transition: color 0.2s !important;
         }
         .gdpr-consent-label a:hover {
-          color: #7be89f !important;
+          color: rgba(123,232,159,0.8) !important;
         }
       `}</style>
 
