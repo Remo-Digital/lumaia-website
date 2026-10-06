@@ -34,35 +34,14 @@ export default function ProductAssetStudioContent() {
 
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white leading-[1.1] mb-8">{pas.h1}</h1>
 
-            {/* Hero placeholder */}
-            <div className="glass-strong rounded-2xl p-10 mb-8 min-h-[250px] relative overflow-hidden flex items-center justify-center">
-              <div className="absolute inset-0 opacity-25" aria-hidden="true">
-                <svg className="w-full h-full" viewBox="0 0 600 250" fill="none" aria-hidden="true">
-                  <rect x="40" y="50" width="100" height="150" rx="8" stroke="rgba(255,255,255,0.15)" strokeWidth="1" fill="rgba(255,255,255,0.02)" />
-                  <text x="90" y="130" textAnchor="middle" fill="rgba(255,255,255,0.15)" fontSize="9">1 Bild</text>
-                  <line x1="160" y1="125" x2="220" y2="125" stroke="rgba(123,232,159,0.3)" strokeWidth="2" markerEnd="url(#arrow)">
-                    <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite" />
-                  </line>
-                  <text x="190" y="115" textAnchor="middle" fill="rgba(123,232,159,0.4)" fontSize="9">PAS</text>
-                  {[0,1,2,3].map(i => (
-                    <g key={i}>
-                      <rect x={240 + (i % 2) * 120} y={40 + Math.floor(i / 2) * 90} width="100" height="70" rx="6"
-                        stroke="rgba(123,232,159,0.2)" strokeWidth="1" fill="rgba(123,232,159,0.03)">
-                        <animate attributeName="opacity" values="0.5;0.9;0.5" dur={`${2.5 + i * 0.3}s`} repeatCount="indefinite" />
-                      </rect>
-                      <text x={290 + (i % 2) * 120} y={80 + Math.floor(i / 2) * 90} textAnchor="middle" fill="rgba(123,232,159,0.25)" fontSize="8">
-                        {['Lifestyle', 'Hero', 'Detail', 'Rotation'][i]}
-                      </text>
-                    </g>
-                  ))}
-                  <defs>
-                    <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
-                      <path d="M0 0L8 3L0 6Z" fill="rgba(123,232,159,0.3)" />
-                    </marker>
-                  </defs>
-                </svg>
-              </div>
-              <span className="relative text-white/30 text-xs flex flex-col items-center gap-1">{pas.heroAlt}<span className="text-white/20 text-[10px]">1200 × 500 px · .webp · max 200 KB</span></span>
+            <div className="rounded-2xl overflow-hidden mb-8">
+              <img
+                src="/2_Loesung_Aus_einem_Produktbild_erzeugt_Product_Asset_Studio_ein_vollstandiges_Asset_Set.webp"
+                alt={locale === 'de-ch'
+                  ? 'Aus einem Produktbild erzeugt Product Asset Studio ein vollständiges Asset-Set'
+                  : 'Product Asset Studio generates a complete asset set from a single product image'}
+                className="w-full h-auto"
+              />
             </div>
               
             <p className="text-white/70 text-lg leading-relaxed mb-8">{pas.directOffer}</p>

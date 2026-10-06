@@ -72,16 +72,26 @@ export default function AgenticCommerceContent() {
                 ))}
               </div>
 
-              <div className="rounded-2xl overflow-hidden mb-8">
-                <img
-                  src="/2_Loesung_Aus_einem_Produktbild_erzeugt_Product_Asset_Studio_ein_vollstandiges_Asset_Set.webp"
-                  alt={locale === 'de-ch'
-                    ? 'Aus einem Produktbild erzeugt Product Asset Studio ein vollständiges Asset-Set'
-                    : 'Product Asset Studio generates a complete asset set from a single product image'}
-                  className="w-full h-auto"
-                  loading="lazy"
-                />
-              </div>
+     {/*          <div className="glass-strong rounded-2xl p-10 mb-8 flex items-center justify-center min-h-[180px] relative overflow-hidden">
+                <div className="absolute inset-0 opacity-25" aria-hidden="true">
+                  <svg className="w-full h-full" viewBox="0 0 500 180" fill="none" aria-hidden="true">
+                    {['ACP', 'UCP', 'MCP', 'AP2', 'A2A'].map((name, i) => (
+                      <g key={name}>
+                        <rect x={20 + i * 95} y="60" width="80" height="60" rx="8" stroke="rgba(123,232,159,0.25)" strokeWidth="1" fill="rgba(123,232,159,0.03)">
+                          <animate attributeName="opacity" values="0.5;0.9;0.5" dur={`${2 + i * 0.3}s`} repeatCount="indefinite" />
+                        </rect>
+                        <text x={60 + i * 95} y="95" textAnchor="middle" fill="rgba(123,232,159,0.4)" fontSize="11">{name}</text>
+                        {i < 4 && (
+                          <line x1={100 + i * 95} y1="90" x2={115 + i * 95} y2="90" stroke="rgba(123,232,159,0.15)" strokeWidth="1" strokeDasharray="3 3">
+                            <animate attributeName="strokeDashoffset" values="0;-6" dur="1s" repeatCount="indefinite" />
+                          </line>
+                        )}
+                      </g>
+                    ))}
+                  </svg>
+                </div>
+                <span className="relative text-white/30 text-xs flex flex-col items-center gap-1">{locale === 'de-ch' ? 'Protokoll-\u00dcbersicht' : 'Protocol Overview'}<span className="text-white/20 text-[10px]">1000 × 360 px · .webp · max 200 KB</span></span>
+              </div> */}
            
               <p className="text-white/70 text-base leading-relaxed font-medium">{ac.sections.howAgentsShop.conclusion}</p>
             </section>
