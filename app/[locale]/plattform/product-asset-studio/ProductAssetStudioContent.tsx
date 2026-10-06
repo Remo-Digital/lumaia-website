@@ -43,7 +43,6 @@ export default function ProductAssetStudioContent() {
                 className="w-full h-auto"
               />
             </div>
-              */}
             <p className="text-white/70 text-lg leading-relaxed mb-8">{pas.directOffer}</p>
 
             <div className="flex flex-col sm:flex-row items-start gap-4 mb-4">
