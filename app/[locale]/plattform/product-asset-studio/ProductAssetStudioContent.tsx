@@ -78,17 +78,15 @@ export default function ProductAssetStudioContent() {
             </div>
             <p className="text-white/60 text-sm mb-8">{pas.ctaMicro}</p>
 
-            {/* Trust layer placeholder image */}
-            <div className="glass rounded-2xl overflow-hidden min-h-[180px] flex items-center justify-center"
-              style={{ border: '1px dashed rgba(255,255,255,0.12)' }}>
-              <span className="text-white/25 text-xs flex flex-col items-center gap-1.5">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="2" />
-                  <circle cx="8.5" cy="8.5" r="1.5" />
-                  <path d="m21 15-5-5L5 21" />
-                </svg>
-                {locale === 'de-ch' ? 'Platzhalterbild · 800 × 180 px · .webp' : 'Placeholder image · 800 × 180 px · .webp'}
-              </span>
+            <div className="rounded-2xl overflow-hidden mb-8">
+              <img
+                src="/2_Loesung_Aus_einem_Produktbild_erzeugt_Product_Asset_Studio_ein_vollstandiges_Asset_Set.webp"
+                alt={locale === 'de-ch'
+                  ? 'Aus einem Produktbild erzeugt Product Asset Studio ein vollständiges Asset-Set'
+                  : 'Product Asset Studio generates a complete asset set from a single product image'}
+                className="w-full h-auto"
+                loading="lazy"
+              />
             </div>
           </div>
         </section>
