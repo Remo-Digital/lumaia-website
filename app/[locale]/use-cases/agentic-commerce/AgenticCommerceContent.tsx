@@ -72,7 +72,7 @@ export default function AgenticCommerceContent() {
                 ))}
               </div>
 
-              <div className="glass-strong rounded-2xl p-10 mb-8 flex items-center justify-center min-h-[180px] relative overflow-hidden">
+     {/*          <div className="glass-strong rounded-2xl p-10 mb-8 flex items-center justify-center min-h-[180px] relative overflow-hidden">
                 <div className="absolute inset-0 opacity-25" aria-hidden="true">
                   <svg className="w-full h-full" viewBox="0 0 500 180" fill="none" aria-hidden="true">
                     {['ACP', 'UCP', 'MCP', 'AP2', 'A2A'].map((name, i) => (
@@ -91,7 +91,7 @@ export default function AgenticCommerceContent() {
                   </svg>
                 </div>
                 <span className="relative text-white/30 text-xs flex flex-col items-center gap-1">{locale === 'de-ch' ? 'Protokoll-\u00dcbersicht' : 'Protocol Overview'}<span className="text-white/20 text-[10px]">1000 × 360 px · .webp · max 200 KB</span></span>
-              </div>
+              </div> */}
            
               <p className="text-white/70 text-base leading-relaxed font-medium">{ac.sections.howAgentsShop.conclusion}</p>
             </section>
