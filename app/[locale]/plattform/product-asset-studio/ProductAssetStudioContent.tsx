@@ -57,16 +57,6 @@ export default function ProductAssetStudioContent() {
             </div>
             <p className="text-white/60 text-sm mb-8">{pas.ctaMicro}</p>
 
-            <div className="rounded-2xl overflow-hidden mb-8">
-              <img
-                src="/2_Loesung_Aus_einem_Produktbild_erzeugt_Product_Asset_Studio_ein_vollstandiges_Asset_Set.webp"
-                alt={locale === 'de-ch'
-                  ? 'Aus einem Produktbild erzeugt Product Asset Studio ein vollständiges Asset-Set'
-                  : 'Product Asset Studio generates a complete asset set from a single product image'}
-                className="w-full h-auto"
-                loading="lazy"
-              />
-            </div>
           </div>
         </section>
 
