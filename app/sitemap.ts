@@ -1,4 +1,5 @@
 import { locales, translatePath, type SiteLocale } from '@/lib/i18n'
+import { getAllPosts } from '@/lib/blog'
 import type { MetadataRoute } from 'next'
 
 const BASE = 'https://lumaia.studio'
@@ -35,7 +36,7 @@ function localizedUrl(internalPath: string, locale: SiteLocale) {
   return `${BASE}/${locale}${slug === '/' ? '' : slug}`
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const today = new Date().toISOString().split('T')[0]
   const entries: MetadataRoute.Sitemap = []
 
@@ -49,6 +50,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: route.changeFrequency,
         priority: locale === 'de-ch' ? route.priority : Math.round(Math.max(route.priority - 0.1, 0.1) * 10) / 10,
         alternates: { languages: alternates },
+      })
+    }
+  }
+
+  // Blog posts × locales (hreflang only for locales the post exists in)
+  const postsByLocale = await Promise.all(locales.map(async (locale) => ({ locale, posts: await getAllPosts(locale) })))
+  for (const { locale, posts } of postsByLocale) {
+    for (const post of posts) {
+      const path = `/blog/${post.slug}`
+      const languages: Record<string, string> = {}
+      for (const { locale: other, posts: otherPosts } of postsByLocale) {
+        if (otherPosts.some((p) => p.slug === post.slug)) {
+          languages[other === 'de-ch' ? 'de-CH' : 'en-CH'] = localizedUrl(path, other)
+        }
+      }
+      languages['x-default'] = languages['de-CH'] ?? languages['en-CH']
+      entries.push({
+        url: localizedUrl(path, locale),
+        lastModified: post.date,
+        changeFrequency: 'monthly',
+        priority: locale === 'de-ch' ? 0.6 : 0.5,
+        alternates: { languages },
       })
     }
   }

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
-import { getHreflangUrls } from '@/lib/i18n'
+import { getHreflangUrls, type SiteLocale } from '@/lib/i18n'
+import { getAllPosts } from '@/lib/blog'
 import HomeContent from './HomeContent'
 
 export async function generateMetadata({
@@ -30,6 +31,12 @@ export async function generateMetadata({
   }
 }
 
-export default function Home() {
-  return <HomeContent />
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params
+  const latestPosts = (await getAllPosts(locale as SiteLocale)).slice(0, 3)
+  return <HomeContent latestPosts={latestPosts} />
 }

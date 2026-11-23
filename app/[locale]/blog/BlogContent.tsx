@@ -1,13 +1,14 @@
 'use client'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import BlogCard from '@/components/BlogCard'
 import { useLanguage } from '@/lib/LanguageContext'
 import { localizedHref } from '@/lib/i18n'
+import type { BlogPostSummary } from '@/lib/blog-shared'
 
-export default function BlogContent() {
+export default function BlogContent({ posts }: { posts: BlogPostSummary[] }) {
   const { t, locale } = useLanguage()
   const b = t.blogPage
-  const bt = t.blogTeaser
 
   return (
     <>
@@ -29,38 +30,17 @@ export default function BlogContent() {
           </header>
 
           {/* Blog cards */}
-          <section className="grid md:grid-cols-3 gap-6 animate-fade-up-2 mb-16" aria-label={locale === 'de-ch' ? 'Blog-Artikel' : 'Blog articles'}>
-            {bt.posts.map((post, i) => (
-              <article key={i} className="glass rounded-2xl p-6 flex flex-col gap-4 glow-hover">
-                <div
-                  className="rounded-xl w-full aspect-video flex flex-col items-center justify-center gap-1"
-                  style={{ background: 'linear-gradient(135deg, rgba(123,232,159,0.06) 0%, rgba(14,156,176,0.06) 100%)', border: '1px solid rgba(255,255,255,0.05)' }}
-                  aria-hidden="true"
-                >
-                  <span className="text-white/20 text-[10px]">800 × 450 px · .webp · max 200 KB</span>
-                </div>
-                <div className="flex flex-col gap-2 flex-1">
-                  <span className="glass-accent text-accent text-xs font-semibold tracking-[0.15em] uppercase px-3 py-1 rounded-full self-start">
-                    {b.label}
-                  </span>
-                  <h2 className="font-serif text-lg text-white/90 leading-snug">
-                    {post.title}
-                  </h2>
-                  <p className="text-white/35 text-sm leading-relaxed flex-1">{b.comingSoon}</p>
-                </div>
-                <span
-                  className="inline-flex items-center gap-1 text-sm font-semibold text-white/50 cursor-not-allowed"
-                  aria-disabled="true"
-                >
-                  {b.readArticle} &rarr;
-                </span>
-              </article>
-            ))}
-          </section>
+          {posts.length > 0 && (
+            <section className="grid md:grid-cols-3 gap-6 animate-fade-up-2 mb-16" aria-label={b.articlesLabel}>
+              {posts.map((post) => (
+                <BlogCard key={post.slug} post={post} />
+              ))}
+            </section>
+          )}
 
-          {/* Coming soon notice */}
-          <section className="glass rounded-2xl p-8 text-center animate-fade-up-3" aria-label={locale === 'de-ch' ? 'Ank\u00fcndigung' : 'Announcement'}>
-            <p className="text-white/70 text-base mb-6">{b.comingSoon}</p>
+          {/* Contact / coming soon notice */}
+          <section className="glass rounded-2xl p-8 text-center animate-fade-up-3" aria-label={locale === 'de-ch' ? 'Kontakt' : 'Contact'}>
+            <p className="text-white/70 text-base mb-6">{posts.length > 0 ? b.ctaSub : b.comingSoon}</p>
             <a
               href={localizedHref('/contact', locale)}
               className="inline-flex items-center justify-center gap-2 text-sm font-semibold px-6 py-3 rounded-full transition-opacity hover:opacity-80"

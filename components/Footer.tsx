@@ -46,7 +46,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {/* <li><a href={localizedHref('/use-cases', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">{locale === 'de-ch' ? 'Alle Use Cases' : 'All Use Cases'}</a></li> */}
               <li><a href={localizedHref('/use-cases/agentic-commerce', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">Agentic Commerce</a></li>
-              {/* <li><a href={localizedHref('/blog', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">Blog</a></li> */}
+              <li><a href={localizedHref('/blog', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">Blog</a></li>
               
             </ul>
           </nav>

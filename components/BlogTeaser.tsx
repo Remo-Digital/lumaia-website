@@ -1,9 +1,13 @@
 'use client'
 import { useLanguage } from '@/lib/LanguageContext'
 import { localizedHref } from '@/lib/i18n'
+import BlogCard from '@/components/BlogCard'
+import type { BlogPostSummary } from '@/lib/blog-shared'
 
-export default function BlogTeaser() {
+export default function BlogTeaser({ posts }: { posts: BlogPostSummary[] }) {
   const { t, locale } = useLanguage()
+
+  if (posts.length === 0) return null
 
   return (
     <section className="relative overflow-hidden py-24 px-6" style={{ background: '#070512' }} aria-labelledby="blog-teaser-title">
@@ -16,18 +20,8 @@ export default function BlogTeaser() {
         <p className="text-white/70 text-lg max-w-2xl mb-12 leading-relaxed">{t.blogTeaser.sub}</p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {t.blogTeaser.posts.map((post, i) => (
-            <article key={i} className="glass glow-hover rounded-2xl overflow-hidden transition-all duration-300">
-              {/* Placeholder image */}
-              <div className="h-40 bg-gradient-to-br from-accent/5 to-purple/5 flex flex-col items-center justify-center gap-1">
-                <span className="text-white/30 text-sm">Blog Placeholder</span>
-                <span className="text-white/20 text-[10px]">800 × 450 px · .webp · max 200 KB</span>
-              </div>
-              <div className="p-6">
-                <h3 className="text-white/80 font-medium text-base mb-2">{post.title}</h3>
-                <span className="text-accent text-sm">{locale === 'de-ch' ? 'Bald verf\u00fcgbar' : 'Coming soon'}</span>
-              </div>
-            </article>
+          {posts.map((post) => (
+            <BlogCard key={post.slug} post={post} headingLevel="h3" />
           ))}
         </div>
 

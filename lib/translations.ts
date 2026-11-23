@@ -176,11 +176,6 @@ export const translations = {
       title_em: 'the LumAIa blog',
       sub: 'More on Agentic Commerce, AI visibility in answer engines, and the future of marketing on the LumAIa blog.',
       link: 'Go to the blog',
-      posts: [
-        { title: 'Blog article placeholder 1', slug: '#' },
-        { title: 'Blog article placeholder 2', slug: '#' },
-        { title: 'Blog article placeholder 3', slug: '#' },
-      ],
     },
 
     // ── CTA Final ──
@@ -718,6 +713,12 @@ export const translations = {
       comingSoon: 'Blog articles coming soon. Stay tuned.',
       readArticle: 'Read article',
       contactCta: 'Get in touch',
+      articlesLabel: 'Blog articles',
+      backToBlog: 'Back to the blog',
+      by: 'by',
+      draft: 'Draft',
+      ctaTitle: 'Want to put this into practice?',
+      ctaSub: 'We show you how LumAIa makes your products visible on every channel and in AI answers.',
     },
 
     // ── Signup Page ──
@@ -1043,11 +1044,6 @@ export const translations = {
       title_em: 'LumAIa-Blog',
       sub: 'Mehr zu Agentic Commerce, KI-Sichtbarkeit in Antwort-Engines und der Zukunft des Marketings finden Sie im LumAIa-Blog.',
       link: 'Zum Blog',
-      posts: [
-        { title: 'Blog-Artikel Platzhalter 1', slug: '#' },
-        { title: 'Blog-Artikel Platzhalter 2', slug: '#' },
-        { title: 'Blog-Artikel Platzhalter 3', slug: '#' },
-      ],
     },
 
     // ── CTA Final ──
@@ -1584,6 +1580,12 @@ export const translations = {
       comingSoon: 'Blog-Artikel erscheinen in K\u00fcrze. Bleiben Sie dran.',
       readArticle: 'Artikel lesen',
       contactCta: 'Kontakt aufnehmen',
+      articlesLabel: 'Blog-Artikel',
+      backToBlog: 'Zurück zum Blog',
+      by: 'von',
+      draft: 'Entwurf',
+      ctaTitle: 'Wollen Sie das umsetzen?',
+      ctaSub: 'Wir zeigen Ihnen, wie LumAIa Ihre Produkte auf jedem Kanal und in KI-Antworten sichtbar macht.',
     },
 
     // ── Signup Page ──
