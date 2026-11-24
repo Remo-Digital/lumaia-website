@@ -3,7 +3,7 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import { useLanguage } from '@/lib/LanguageContext'
 import { modules, phases } from '@/lib/modules'
-import { localizedHref } from '@/lib/i18n'
+import { localizedHref, baseLocaleOf } from '@/lib/i18n'
 
 const phaseOrder = ['plan', 'build', 'publish', 'report-learn'] as const
 
@@ -39,7 +39,7 @@ export default function PlattformContent() {
               <div className="absolute inset-0 line-grid pointer-events-none" aria-hidden="true" />
               <div className="relative z-10 max-w-5xl mx-auto">
                 <h2 className="text-lg font-semibold tracking-[0.15em] uppercase mb-8" style={{ color: phase.color }}>
-                  {phase[locale]}
+                  {phase[baseLocaleOf(locale)]}
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {phaseModules.map(mod => (
@@ -49,15 +49,15 @@ export default function PlattformContent() {
                       className="glass glow-hover rounded-2xl p-6 transition-all duration-300 group block"
                     >
                       <div className="flex items-center justify-between mb-3">
-                        <span className="text-xs font-semibold tracking-wider uppercase text-white/60">{mod.tag[locale]}</span>
+                        <span className="text-xs font-semibold tracking-wider uppercase text-white/60">{mod.tag[baseLocaleOf(locale)]}</span>
                         <span className={`text-[10px] font-semibold tracking-wider uppercase px-2 py-0.5 rounded ${
                           mod.status === 'live' ? 'text-accent bg-accent/10' : 'text-white/50 bg-white/5'
                         }`}>
                           {mod.status === 'live' ? t.platformPage.live : t.platformPage.comingSoon}
                         </span>
                       </div>
-                      <h3 className="font-serif text-lg text-white group-hover:text-accent transition-colors mb-2">{mod.name[locale]}</h3>
-                      <p className="text-white/60 text-sm leading-relaxed">{mod.description[locale]}</p>
+                      <h3 className="font-serif text-lg text-white group-hover:text-accent transition-colors mb-2">{mod.name[baseLocaleOf(locale)]}</h3>
+                      <p className="text-white/60 text-sm leading-relaxed">{mod.description[baseLocaleOf(locale)]}</p>
                     </a>
                   ))}
                 </div>

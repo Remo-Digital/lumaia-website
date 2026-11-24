@@ -4,7 +4,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { cache, type ComponentType } from 'react'
-import { locales, type SiteLocale } from '@/lib/i18n'
+import { baseLocaleOf, locales, type SiteLocale } from '@/lib/i18n'
 import { headingIds, type BlogFaq, type BlogHeading, type BlogMeta } from '@/lib/blog-shared'
 
 const CONTENT_DIR = path.join(process.cwd(), 'content', 'blog')
@@ -102,15 +102,18 @@ function analyzeSource(source: string): Pick<LoadedPost, 'headings' | 'wordCount
 
 /** All posts of a locale, keyed by slug (cached per request/build worker) */
 const loadLocale = cache(async (locale: SiteLocale): Promise<Map<string, LoadedPost>> => {
-  const dir = path.join(CONTENT_DIR, locale)
+  // A locale without its own folder (e.g. de-de) uses the posts of its base locale (de-ch)
+  const ownDir = path.join(CONTENT_DIR, locale)
+  const folder = fs.existsSync(ownDir) ? locale : baseLocaleOf(locale)
+  const dir = path.join(CONTENT_DIR, folder)
   const files = fs.existsSync(dir) ? fs.readdirSync(dir).filter((file) => file.endsWith('.mdx')) : []
   const posts = new Map<string, LoadedPost>()
 
   for (const file of files) {
     const name = file.slice(0, -'.mdx'.length)
     // Keep the `.mdx` suffix in the template so the bundler only includes MDX files
-    const mod: BlogModule = await import(`@/content/blog/${locale}/${name}.mdx`)
-    const meta = normalize(mod.frontmatter ?? {}, `${locale}/${file}`)
+    const mod: BlogModule = await import(`@/content/blog/${folder}/${name}.mdx`)
+    const meta = normalize(mod.frontmatter ?? {}, `${folder}/${file}`)
     if (meta.draft && !SHOW_DRAFTS) continue
     if (posts.has(meta.slug)) throw new Error(`Blog: duplicate slug "${meta.slug}" in ${locale}`)
     const analysis = analyzeSource(fs.readFileSync(path.join(dir, file), 'utf8'))

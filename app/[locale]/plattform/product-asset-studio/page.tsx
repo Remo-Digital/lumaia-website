@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { getHreflangUrls } from '@/lib/i18n'
+import { getHreflangUrls, hreflangOf, type SiteLocale } from '@/lib/i18n'
 import { translations } from '@/lib/translations'
 import ProductAssetStudioContent from './ProductAssetStudioContent'
 
@@ -9,14 +9,14 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>
 }): Promise<Metadata> {
   const { locale } = await params
-  const t = translations[locale as keyof typeof translations] || translations['de-ch']
+  const t = translations[locale as SiteLocale] ?? translations['de-ch']
   const hreflang = getHreflangUrls('/plattform/product-asset-studio')
 
   return {
     title: `Product Asset Studio \u2013 LumAIa`,
     description: t.pas.directOffer,
     alternates: {
-      canonical: hreflang[locale === 'en-ch' ? 'en-CH' : 'de-CH'],
+      canonical: hreflang[hreflangOf(locale as SiteLocale)],
       languages: hreflang,
     },
   }

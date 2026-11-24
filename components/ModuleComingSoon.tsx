@@ -1,7 +1,7 @@
 'use client'
 import { useLanguage } from '@/lib/LanguageContext'
 import { getModuleBySlug, phases } from '@/lib/modules'
-import { localizedHref } from '@/lib/i18n'
+import { localizedHref, baseLocaleOf } from '@/lib/i18n'
 import Nav from './Nav'
 import Footer from './Footer'
 
@@ -33,7 +33,7 @@ export default function ModuleComingSoon({ slug }: { slug: string }) {
             {/* Phase badge */}
             <div className="inline-flex items-center gap-2 mb-6">
               <span className="text-xs font-semibold tracking-[0.15em] uppercase px-3 py-1 rounded-full" style={{ color: phase.color, background: `${phase.color}12`, border: `1px solid ${phase.color}25` }}>
-                {phase[locale]}
+                {phase[baseLocaleOf(locale)]}
               </span>
               <span className="glass-accent text-accent text-xs font-semibold tracking-[0.15em] uppercase px-3 py-1 rounded-full">
                 {t.moduleComingSoon.status}
@@ -41,10 +41,10 @@ export default function ModuleComingSoon({ slug }: { slug: string }) {
             </div>
 
             <h1 className="font-serif text-5xl md:text-6xl text-white leading-[1.1] mb-6">
-              {mod.name[locale]}
+              {mod.name[baseLocaleOf(locale)]}
             </h1>
             <p className="text-white/70 text-lg leading-relaxed mb-8 max-w-xl">
-              {mod.description[locale]}
+              {mod.description[baseLocaleOf(locale)]}
             </p>
             <p className="text-white/60 text-base mb-12">
               {t.moduleComingSoon.intro}

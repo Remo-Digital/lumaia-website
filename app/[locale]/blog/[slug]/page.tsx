@@ -3,13 +3,12 @@ import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
-import { getHreflangUrls, localizedHref, type SiteLocale } from '@/lib/i18n'
+import { defaultLocale, hreflangOf, localizedHref, localizedUrl, locales, type SiteLocale } from '@/lib/i18n'
 import { translations } from '@/lib/translations'
 import { getAllPostParams, getPost, getPostTranslations } from '@/lib/blog'
-import { formatBlogDate, slugifyHeading } from '@/lib/blog-shared'
+import { formatBlogDate, slugifyHeading, toIsoDateTime } from '@/lib/blog-shared'
 
 const BASE = 'https://lumaia.studio'
-const HREFLANG_KEY: Record<SiteLocale, 'de-CH' | 'en-CH'> = { 'de-ch': 'de-CH', 'en-ch': 'en-CH' }
 
 type Params = Promise<{ locale: string; slug: string }>
 
@@ -19,16 +18,16 @@ export async function generateStaticParams() {
 
 export const dynamicParams = false
 
-const postUrl = (locale: SiteLocale, slug: string) => getHreflangUrls(`/blog/${slug}`)[HREFLANG_KEY[locale]]
+const postUrl = (locale: SiteLocale, slug: string) => localizedUrl(`/blog/${slug}`, locale)
 
 /** Absolute URLs of every language version of a post, for hreflang */
 async function postAlternates(locale: SiteLocale, slug: string) {
   const translationsBySlug = await getPostTranslations(locale, slug)
   const languages: Record<string, string> = {}
   for (const [l, s] of Object.entries(translationsBySlug) as [SiteLocale, string][]) {
-    languages[HREFLANG_KEY[l]] = postUrl(l, s)
+    languages[hreflangOf(l)] = postUrl(l, s)
   }
-  languages['x-default'] = languages['de-CH'] ?? languages['en-CH']
+  languages['x-default'] = languages[hreflangOf(defaultLocale)] ?? Object.values(languages)[0]
   return { translationsBySlug, languages }
 }
 
@@ -43,8 +42,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const canonical = postUrl(locale, slug)
 
   return {
-    // Frontmatter titles already include the brand, so bypass the layout's title template
-    title: meta.seoTitle === meta.title ? meta.title : { absolute: meta.seoTitle },
+    title: meta.seoTitle,
     description: meta.description,
     alternates: { canonical, languages },
     robots: meta.draft ? { index: false, follow: false } : undefined,
@@ -53,8 +51,8 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
       title: meta.title,
       description: meta.description,
       url: canonical,
-      publishedTime: meta.date,
-      modifiedTime: meta.updated,
+      publishedTime: toIsoDateTime(meta.date),
+      modifiedTime: meta.updated ? toIsoDateTime(meta.updated) : undefined,
       authors: [meta.author],
       tags: meta.tags,
       images: meta.image ? [{ url: `${BASE}${meta.image}` }] : undefined,
@@ -74,13 +72,13 @@ export default async function BlogPostPage({ params }: { params: Params }) {
   const { meta, Content, headings, wordCount, citations } = post
   const b = translations[locale].blogPage
   const url = postUrl(locale, slug)
-  const blogUrl = getHreflangUrls('/blog')[HREFLANG_KEY[locale]]
+  const blogUrl = localizedUrl('/blog', locale)
   const homeUrl = `${BASE}/${locale}`
   const { translationsBySlug } = await postAlternates(locale, slug)
 
   // Language switcher: link to the translated slug, or the blog overview if there is no translation
   const localeHrefs = Object.fromEntries(
-    (['de-ch', 'en-ch'] as const).map((l) => [l, localizedHref(translationsBySlug[l] ? `/blog/${translationsBySlug[l]}` : '/blog', l)]),
+    locales.map((l) => [l, localizedHref(translationsBySlug[l] ? `/blog/${translationsBySlug[l]}` : '/blog', l)]),
   ) as Record<SiteLocale, string>
 
   // Stable entity ids, so the same organization and author are recognised across pages
@@ -95,9 +93,12 @@ export default async function BlogPostPage({ params }: { params: Params }) {
     image: `${url}#primaryimage`,
     faq: `${url}#faq`,
   }
-  const language = HREFLANG_KEY[locale]
+  const language = hreflangOf(locale)
   const showToc = meta.toc && headings.length > 1
 
+  // Only nodes no other node points to show up as top-level items in validators. The WebPage
+  // therefore does not reference the article or breadcrumb, so BlogPosting, BreadcrumbList and
+  // FAQPage each stay top-level (the article points to the page via mainEntityOfPage).
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -153,19 +154,17 @@ export default async function BlogPostPage({ params }: { params: Params }) {
         description: meta.description,
         inLanguage: language,
         isPartOf: { '@id': ids.website },
-        breadcrumb: { '@id': ids.breadcrumb },
-        mainEntity: { '@id': ids.article },
         ...(meta.image ? { primaryImageOfPage: { '@id': ids.image } } : {}),
-        datePublished: meta.date,
-        dateModified: meta.updated ?? meta.date,
+        datePublished: toIsoDateTime(meta.date),
+        dateModified: toIsoDateTime(meta.updated ?? meta.date),
       },
       {
         '@type': 'BlogPosting',
         '@id': ids.article,
         headline: meta.title,
         description: meta.description,
-        datePublished: meta.date,
-        dateModified: meta.updated ?? meta.date,
+        datePublished: toIsoDateTime(meta.date),
+        dateModified: toIsoDateTime(meta.updated ?? meta.date),
         inLanguage: language,
         url,
         mainEntityOfPage: { '@id': ids.page },

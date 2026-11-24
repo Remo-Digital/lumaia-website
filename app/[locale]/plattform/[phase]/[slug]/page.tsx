@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { modules } from '@/lib/modules'
-import { locales, getHreflangUrls } from '@/lib/i18n'
-import type { Locale } from '@/lib/translations'
+import { locales, getHreflangUrls, hreflangOf, baseLocaleOf, type SiteLocale } from '@/lib/i18n'
 import ModuleComingSoon from '@/components/ModuleComingSoon'
 
 export function generateStaticParams() {
@@ -28,10 +27,10 @@ export async function generateMetadata({
   const hreflang = getHreflangUrls(mod.url)
 
   return {
-    title: `${mod.name[locale as Locale]} \u2013 LumAIa`,
-    description: mod.description[locale as Locale],
+    title: `${mod.name[baseLocaleOf(locale as SiteLocale)]} \u2013 LumAIa`,
+    description: mod.description[baseLocaleOf(locale as SiteLocale)],
     alternates: {
-      canonical: hreflang[locale === 'en-ch' ? 'en-CH' : 'de-CH'],
+      canonical: hreflang[hreflangOf(locale as SiteLocale)],
       languages: hreflang,
     },
   }
