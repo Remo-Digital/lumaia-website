@@ -3,7 +3,7 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import FAQ from '@/components/FAQ'
 import { useLanguage } from '@/lib/LanguageContext'
-import { localizedHref } from '@/lib/i18n'
+import { localizedHref, isGerman } from '@/lib/i18n'
 
 const assetTypeImages = [
   '/lifestyle-use-agentic-commerce.webp',
@@ -37,7 +37,7 @@ export default function ProductAssetStudioContent() {
             <div className="rounded-2xl overflow-hidden mb-8">
               <img
                 src="/2_Loesung_Aus_einem_Produktbild_erzeugt_Product_Asset_Studio_ein_vollstandiges_Asset_Set.webp"
-                alt={locale === 'de-ch'
+                alt={isGerman(locale)
                   ? 'Aus einem Produktbild erzeugt Product Asset Studio ein vollständiges Asset-Set'
                   : 'Product Asset Studio generates a complete asset set from a single product image'}
                 className="w-full h-auto"
@@ -85,7 +85,7 @@ export default function ProductAssetStudioContent() {
                 {pas.sections.assetTypes.types.map((type, i) => (
                   <article key={i} className="glass glow-hover rounded-2xl overflow-hidden transition-all duration-300">
                     <div className="h-48 overflow-hidden">
-                      <img src={assetTypeImages[i]} alt={locale === 'de-ch' ? `${type.title} – Beispiel-Asset-Typ` : `${type.title} – Sample Asset Type`} className="w-full h-full object-cover" loading="lazy" />
+                      <img src={assetTypeImages[i]} alt={isGerman(locale) ? `${type.title} – Beispiel-Asset-Typ` : `${type.title} – Sample Asset Type`} className="w-full h-full object-cover" loading="lazy" />
                     </div>
                     <div className="p-6">
                       <h3 className="font-serif text-lg text-white mb-2">{type.title}</h3>
@@ -130,15 +130,15 @@ export default function ProductAssetStudioContent() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 <div className="glass rounded-xl overflow-hidden">
                   <div className="px-4 pt-3 pb-1">
-                    <span className="text-white/50 text-xs font-medium">{locale === 'de-ch' ? 'Vorher: 1 Produktbild' : 'Before: 1 product image'}</span>
+                    <span className="text-white/50 text-xs font-medium">{isGerman(locale) ? 'Vorher: 1 Produktbild' : 'Before: 1 product image'}</span>
                   </div>
-                  <img src="/gartenmoebel-produktfotos.webp" alt={locale === 'de-ch' ? 'Bistro-Set Produktfotos – Ausgangsbild' : 'Bistro set product photos – source image'} className="w-full object-cover" loading="lazy" />
+                  <img src="/gartenmoebel-produktfotos.webp" alt={isGerman(locale) ? 'Bistro-Set Produktfotos – Ausgangsbild' : 'Bistro set product photos – source image'} className="w-full object-cover" loading="lazy" />
                 </div>
                 <div className="glass-accent rounded-xl overflow-hidden">
                   <div className="px-4 pt-3 pb-1">
-                    <span className="text-accent/60 text-xs font-medium">{locale === 'de-ch' ? 'Nachher: 6 Asset-Varianten' : 'After: 6 asset variants'}</span>
+                    <span className="text-accent/60 text-xs font-medium">{isGerman(locale) ? 'Nachher: 6 Asset-Varianten' : 'After: 6 asset variants'}</span>
                   </div>
-                  <img src="/gartenmoebel-collage.webp" alt={locale === 'de-ch' ? 'Bistro-Set Lifestyle-Collage – generierte Varianten' : 'Bistro set lifestyle collage – generated variants'} className="w-full object-cover" loading="lazy" />
+                  <img src="/gartenmoebel-collage.webp" alt={isGerman(locale) ? 'Bistro-Set Lifestyle-Collage – generierte Varianten' : 'Bistro set lifestyle collage – generated variants'} className="w-full object-cover" loading="lazy" />
                 </div>
               </div>
               <p className="text-white/70 text-base leading-relaxed">{pas.sections.example1.after}</p>
@@ -150,15 +150,15 @@ export default function ProductAssetStudioContent() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 <div className="glass rounded-xl overflow-hidden">
                   <div className="px-4 pt-3 pb-1">
-                    <span className="text-white/50 text-xs font-medium">{locale === 'de-ch' ? 'Freisteller' : 'Cut-out'}</span>
+                    <span className="text-white/50 text-xs font-medium">{isGerman(locale) ? 'Freisteller' : 'Cut-out'}</span>
                   </div>
-                  <img src="/abtropfgestell-freisteller.webp" alt={locale === 'de-ch' ? 'Abtropfgestell Freisteller' : 'Dish rack cut-out'} className="w-full object-cover" loading="lazy" />
+                  <img src="/abtropfgestell-freisteller.webp" alt={isGerman(locale) ? 'Abtropfgestell Freisteller' : 'Dish rack cut-out'} className="w-full object-cover" loading="lazy" />
                 </div>
                 <div className="glass-accent rounded-xl overflow-hidden">
                   <div className="px-4 pt-3 pb-1">
-                    <span className="text-accent/60 text-xs font-medium">{locale === 'de-ch' ? 'Generiertes Lifestyle-Bild' : 'Generated lifestyle image'}</span>
+                    <span className="text-accent/60 text-xs font-medium">{isGerman(locale) ? 'Generiertes Lifestyle-Bild' : 'Generated lifestyle image'}</span>
                   </div>
-                  <img src="/abtropfgestell-kueche-01.webp" alt={locale === 'de-ch' ? 'Abtropfgestell in Küche – generiertes Lifestyle-Bild' : 'Dish rack in kitchen – generated lifestyle image'} className="w-full object-cover" loading="lazy" />
+                  <img src="/abtropfgestell-kueche-01.webp" alt={isGerman(locale) ? 'Abtropfgestell in Küche – generiertes Lifestyle-Bild' : 'Dish rack in kitchen – generated lifestyle image'} className="w-full object-cover" loading="lazy" />
                 </div>
               </div>
               <p className="text-white/70 text-base leading-relaxed mb-4">{pas.sections.example2.upscaling}</p>
@@ -200,9 +200,9 @@ export default function ProductAssetStudioContent() {
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-sm">
               <a href={localizedHref('/use-cases/agentic-commerce', locale)} className="text-white/70 hover:text-accent transition-colors">Use Case: Agentic Commerce</a>
               <span className="text-white/30 hidden sm:inline" aria-hidden="true">&bull;</span>
-              <a href={localizedHref('/pricing', locale)} className="text-white/70 hover:text-accent transition-colors">{locale === 'de-ch' ? 'Preise' : 'Pricing'}</a>
+              <a href={localizedHref('/pricing', locale)} className="text-white/70 hover:text-accent transition-colors">{isGerman(locale) ? 'Preise' : 'Pricing'}</a>
               <span className="text-white/30 hidden sm:inline" aria-hidden="true">&bull;</span>
-              <a href={localizedHref('/plattform', locale)} className="text-white/70 hover:text-accent transition-colors">{locale === 'de-ch' ? 'Plattform-\u00dcbersicht' : 'Platform Overview'}</a>
+              <a href={localizedHref('/plattform', locale)} className="text-white/70 hover:text-accent transition-colors">{isGerman(locale) ? 'Plattform-\u00dcbersicht' : 'Platform Overview'}</a>
             </div>
           </div>
         </section>

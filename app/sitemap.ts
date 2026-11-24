@@ -1,8 +1,6 @@
-import { locales, translatePath, type SiteLocale } from '@/lib/i18n'
+import { defaultLocale, getHreflangUrls, hreflangOf, localizedUrl, locales, type SiteLocale } from '@/lib/i18n'
 import { getAllPosts, getPostTranslations } from '@/lib/blog'
 import type { MetadataRoute } from 'next'
-
-const BASE = 'https://lumaia.studio'
 
 const routes = [
   { path: '/', changeFrequency: 'weekly' as const, priority: 1.0 },
@@ -19,36 +17,19 @@ const routes = [
   { path: '/legal/terms', changeFrequency: 'yearly' as const, priority: 0.3 },
 ]
 
-function buildAlternates(internalPath: string) {
-  const deSlug = translatePath(internalPath, 'de-ch')
-  const enSlug = translatePath(internalPath, 'en-ch')
-  const deUrl = `${BASE}/de-ch${deSlug === '/' ? '' : deSlug}`
-  const enUrl = `${BASE}/en-ch${enSlug === '/' ? '' : enSlug}`
-  return {
-    'de-CH': deUrl,
-    'en-CH': enUrl,
-    'x-default': deUrl,
-  }
-}
-
-function localizedUrl(internalPath: string, locale: SiteLocale) {
-  const slug = translatePath(internalPath, locale)
-  return `${BASE}/${locale}${slug === '/' ? '' : slug}`
-}
-
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const today = new Date().toISOString().split('T')[0]
   const entries: MetadataRoute.Sitemap = []
 
   // Static routes × locales
   for (const route of routes) {
-    const alternates = buildAlternates(route.path)
+    const alternates = getHreflangUrls(route.path)
     for (const locale of locales) {
       entries.push({
         url: localizedUrl(route.path, locale),
         lastModified: today,
         changeFrequency: route.changeFrequency,
-        priority: locale === 'de-ch' ? route.priority : Math.round(Math.max(route.priority - 0.1, 0.1) * 10) / 10,
+        priority: locale === defaultLocale ? route.priority : Math.round(Math.max(route.priority - 0.1, 0.1) * 10) / 10,
         alternates: { languages: alternates },
       })
     }
@@ -60,14 +41,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       const languages: Record<string, string> = {}
       const translated = await getPostTranslations(locale, post.slug)
       for (const [other, slug] of Object.entries(translated) as [SiteLocale, string][]) {
-        languages[other === 'de-ch' ? 'de-CH' : 'en-CH'] = localizedUrl(`/blog/${slug}`, other)
+        languages[hreflangOf(other)] = localizedUrl(`/blog/${slug}`, other)
       }
-      languages['x-default'] = languages['de-CH'] ?? languages['en-CH']
+      languages['x-default'] = languages[hreflangOf(defaultLocale)] ?? Object.values(languages)[0]
       entries.push({
         url: localizedUrl(`/blog/${post.slug}`, locale),
         lastModified: post.updated ?? post.date,
         changeFrequency: 'monthly',
-        priority: locale === 'de-ch' ? 0.6 : 0.5,
+        priority: locale === defaultLocale ? 0.6 : 0.5,
         alternates: { languages },
       })
     }

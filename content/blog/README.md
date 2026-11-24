@@ -7,6 +7,8 @@ content/blog/de-ch/*.mdx  →  /de-ch/blog/<slug>
 content/blog/en-ch/*.mdx  →  /en-ch/blog/<slug>
 ```
 
+Die übrigen Märkte haben keinen eigenen Ordner und übernehmen die Artikel ihrer Basissprache: `de-de` und `de-at` zeigen die Artikel aus `de-ch`, `en-us` und `en-uk` die aus `en-ch` (gleicher Slug, eigene URL, hreflang für alle Varianten). Braucht ein Markt eigene Artikel, einen Ordner `content/blog/<locale>/` anlegen; dann gilt nur dieser Ordner.
+
 ## Frontmatter
 
 ```yaml

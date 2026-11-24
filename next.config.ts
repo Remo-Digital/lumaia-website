@@ -18,6 +18,9 @@ const nextConfig: NextConfig = {
       // Old /de/ and /en/ prefix redirects → new /de-ch/ and /en-ch/
       { source: '/de/:path*', destination: '/de-ch/:path*', permanent: true },
       { source: '/en/:path*', destination: '/en-ch/:path*', permanent: true },
+      // ISO code for the UK is GB; the URL uses /en-uk
+      { source: '/en-gb', destination: '/en-uk', permanent: true },
+      { source: '/en-gb/:path*', destination: '/en-uk/:path*', permanent: true },
     ]
   },
 }

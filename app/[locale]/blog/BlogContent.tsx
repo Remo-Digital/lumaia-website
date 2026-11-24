@@ -3,7 +3,7 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import BlogCard from '@/components/BlogCard'
 import { useLanguage } from '@/lib/LanguageContext'
-import { localizedHref } from '@/lib/i18n'
+import { localizedHref, isGerman } from '@/lib/i18n'
 import type { BlogPostSummary } from '@/lib/blog-shared'
 
 export default function BlogContent({ posts }: { posts: BlogPostSummary[] }) {
@@ -39,7 +39,7 @@ export default function BlogContent({ posts }: { posts: BlogPostSummary[] }) {
           )}
 
           {/* Contact / coming soon notice */}
-          <section className="glass rounded-2xl p-8 text-center animate-fade-up-3" aria-label={locale === 'de-ch' ? 'Kontakt' : 'Contact'}>
+          <section className="glass rounded-2xl p-8 text-center animate-fade-up-3" aria-label={isGerman(locale) ? 'Kontakt' : 'Contact'}>
             <p className="text-white/70 text-base mb-6">{posts.length > 0 ? b.ctaSub : b.comingSoon}</p>
             <a
               href={localizedHref('/contact', locale)}

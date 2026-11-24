@@ -4,7 +4,7 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import FAQ from '@/components/FAQ'
 import { useLanguage } from '@/lib/LanguageContext'
-import { localizedHref } from '@/lib/i18n'
+import { localizedHref, isGerman } from '@/lib/i18n'
 
 export default function AgenticCommerceContent() {
   const { t, locale } = useLanguage()
@@ -25,7 +25,7 @@ export default function AgenticCommerceContent() {
 
             <div className="rounded-2xl mb-8 overflow-hidden">
               <Image
-                src={locale === 'de-ch' ? '/Ausganslage_DE.webp' : '/Ausgangslage_Eng.webp'}
+                src={isGerman(locale) ? '/Ausganslage_DE.webp' : '/Ausgangslage_Eng.webp'}
                 alt={ac.heroAlt}
                 width={1200}
                 height={500}
@@ -39,8 +39,8 @@ export default function AgenticCommerceContent() {
               <p className="text-white/80 text-base leading-relaxed">{ac.directAnswer}</p>
             </div>
 
-            <nav className="glass rounded-2xl p-6 mb-16" aria-label={locale === 'de-ch' ? 'Inhaltsverzeichnis' : 'Table of contents'}>
-              <h2 className="text-white/70 text-sm font-semibold tracking-[0.15em] uppercase mb-4">{locale === 'de-ch' ? 'Inhaltsverzeichnis' : 'Contents'}</h2>
+            <nav className="glass rounded-2xl p-6 mb-16" aria-label={isGerman(locale) ? 'Inhaltsverzeichnis' : 'Table of contents'}>
+              <h2 className="text-white/70 text-sm font-semibold tracking-[0.15em] uppercase mb-4">{isGerman(locale) ? 'Inhaltsverzeichnis' : 'Contents'}</h2>
               <ol className="space-y-2">
                 {ac.toc.map((item, i) => (
                   <li key={i}>
@@ -90,7 +90,7 @@ export default function AgenticCommerceContent() {
                     ))}
                   </svg>
                 </div>
-                <span className="relative text-white/30 text-xs flex flex-col items-center gap-1">{locale === 'de-ch' ? 'Protokoll-\u00dcbersicht' : 'Protocol Overview'}<span className="text-white/20 text-[10px]">1000 × 360 px · .webp · max 200 KB</span></span>
+                <span className="relative text-white/30 text-xs flex flex-col items-center gap-1">{isGerman(locale) ? 'Protokoll-\u00dcbersicht' : 'Protocol Overview'}<span className="text-white/20 text-[10px]">1000 × 360 px · .webp · max 200 KB</span></span>
               </div> */}
            
               <p className="text-white/70 text-base leading-relaxed font-medium">{ac.sections.howAgentsShop.conclusion}</p>
@@ -153,8 +153,8 @@ export default function AgenticCommerceContent() {
                   <table className="w-full text-left" role="table">
                     <thead>
                       <tr className="border-b border-white/10">
-                        <th className="px-6 py-4 text-sm font-semibold text-white/60" scope="col">{locale === 'de-ch' ? 'Merkmal' : 'Attribute'}</th>
-                        <th className="px-6 py-4 text-sm font-semibold text-white/70" scope="col">{locale === 'de-ch' ? 'Klassisch' : 'Traditional'}</th>
+                        <th className="px-6 py-4 text-sm font-semibold text-white/60" scope="col">{isGerman(locale) ? 'Merkmal' : 'Attribute'}</th>
+                        <th className="px-6 py-4 text-sm font-semibold text-white/70" scope="col">{isGerman(locale) ? 'Klassisch' : 'Traditional'}</th>
                         <th className="px-6 py-4 text-sm font-semibold text-accent/80" scope="col">Agent-ready</th>
                       </tr>
                     </thead>
@@ -189,7 +189,7 @@ export default function AgenticCommerceContent() {
             </section>
 
             <section className="glass-strong rounded-2xl p-8 mb-8">
-              <h2 className="font-serif text-xl text-white mb-4">{locale === 'de-ch' ? 'Fazit' : 'Conclusion'}</h2>
+              <h2 className="font-serif text-xl text-white mb-4">{isGerman(locale) ? 'Fazit' : 'Conclusion'}</h2>
               <p className="text-white/70 text-base leading-relaxed">{ac.conclusion}</p>
             </section>
 
