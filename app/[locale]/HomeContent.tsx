@@ -14,12 +14,12 @@ import TestimonialsSection from '@/components/TestimonialsSection'
 import Comparison from '@/components/Comparison'
 import PricingTeaser from '@/components/PricingTeaser'
 import FAQ from '@/components/FAQ'
-// import BlogTeaser from '@/components/BlogTeaser'
 import CTAFinal from '@/components/CTAFinal'
 import Footer from '@/components/Footer'
 import BlogTeaser from '@/components/BlogTeaser'
+import type { BlogPostSummary } from '@/lib/blog-shared'
 
-export default function HomeContent() {
+export default function HomeContent({ latestPosts }: { latestPosts: BlogPostSummary[] }) {
   const { locale } = useLanguage()
   const schemaOrg = {
     '@context': 'https://schema.org',
@@ -72,7 +72,7 @@ export default function HomeContent() {
         <Comparison />
     {/*    <PricingTeaser /> */}
         <FAQ />
-   {/*      <BlogTeaser /> */}
+        <BlogTeaser posts={latestPosts} />
         <CTAFinal />
       </main>
       <Footer />

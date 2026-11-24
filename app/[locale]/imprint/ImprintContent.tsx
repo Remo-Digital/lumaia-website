@@ -26,7 +26,7 @@ export default function ImprintContent() {
 
           <section className="glass rounded-2xl p-8 md:p-12 animate-fade-up-2 flex flex-col gap-8" aria-label={im.label}>
             {[
-              { label: im.company, value: 'Dewave GmbH' },
+              { label: im.company, value: 'Dewave GmbH\nInhalt und Form Kommunikations AG' },
               { label: im.address, value: 'Bahnhofstrasse 59\n6312 Steinhausen\nSchweiz' },
               { label: im.uid, value: 'CHE-162.124.947' },
               { label: im.responsible, value: 'Remo Girard, Co-Founder' },
