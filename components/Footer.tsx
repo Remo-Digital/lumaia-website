@@ -2,15 +2,18 @@
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useLanguage } from '@/lib/LanguageContext'
-import { localizedHref, switchLocalePath } from '@/lib/i18n'
+import { localizedHref, switchLocalePath, type SiteLocale } from '@/lib/i18n'
 
-export default function Footer() {
+/** `localeHrefs` overrides the language switcher targets, e.g. for blog posts with per-locale slugs */
+export default function Footer({ localeHrefs }: { localeHrefs?: Partial<Record<SiteLocale, string>> } = {}) {
   const { t, locale } = useLanguage()
   const pathname = usePathname()
 
   const otherLocale = locale === 'en-ch' ? 'de-ch' : 'en-ch'
   const pathWithoutLocale = pathname.replace(/^\/(de-ch|en-ch)/, '') || '/'
   const switchLocaleHref = `/${otherLocale}${pathWithoutLocale === '/' ? '' : pathWithoutLocale}`
+  const localeHref = (target: SiteLocale) =>
+    localeHrefs?.[target] ?? `/${target}${pathWithoutLocale === '/' ? '' : switchLocalePath(pathWithoutLocale, locale, target)}`
 
   return (
     <footer
@@ -46,7 +49,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {/* <li><a href={localizedHref('/use-cases', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">{locale === 'de-ch' ? 'Alle Use Cases' : 'All Use Cases'}</a></li> */}
               <li><a href={localizedHref('/use-cases/agentic-commerce', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">Agentic Commerce</a></li>
-              {/* <li><a href={localizedHref('/blog', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">Blog</a></li> */}
+              <li><a href={localizedHref('/blog', locale)} className="text-white/60 text-sm hover:text-accent transition-colors">Blog</a></li>
               
             </ul>
           </nav>
@@ -69,7 +72,7 @@ export default function Footer() {
           <span className="text-white/50 text-sm">{t.footer.copyright}</span>
           <div className="flex items-center gap-1 text-sm font-semibold tracking-[0.1em] uppercase">
             <a
-              href={`/de-ch${pathWithoutLocale === '/' ? '' : switchLocalePath(pathWithoutLocale || '/', locale, 'de-ch')}`}
+              href={localeHref('de-ch')}
               className={`px-2 py-1 rounded transition-colors ${locale === 'de-ch' ? 'text-accent' : 'text-white/40 hover:text-white/70'}`}
               aria-label="Deutsch"
             >
@@ -77,7 +80,7 @@ export default function Footer() {
             </a>
             <span className="text-white/20">|</span>
             <a
-              href={`/en-ch${pathWithoutLocale === '/' ? '' : switchLocalePath(pathWithoutLocale || '/', locale, 'en-ch')}`}
+              href={localeHref('en-ch')}
               className={`px-2 py-1 rounded transition-colors ${locale === 'en-ch' ? 'text-accent' : 'text-white/40 hover:text-white/70'}`}
               aria-label="English"
             >

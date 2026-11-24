@@ -1,6 +1,9 @@
 import type { NextConfig } from 'next'
+import path from 'node:path'
+import createMDX from '@next/mdx'
 
 const nextConfig: NextConfig = {
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   turbopack: {
     root: import.meta.dirname,
   },
@@ -19,4 +22,15 @@ const nextConfig: NextConfig = {
   },
 }
 
-export default nextConfig
+// Plugins are passed as strings so they work with Turbopack
+const withMDX = createMDX({
+  options: {
+    // YAML frontmatter is exported from each MDX file as `frontmatter`
+    remarkPlugins: ['remark-gfm', 'remark-frontmatter', 'remark-mdx-frontmatter'],
+    // Local plugin: <section> per `##` heading. Absolute path, because Turbopack does not
+    // resolve relative plugin paths from the project root.
+    rehypePlugins: [path.join(import.meta.dirname, 'lib/mdx/rehype-sections.mjs')],
+  },
+})
+
+export default withMDX(nextConfig)
