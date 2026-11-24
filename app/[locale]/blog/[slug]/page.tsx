@@ -281,7 +281,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
             <footer className="mt-16 pt-10 border-t border-white/10">
               <section id="author" aria-labelledby="author-title" className="flex flex-col sm:flex-row gap-5 scroll-mt-28">
                 {meta.authorImage && (
-                  <Image src={meta.authorImage} alt={meta.author} width={80} height={80} className="rounded-full object-cover w-20 h-20 shrink-0" />
+                  <Image src={meta.authorImage} alt={meta.author} width={80} height={80} className="rounded-full object-cover object-top w-20 h-20 shrink-0" />
                 )}
                 <div>
                   <h2 id="author-title" className="text-xs font-semibold tracking-[0.15em] uppercase text-white/50 mb-2">{b.aboutAuthor}</h2>
