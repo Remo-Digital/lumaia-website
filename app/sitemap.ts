@@ -1,4 +1,4 @@
-import { defaultLocale, xDefaultLocale, getHreflangUrls, hreflangOf, localizedUrl, locales, type SiteLocale } from '@/lib/i18n'
+import { defaultLocale, getHreflangUrls, hreflangOf, localizedUrl, locales, type SiteLocale } from '@/lib/i18n'
 import { getAllPosts, getPostTranslations } from '@/lib/blog'
 import type { MetadataRoute } from 'next'
 
@@ -43,7 +43,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       for (const [other, slug] of Object.entries(translated) as [SiteLocale, string][]) {
         languages[hreflangOf(other)] = localizedUrl(`/blog/${slug}`, other)
       }
-      languages['x-default'] = languages[hreflangOf(xDefaultLocale)] ?? languages[hreflangOf(defaultLocale)] ?? Object.values(languages)[0]
+      languages['x-default'] = languages[hreflangOf(defaultLocale)] ?? Object.values(languages)[0]
       entries.push({
         url: localizedUrl(`/blog/${post.slug}`, locale),
         lastModified: post.updated ?? post.date,

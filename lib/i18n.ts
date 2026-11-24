@@ -4,9 +4,10 @@
 export const locales = ['de-ch', 'de-de', 'de-at', 'en-ch', 'en-us', 'en-uk', 'en'] as const
 export type SiteLocale = (typeof locales)[number]
 export type Language = 'de' | 'en'
-export const defaultLocale: SiteLocale = 'de-ch'
-/** hreflang x-default: the version for searchers whose language/country has no own locale */
-export const xDefaultLocale: SiteLocale = 'en'
+/** International English: fallback for unknown visitors and hreflang x-default */
+export const defaultLocale: SiteLocale = 'en'
+/** Fallback for German speakers outside DE/AT/CH */
+export const defaultGermanLocale: SiteLocale = 'de-ch'
 
 const BASE = 'https://lumaia.studio'
 
@@ -106,7 +107,7 @@ export function localizedUrl(internalPath: string, locale: SiteLocale): string {
 export function getHreflangUrls(internalPath: string): Record<string, string> {
   const urls: Record<string, string> = {}
   for (const locale of locales) urls[hreflangOf(locale)] = localizedUrl(internalPath, locale)
-  urls['x-default'] = urls[hreflangOf(xDefaultLocale)]
+  urls['x-default'] = urls[hreflangOf(defaultLocale)]
   return urls
 }
 
@@ -128,8 +129,8 @@ export function detectLocale(country: string | null, acceptLanguage: string | nu
   if (countryCode) {
     const inCountry = locales.filter((l) => localeInfo[l].country === countryCode)
     if (inCountry.length) return inCountry.find((l) => localeInfo[l].language === preferredLanguage) ?? inCountry[0]
-    // Country without its own locale: German speakers get the default, everyone else international English
-    return preferredLanguage === 'de' ? defaultLocale : 'en'
+    // Country without its own locale: German speakers get de-ch, everyone else international English
+    return preferredLanguage === 'de' ? defaultGermanLocale : defaultLocale
   }
 
   // No country (e.g. local development): match the browser language exactly, then by language
@@ -137,5 +138,5 @@ export function detectLocale(country: string | null, acceptLanguage: string | nu
     const exact = locales.find((l) => localeInfo[l].hreflang.toLowerCase() === tag)
     if (exact) return exact
   }
-  return preferredLanguage === 'en' ? 'en' : defaultLocale
+  return preferredLanguage === 'de' ? defaultGermanLocale : defaultLocale
 }
