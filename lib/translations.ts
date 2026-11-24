@@ -1,6 +1,9 @@
-export type Locale = 'en-ch' | 'de-ch'
+import { locales, localeInfo, type SiteLocale } from './i18n'
 
-export const translations = {
+export type Locale = SiteLocale
+
+/** Copy per base language: de-ch (German) and en-ch (English). Other locales inherit from these. */
+const baseTranslations = {
   'en-ch': {
     // ── Navigation ──
     nav: {
@@ -1747,3 +1750,28 @@ export const translations = {
     },
   },
 } as const
+
+type BaseTranslations = typeof baseTranslations
+type Translation = BaseTranslations['de-ch'] | BaseTranslations['en-ch']
+type DeepPartial<T> = { [K in keyof T]?: T[K] extends string ? string : T[K] extends object ? DeepPartial<T[K]> : T[K] }
+
+/**
+ * Market-specific copy that differs from the base language, e.g. spelling (ß in de-de/de-at),
+ * currency or legal wording. Only the keys that differ are needed:
+ *   'de-de': { pricingPage: { sub: '…' } },
+ */
+const marketOverrides: { [L in SiteLocale]?: DeepPartial<BaseTranslations[(typeof localeInfo)[L]['baseLocale']]> } = {}
+
+function deepMerge<T>(base: T, override: unknown): T {
+  if (!override || typeof override !== 'object' || Array.isArray(override)) return (override ?? base) as T
+  const result: Record<string, unknown> = { ...(base as Record<string, unknown>) }
+  for (const [key, value] of Object.entries(override)) {
+    const current = result[key]
+    result[key] = current && typeof current === 'object' && !Array.isArray(current) ? deepMerge(current, value) : value
+  }
+  return result as T
+}
+
+export const translations = Object.fromEntries(
+  locales.map((locale) => [locale, deepMerge(baseTranslations[localeInfo[locale].baseLocale], marketOverrides[locale])]),
+) as Record<SiteLocale, Translation>

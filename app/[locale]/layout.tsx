@@ -3,8 +3,7 @@ import { Inter, Lexend } from 'next/font/google'
 import Script from 'next/script'
 import { notFound } from 'next/navigation'
 import { LanguageProvider } from '@/lib/LanguageContext'
-import { locales, getHreflangUrls } from '@/lib/i18n'
-import type { Locale } from '@/lib/translations'
+import { locales, getHreflangUrls, hreflangOf, isLocale, languageOf, type SiteLocale } from '@/lib/i18n'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -30,22 +29,20 @@ export async function generateMetadata({
   const { locale } = await params
   const hreflang = getHreflangUrls('/')
 
-  const titles: Record<string, string> = {
-    'de-ch': 'LumAIa \u2013 Die Agentic Agency Plattform f\u00fcr Marketing',
-    'en-ch': 'LumAIa \u2013 The Agentic Agency Platform for Marketing',
+  const titles: Record<'de' | 'en', string> = {
+    de: 'LumAIa \u2013 Die Agentic Agency Plattform f\u00fcr Marketing',
+    en: 'LumAIa \u2013 The Agentic Agency Platform for Marketing',
   }
 
-  const descriptions: Record<string, string> = {
-    'de-ch': 'LumAIa automatisiert den gesamten Marketing-Workflow \u2013 von Strategie bis Kampagnen-Optimierung. 10\u00d7 schneller, 70% g\u00fcnstiger, 100% Brand-Safe.',
-    'en-ch': 'LumAIa automates the entire marketing workflow \u2013 from strategy to campaign optimization. 10\u00d7 faster, 70% cheaper, 100% brand-safe.',
+  const descriptions: Record<'de' | 'en', string> = {
+    de: 'LumAIa automatisiert den gesamten Marketing-Workflow \u2013 von Strategie bis Kampagnen-Optimierung. 10\u00d7 schneller, 70% g\u00fcnstiger, 100% Brand-Safe.',
+    en: 'LumAIa automates the entire marketing workflow \u2013 from strategy to campaign optimization. 10\u00d7 faster, 70% cheaper, 100% brand-safe.',
   }
 
   return {
-    title: {
-      default: titles[locale] || titles['de-ch'],
-      template: '%s \u2013 LumAIa',
-    },
-    description: descriptions[locale] || descriptions['de-ch'],
+    // No title template: every page title already contains the brand
+    title: titles[isLocale(locale) ? languageOf(locale) : 'de'],
+    description: descriptions[isLocale(locale) ? languageOf(locale) : 'de'],
     icons: {
       icon: [
         { url: '/favicon.ico' },
@@ -56,7 +53,7 @@ export async function generateMetadata({
     },
     manifest: '/site.webmanifest',
     alternates: {
-      canonical: hreflang[locale === 'en-ch' ? 'en-CH' : 'de-CH'],
+      canonical: hreflang[hreflangOf(locale as SiteLocale)],
       languages: hreflang,
     },
   }
@@ -71,12 +68,12 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params
 
-  if (!locales.includes(locale as typeof locales[number])) {
+  if (!isLocale(locale)) {
     notFound()
   }
 
   return (
-    <html lang={locale} className={`${inter.variable} ${lexend.variable}`}>
+    <html lang={hreflangOf(locale)} className={`${inter.variable} ${lexend.variable}`}>
       <head>
         {/* Google Tag Manager */}
         <Script id="google-tag-manager" strategy="afterInteractive">
@@ -112,7 +109,7 @@ gtag('config', 'G-21LLYMZSE2');`}
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-accent focus:text-ink focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold">
           Skip to main content
         </a>
-        <LanguageProvider locale={locale as Locale}>{children}</LanguageProvider>
+        <LanguageProvider locale={locale}>{children}</LanguageProvider>
       </body>
     </html>
   )

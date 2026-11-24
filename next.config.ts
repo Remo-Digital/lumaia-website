@@ -14,10 +14,12 @@ const nextConfig: NextConfig = {
       { source: '/impressum', destination: '/de-ch/impressum', permanent: true },
       { source: '/kontakt', destination: '/de-ch/kontakt', permanent: true },
       { source: '/agentic-commerce', destination: '/de-ch/plattform/product-asset-studio', permanent: true },
-      { source: '/en/agentic-commerce', destination: '/en-ch/platform/product-asset-studio', permanent: true },
-      // Old /de/ and /en/ prefix redirects → new /de-ch/ and /en-ch/
+      { source: '/en/agentic-commerce', destination: '/en/platform/product-asset-studio', permanent: true },
+      // Old /de/ prefix → /de-ch/ (/en/ is now the international English version)
       { source: '/de/:path*', destination: '/de-ch/:path*', permanent: true },
-      { source: '/en/:path*', destination: '/en-ch/:path*', permanent: true },
+      // ISO code for the UK is GB; the URL uses /en-uk
+      { source: '/en-gb', destination: '/en-uk', permanent: true },
+      { source: '/en-gb/:path*', destination: '/en-uk/:path*', permanent: true },
     ]
   },
 }

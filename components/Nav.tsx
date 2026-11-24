@@ -1,26 +1,19 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
-import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import { useLanguage } from '@/lib/LanguageContext'
 import { modules, phases } from '@/lib/modules'
-import { localizedHref, switchLocalePath, type SiteLocale } from '@/lib/i18n'
+import { localizedHref, type SiteLocale, baseLocaleOf, isGerman } from '@/lib/i18n'
+import LocaleSwitcher from '@/components/LocaleSwitcher'
 
 /** `localeHrefs` overrides the language switcher targets, e.g. for blog posts with per-locale slugs */
 export default function Nav({ localeHrefs }: { localeHrefs?: Partial<Record<SiteLocale, string>> } = {}) {
   const { t, locale } = useLanguage()
-  const pathname = usePathname()
   const [mobileOpen, setMobileOpen] = useState(false)
   const [megaOpen, setMegaOpen] = useState(false)
   const [bannerDismissed, setBannerDismissed] = useState(false)
   const megaRef = useRef<HTMLDivElement>(null)
 
-  // Build language switcher URL: strip current locale prefix, prepend other locale
-  const otherLocale = locale === 'en-ch' ? 'de-ch' : 'en-ch'
-  const pathWithoutLocale = pathname.replace(/^\/(de-ch|en-ch)/, '') || '/'
-  const switchLocaleHref = `/${otherLocale}${pathWithoutLocale === '/' ? '' : pathWithoutLocale}`
-  const localeHref = (target: SiteLocale) =>
-    localeHrefs?.[target] ?? `/${target}${pathWithoutLocale === '/' ? '' : switchLocalePath(pathWithoutLocale, locale, target)}`
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -62,7 +55,7 @@ export default function Nav({ localeHrefs }: { localeHrefs?: Partial<Record<Site
           <button
             onClick={() => setBannerDismissed(true)}
             className="absolute right-3 top-1/2 -translate-y-1/2 text-white/60 hover:text-white/80 transition-colors p-1"
-            aria-label={locale === 'de-ch' ? 'Banner schliessen' : 'Dismiss banner'}
+            aria-label={isGerman(locale) ? 'Banner schliessen' : 'Dismiss banner'}
           >
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
               <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
@@ -74,7 +67,7 @@ export default function Nav({ localeHrefs }: { localeHrefs?: Partial<Record<Site
       {/* Navigation Bar */}
       <nav
         style={{ background: 'rgba(3,2,10,0.85)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}
-        aria-label={locale === 'de-ch' ? 'Hauptnavigation' : 'Main navigation'}
+        aria-label={isGerman(locale) ? 'Hauptnavigation' : 'Main navigation'}
       >
         <div className="flex items-center justify-between px-6 md:px-12 py-4">
           {/* Logo */}
@@ -108,7 +101,7 @@ export default function Nav({ localeHrefs }: { localeHrefs?: Partial<Record<Site
                     {phaseOrder.map(phase => (
                       <div key={phase}>
                         <h3 className="text-xs font-semibold tracking-[0.15em] uppercase mb-3" style={{ color: phases[phase].color }}>
-                          {phases[phase][locale]}
+                          {phases[phase][baseLocaleOf(locale)]}
                         </h3>
                         <ul className="space-y-1.5">
                           {modules.filter(m => m.phase === phase).map(mod => (
@@ -119,7 +112,7 @@ export default function Nav({ localeHrefs }: { localeHrefs?: Partial<Record<Site
                                 role="menuitem"
                                 onClick={() => setMegaOpen(false)}
                               >
-                                <span className="flex-1">{mod.name[locale]}</span>
+                                <span className="flex-1">{mod.name[baseLocaleOf(locale)]}</span>
                                 {mod.status === 'live' && (
                                   <span className="text-[10px] font-semibold tracking-wider uppercase text-accent bg-accent/10 px-1.5 py-0.5 rounded">Live</span>
                                 )}
@@ -136,7 +129,7 @@ export default function Nav({ localeHrefs }: { localeHrefs?: Partial<Record<Site
                       className="text-sm text-accent hover:underline underline-offset-2"
                       onClick={() => setMegaOpen(false)}
                     >
-                      {locale === 'de-ch' ? 'Alle 19 Module ansehen' : 'View all 19 modules'} &rarr;
+                      {isGerman(locale) ? 'Alle 19 Module ansehen' : 'View all 19 modules'} &rarr;
                     </a>
                   </div>
                 </div>
@@ -173,24 +166,7 @@ export default function Nav({ localeHrefs }: { localeHrefs?: Partial<Record<Site
               {t.nav.cta}
             </a>
 
-            {/* Language Switcher */}
-            <div className="flex items-center gap-1 text-sm font-semibold tracking-[0.1em] uppercase">
-              <a
-                href={localeHref('de-ch')}
-                className={`px-2 py-1 rounded transition-colors ${locale === 'de-ch' ? 'text-accent' : 'text-white/40 hover:text-white/70'}`}
-                aria-label="Deutsch"
-              >
-                DE
-              </a>
-              <span className="text-white/20">|</span>
-              <a
-                href={localeHref('en-ch')}
-                className={`px-2 py-1 rounded transition-colors ${locale === 'en-ch' ? 'text-accent' : 'text-white/40 hover:text-white/70'}`}
-                aria-label="English"
-              >
-                EN
-              </a>
-            </div>
+            <LocaleSwitcher localeHrefs={localeHrefs} />
           </div>
 
           {/* Mobile hamburger */}
@@ -199,7 +175,7 @@ export default function Nav({ localeHrefs }: { localeHrefs?: Partial<Record<Site
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-expanded={mobileOpen}
             aria-controls="mobile-menu"
-            aria-label={locale === 'de-ch' ? 'Menü öffnen' : 'Open menu'}
+            aria-label={isGerman(locale) ? 'Menü öffnen' : 'Open menu'}
           >
             {mobileOpen ? (
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -219,7 +195,7 @@ export default function Nav({ localeHrefs }: { localeHrefs?: Partial<Record<Site
       {mobileOpen && (
         <nav
           id="mobile-menu"
-          aria-label={locale === 'de-ch' ? 'Mobile Navigation' : 'Mobile navigation'}
+          aria-label={isGerman(locale) ? 'Mobile Navigation' : 'Mobile navigation'}
           className="lg:hidden fixed inset-x-0 bottom-0 z-40 overflow-y-auto"
           style={{ top: bannerDismissed ? '65px' : '101px', background: 'rgba(3,2,10,0.97)' }}
         >
@@ -246,24 +222,8 @@ export default function Nav({ localeHrefs }: { localeHrefs?: Partial<Record<Site
                 {t.nav.cta}
               </a>
             </div>
-            <div className="pt-2 flex items-center gap-2 text-sm font-semibold tracking-[0.1em] uppercase">
-              <a
-                href={localeHref('de-ch')}
-                className={`px-2 py-1 rounded transition-colors ${locale === 'de-ch' ? 'text-accent' : 'text-white/40 hover:text-white/70'}`}
-                aria-label="Deutsch"
-                onClick={() => setMobileOpen(false)}
-              >
-                DE
-              </a>
-              <span className="text-white/20" aria-hidden="true">|</span>
-              <a
-                href={localeHref('en-ch')}
-                className={`px-2 py-1 rounded transition-colors ${locale === 'en-ch' ? 'text-accent' : 'text-white/40 hover:text-white/70'}`}
-                aria-label="English"
-                onClick={() => setMobileOpen(false)}
-              >
-                EN
-              </a>
+            <div className="pt-4 border-t border-white/5">
+              <LocaleSwitcher localeHrefs={localeHrefs} variant="inline" onNavigate={() => setMobileOpen(false)} />
             </div>
           </div>
         </nav>

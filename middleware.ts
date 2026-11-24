@@ -1,8 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { reverseTranslatePath, translatePath, type SiteLocale } from '@/lib/i18n'
-
-const locales = ['de-ch', 'en-ch'] as const
-const defaultLocale = 'de-ch'
+import { detectLocale, locales, reverseTranslatePath, translatePath, type SiteLocale } from '@/lib/i18n'
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
@@ -47,10 +44,12 @@ export function middleware(request: NextRequest) {
     return NextResponse.next()
   }
 
-  // Redirect bare paths to /de-ch/...
+  // Paths without locale: send the visitor to their country/language version. The target
+  // depends on the visitor, so the redirect is temporary (307), never cached as permanent.
+  const locale = detectLocale(request.headers.get('x-vercel-ip-country'), request.headers.get('accept-language'))
   const url = request.nextUrl.clone()
-  url.pathname = `/${defaultLocale}${pathname}`
-  return NextResponse.redirect(url, 301)
+  url.pathname = `/${locale}${pathname === '/' ? '' : translatePath(pathname, locale)}`
+  return NextResponse.redirect(url, 307)
 }
 
 export const config = {

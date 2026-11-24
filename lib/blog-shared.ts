@@ -1,5 +1,5 @@
 // Blog types and helpers that are safe to use in client components (no fs access).
-import type { SiteLocale } from '@/lib/i18n'
+import { hreflangOf, type SiteLocale } from '@/lib/i18n'
 
 export type BlogFaq = { question: string; answer: string }
 
@@ -44,7 +44,7 @@ export type BlogMeta = {
 export type BlogPostSummary = BlogMeta
 
 export function formatBlogDate(date: string, locale: SiteLocale): string {
-  return new Intl.DateTimeFormat(locale === 'de-ch' ? 'de-CH' : 'en-GB', {
+  return new Intl.DateTimeFormat(hreflangOf(locale), {
     day: 'numeric',
     month: 'long',
     year: 'numeric',

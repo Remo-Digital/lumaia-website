@@ -18,6 +18,7 @@ import CTAFinal from '@/components/CTAFinal'
 import Footer from '@/components/Footer'
 import BlogTeaser from '@/components/BlogTeaser'
 import type { BlogPostSummary } from '@/lib/blog-shared'
+import { isGerman } from '@/lib/i18n'
 
 export default function HomeContent({ latestPosts }: { latestPosts: BlogPostSummary[] }) {
   const { locale } = useLanguage()
@@ -59,7 +60,7 @@ export default function HomeContent({ latestPosts }: { latestPosts: BlogPostSumm
         <section className="relative py-16 px-6" style={{ background: '#080614' }}>
           <div className="max-w-4xl mx-auto">
             <VideoPlayer
-              src={locale === 'de-ch' ? '/Lumaia_Ad_DE.mp4' : '/Lumaia_Ad_EN.mp4'}
+              src={isGerman(locale) ? '/Lumaia_Ad_DE.mp4' : '/Lumaia_Ad_EN.mp4'}
               label="LumAIa Product Demo"
             />
           </div>

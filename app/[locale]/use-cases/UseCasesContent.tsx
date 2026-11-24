@@ -2,7 +2,7 @@
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import { useLanguage } from '@/lib/LanguageContext'
-import { localizedHref } from '@/lib/i18n'
+import { localizedHref, isGerman } from '@/lib/i18n'
 
 export default function UseCasesContent() {
   const { t, locale } = useLanguage()
@@ -52,7 +52,7 @@ export default function UseCasesContent() {
                     <p className="text-white/70 text-base leading-relaxed">{uc.desc}</p>
                     {href !== '#' && (
                       <span className="inline-block mt-4 text-accent text-sm font-medium">
-                        {locale === 'de-ch' ? 'Mehr erfahren' : 'Learn more'} &rarr;
+                        {isGerman(locale) ? 'Mehr erfahren' : 'Learn more'} &rarr;
                       </span>
                     )}
                   </a>
