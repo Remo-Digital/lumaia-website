@@ -16,8 +16,8 @@ import {
 const languages: Language[] = ['de', 'en']
 const localePrefix = new RegExp(`^/(${locales.join('|')})(?=/|$)`)
 
-/** Short label for the trigger, e.g. "DE · CH", "EN · UK" */
-const shortLabel = (locale: SiteLocale) => locale.toUpperCase().replace('-', ' · ')
+/** Short label for the trigger, e.g. "DE · CH", "EN · UK", "EN · INT" */
+const shortLabel = (locale: SiteLocale) => (localeInfo[locale].country ? locale.toUpperCase().replace('-', ' · ') : `${locale.toUpperCase()} · INT`)
 
 type Props = {
   /** Overrides the target per locale, e.g. for blog posts with per-locale slugs */

@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
-import { defaultLocale, hreflangOf, localizedHref, localizedUrl, locales, type SiteLocale } from '@/lib/i18n'
+import { defaultLocale, xDefaultLocale, hreflangOf, localizedHref, localizedUrl, locales, type SiteLocale } from '@/lib/i18n'
 import { translations } from '@/lib/translations'
 import { getAllPostParams, getPost, getPostTranslations } from '@/lib/blog'
 import { formatBlogDate, slugifyHeading } from '@/lib/blog-shared'
@@ -27,7 +27,7 @@ async function postAlternates(locale: SiteLocale, slug: string) {
   for (const [l, s] of Object.entries(translationsBySlug) as [SiteLocale, string][]) {
     languages[hreflangOf(l)] = postUrl(l, s)
   }
-  languages['x-default'] = languages[hreflangOf(defaultLocale)] ?? Object.values(languages)[0]
+  languages['x-default'] = languages[hreflangOf(xDefaultLocale)] ?? languages[hreflangOf(defaultLocale)] ?? Object.values(languages)[0]
   return { translationsBySlug, languages }
 }
 
