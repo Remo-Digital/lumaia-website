@@ -52,6 +52,21 @@ export function formatBlogDate(date: string, locale: SiteLocale): string {
   }).format(new Date(date))
 }
 
+/**
+ * ISO 8601 date-time with time zone for structured data, e.g. '2026-11-24' →
+ * '2026-11-24T00:00:00+01:00'. A date without time is taken as midnight in Zurich
+ * (+01:00 in winter, +02:00 in summer). Values that already contain a time pass through.
+ */
+export function toIsoDateTime(date: string): string {
+  if (date.includes('T')) return date
+  const noonUtc = new Date(`${date}T12:00:00Z`)
+  const offset = new Intl.DateTimeFormat('en-US', { timeZone: 'Europe/Zurich', timeZoneName: 'longOffset' })
+    .formatToParts(noonUtc)
+    .find((part) => part.type === 'timeZoneName')
+    ?.value.replace('GMT', '')
+  return `${date}T00:00:00${offset || '+00:00'}`
+}
+
 export type BlogHeading = { id: string; text: string }
 
 export { headingIds, slugifyHeading } from '@/lib/mdx/heading-ids.mjs'
