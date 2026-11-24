@@ -29,15 +29,16 @@ export default function BlogCard({ post, headingLevel = 'h2' }: { post: BlogPost
       <div className="flex flex-col gap-2 flex-1">
         <div className="flex flex-wrap items-center gap-2">
           <span className="glass-accent text-accent text-xs font-semibold tracking-[0.15em] uppercase px-3 py-1 rounded-full">
-            {post.tags?.[0] ?? b.label}
+            {post.category ?? post.tags?.[0] ?? b.label}
           </span>
           {post.draft && (
             <span className="text-xs font-semibold uppercase tracking-[0.15em] text-amber-300/80">{b.draft}</span>
           )}
         </div>
-        <time dateTime={post.date} className="text-white/40 text-xs">
-          {formatBlogDate(post.date, locale)}
-        </time>
+        <p className="text-white/40 text-xs">
+          <time dateTime={post.date}>{formatBlogDate(post.date, locale)}</time>
+          {post.readingTime ? ` · ${post.readingTime} ${b.minRead}` : ''}
+        </p>
         <Heading className="font-serif text-lg text-white/90 leading-snug">
           {/* Stretched link makes the whole card clickable */}
           <a href={href} className="after:absolute after:inset-0 after:rounded-2xl focus-visible:outline-none">

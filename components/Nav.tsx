@@ -4,9 +4,10 @@ import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import { useLanguage } from '@/lib/LanguageContext'
 import { modules, phases } from '@/lib/modules'
-import { localizedHref, switchLocalePath } from '@/lib/i18n'
+import { localizedHref, switchLocalePath, type SiteLocale } from '@/lib/i18n'
 
-export default function Nav() {
+/** `localeHrefs` overrides the language switcher targets, e.g. for blog posts with per-locale slugs */
+export default function Nav({ localeHrefs }: { localeHrefs?: Partial<Record<SiteLocale, string>> } = {}) {
   const { t, locale } = useLanguage()
   const pathname = usePathname()
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -18,6 +19,8 @@ export default function Nav() {
   const otherLocale = locale === 'en-ch' ? 'de-ch' : 'en-ch'
   const pathWithoutLocale = pathname.replace(/^\/(de-ch|en-ch)/, '') || '/'
   const switchLocaleHref = `/${otherLocale}${pathWithoutLocale === '/' ? '' : pathWithoutLocale}`
+  const localeHref = (target: SiteLocale) =>
+    localeHrefs?.[target] ?? `/${target}${pathWithoutLocale === '/' ? '' : switchLocalePath(pathWithoutLocale, locale, target)}`
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -173,7 +176,7 @@ export default function Nav() {
             {/* Language Switcher */}
             <div className="flex items-center gap-1 text-sm font-semibold tracking-[0.1em] uppercase">
               <a
-                href={`/de-ch${pathWithoutLocale === '/' ? '' : switchLocalePath(pathWithoutLocale || '/', locale, 'de-ch')}`}
+                href={localeHref('de-ch')}
                 className={`px-2 py-1 rounded transition-colors ${locale === 'de-ch' ? 'text-accent' : 'text-white/40 hover:text-white/70'}`}
                 aria-label="Deutsch"
               >
@@ -181,7 +184,7 @@ export default function Nav() {
               </a>
               <span className="text-white/20">|</span>
               <a
-                href={`/en-ch${pathWithoutLocale === '/' ? '' : switchLocalePath(pathWithoutLocale || '/', locale, 'en-ch')}`}
+                href={localeHref('en-ch')}
                 className={`px-2 py-1 rounded transition-colors ${locale === 'en-ch' ? 'text-accent' : 'text-white/40 hover:text-white/70'}`}
                 aria-label="English"
               >
@@ -245,7 +248,7 @@ export default function Nav() {
             </div>
             <div className="pt-2 flex items-center gap-2 text-sm font-semibold tracking-[0.1em] uppercase">
               <a
-                href={`/de-ch${pathWithoutLocale === '/' ? '' : switchLocalePath(pathWithoutLocale || '/', locale, 'de-ch')}`}
+                href={localeHref('de-ch')}
                 className={`px-2 py-1 rounded transition-colors ${locale === 'de-ch' ? 'text-accent' : 'text-white/40 hover:text-white/70'}`}
                 aria-label="Deutsch"
                 onClick={() => setMobileOpen(false)}
@@ -254,7 +257,7 @@ export default function Nav() {
               </a>
               <span className="text-white/20" aria-hidden="true">|</span>
               <a
-                href={`/en-ch${pathWithoutLocale === '/' ? '' : switchLocalePath(pathWithoutLocale || '/', locale, 'en-ch')}`}
+                href={localeHref('en-ch')}
                 className={`px-2 py-1 rounded transition-colors ${locale === 'en-ch' ? 'text-accent' : 'text-white/40 hover:text-white/70'}`}
                 aria-label="English"
                 onClick={() => setMobileOpen(false)}

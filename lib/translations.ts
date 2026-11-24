@@ -717,8 +717,14 @@ export const translations = {
       backToBlog: 'Back to the blog',
       by: 'by',
       draft: 'Draft',
+      minRead: 'min read',
+      updatedOn: 'Updated',
       ctaTitle: 'Want to put this into practice?',
       ctaSub: 'We show you how LumAIa makes your products visible on every channel and in AI answers.',
+      home: 'Home',
+      breadcrumb: 'Breadcrumb',
+      toc: 'Contents',
+      aboutAuthor: 'About the author',
     },
 
     // ── Signup Page ──
@@ -1584,8 +1590,14 @@ export const translations = {
       backToBlog: 'Zurück zum Blog',
       by: 'von',
       draft: 'Entwurf',
+      minRead: 'Min. Lesezeit',
+      updatedOn: 'Aktualisiert',
       ctaTitle: 'Wollen Sie das umsetzen?',
       ctaSub: 'Wir zeigen Ihnen, wie LumAIa Ihre Produkte auf jedem Kanal und in KI-Antworten sichtbar macht.',
+      home: 'Startseite',
+      breadcrumb: 'Brotkrumennavigation',
+      toc: 'Inhalt',
+      aboutAuthor: 'Über den Autor',
     },
 
     // ── Signup Page ──
