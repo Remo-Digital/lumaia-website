@@ -6,7 +6,7 @@ import Footer from '@/components/Footer'
 import { defaultLocale, hreflangOf, localizedHref, localizedUrl, locales, type SiteLocale } from '@/lib/i18n'
 import { translations } from '@/lib/translations'
 import { getAllPostParams, getPost, getPostTranslations } from '@/lib/blog'
-import { formatBlogDate, slugifyHeading } from '@/lib/blog-shared'
+import { formatBlogDate, slugifyHeading, toIsoDateTime } from '@/lib/blog-shared'
 
 const BASE = 'https://lumaia.studio'
 
@@ -51,8 +51,8 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
       title: meta.title,
       description: meta.description,
       url: canonical,
-      publishedTime: meta.date,
-      modifiedTime: meta.updated,
+      publishedTime: toIsoDateTime(meta.date),
+      modifiedTime: meta.updated ? toIsoDateTime(meta.updated) : undefined,
       authors: [meta.author],
       tags: meta.tags,
       images: meta.image ? [{ url: `${BASE}${meta.image}` }] : undefined,
@@ -96,6 +96,9 @@ export default async function BlogPostPage({ params }: { params: Params }) {
   const language = hreflangOf(locale)
   const showToc = meta.toc && headings.length > 1
 
+  // Only nodes no other node points to show up as top-level items in validators. The WebPage
+  // therefore does not reference the article or breadcrumb, so BlogPosting, BreadcrumbList and
+  // FAQPage each stay top-level (the article points to the page via mainEntityOfPage).
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -151,19 +154,17 @@ export default async function BlogPostPage({ params }: { params: Params }) {
         description: meta.description,
         inLanguage: language,
         isPartOf: { '@id': ids.website },
-        breadcrumb: { '@id': ids.breadcrumb },
-        mainEntity: { '@id': ids.article },
         ...(meta.image ? { primaryImageOfPage: { '@id': ids.image } } : {}),
-        datePublished: meta.date,
-        dateModified: meta.updated ?? meta.date,
+        datePublished: toIsoDateTime(meta.date),
+        dateModified: toIsoDateTime(meta.updated ?? meta.date),
       },
       {
         '@type': 'BlogPosting',
         '@id': ids.article,
         headline: meta.title,
         description: meta.description,
-        datePublished: meta.date,
-        dateModified: meta.updated ?? meta.date,
+        datePublished: toIsoDateTime(meta.date),
+        dateModified: toIsoDateTime(meta.updated ?? meta.date),
         inLanguage: language,
         url,
         mainEntityOfPage: { '@id': ids.page },
