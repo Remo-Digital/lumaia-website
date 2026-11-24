@@ -96,6 +96,9 @@ export default async function BlogPostPage({ params }: { params: Params }) {
   const language = hreflangOf(locale)
   const showToc = meta.toc && headings.length > 1
 
+  // Only nodes no other node points to show up as top-level items in validators. The WebPage
+  // therefore does not reference the article or breadcrumb, so BlogPosting, BreadcrumbList and
+  // FAQPage each stay top-level (the article points to the page via mainEntityOfPage).
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -151,8 +154,6 @@ export default async function BlogPostPage({ params }: { params: Params }) {
         description: meta.description,
         inLanguage: language,
         isPartOf: { '@id': ids.website },
-        breadcrumb: { '@id': ids.breadcrumb },
-        mainEntity: { '@id': ids.article },
         ...(meta.image ? { primaryImageOfPage: { '@id': ids.image } } : {}),
         datePublished: meta.date,
         dateModified: meta.updated ?? meta.date,
